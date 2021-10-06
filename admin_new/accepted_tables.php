@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    require_once '../includes/dbh.inc.php';
+    require_once '../includes/emptySession.php';
+
+    emptyAdminLoginSession();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -164,132 +172,64 @@
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Accepted
+                Decline
               </div>
               <div class="card-body">
                 <table id="datatablesSimple">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Date</th>
-                      <th>Time</th>
-                      <th>Branch</th>
-                      <th>Consultation</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Date</th>
-                      <th>Time</th>
-                      <th>Branch</th>
-                      <th>Consultation</th>
-                      <th>Action</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Karlito Junior</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Lebron James</td>
-                      <td>2021/05/35</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Pinagbuhatan</td>
-                      <td>Oral Prophylaxis</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Manny Paquiao</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Nikola Tesla</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Tooth Extraction</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Michael Jordan</td>
-                      <td>2021/02/12</td>
-                      <td>1:00PM-2:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Oral Prophylaxis</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Jesa Belle</td>
-                      <td>2021/12/35</td>
-                      <td>1:00PM-3:00PM</td>
-                      <td>Pinagbuhatan</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Karlito Junior</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Orthodontic Treatment</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>John Stockton</td>
-                      <td>2021/06/15</td>
-                      <td>5:00AM-3:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Orthodontic Treatment</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
+
+                <?php
+                            $sql = "SELECT * FROM booking;";
+                            $result = mysqli_query($conn, $sql);
+                            $resultChecked = mysqli_num_rows($result);
+?>  
+<thead class="thead-light">
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">Procedure</th>
+        <th scope="col">Branch</th>
+        <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <?php
+                            if($resultChecked > 0){  
+                                while($row = mysqli_fetch_assoc($result)){
+                                    if("Accepted" === $row['bookingStatus']){ ?>
+                                  <tbody>
+                                            <tr>
+                                            <th scope="row"> <?php echo $row['bookingName'] ?> </th>
+                                                <td> <?php echo $row['bookingGender'] ?> </td>
+                                                <td> <?php echo $row['bookingDate'] ?> </td>
+                                                <td> <?php echo $row['bookingTime'] ?> </td>
+                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
+                                                <td> <?php echo $row['bookingBranch'] ?> </td>
+                                            
+                                                
+                                                <td> 
+                                                    <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+                                                        <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
+                                                        <button type="button" class="btn btn-warning" id="accept-button" name="submit">
+                                                          <i class="fas fa-check"></i> Done
+                                                        </button> 
+                                                  
+                                                    </form>
+                                                </td>
+                                                </tbody>
+                                       
+
+                            <?php } } } ?>
+                
+                 
                   </tbody>
                 </table>
               </div>
             </div>
-          </div> 
+          </div>
+
+
+
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid px-4">
             <div
