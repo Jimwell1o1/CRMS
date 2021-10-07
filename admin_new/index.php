@@ -114,6 +114,17 @@
               <div class="sb-sidenav-menu-heading">General</div>
               <a class="nav-link" href="index.php">
                 <div class="sb-nav-link-icon">
+
+                
+                <i class="fas fa-home"></i>
+                </div>
+                Home
+              </a>
+
+              <a class="nav-link" href="index.php">
+                <div class="sb-nav-link-icon">
+
+                
                   <i class="fas fa-tachometer-alt"></i>
                 </div>
                 Dashboard
@@ -131,7 +142,7 @@
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-columns"></i>
                 </div>
-                Schedule
+                Appointments
                 <div class="sb-sidenav-collapse-arrow">
                   <i class="fas fa-angle-down"></i>
                 </div>
@@ -144,19 +155,29 @@
               >
                 <nav class="sb-sidenav-menu-nested nav">
                   <a class="nav-link" href="pending_tables.php"
-                    >Pending Schedule</a
+                    >Pending Schedules</a
                   >
                   <a class="nav-link" href="accepted_tables.php"
-                    >Accepted Schedule</a
+                    >Accepted Schedules</a
                   >
                   <a class="nav-link" href="declined_tables.php"
-                    >Decline Schedule</a
+                    >Decline Schedules</a
+                  >
+                  <a class="nav-link" href="declined_tables.php"
+                    >Missed Schedules</a
                   >
                   <a class="nav-link" href="customer_history.php"
                     >Customer History</a
                   >
                 </nav>
               </div>
+              <div class="sb-sidenav-menu-heading">Users</div>
+              <a class="nav-link" href="index.php">
+                <div class="sb-nav-link-icon">
+                <i class="fas fa-archive"></i>
+                </div>
+                Accounts
+              </a>
 
               <a class="nav-link" href="add_patient.php">
                 <div class="sb-nav-link-icon">
