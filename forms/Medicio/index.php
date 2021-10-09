@@ -554,7 +554,7 @@
         <div class="modal-content" style="height:630px;">
             <div class="close">+</div>
             
-            <form action="includes/bookingDetails.inc.php" method="POST">
+            <form action="../../includes/bookingDetails.inc.php" method="POST">
            
            <h4 style="text-align:left;" class = "success">PLEASE CHECK YOUR DETAILS: </h4>
            <hr>
