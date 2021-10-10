@@ -245,6 +245,7 @@
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Accepted" === $row['bookingStatus']){ ?>
                                   <tbody>
+                                    
                                             <tr>
                                             <th scope="row"> <?php echo $row['bookingName'] ?> </th>
                                                 <td> <?php echo $row['bookingGender'] ?> </td>
@@ -252,8 +253,7 @@
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
-                                            
-                                                
+                 
                                                 <td> 
                                                     <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
