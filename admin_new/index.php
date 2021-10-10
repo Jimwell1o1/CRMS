@@ -172,7 +172,7 @@
                 </nav>
               </div>
               <div class="sb-sidenav-menu-heading">Users</div>
-              <a class="nav-link" href="index.php">
+              <a class="nav-link" href="user_accounts.php">
                 <div class="sb-nav-link-icon">
                 <i class="fas fa-archive"></i>
                 </div>

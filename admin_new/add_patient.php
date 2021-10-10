@@ -20,7 +20,7 @@
     <!--========= NAV BAR =========-->
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="index.html">MCY Dental Clinic</a>
+      <a class="navbar-brand ps-3" href="../index.php">MCY Dental Clinic</a>
       <!-- Sidebar Toggle-->
       <button
         class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
@@ -46,12 +46,37 @@
             placeholder="Search for..."
             aria-label="Search for..."
             aria-describedby="btnNavbarSearch"
+            id="btnNavbarSearch"
+            onchange="openPage()"
           />
           <button class="btn btn-primary" id="btnNavbarSearch" type="button">
             <i class="fas fa-search"></i>
           </button>
         </div>
       </form>
+
+      <!-- Script for Searching Page -->
+     <script>
+       function openPage(){
+         var x =document.getElementById("btnNavbarSearch").value;
+
+         if(x === "pending"){
+           window.open("pending_tables.html");
+         }
+         if(x == "declined" || "DECLINED"){
+          window.open("declined_tables.html");
+         }
+         else if(x == "accepted" || "ACCEPTED"){
+          window.open("accepted_tables.html");
+         }
+         else if(x == "history" || "HISTORY"){
+          window.open("customer_history.html");
+         }
+         else if(x == "patient" || "PATIENT"){
+          window.open("add_patient.html");
+         }
+       }
+     </script>
 
       <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
         <li class="nav-item dropdown">
@@ -84,6 +109,17 @@
               <div class="sb-sidenav-menu-heading">General</div>
               <a class="nav-link" href="index.php">
                 <div class="sb-nav-link-icon">
+
+                
+                <i class="fas fa-home"></i>
+                </div>
+                Home
+              </a>
+
+              <a class="nav-link" href="index.php">
+                <div class="sb-nav-link-icon">
+
+                
                   <i class="fas fa-tachometer-alt"></i>
                 </div>
                 Dashboard
@@ -101,7 +137,7 @@
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-columns"></i>
                 </div>
-                Schedule
+                Appointments
                 <div class="sb-sidenav-collapse-arrow">
                   <i class="fas fa-angle-down"></i>
                 </div>
@@ -114,19 +150,29 @@
               >
                 <nav class="sb-sidenav-menu-nested nav">
                   <a class="nav-link" href="pending_tables.php"
-                    >Pending Schedule</a
+                    >Pending Schedules</a
                   >
                   <a class="nav-link" href="accepted_tables.php"
-                    >Accepted Schedule</a
+                    >Accepted Schedules</a
                   >
                   <a class="nav-link" href="declined_tables.php"
-                    >Decline Schedule</a
+                    >Decline Schedules</a
+                  >
+                  <a class="nav-link" href="declined_tables.php"
+                    >Missed Schedules</a
                   >
                   <a class="nav-link" href="customer_history.php"
                     >Customer History</a
                   >
                 </nav>
               </div>
+              <div class="sb-sidenav-menu-heading">Users</div>
+              <a class="nav-link" href="user_accounts.php">
+                <div class="sb-nav-link-icon">
+                <i class="fas fa-archive"></i>
+                </div>
+                Accounts
+              </a>
 
               <a class="nav-link" href="add_patient.php">
                 <div class="sb-nav-link-icon">
@@ -135,13 +181,14 @@
                 Add Patient
               </a>
 
-             
+              
           <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
             Administrator
           </div>
         </nav>
       </div>
+
 
       <!--========= END OF NAV BAR =========-->
       <div id="layoutSidenav_content">
