@@ -191,6 +191,7 @@
 
 
       <!--========= END OF NAV BAR =========-->
+
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
@@ -202,11 +203,25 @@
               <li class="breadcrumb-item active">Add Patient</li>
             </ol>
             
+          <label for="basic-url" class="form-label">General Information</label>
 
+          
+          <div class="row">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Patient Name</span>
               <input type="text" class="form-control" placeholder="Full Name" aria-label="Username" aria-describedby="basic-addon1">
             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Gender</span>
+              <select class="form-select" aria-label="Default select example">
+              <option selected>Select Gender</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+            </select>
+            </div>
+          </div>
+            
             
 
             <label for="basic-url" class="form-label">Schedule Information</label>
