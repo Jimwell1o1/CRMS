@@ -28,6 +28,20 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
       crossorigin="anonymous"
     ></script>
+
+      <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+<link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="../assets/css/style.css" rel="stylesheet">
   </head>
   <body class="sb-nav-fixed">
     <!--========= NAV BAR =========-->
@@ -231,12 +245,11 @@
 ?>  
 <thead class="thead-light">
         <tr>
+        <th scope="col">User ID</th>
         <th scope="col">Name</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Date</th>
-        <th scope="col">Time</th>
-        <th scope="col">Procedure</th>
-        <th scope="col">Branch</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Status</th>
         <th scope="col">Action</th>
         </tr>
         </thead>
@@ -246,19 +259,23 @@
                                     if("Accepted" === $row['bookingStatus']){ ?>
                                   <tbody>
                                             <tr>
+                                            <td> <?php echo '1' ?> </td>
                                             <th scope="row"> <?php echo $row['bookingName'] ?> </th>
+                                            
                                                 <td> <?php echo $row['bookingGender'] ?> </td>
+                                                <td> <?php echo 'rjosdjnsa@gmail.com' ?> </td>
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
-                                                <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td> <?php echo $row['bookingBranch'] ?> </td>
+
                                             
                                                 
                                                 <td> 
                                                     <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
-                                                        <button type="button" class="btn btn-warning" id="accept-button" name="submit">
-                                                          <i class="fas fa-check"></i> Done
+                                                        <button type="button" class="btn btn-primary" id="accept-button" name="submit">
+                                                          <i class="fas fa-edit"></i> Edit
+                                                        </button> 
+                                                        <button type="button" class="btn btn-danger" id="accept-button" name="submit">
+                                                          <i class="fas fa-trash"></i> Delete
                                                         </button> 
                                                   
                                                     </form>
