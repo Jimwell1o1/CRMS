@@ -113,31 +113,15 @@
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
                                                 <td class="status"> <?php echo $row['bookingStatus'] ?> </td>
-                                             
-                                             <?php }
-                                    else {
-                                      ?>
-                                      <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td> <?php echo 'No entries found.' ?> </td>
-                                      </tr>
-                                            </tbody>
-                                            </table>
-
-                                 
-
-                            <?php 
-                            break;
-                                    } 
-                                 
-                                   
-                                  } 
-                                }
-                            ?>
+                                                
+                                            
+                                                </tr>
+                                        </tbody>
                             
                          
+                                        
+                            <?php } } } ?>
+                            </table>
 
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
