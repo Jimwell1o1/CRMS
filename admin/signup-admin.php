@@ -8,74 +8,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/loginANDsignup.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="../sweetalert/jquery-3.5.1.min.js"></script>
-    <script src="../sweetalert/sweetalert2.all.min.js"></script>
-    <title> Starbite Admin | Register </title>
+    <script src="sweetalert/jquery-3.5.1.min.js"></script>
+    <script src="sweetalert/sweetalert2.all.min.js"></script>
+    <title> MCY ADMIN </title>
+
+
+     <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+<link rel = "stylesheet" href = "../assets/css/styleLogIn.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-    <body class="admin">
-        <div class="container">
-            <h1> Administrator </h1>
+
+
+    <body>
+  
+    <div class="wrapper fadeInDown">
+  <div id="formContent">
             <form class="form" action="../includes/signup-admin.inc.php" method="POST">
-                <h2> Sign Up </h2>
+            <br>
+                <h2><a href = "../index.php"> Administrator || MCY CLINIC</a> </h2><br>
                 <div class="input-box">
-                    <input class="text-input" type="text" name="admin_name" required
+                    <input id="textbox" class="text-input" type="text" name="admin_name" placeholder="Full Name" required
                         value="<?php 
                                     if(isset($_SESSION['admin_name'])){
                                         echo htmlspecialchars($_SESSION['admin_name']);
                                     }
                                 ?>">
-                    <label class="text-label"> Full Name </label>
+                 
                 </div>
                 <div class="input-box">
-                    <input class="text-input" type="text" name="admin_email" required
+                    <input id="textbox" class="text-input" type="text" name="admin_email" placeholder="Email" required
                         value="<?php 
                                     if(isset($_SESSION['admin_email'])){
                                         echo htmlspecialchars($_SESSION['admin_email']);
                                     }
                                 ?>">
-                    <label class="text-label"> Email </label>
+           
                 </div>
                 <div class="input-box">
-                    <input class="text-input" type="text" name="admin_uid" required
+                    <input id="textbox" class="text-input" type="text" name="admin_uid" placeholder="UserName" required
                         value="<?php 
                                     if(isset($_SESSION['admin_uid'])){
                                         echo htmlspecialchars($_SESSION['admin_uid']);
                                     }
                                 ?>">
-                    <label class="text-label"> Username </label>
+                
                 </div>
                 <div class="input-box">
-                    <input id="password1" class="text-input" type="password" name="admin_password" required
+                    <input  id="passwordVal" class="text-input" type="password" placeholder="Password" name="admin_password" required
                         value="<?php 
                                     if(isset($_SESSION['admin_password'])){
                                         echo htmlspecialchars($_SESSION['admin_password']);
                                     }
                                 ?>">
-                    <label class="text-label"> Password </label>
-                    <span id="show-password" class="far fa-eye-slash"></span>
-                    <span id="hide-password" class="far fa-eye" style="display:none"></span>
+                    
+    
                 </div>
                 <div class="input-box">
-                    <input id="password2" class="text-input" type="password" name="admin_confirmpassword" required
+                    <input  id="confirmVal" class="text-input" type="password" placeholder="Confirm Password" name="admin_confirmpassword" required
                         value="<?php 
                                     if(isset($_SESSION['admin_confirmpassword'])){
                                         echo htmlspecialchars($_SESSION['admin_confirmpassword']);
                                     }
                                 ?>">
-                    <label class="text-label"> Confirm Password </label>
-                    <span id="show-confirm-password" class="far fa-eye-slash"></span>
-                    <span id="hide-confirm-password" class="far fa-eye" style="display:none"></span>
-                </div>
-                <input class="submit-button" type="submit" name="submit" value="Sign Up" required>
+                
+                </div> 
+                <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/><br>
                 <span> Already have an account? <a href="login-admin.php"> Login here </a> </span> 
+                <input class="submit-button" type="submit" name="submit" value="Sign Up" required>
+               
             </form>
         </div>
     </body>
 
     
     <!-- For Checking -->
+
     <?php
         if(isset($_GET["error"])){
             if($_GET["error"] === "invalidemail"){ ?>
@@ -164,46 +191,35 @@
         }
     ?>
 
+<!-- Show Password Function -->
+<script>
+      function myFunction() {
+         var x = document.getElementById("confirmVal");
+         var y = document.getElementById("passwordVal");
+         if (x.type === "password") {
+          x.type = "text";
+          y.type = "text";
+        } else {
+            x.type = "password";
+            y.type = "password";
+         }
+        }
+    </script>
 
-    <!-- Show and Hide password -->
-    <script>
-        const showPassword = document.getElementById("show-password");
-        const hidePassword = document.getElementById("hide-password");
-        const showConfirmPassword = document.getElementById("show-confirm-password");
-        const hideConfirmPassword = document.getElementById("hide-confirm-password");
-        const password1 = document.getElementById("password1");
-        const password2 = document.getElementById("password2");
+</div></div>
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-        showPassword.addEventListener("click", function(){
-            if(password1.type === "password"){
-                password1.setAttribute("type", "text");
-                showPassword.style.display = "none";
-                hidePassword.style.display = "block";
-            }
-        });
+<!-- Vendor JS Files -->
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+<script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../assets/vendor/venobox/venobox.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
 
-        hidePassword.addEventListener("click", function(){
-            if(password1.type === "text"){
-                password1.setAttribute("type", "password");
-                hidePassword.style.display = "none";
-                showPassword.style.display = "block";
-            }
-        });
-
-        showConfirmPassword.addEventListener("click", function(){
-            if(password2.type === "password"){
-                password2.setAttribute("type", "text");
-                showConfirmPassword.style.display = "none";
-                hideConfirmPassword.style.display = "block";
-            }
-        });
-
-        hideConfirmPassword.addEventListener("click", function(){
-            if(password2.type === "text"){
-                password2.setAttribute("type", "password");
-                hideConfirmPassword.style.display = "none";
-                showConfirmPassword.style.display = "block";
-            }
-        });
+<!-- Template Main JS File -->
+<script src="../assets/js/main.js"></script>
     </script>
 </html> 

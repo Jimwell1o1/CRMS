@@ -18,7 +18,7 @@
         $_SESSION['admin_password'] = $admin_password;
         $_SESSION['admin_confirmpassword'] = $admin_confirmpassword;
 
-
+      
         if(invalidEmail($admin_email) !== false){
             header("location: ../admin/signup-admin.php?error=invalidemail");
             exit();
@@ -47,7 +47,7 @@
         createAdminUser($conn, $admin_name, $admin_email, $admin_uid, $admin_password);   
 
     }else {
-        header("location: ../admin/signup-admin.php");
+        header("location: ../admin/login-admin.php");
         exit();
     }
 
