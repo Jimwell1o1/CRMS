@@ -45,7 +45,7 @@
   <div id="formContent">
             <form class="form" action="../includes/signup-admin.inc.php" method="POST">
             <br>
-                <h2><a href = "../index.php"> Administrator || MCY CLINIC</a> </h2><br>
+                <h2> Admin Registration</h2><br>
                 <div class="input-box">
                     <input id="textbox" class="text-input" type="text" name="admin_name" placeholder="Full Name" required
                         value="<?php 
