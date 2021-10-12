@@ -25,6 +25,7 @@
     
   <?php include "includes/navbar.php"; ?> <!--==== NAV BAR ====-->
 
+    
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
@@ -91,7 +92,7 @@
                                               <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                        
                                                 <button name="submit" class="btn btn-secondary">
-                                                  <i class="fas fa-check"></i> Delete
+                                                  <i class="fas fa-trash"></i> Delete
                                                 </button>
                                                     </form>
 
@@ -114,8 +115,6 @@
             </div>
           </div>
 
-
-         
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -162,5 +161,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/datatables-simple-demo.js"></script>
+
   </body>
 </html>

@@ -80,7 +80,7 @@
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Accepted" === $row['bookingStatus']){ ?>
-<tr>
+                                      <tr>
                                               <th scope="row"> <?php echo $row['bookingName'] ?> </th>
                                               <td> <?php echo $row['bookingGender'] ?> </td>
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
