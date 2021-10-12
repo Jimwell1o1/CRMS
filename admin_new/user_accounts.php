@@ -78,7 +78,6 @@
                       <th>Name</th>
                       <th>Username</th>
                       <th>Email</th>
-                      <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -87,7 +86,6 @@
                       <th>Name</th>
                       <th>Username</th>
                       <th>Email</th>
-                      <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -106,25 +104,8 @@
                                             <td> <?php echo $row['usersName'] ?> </td>
                                             <td> <?php echo $row['usersUid'] ?> </td>
                                             <td> <?php echo $row['usersEmail'] ?> </td>
-                                             
 
-
-
-                                            <td> 
-                                                    <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                        
-                                                        <button type="button" class="btn btn-danger" id="accept-button" name="submit">
-                                                        <i class="fas fa-trash"></i>
-                                                        </button> 
-                                                  
-                                                    </form>
-                                                </td>
                                             </tr>
-
-
-                                            
-                                       
-
                             <?php }  } ?>
                    
 
