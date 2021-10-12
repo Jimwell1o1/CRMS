@@ -109,7 +109,7 @@
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> 
                                                         <button class="btn btn-outline-danger"> Delete </button>  -->
 
-                                                        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                   <i class="fas fa-edit"></i>
                                                 </button>
                                                 <button class="btn btn-warning" id="accept-button" name="submit">
@@ -120,7 +120,7 @@
                                                 </button>
                                                     </form>
 
-                                          
+                                
                                               </td>
                                             </tr>
 

@@ -103,7 +103,7 @@ while($row = mysqli_fetch_assoc($query_result)){
 
               <!-- Customer History -->
               <div class="col-xl-3 col-md-6 mb-4 ">
-                <div class="card border-left-primary shadow h-100 py-2 bg-primary">
+              <div class="card border-left-primary shadow h-55 bg-primary">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -119,6 +119,17 @@ while($row = mysqli_fetch_assoc($query_result)){
                             <div class="col-auto">
                                 <i class="fas fa-history fa-2x text-gray-300 text-white"></i>
                             </div>
+                            <div class="
+                              card-footer
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                              ">
+                              <a class="small text-white" href="customer_history.php"> View Schedule</a>
+                              <div class="small text-white">
+                              <i class="fas fa-angle-right"></i>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,7 +137,7 @@ while($row = mysqli_fetch_assoc($query_result)){
 
                <!-- Pending -->
                <div class="col-xl-3 col-md-6 mb-4 ">
-                <div class="card border-left-primary shadow h-100 py-2 bg-warning">
+               <div class="card border-left-primary shadow h-55 bg-warning">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -141,6 +152,17 @@ while($row = mysqli_fetch_assoc($query_result)){
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300 text-white"></i>
                             </div>
+                            <div class="
+                              card-footer
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                              ">
+                              <a class="small text-white" href="customer_history.php">View Schedule</a>
+                              <div class="small text-white">
+                              <i class="fas fa-angle-right"></i>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,7 +171,7 @@ while($row = mysqli_fetch_assoc($query_result)){
            
               <!-- Accepted -->
               <div class="col-xl-3 col-md-6 mb-4 ">
-                <div class="card border-left-primary shadow h-100 py-2 bg-success">
+              <div class="card border-left-primary shadow h-55 bg-success">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -164,13 +186,24 @@ while($row = mysqli_fetch_assoc($query_result)){
                             <div class="col-auto">
                                 <i class="fas fa-check-circle fa-2x text-gray-300 text-white"></i>
                             </div>
+                            <div class="
+                              card-footer
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                              ">
+                              <a class="small text-white" href="customer_history.php">View Schedule</a>
+                              <div class="small text-white">
+                              <i class="fas fa-angle-right"></i>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
               <div class="col-xl-3 col-md-6 mb-4 ">
-                <div class="card border-left-primary shadow h-100 py-2 bg-danger">
+                <div class="card border-left-primary shadow h-55  bg-danger">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -185,99 +218,24 @@ while($row = mysqli_fetch_assoc($query_result)){
                             <div class="col-auto">
                                 <i class="fas fa-ban fa-2x text-gray-300 text-white"></i>
                             </div>
+                            
+                            <div class="
+                              card-footer
+                              d-flex
+                              align-items-center
+                              justify-content-between
+                              ">
+                              <a class="small text-white" href="customer_history.php">View Details</a>
+                              <div class="small text-white">
+                              <i class="fas fa-angle-right"></i>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-              <div class="col-xl-3 col-md-6">
-                <div class="card bg-primary text-white mb-4">
-                  <div class="card-body">Customer History</div>
-                  <div
-                    class="
-                      card-footer
-                      d-flex
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <a class="small text-white stretched-link" href="customer_history.php"
-                      >View Details</a
-                    >
-                    <div class="small text-white">
-                      <i class="fas fa-angle-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-                 <div class="col-xl-3 col-md-6">
-                <div class="card bg-warning text-white mb-4">
-                  <div class="card-body">Pending Customers</div>
-                  <div
-                    class="
-                      card-footer
-                      d-flex
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <a class="small text-white stretched-link" href="pending_tables.php"
-                      >View Details</a
-                    >
-                    <div class="small text-white">
-                      <i class="fas fa-angle-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="col-xl-3 col-md-6">
-                <div class="card bg-success text-white mb-4">
-                  <div class="card-body">Accepted Customers</div>
-                  <div
-                    class="
-                      card-footer
-                      d-flex
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <a class="small text-white stretched-link" href="accepted_tables.php"
-                      >View Details</a
-                    >
-                    <div class="small text-white">
-                      <i class="fas fa-angle-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Decline -->
-              <div class="col-xl-3 col-md-6">
-                <div class="card bg-danger text-white mb-4">
-                  <div class="card-body">Decline Customers</div>
-                  <div
-                    class="
-                      card-footer
-                      d-flex
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <a class="small text-white stretched-link" href="declined_tables.php"
-                      >View Details</a
-                    >
-                    <div class="small text-white">
-                      <i class="fas fa-angle-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
+              
             <div class="row">
               <div class="col-xl-6">
                 <div class="card mb-4">
