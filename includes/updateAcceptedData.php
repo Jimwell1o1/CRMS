@@ -21,7 +21,7 @@
             }
         }
         $_SESSION['Done'] = 'Done';
-        header("location: ../admin/accepted.php");
+        header("location: ../admin_new/accepted_tables.php");
         exit();
 
     }else {

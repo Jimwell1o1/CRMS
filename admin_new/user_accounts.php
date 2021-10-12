@@ -70,38 +70,47 @@
                 Accounts
               </div>
               <div class="card-body">
-                <table id="example" class="table table-stripped table-bordered">
+              
+              <table id="datatablesSimple">
+                  <thead>
+                    <tr>
+                      <th>User ID</th>
+                      <th>Name</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>User ID</th>
+                      <th>Name</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    
 
-                <?php
+                    <?php
                             $sql = "SELECT * FROM users;";
                             $result = mysqli_query($conn, $sql);
                             $resultChecked = mysqli_num_rows($result);
-?>  
-<thead class="thead-light">
-        <tr>
-        <th scope="col">User ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Username</th>
-        <th scope="col">Email</th>
-        <th scope="col">Action</th>
-        </tr>
-        </thead>
-        <?php
+                            
                             if($resultChecked > 0){  
-                                while($row = mysqli_fetch_assoc($result)){
-                                     ?>
-                                  <tbody>
-                                            <tr>
-                                            
-                                            <th scope="row"> <?php echo $row['usersId'] ?> </th>
-                                            
-                                                <td> <?php echo $row['usersName'] ?> </td>
-                                                <td> <?php echo $row['usersEmail'] ?> </td>
-                                                <td> <?php echo $row['usersUid'] ?> </td>
+                              while($row = mysqli_fetch_assoc($result)){
+                                ?>
+                                          <tr>
+                                          <th scope="row"> <?php echo $row['usersId'] ?> </th>
+                                            <td> <?php echo $row['usersName'] ?> </td>
+                                            <td> <?php echo $row['usersUid'] ?> </td>
+                                            <td> <?php echo $row['usersEmail'] ?> </td>
+                                             
 
-                                            
-                                                
-                                                <td> 
+
+
+                                            <td> 
                                                     <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
                                                         <button type="button" class="btn btn-primary" id="accept-button" name="submit">
@@ -113,14 +122,21 @@
                                                   
                                                     </form>
                                                 </td>
-                                                </tbody>
+                                            </tr>
+
+
+                                            
                                        
 
-                            <?php } }  ?>
-                
+                            <?php }  } ?>
+                   
+
+
                  
                   </tbody>
                 </table>
+
+
               </div>
             </div>
           </div>
@@ -143,20 +159,7 @@
         </footer>
       </div>
     </div>
-    <script>
-      $(document).ready(function() {
-    $('#example').DataTable();
-    
-} );
-
-
-
-
-
-
-
-
-</script>
+  
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"

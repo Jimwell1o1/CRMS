@@ -41,55 +41,80 @@
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Decline
+                Accepted
               </div>
               <div class="card-body">
-                <table id="datatablesSimple">
+               
 
-                <?php
+              <table id="datatablesSimple">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Gender</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>Branch</th>
+                      <th>Consultation</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Gender</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>Branch</th>
+                      <th>Consultation</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    
+
+                    <?php
                             $sql = "SELECT * FROM booking;";
                             $result = mysqli_query($conn, $sql);
                             $resultChecked = mysqli_num_rows($result);
-?>  
-<thead class="thead-light">
-        <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Date</th>
-        <th scope="col">Time</th>
-        <th scope="col">Procedure</th>
-        <th scope="col">Branch</th>
-        <th scope="col">Action</th>
-        </tr>
-        </thead>
-        <?php
+
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Accepted" === $row['bookingStatus']){ ?>
-                                  <tbody>
-                                    
-                                            <tr>
-                                            <th scope="row"> <?php echo $row['bookingName'] ?> </th>
-                                                <td> <?php echo $row['bookingGender'] ?> </td>
+<tr>
+                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
+                                              <td> <?php echo $row['bookingGender'] ?> </td>
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
-                 
-                                                <td> 
-                                                    <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
+                                             
+
+
+
+                                              <td class="text-right">
+                                              <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
-                                                        <button type="button" class="btn btn-warning" id="accept-button" name="submit">
+                                                        <button class="btn btn-warning" id="accept-button" name="submit">
                                                           <i class="fas fa-check"></i> Done
                                                         </button> 
+                                                        <button class="btn btn-danger">
+                                                          <i class="fas fa-trash"></i>
+                                                        </button>
                                                   
                                                     </form>
-                                                </td>
-                                                </tbody>
+
+                                          
+                                              </td>
+                                            </tr>
+
+
+                                            
                                        
 
                             <?php } } } ?>
-                
+                   
+
+
                  
                   </tbody>
                 </table>
