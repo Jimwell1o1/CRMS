@@ -64,6 +64,17 @@
                                 ?>">
            
                 </div>
+
+                <div class="input-box">
+                    <input id="textbox" class="text-input" type="text" name="admin_branch" placeholder="Enter all caps" required
+                        value="<?php 
+                                    if(isset($_SESSION['admin_branch'])){
+                                        echo htmlspecialchars($_SESSION['admin_branch']);
+                                    }
+                                ?>">
+                
+                </div>
+
                 <div class="input-box">
                     <input id="textbox" class="text-input" type="text" name="admin_uid" placeholder="UserName" required
                         value="<?php 
@@ -125,6 +136,19 @@
                         text: ''
                     })
                 </script>
+
+            <?php }
+
+            if($_GET["error"] === "mustbeallcaps"){ ?>
+                <script>
+                    Swal.fire({
+                        icon: 'warning',
+                        width: '350',
+                        title: 'Branch must be all caps!',
+                        text: ''
+                    })
+                </script>
+
             <?php }
 
             if($_GET["error"] === "usernametaken"){ ?>
