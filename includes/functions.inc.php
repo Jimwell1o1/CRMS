@@ -191,7 +191,7 @@ function admin_emailExists($conn, $admin_email){
 
 
 // Function for Create Admin Account inserting to Database
-function createAdminUser($conn, $admin_name, $admin_email, $admin_uid,$admin_branch, $admin_password){
+function createAdminUser($conn, $admin_name, $admin_email, $admin_uid,$admin_branchName, $admin_password){
     $sql = "INSERT INTO adminAcc (adminAccName, adminAccEmail, adminAccUid, adminAccbranch,adminAccPwd) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -201,7 +201,7 @@ function createAdminUser($conn, $admin_name, $admin_email, $admin_uid,$admin_bra
 
     $hashedPwd = password_hash($admin_password, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sssss", $admin_name, $admin_email, $admin_uid,$admin_branch, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "sssss", $admin_name, $admin_email, $admin_uid,$admin_branchName, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../admin/signup-admin.php?error=none");

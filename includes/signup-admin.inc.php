@@ -8,14 +8,14 @@
 
         $admin_name = $_POST['admin_name'];
         $admin_email = $_POST['admin_email'];
-        $admin_branch = $_POST['admin_branch'];
+        $admin_branchName = $_POST['admin_branchName'];
         $admin_uid = $_POST['admin_uid'];
         $admin_password = $_POST['admin_password'];
         $admin_confirmpassword = $_POST['admin_confirmpassword'];
 
         $_SESSION['admin_name'] = $admin_name;
         $_SESSION['admin_email'] = $admin_email;
-        $_SESSION['admin_branch'] = $admin_branch;
+        $_SESSION['admin_branchName'] = $admin_branchName;
         $_SESSION['admin_uid'] = $admin_uid;
         $_SESSION['admin_password'] = $admin_password;
         $_SESSION['admin_confirmpassword'] = $admin_confirmpassword;
@@ -46,7 +46,7 @@
             exit();
         }
 
-        createAdminUser($conn, $admin_name, $admin_email, $admin_uid,$admin_branch, $admin_password);   
+        createAdminUser($conn, $admin_name, $admin_email, $admin_uid,$admin_branchName, $admin_password);   
 
     }else {
         header("location: ../admin/login-admin.php");
