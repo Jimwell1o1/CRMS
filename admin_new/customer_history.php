@@ -75,7 +75,8 @@
 
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
-                                    if("Done" === $row['bookingStatus']){ ?>
+                                    if("Done" === $row['bookingStatus']){ 
+                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ ?>
 <tr>
                                               <th scope="row"> <?php echo $row['bookingId'] ?> </th>
                                               <td > <?php echo $row['bookingName'] ?> </td>
@@ -98,7 +99,7 @@
                                             
                                        
 
-                            <?php } } } ?>
+                            <?php } } } } ?>
                    
 
                   </tbody>

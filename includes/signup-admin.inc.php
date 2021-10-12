@@ -49,7 +49,7 @@
         createAdminUser($conn, $admin_name, $admin_email, $admin_uid,$admin_branchName, $admin_password);   
 
     }else {
-        header("location: ../admin/login-admin.php");
+        header("location: ../admin/signup-admin.php");
         exit();
     }
 
