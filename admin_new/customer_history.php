@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    require_once '../includes/dbh.inc.php';
+    require_once '../includes/emptySession.php';
+
+    emptyAdminLoginSession();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,79 +43,64 @@
                 <table id="datatablesSimple">
                   <thead>
                     <tr>
+                    <th>Booking ID</th>
                       <th>Name</th>
+                      <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Branch</th>
                       <th>Consultation</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
+                    <th>Booking ID</th>
                       <th>Name</th>
+                      <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Branch</th>
                       <th>Consultation</th>
+                      <th>Status</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td>Karlito Junior</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Fluoride Application</td>
-                    </tr>
-                    <tr>
-                      <td>Lebron James</td>
-                      <td>2021/05/35</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Pinagbuhatan</td>
-                      <td>Oral Prophylaxis</td>
-                    </tr>
-                    <tr>
-                      <td>Manny Paquiao</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Fluoride Application</td>
-                    </tr>
-                    <tr>
-                      <td>Nikola Tesla</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Tooth Extraction</td>
-                    </tr>
-                    <tr>
-                      <td>Michael Jordan</td>
-                      <td>2021/02/12</td>
-                      <td>1:00PM-2:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Oral Prophylaxis</td>
-                    </tr>
-                    <tr>
-                      <td>Jesa Belle</td>
-                      <td>2021/12/35</td>
-                      <td>1:00PM-3:00PM</td>
-                      <td>Pinagbuhatan</td>
-                      <td>Fluoride Application</td>
-                    </tr>
-                    <tr>
-                      <td>Karlito Junior</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Orthodontic Treatment</td>
-                    </tr>
-                    <tr>
-                      <td>John Stockton</td>
-                      <td>2021/06/15</td>
-                      <td>5:00AM-3:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Orthodontic Treatment</td>
-                    </tr>
+                    
+                    
+                    <?php
+                            $sql = "SELECT * FROM booking;";
+                            $result = mysqli_query($conn, $sql);
+                            $resultChecked = mysqli_num_rows($result);
+
+                            if($resultChecked > 0){  
+                                while($row = mysqli_fetch_assoc($result)){
+                                    if("Done" === $row['bookingStatus']){ ?>
+<tr>
+                                              <th scope="row"> <?php echo $row['bookingId'] ?> </th>
+                                              <td > <?php echo $row['bookingName'] ?> </td>
+                                              <td> <?php echo $row['bookingGender'] ?> </td>
+                                                <td> <?php echo $row['bookingDate'] ?> </td>
+                                                <td> <?php echo $row['bookingTime'] ?> </td>
+                                                <td> <?php echo $row['bookingBranch'] ?> </td>
+                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
+                                                <td> <?php echo $row['bookingStatus'] ?> </td>
+                                             
+
+
+                                             
+
+                                          
+                                              </td>
+                                            </tr>
+
+
+                                            
+                                       
+
+                            <?php } } } ?>
+                   
+
                   </tbody>
                 </table>
               </div>
