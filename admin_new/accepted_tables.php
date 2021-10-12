@@ -91,7 +91,7 @@
 
 
 
-                                              <td class="text-right">
+                                                <td class="text-left">
                                               <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
                                                         <button class="btn btn-warning" id="accept-button" name="submit">

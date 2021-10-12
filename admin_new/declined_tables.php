@@ -87,7 +87,7 @@
 
 
 
-                                              <td class="text-right">
+                                                <td class="text-left">
                                               <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                        
                                                 <button name="submit" class="btn btn-secondary">

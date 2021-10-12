@@ -104,7 +104,7 @@
 
 
 
-                                              <td class="text-right">
+                                              <td class="text-left">
                                               <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> 
                                                         <button class="btn btn-outline-danger"> Delete </button>  -->
