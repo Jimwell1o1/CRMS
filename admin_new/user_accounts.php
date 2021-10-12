@@ -112,12 +112,9 @@
 
                                             <td> 
                                                     <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                        <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
-                                                        <button type="button" class="btn btn-primary" id="accept-button" name="submit">
-                                                          <i class="fas fa-edit"></i> 
-                                                        </button> 
+                                                        
                                                         <button type="button" class="btn btn-danger" id="accept-button" name="submit">
-                                                          <i class="fas fa-trash"></i>
+                                                        <i class="fas fa-trash"></i>
                                                         </button> 
                                                   
                                                     </form>
