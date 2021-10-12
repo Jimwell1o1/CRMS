@@ -145,7 +145,7 @@
                       justify-content-between
                     "
                   >
-                    <a class="small text-white stretched-link" href="#"
+                    <a class="small text-white stretched-link" href="customer_history.php"
                       >View Details</a
                     >
                     <div class="small text-white">
@@ -166,7 +166,7 @@
                       justify-content-between
                     "
                   >
-                    <a class="small text-white stretched-link" href="#"
+                    <a class="small text-white stretched-link" href="pending_tables.php"
                       >View Details</a
                     >
                     <div class="small text-white">
@@ -188,7 +188,7 @@
                       justify-content-between
                     "
                   >
-                    <a class="small text-white stretched-link" href="#"
+                    <a class="small text-white stretched-link" href="accepted_tables.php"
                       >View Details</a
                     >
                     <div class="small text-white">
@@ -210,7 +210,7 @@
                       justify-content-between
                     "
                   >
-                    <a class="small text-white stretched-link" href="#"
+                    <a class="small text-white stretched-link" href="declined_tables.php"
                       >View Details</a
                     >
                     <div class="small text-white">
