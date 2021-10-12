@@ -137,7 +137,7 @@
                     >Accepted Schedules</a
                   >
                   <a class="nav-link" href="declined_tables.php"
-                    >Decline Schedules</a
+                    >Declined Schedules</a
                   >
                   <a class="nav-link" href="declined_tables.php"
                     >Missed Schedules</a

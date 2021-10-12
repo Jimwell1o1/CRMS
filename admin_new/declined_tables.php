@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    require_once '../includes/dbh.inc.php';
+    require_once '../includes/emptySession.php';
+
+    emptyAdminLoginSession();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,18 +28,18 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Decline Schedule</h1>
+            <h1 class="mt-4">Declined Schedule</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item">
                 <a href="index.html">Dashboard</a>
               </li>
-              <li class="breadcrumb-item active">Decline Schedule</li>
+              <li class="breadcrumb-item active">Declined Schedules</li>
             </ol>
 
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Decline
+                Declined
               </div>
               <div class="card-body">
                 <table id="datatablesSimple">
@@ -57,102 +64,48 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td>Karlito Junior</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-secondary">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Lebron James</td>
-                      <td>2021/05/35</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Pinagbuhatan</td>
-                      <td>Oral Prophylaxis</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-secondary">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Manny Paquiao</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-secondary">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Nikola Tesla</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Tooth Extraction</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-secondary">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Michael Jordan</td>
-                      <td>2021/02/12</td>
-                      <td>1:00PM-2:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Oral Prophylaxis</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-secondary">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Jesa Belle</td>
-                      <td>2021/12/35</td>
-                      <td>1:00PM-3:00PM</td>
-                      <td>Pinagbuhatan</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-secondary">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Karlito Junior</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Orthodontic Treatment</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-secondary">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>John Stockton</td>
-                      <td>2021/06/15</td>
-                      <td>5:00AM-3:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Orthodontic Treatment</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-secondary">
-                          <i class="fas fa-check"></i> Done
-                        </button>
-                      </td>
-                    </tr>
+                    
+
+                    <?php
+                            $sql = "SELECT * FROM booking;";
+                            $result = mysqli_query($conn, $sql);
+                            $resultChecked = mysqli_num_rows($result);
+
+                            if($resultChecked > 0){  
+                                while($row = mysqli_fetch_assoc($result)){
+                                    if("Declined" === $row['bookingStatus']){ ?>
+<tr>
+                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
+                                           
+                                                <td> <?php echo $row['bookingDate'] ?> </td>
+                                                <td> <?php echo $row['bookingTime'] ?> </td>
+                                                <td> <?php echo $row['bookingBranch'] ?> </td>
+                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
+                                             
+
+
+
+                                              <td class="text-right">
+                                              <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+                                                       
+                                                <button name="submit" class="btn btn-secondary">
+                                                  <i class="fas fa-check"></i> Delete
+                                                </button>
+                                                    </form>
+
+                                          
+                                              </td>
+                                            </tr>
+
+
+                                            
+                                       
+
+                            <?php } } } ?>
+                   
+
+
+                 
                   </tbody>
                 </table>
               </div>

@@ -78,9 +78,7 @@
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Pending" === $row['bookingStatus']){ ?>
                                      
-                                            <tbody>
-                                            <tr>
-
+                                          
 
                                             <tr>
                                               <th scope="row"> <?php echo $row['bookingName'] ?> </th>
@@ -114,10 +112,10 @@
                                                         <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                   <i class="fas fa-edit"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-warning">
+                                                <button class="btn btn-warning" id="accept-button" name="submit">
                                                   <i class="fas fa-check"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-danger">
+                                                <button class="btn btn-danger">
                                                   <i class="fas fa-trash"></i>
                                                 </button>
                                                     </form>
