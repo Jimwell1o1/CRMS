@@ -66,12 +66,14 @@
                 </div>
 
                 <div class="input-box">
-                    <input id="textbox" class="text-input" type="text" name="admin_branchName" placeholder="Enter all caps" required
-                        value="<?php 
-                                    if(isset($_SESSION['admin_branchName'])){
-                                        echo htmlspecialchars($_SESSION['admin_branchName']);
-                                    }
-                                ?>">
+                <select class="text-input" name="admin_branchName">
+                <option value="" disabled selected>Select Branch</option>
+                <option value = "Malinao">Malinao</option>    
+                <option value = "Pinagbuhatan">Pinagbuhatan</option>  
+                <option value = "San Joaquin">San Joaquin</option>        
+                </select>
+
+                  
                 
                 </div>
 
