@@ -308,172 +308,93 @@ while($row = mysqli_fetch_assoc($query_result)){
                 Pending Customer
               </div>
               <div class="card-body">
-                <table id="datatablesSimple">
+                   <table id="datatablesSimple">
                   <thead>
                     <tr>
-                      <th>Name</th>
+                    <th>Name</th>
+                      <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
-                      <th>Branch</th>
                       <th>Consultation</th>
+                      <th>Branch</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Name</th>
+                    <th>Name</th>
+                    <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
-                      <th>Branch</th>
                       <th>Consultation</th>
+                      <th>Branch</th>
                       <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td>Karlito Junior</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Lebron James</td>
-                      <td>2021/05/35</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Pinagbuhatan</td>
-                      <td>Oral Prophylaxis</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Manny Paquiao</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Nikola Tesla</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Tooth Extraction</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Michael Jordan</td>
-                      <td>2021/02/12</td>
-                      <td>1:00PM-2:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Oral Prophylaxis</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Jesa Belle</td>
-                      <td>2021/12/35</td>
-                      <td>1:00PM-3:00PM</td>
-                      <td>Pinagbuhatan</td>
-                      <td>Fluoride Application</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Karlito Junior</td>
-                      <td>2021/04/25</td>
-                      <td>9:00AM-1:00PM</td>
-                      <td>Malinao</td>
-                      <td>Orthodontic Treatment</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>John Stockton</td>
-                      <td>2021/06/15</td>
-                      <td>5:00AM-3:00PM</td>
-                      <td>San Joaquin</td>
-                      <td>Orthodontic Treatment</td>
-                      <td class="text-right">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-warning">
-                          <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
+                    
+
+                    <?php
+                            $sql = "SELECT * FROM booking;";
+                            $result = mysqli_query($conn, $sql);
+                            $resultChecked = mysqli_num_rows($result);
+
+                            if($resultChecked > 0){  
+                                while($row = mysqli_fetch_assoc($result)){
+                                    if("Pending" === $row['bookingStatus']){ ?>
+                                     
+                                          
+
+                                            <tr>
+                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
+                                              <td> <?php echo $row['bookingGender'] ?> </td>
+                                                <td> <?php echo $row['bookingDate'] ?> </td>
+                                                <td> <?php echo $row['bookingTime'] ?> </td>
+                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
+                                                <td> <?php echo $row['bookingBranch'] ?> </td>
+                                                <!-- <td class="status"> 
+                                                    <?php if($row['bookingStatus'] == 'Pending'): ?>
+                                                        <span class="badge badge-warning">Pending Request</span>
+                                                    <?php endif ?>
+                                                    <?php if($row['bookingStatus'] == 'Accepted'): ?>
+                                                        <span class="badge badge-primary">Confirmed</span>
+                                                    <?php endif ?>
+                                                    <?php if($row['bookingStatus'] == 'Declined'): ?>
+                                                        <span class="badge badge-danger">Declined</span>
+                                                    <?php endif ?>
+                                                    <?php if($row['bookingStatus'] == 'Done'): ?>
+                                                        <span class="badge badge-info">Done</span>
+                                                    <?php endif ?>
+                                                </td> -->
+
+
+
+                                              <td class="text-left">
+                                              <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+                                                        <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> 
+                                                        <button class="btn btn-outline-danger"> Delete </button>  -->
+
+                                                        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                  <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-warning" id="accept-button" name="submit">
+                                                  <i class="fas fa-check"></i>
+                                                </button>
+                                                <button class="btn btn-danger">
+                                                  <i class="fas fa-trash"></i>
+                                                </button>
+                                                    </form>
+
+                                          
+                                              </td>
+                                            </tr>
+
+
+                                            
+                                       
+
+                            <?php } } } ?>
+                   
                   </tbody>
                 </table>
               </div>
