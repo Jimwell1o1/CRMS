@@ -46,6 +46,7 @@
                   <thead>
                     <tr>
                       <th>Name</th>
+                      <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Branch</th>
@@ -56,6 +57,7 @@
                   <tfoot>
                     <tr>
                       <th>Name</th>
+                      <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Branch</th>
@@ -76,7 +78,7 @@
                                     if("Declined" === $row['bookingStatus']){ ?>
 <tr>
                                               <th scope="row"> <?php echo $row['bookingName'] ?> </th>
-                                           
+                                              <td> <?php echo $row['bookingGender'] ?> </td>
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
