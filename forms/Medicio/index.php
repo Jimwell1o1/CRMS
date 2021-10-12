@@ -230,7 +230,7 @@
             
             <div class="col-md-6 form-group">
               <h6>Name:</h6>
-              <input type="text" name="name" class="form-control" id="name" placeholder="Patient or Parent Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="text" value = "<?PHP print $name ; ?>"  name="name" class="form-control" id="name" placeholder="Patient or Parent Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
               <span class="text-danger"> <?php echo $nameErr;?></span>
               <div class="validate"></div>
             </div>
@@ -283,93 +283,100 @@
               <select class="form-control" name="time[]">
                             <option value="" disabled selected>Select Time</option>
                             <!-- TO KEEP THE DETAILS TYPED -------->    
-                                <option value = "8:00AM" <?php
+                                <option value = "8:00 AM" <?php
                                   if(isset($_GET['submit']) && (!empty($_GET["time"]))){
                                     
                                     $time = isset($_GET['time']) ? $_GET['time'] : '';
                                     for($i = 0; $i < count($time); $i++) {
                                         $final = $time[$i];
                                       }  
-                                    echo($final == '8:00AM') ? ' selected="selected"' : '';
+                                    echo($final == '8:00 AM') ? ' selected="selected"' : '';
                                     }?>
-                                    >8:00AM</option>
+                                    >8:00 AM</option>
                          
-                         <!-- TO KEEP THE DETAILS TYPED -------->        
-                              <option value = "9:00AM" <?php
-                               if(isset($_GET['submit']) && (!empty($_GET["time"]))){
+                         <!-- TO KEEP THE DETAILS TYPED -------->    
+                         <option value = "9:00 AM" <?php
+                                  if(isset($_GET['submit']) && (!empty($_GET["time"]))){
                                     
-                                $time = isset($_GET['time']) ? $_GET['time'] : '';
-                                for($i = 0; $i < count($time); $i++) {
-                                      $final = $gender[$i];
-                                    }  
-                                  echo($final == '9:00AM') ? ' selected="selected"' : '';
-                                  }?>>9:00AM</option>
+                                    $time = isset($_GET['time']) ? $_GET['time'] : '';
+                                    for($i = 0; $i < count($time); $i++) {
+                                        $final = $time[$i];
+                                      }  
+                                    echo($final == '9:00 AM') ? ' selected="selected"' : '';
+                                    }?>
+                                    >9:00 AM</option>
 
-                          <!-- TO KEEP THE DETAILS TYPED -------->        
-                              <option value = "10:00AM" <?php
-                               if(isset($_GET['submit']) && (!empty($_GET["time"]))){
+                         <!-- TO KEEP THE DETAILS TYPED -------->    
+                         <option value = "10:00 AM" <?php
+                                  if(isset($_GET['submit']) && (!empty($_GET["time"]))){
                                     
-                                $time = isset($_GET['time']) ? $_GET['time'] : '';
-                                for($i = 0; $i < count($time); $i++) {
-                                      $final = $gender[$i];
-                                    }  
-                                  echo($final == '10:00AM') ? ' selected="selected"' : '';
-                                  }?>>10:00AM</option>
+                                    $time = isset($_GET['time']) ? $_GET['time'] : '';
+                                    for($i = 0; $i < count($time); $i++) {
+                                        $final = $time[$i];
+                                      }  
+                                    echo($final == '10:00 AM') ? ' selected="selected"' : '';
+                                    }?>
+                                    >10:00 AM</option>
                           
-                          <!-- TO KEEP THE DETAILS TYPED -------->        
-                          <option value = "1:00PM" <?php
-                               if(isset($_GET['submit']) && (!empty($_GET["time"]))){
+                          <!-- TO KEEP THE DETAILS TYPED -------->    
+                         <option value = "1:00 PM" <?php
+                                  if(isset($_GET['submit']) && (!empty($_GET["time"]))){
                                     
-                                $time = isset($_GET['time']) ? $_GET['time'] : '';
-                                for($i = 0; $i < count($time); $i++) {
-                                      $final = $gender[$i];
-                                    }  
-                                  echo($final == '1:00PM') ? ' selected="selected"' : '';
-                                  }?>>1:00PM</option>
+                                    $time = isset($_GET['time']) ? $_GET['time'] : '';
+                                    for($i = 0; $i < count($time); $i++) {
+                                        $final = $time[$i];
+                                      }  
+                                    echo($final == '1:00 PM') ? ' selected="selected"' : '';
+                                    }?>
+                                    >1:00 PM</option>
                           
-                          <!-- TO KEEP THE DETAILS TYPED -------->        
-                          <option value = "2:00PM" <?php
-                               if(isset($_GET['submit']) && (!empty($_GET["time"]))){
+                         <!-- TO KEEP THE DETAILS TYPED -------->    
+                         <option value = "2:00 PM" <?php
+                                  if(isset($_GET['submit']) && (!empty($_GET["time"]))){
                                     
-                                $time = isset($_GET['time']) ? $_GET['time'] : '';
-                                for($i = 0; $i < count($time); $i++) {
-                                      $final = $gender[$i];
-                                    }  
-                                  echo($final == '2:00PM') ? ' selected="selected"' : '';
-                                  }?>>2:00PM</option>
+                                    $time = isset($_GET['time']) ? $_GET['time'] : '';
+                                    for($i = 0; $i < count($time); $i++) {
+                                        $final = $time[$i];
+                                      }  
+                                    echo($final == '2:00 PM') ? ' selected="selected"' : '';
+                                    }?>
+                                    >2:00 PM</option>
                             
-                            <!-- TO KEEP THE DETAILS TYPED -------->        
-                          <option value = "3:00PM" <?php
-                               if(isset($_GET['submit']) && (!empty($_GET["time"]))){
+                            <!-- TO KEEP THE DETAILS TYPED -------->    
+                         <option value = "3:00 PM" <?php
+                                  if(isset($_GET['submit']) && (!empty($_GET["time"]))){
                                     
-                                $time = isset($_GET['time']) ? $_GET['time'] : '';
-                                for($i = 0; $i < count($time); $i++) {
-                                      $final = $gender[$i];
-                                    }  
-                                  echo($final == '3:00PM') ? ' selected="selected"' : '';
-                                  }?>>3:00PM</option>
+                                    $time = isset($_GET['time']) ? $_GET['time'] : '';
+                                    for($i = 0; $i < count($time); $i++) {
+                                        $final = $time[$i];
+                                      }  
+                                    echo($final == '3:00 PM') ? ' selected="selected"' : '';
+                                    }?>
+                                    >3:00 PM</option>
 
-                            <!-- TO KEEP THE DETAILS TYPED -------->        
-                          <option value = "4:00PM" <?php
-                               if(isset($_GET['submit']) && (!empty($_GET["time"]))){
+                            <!-- TO KEEP THE DETAILS TYPED -------->    
+                         <option value = "4:00 PM" <?php
+                                  if(isset($_GET['submit']) && (!empty($_GET["time"]))){
                                     
-                                $time = isset($_GET['time']) ? $_GET['time'] : '';
-                                for($i = 0; $i < count($time); $i++) {
-                                      $final = $gender[$i];
-                                    }  
-                                  echo($final == '4:00PM') ? ' selected="selected"' : '';
-                                  }?>>4:00PM</option>
+                                    $time = isset($_GET['time']) ? $_GET['time'] : '';
+                                    for($i = 0; $i < count($time); $i++) {
+                                        $final = $time[$i];
+                                      }  
+                                    echo($final == '4:00 PM') ? ' selected="selected"' : '';
+                                    }?>
+                                    >4:00 PM</option>
                                   
-                             <!-- TO KEEP THE DETAILS TYPED -------->        
-                          <option value = "5:00PM" <?php
-                               if(isset($_GET['submit']) && (!empty($_GET["time"]))){
+                            <!-- TO KEEP THE DETAILS TYPED -------->    
+                         <option value = "5:00 PM" <?php
+                                  if(isset($_GET['submit']) && (!empty($_GET["time"]))){
                                     
-                                $time = isset($_GET['time']) ? $_GET['time'] : '';
-                                for($i = 0; $i < count($time); $i++) {
-                                      $final = $gender[$i];
-                                    }  
-                                  echo($final == '5:00PM') ? ' selected="selected"' : '';
-                                  }?>>5:00PM</option>
+                                    $time = isset($_GET['time']) ? $_GET['time'] : '';
+                                    for($i = 0; $i < count($time); $i++) {
+                                        $final = $time[$i];
+                                      }  
+                                    echo($final == '5:00 PM') ? ' selected="selected"' : '';
+                                    }?>
+                                    >5:00 PM</option>
                         </select>
                         <span class="text-danger"> <?php echo $timeErr;?></span>
                 <div class="validate"></div>
