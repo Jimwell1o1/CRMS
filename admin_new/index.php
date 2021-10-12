@@ -1,3 +1,36 @@
+<?php
+
+$conn = mysqli_connect("localhost","root","","phpproject01");
+
+$query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Pending'";
+
+$query_result = mysqli_query($conn,$query);
+while($row = mysqli_fetch_assoc($query_result)){
+
+  $pending = $row['bookingCount'];
+}
+
+
+$query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Accepted'";
+
+$query_result = mysqli_query($conn,$query);
+while($row = mysqli_fetch_assoc($query_result)){
+
+  $accepted = $row['bookingCount'];
+}
+
+$query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Declined'";
+
+$query_result = mysqli_query($conn,$query);
+while($row = mysqli_fetch_assoc($query_result)){
+
+  $decline = $row['bookingCount'];
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,8 +102,11 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase text-white mb-1">
-                                  Customer History</div>
-                                <div class="h4 mb-0 font-weight-bold text-white">30</div>
+                                  Missed Schedule</div>
+                                <div class="h4 mb-0 font-weight-bold text-white">
+                                
+                                  None Pa
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-history fa-2x text-gray-300 text-white"></i>
@@ -88,7 +124,11 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase text-white mb-1">
                                     Pending Schedule</div>
-                                <div class="h4 mb-0 font-weight-bold text-white">21</div>
+                                <div class="h4 mb-0 font-weight-bold text-white">
+                                <?php 
+                                  echo $pending; 
+                                ?>
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300 text-white"></i>
@@ -107,7 +147,11 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase text-white mb-1">
                                     Accepted Schedule</div>
-                                <div class="h4 mb-0 font-weight-bold text-white">39</div>
+                                <div class="h4 mb-0 font-weight-bold text-white">
+                                <?php 
+                                  echo $accepted; 
+                                ?>
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-check-circle fa-2x text-gray-300 text-white"></i>
@@ -124,7 +168,11 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase text-white mb-1">
                                     Decline Schedule</div>
-                                <div class="h4 mb-0 font-weight-bold text-white">41</div>
+                                <div class="h4 mb-0 font-weight-bold text-white">
+                                <?php 
+                                  echo $decline; 
+                                ?>
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-ban fa-2x text-gray-300 text-white"></i>
@@ -134,92 +182,6 @@
                 </div>
             </div>
 
-              <div class="col-xl-3 col-md-6">
-                <div class="card bg-primary text-white mb-4">
-                  <div class="card-body">Customer History</div>
-                  <div
-                    class="
-                      card-footer
-                      d-flex
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <a class="small text-white stretched-link" href="#"
-                      >View Details</a
-                    >
-                    <div class="small text-white">
-                      <i class="fas fa-angle-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-                 <div class="col-xl-3 col-md-6">
-                <div class="card bg-warning text-white mb-4">
-                  <div class="card-body">Pending Customers</div>
-                  <div
-                    class="
-                      card-footer
-                      d-flex
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <a class="small text-white stretched-link" href="#"
-                      >View Details</a
-                    >
-                    <div class="small text-white">
-                      <i class="fas fa-angle-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="col-xl-3 col-md-6">
-                <div class="card bg-success text-white mb-4">
-                  <div class="card-body">Accepted Customers</div>
-                  <div
-                    class="
-                      card-footer
-                      d-flex
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <a class="small text-white stretched-link" href="#"
-                      >View Details</a
-                    >
-                    <div class="small text-white">
-                      <i class="fas fa-angle-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Decline -->
-              <div class="col-xl-3 col-md-6">
-                <div class="card bg-danger text-white mb-4">
-                  <div class="card-body">Decline Customers</div>
-                  <div
-                    class="
-                      card-footer
-                      d-flex
-                      align-items-center
-                      justify-content-between
-                    "
-                  >
-                    <a class="small text-white stretched-link" href="#"
-                      >View Details</a
-                    >
-                    <div class="small text-white">
-                      <i class="fas fa-angle-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
 
             <div class="row">
