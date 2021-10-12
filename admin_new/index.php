@@ -89,6 +89,39 @@ while($row = mysqli_fetch_assoc($query_result)){
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Schedule', 'Appointment per Schedule'],
+          ['Pending',     <?php 
+                                  echo $pending; 
+                                ?>],
+          ['Decline',      <?php 
+                                  echo $decline; 
+                                ?>],
+          ['Accepted', <?php 
+                                  echo $accepted; 
+                                ?>],
+        ]);
+
+        var options = {
+          title: 'Schedule Percentage'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
   </head>
   <body class="sb-nav-fixed">
 
@@ -248,7 +281,7 @@ while($row = mysqli_fetch_assoc($query_result)){
                     Area Chart Example
                   </div>
                   <div class="card-body">
-                    <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                  <div id="piechart" width="100%" height="40"></div>
                   </div>
                 </div>
               </div>
@@ -448,13 +481,13 @@ while($row = mysqli_fetch_assoc($query_result)){
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
-    ></script>
+    ></s>
     <script src="js/scripts.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
       crossorigin="anonymous"
     ></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-pie-demo.php"></script>
     <script src="assets/demo/chart-bar-demo.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
