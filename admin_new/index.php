@@ -158,7 +158,7 @@ while($row = mysqli_fetch_assoc($query_result)){
                               align-items-center
                               justify-content-between
                               ">
-                              <a class="small text-white" href="customer_history.php">View Schedule</a>
+                              <a class="small text-white" href="pending_tables.php">View Schedule</a>
                               <div class="small text-white">
                               <i class="fas fa-angle-right"></i>
                             </div>
@@ -192,7 +192,7 @@ while($row = mysqli_fetch_assoc($query_result)){
                               align-items-center
                               justify-content-between
                               ">
-                              <a class="small text-white" href="customer_history.php">View Schedule</a>
+                              <a class="small text-white" href="accepted_tables.php">View Schedule</a>
                               <div class="small text-white">
                               <i class="fas fa-angle-right"></i>
                             </div>
@@ -225,7 +225,7 @@ while($row = mysqli_fetch_assoc($query_result)){
                               align-items-center
                               justify-content-between
                               ">
-                              <a class="small text-white" href="customer_history.php">View Details</a>
+                              <a class="small text-white" href="declined_tables.php">View Details</a>
                               <div class="small text-white">
                               <i class="fas fa-angle-right"></i>
                             </div>
