@@ -66,10 +66,10 @@
                 </div>
 
                 <div class="input-box">
-                    <input id="textbox" class="text-input" type="text" name="admin_branch" placeholder="Enter all caps" required
+                    <input id="textbox" class="text-input" type="text" name="admin_branchName" placeholder="Enter all caps" required
                         value="<?php 
-                                    if(isset($_SESSION['admin_branch'])){
-                                        echo htmlspecialchars($_SESSION['admin_branch']);
+                                    if(isset($_SESSION['admin_branchName'])){
+                                        echo htmlspecialchars($_SESSION['admin_branchName']);
                                     }
                                 ?>">
                 
