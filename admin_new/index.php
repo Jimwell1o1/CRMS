@@ -119,6 +119,7 @@ while($row = mysqli_fetch_assoc($query_result)){
         chart.draw(data, options);
       }
     </script>
+    
 
 
 
@@ -278,10 +279,10 @@ while($row = mysqli_fetch_assoc($query_result)){
                 <div class="card mb-4">
                   <div class="card-header">
                     <i class="fas fa-chart-area me-1"></i>
-                    Area Chart Example
+                    SCHDULE PERCENTAGE
                   </div>
                   <div class="card-body">
-                  <div id="piechart" width="100%" height="40"></div>
+                  <div id="piechart" width="100%" height="30px"></div>
                   </div>
                 </div>
               </div>
