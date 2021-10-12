@@ -304,7 +304,7 @@ while($row = mysqli_fetch_assoc($query_result)){
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Pending" === $row['bookingStatus']){ 
-                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){?>?>
+                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ ?>
                                      
                                           
 
