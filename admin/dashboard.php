@@ -3,7 +3,6 @@
     require_once '../includes/dbh.inc.php';
     require_once '../includes/emptySession.php';
 
-    emptyAdminLoginSession();
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +70,8 @@
         <div class="section-title" data-aos="fade-right">
             
           <h2>Pending Schedules</h2>
-          <p>PENDING DASHBOARD<br> Requested appointments of the users.</p>
+          <p>PENDING DASHBOARD 
+              <br> Requested appointments of the users.</p>
         </div>
         <table class="table" data-aos="fade-left">
                                     <thead class="thead-light">

@@ -1,6 +1,10 @@
 <?php
     session_start();
-
+    require_once 'includes/dbh.inc.php';
+    require_once 'includes/emptySession.php';
+    
+    emptyUserSignupSession();
+    
 ?>
 
 <!DOCTYPE html>
@@ -220,7 +224,9 @@
         
         <div class="section-title">
           <h2>Make an Appointment</h2>
+
           <p>Don't want to get stuck in line for hours just to set a clinical appointment? 
+           
           <br> You wouldn't want to miss important dates, right?<br> <h6>Make an appointment now to <a href="">enjoy 5% off </a>on your first booking!</h6></p>
         </div>
 

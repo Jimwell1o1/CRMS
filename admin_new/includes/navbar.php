@@ -77,7 +77,7 @@
             <li><a class="dropdown-item" href="#!">Settings</a></li>
             <li><a class="dropdown-item" href="#!">Activity Log</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#!">Logout</a></li>
+            <li><a class="dropdown-item" href="../includes/logout-admin.inc.php">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -165,7 +165,9 @@
               
           <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
-            Administrator
+            Administrator - <?php
+                echo $_SESSION["admin_branchName"];
+            ?>
           </div>
         </nav>
       </div>

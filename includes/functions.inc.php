@@ -228,8 +228,9 @@ function loginAdmin($conn, $uid, $password){
         exit();
     }else if ($checkPwd === true){
         $_SESSION["admin_userName"] = $admin_uidExists["adminAccName"];
+        $_SESSION["admin_branchName"] = $admin_uidExists["adminAccBranch"];
         
-        header("location: ../admin/dashboard.php");
+        header("location: ../admin_new/index.php");
         exit();
     }
 
