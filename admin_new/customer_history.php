@@ -89,21 +89,24 @@
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
                                                 <td> <?php echo $row['bookingStatus'] ?> </td>
-                                             
-
-
-                                             
-
-                                          
                                               </td>
                                             </tr>
-
-
-                                            
-                                       
-
-                            <?php } } } } ?>
-                   
+                                            <?php } 
+                                if($_SESSION['admin_branchName'] === "mainAdmin"){
+                                  ?>
+                                  <tr>
+                                  <th scope="row"> <?php echo $row['bookingId'] ?> </th>
+                                              <td > <?php echo $row['bookingName'] ?> </td>
+                                              <td> <?php echo $row['bookingGender'] ?> </td>
+                                                <td> <?php echo $row['bookingDate'] ?> </td>
+                                                <td> <?php echo $row['bookingTime'] ?> </td>
+                                                <td> <?php echo $row['bookingBranch'] ?> </td>
+                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
+                                                <td> <?php echo $row['bookingStatus'] ?> </td>
+                                              </td>
+                                            </tr>
+                          <?php
+                          } } } } ?>
 
                   </tbody>
                 </table>
