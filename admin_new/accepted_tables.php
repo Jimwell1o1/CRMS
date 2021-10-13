@@ -3,9 +3,11 @@
     require_once '../includes/dbh.inc.php';
     require_once '../includes/emptySession.php';
 
-    emptyAdminLoginSession();
+ if (!isset($_SESSION['admin_branchName'])){
+  header("Location: ../admin/login-admin.php");
+  die();
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>

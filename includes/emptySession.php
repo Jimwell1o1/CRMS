@@ -1,8 +1,9 @@
 <?php 
 
     function emptyAdminLoginSession(){
-        unset($_SESSION['login_adminUsername']);
+        unset($_SESSION['admin_userName']);
         unset($_SESSION['login_adminPassword']);
+        unset($_SESSION['admin_branchName']);
     }
 
     function emptyAdminSignupSession(){
