@@ -1,10 +1,14 @@
 <?php
     session_start();
-    require_once 'includes/dbh.inc.php';
-    require_once 'includes/emptySession.php';
+    require_once '../../includes/dbh.inc.php';
+    require_once '../../includes/emptySession.php';
     
     emptyUserSignupSession();
     
+    if (!isset($_SESSION['useruid'])){
+    header("Location: ../login.php");
+    die();
+}
 ?>
 
 <!DOCTYPE html>

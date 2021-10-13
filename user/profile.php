@@ -2,6 +2,10 @@
     session_start();
     require_once '../forms/includes/dbh.inc.php';
 
+    if (!isset($_SESSION['useruid'])){
+      header("Location: ../forms/login.php");
+      die();
+  }
     
     $usersName = "";
     $usersEmail = "";

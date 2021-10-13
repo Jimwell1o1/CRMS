@@ -4,6 +4,10 @@
     require_once '../includes/emptySession.php';
     
     emptyUserSignupSession();
+    if (!isset($_SESSION['useruid'])){
+      header("Location: ../forms/login.php");
+      die();
+  }
 ?>
 
 

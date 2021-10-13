@@ -3,6 +3,10 @@
  require_once '../includes/dbh.inc.php';
  require_once '../includes/emptySession.php';
 
+ if (!isset($_SESSION['admin_branchName'])){
+  header("Location: ../admin/login-admin.php");
+  die();
+}
  
 $conn = mysqli_connect("localhost","root","","phpproject01");
 
