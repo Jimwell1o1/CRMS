@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="mx-auto col-md-11 form-group">
-                <select class="form-control">" name="admin_branchName" required>
+                <select class="form-control" name="admin_branchName" required>
                 <option value="" disabled selected>Select Branch</option>
                 <option value = "Malinao">Malinao</option>    
                 <option value = "Pinagbuhatan">Pinagbuhatan</option>  
