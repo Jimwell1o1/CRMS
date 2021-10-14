@@ -80,25 +80,30 @@
               <li class="breadcrumb-item active">Send Email</li>
             </ol>
             
-          <label for="basic-url" class="form-label">Send Email to Customer</label>
+          <label for="basic-url" class="form-label">Send Email to Customers</label>
 <div class = "position-left">
           
           <div class="container mt-4 mb-4">
       <div class="row justify-content-md-center">
         <div class="col-md-12 col-lg-8">
+           
+
+            <div class="form-group">
+              <label for="email">Send to:</label>
+              <!-- <input type="email" class="form-control" id="email" placeholder="Enter email"> -->
+              <select class="form-control"  name="Branches" id="">
+              <option value="">Select:</option>
+                <option value="">ALL BRANCHES</option>
+                <option value=""><?PHP echo $_SESSION['admin_branchName']; ?></option>
+              </select>
+              <small class="form-text text-muted">Log In As Main Administrator to Send to All branches.</small>
+            </div>
             <div class="form-group">
                 <label for="name">Subject</label>
                 <input type="text" class="form-control" id="name" placeholder="Your name">
             </div>
-
             <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter email">
-              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-
-            <div class="form-group">
-              <label>Describe the condition in detail</label>
+              <label>Body:</label>
               <textarea id="editor"></textarea>
             </div>
 
@@ -106,7 +111,7 @@
                 <label for="phone">Primary phone number</label>
                 <input type="text" class="form-control" id="phone" placeholder="">
             </div>
-
+            <br>
             <hr>
 
             <div class="form-group form-check">
