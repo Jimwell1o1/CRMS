@@ -30,7 +30,7 @@
             id="btnNavbarSearch"
             onchange="openPage()"
           />
-          <button class="btn btn-primary" id="btnNavbarSearch" type="button">
+          <button class="btn btn-primary" id="btnNavbarSearch">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -39,23 +39,24 @@
       <!-- Script for Searching Page -->
      <script>
        function openPage(){
-         var x =document.getElementById("btnNavbarSearch").value;
+         var x = document.getElementById("btnNavbarSearch").value;
 
-         if(x === "pending"){
-           window.open("pending_tables.html");
+         if(x === "pending" || x =="PENDING"){
+          window.open("pending_tables.php","_self");
          }
-         if(x == "declined" || "DECLINED"){
-          window.open("declined_tables.html");
+        else if(x == "declined" || x =="DECLINED"){
+          window.open("declined_tables.php","_self");
          }
-         else if(x == "accepted" || "ACCEPTED"){
-          window.open("accepted_tables.html");
+         else if(x == "accepted" || x =="ACCEPTED"){
+          window.open("accepted_tables.php","_self");
          }
-         else if(x == "history" || "HISTORY"){
-          window.open("customer_history.html");
+         else if(x == "history" || x == "HISTORY"){
+          window.open("customer_history.php","_self");
          }
-         else if(x == "patient" || "PATIENT"){
-          window.open("add_patient.html");
+         else if(x == "patient" || x =="PATIENT"){
+          window.open("add_patient.php","_self");
          }
+
        }
      </script>
 
@@ -160,6 +161,14 @@
                   <i class="fas fa-plus-circle"></i>
                 </div>
                 Add Patient
+              </a>
+
+
+              <a class="nav-link" href="email_sender.php">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                Send Email
               </a>
 
               
