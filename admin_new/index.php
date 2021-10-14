@@ -8,39 +8,13 @@
   die();
 }
  
-$conn = mysqli_connect("localhost","root","","phpproject01");
+if($_SESSION['admin_branchName'] == "Pinagbuhatan" || $_SESSION['admin_branchName'] == "Malinao" || $_SESSION['admin_branchName'] == "San Joaquin"){
+  include 'includes/dashboardCount1.php';
 
-$query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Pending'";
-
-$query_result = mysqli_query($conn,$query);
-while($row = mysqli_fetch_assoc($query_result)){
-
-  $pending = $row['bookingCount'];
 }
+elseif($_SESSION['admin_branchName'] == "mainAdmin"){
+  include 'includes/dashboardCount2.php';
 
-
-$query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Accepted'";
-
-$query_result = mysqli_query($conn,$query);
-while($row = mysqli_fetch_assoc($query_result)){
-
-  $accepted = $row['bookingCount'];
-}
-
-$query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Declined'";
-
-$query_result = mysqli_query($conn,$query);
-while($row = mysqli_fetch_assoc($query_result)){
-
-  $decline = $row['bookingCount'];
-}
-
-$query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Done'";
-
-$query_result = mysqli_query($conn,$query);
-while($row = mysqli_fetch_assoc($query_result)){
-
-  $done = $row['bookingCount'];
 }
 
 ?>
@@ -135,7 +109,7 @@ while($row = mysqli_fetch_assoc($query_result)){
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Dashboard</h1>
+            <h1 class="mt-4">Dashboard - <?php echo $_SESSION['admin_branchName']; ?> </h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
