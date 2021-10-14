@@ -49,6 +49,7 @@
                 <table id="datatablesSimple">
                   <thead>
                     <tr>
+                      <!-- <th>Booking ID</th> -->
                     <th>Name</th>
                       <th>Gender</th>
                       <th>Date</th>
@@ -60,6 +61,7 @@
                   </thead>
                   <tfoot>
                     <tr>
+                    <!-- <th>Booking ID</th> -->
                     <th>Name</th>
                     <th>Gender</th>
                       <th>Date</th>
@@ -85,6 +87,7 @@
                                           
 
                                             <tr>
+                                            <!-- <th scope="row"> <?php // echo $row['bookingId'] ?> </th> -->
                                               <th scope="row"> <?php echo $row['bookingName'] ?> </th>
                                               <td> <?php echo $row['bookingGender'] ?> </td>
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
