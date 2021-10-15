@@ -55,7 +55,7 @@
                       <th>Time</th>
                       <th>Branch</th>
                       <th>Consultation</th>
-                      <th>Status</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -66,7 +66,7 @@
                       <th>Time</th>
                       <th>Branch</th>
                       <th>Consultation</th>
-                      <th>Status</th>
+                      <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -88,21 +88,16 @@
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td> <?php echo $row['bookingStatus'] ?> </td>
-                                             
-
-
-
-                                                <!-- <td class="text-left">
+                                                <td>
                                               <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                        
-                                                <button name="submit" class="btn btn-secondary">
-                                                  <i class="fas fa-trash"></i> Delete
+                                              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                  <i class="fas fa-edit"></i>
                                                 </button>
                                                     </form>
 
                                           
-                                              </td> -->
+                                              </td>
                                             </tr>
                                             <?php } 
                                 if($_SESSION['admin_branchName'] === "mainAdmin"){
@@ -114,15 +109,15 @@
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td> <?php echo $row['bookingStatus'] ?> </td>
-                                                <!-- <td class="text-left">
-                                                <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                       
-                                                       <button name="submit" class="btn btn-secondary">
-                                                         <i class="fas fa-trash"></i> Delete
-                                                       </button>
-                                                           </form>
-                                              </td> -->
+                                                <td>
+                                              <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+                                              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                  <i class="fas fa-edit"></i>
+                                                </button>
+                                                    </form>
+
+                                          
+                                              </td>
                                             </tr>
                           <?php
                           } } } } ?>
