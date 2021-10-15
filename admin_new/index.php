@@ -99,6 +99,9 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+
+ 
 
 
   </head>
@@ -260,7 +263,22 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                     SCHDULE PERCENTAGE
                   </div>
                   <div class="card-body">
+                 
                   <canvas id="myPieChart" width="100%" height="40"></canvas>
+                  
+                  <script>
+                      var ctx = document.getElementById("myPieChart");
+                  var myPieChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                      labels: [ "Decline", "Pending", "Accepted"],
+                      datasets: [{
+                        data: [  <?php echo $decline; ?>, <?php echo $pending; ?>,<?php echo $accepted; ?>],
+                        backgroundColor: ['#dc3545', '#ffc107', '#28a745'],
+                      }],
+                    },
+                  });
+                 </script>
                   </div>
                 </div>
               </div>
@@ -272,6 +290,59 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                   </div>
                   <div class="card-body">
                     <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                    <script>
+                    var ctx = document.getElementById("myAreaChart");
+                    var myLineChart = new Chart(ctx, {
+                      type: 'line',
+                      data: {
+                    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+                    datasets: [{
+                      label: "Sessions",
+                      lineTension: 0.3,
+                      backgroundColor: "rgba(2,117,216,0.2)",
+                      borderColor: "rgba(240, 255, 0, 1)",
+                      pointRadius: 5,
+                      pointBackgroundColor: "rgb(255, 0, 0)",
+                      pointBorderColor: "rgb(255, 0, 0)",
+                      pointHoverRadius: 5,
+                      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+                      pointHitRadius: 50,
+                      pointBorderWidth: 2,
+                      data: [52, 12, 32, 88, 13, 65, 24,59, 25, 41, 51, 34, 41],
+                    }],
+                  },
+                  options: {
+                    scales: {
+                      xAxes: [{
+                        time: {
+                          unit: 'date'
+                        },
+                        gridLines: {
+                          display: false
+                        },
+                        ticks: {
+                          maxTicksLimit: 7
+                        }
+                      }],
+                      yAxes: [{
+                        ticks: {
+                          min: 0,
+                          max: 100,
+                          maxTicksLimit: 5
+                        },
+                        gridLines: {
+                          color: "rgba(0, 0, 0, .125)",
+                        }
+                      }],
+                    },
+                    legend: {
+                      display: false
+                    }
+                  }
+                });
+                    </script>
+
+                    
                   </div>
                 </div>
               </div>
@@ -494,71 +565,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
     <script src="js/datatables-simple-demo.js"></script>
 
 
-    <script>
-    var ctx = document.getElementById("myAreaChart");
-var myLineChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
-    datasets: [{
-      label: "Sessions",
-      lineTension: 0.3,
-      backgroundColor: "rgba(2,117,216,0.2)",
-      borderColor: "rgba(2,117,216,1)",
-      pointRadius: 5,
-      pointBackgroundColor: "rgba(2,117,216,1)",
-      pointBorderColor: "rgba(255,255,255,0.8)",
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: "rgba(2,117,216,1)",
-      pointHitRadius: 50,
-      pointBorderWidth: 2,
-      data: [52, 12, 32, 88, 13, 65, 24,59, 25, 41, 51, 34, 41],
-    }],
-  },
-  options: {
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'date'
-        },
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          maxTicksLimit: 7
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          max: 100,
-          maxTicksLimit: 5
-        },
-        gridLines: {
-          color: "rgba(0, 0, 0, .125)",
-        }
-      }],
-    },
-    legend: {
-      display: false
-    }
-  }
-});
-    </script>
+   
 
-<script>
-    var ctx = document.getElementById("myPieChart");
-var myPieChart = new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: [ "Decline", "Pending", "Accepted"],
-    datasets: [{
-      data: [  4124, 12412,312412],
-      backgroundColor: ['#dc3545', '#ffc107', '#28a745'],
-    }],
-  },
-});
-
-    </script>
   </body>
 </html>
