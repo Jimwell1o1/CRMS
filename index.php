@@ -169,24 +169,24 @@
           <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
             <h3 data-aos="fade-up">We Offer Dental Clinic Services</h3>
             <p data-aos="fade-up">
-              We appreciate, communicate and empathize with our patients and our fellow team members so that we may enhance the lives of every person involved in achieving our mission.
+            We appreciate, communicate and empathize with our patients and our fellow team members so that we may enhance the lives of every person involved in achieving our mission.
             </p>
             <div class="icon-box" data-aos="fade-up">
               <i class="bx bx-receipt"></i>
               <h4>We Care for you</h4>
-              <p>We treat the patient's dental needs with the highest level of care, skill, judgment and comfort.</p>
+              <p>We provide the most excellent level of care, skill, judgment, and comfort for our patients' dental requirements.</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <i class="bx bx-cube-alt"></i>
               <h4>Our Mission</h4>
-              <p>To be committed to excellence in all of our services to our patients so that we may help them achieve the highest level of dental health appropriate for their needs in an atmosphere of trust and compassion.</p>
+              <p>To strive for excellence in all of our services to our patients to assist them in achieving the highest degree of dental health possible while maintaining a trusting and compassionate environment.</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <i class="bx bx-cube-alt"></i>
               <h4>Our Vision</h4>
-              <p>We at Messiah Christ Yahweh Dental Clinic will continually update ourselves regarding the best and most current materials and technology available in dentistry and infection control.
+              <p>We at Messiah Christ Yahweh Dental Clinic will keep up to date on the latest and most up-to-date materials and technology in dentistry and infection control.
               </p>
             </div>
 
@@ -328,7 +328,7 @@
             <div class="icon-box icon-box-pink">
               <div class="icon"><i class="bx bx-edit"></i></div>
               <h4 class="title"><a href="">Consultation</a></h4>
-              <p class="description">Basically an evaluation of the current condition of your teeth. If you haven't seen a dentist in a while, you may be worried or embarrassed about the current state of your teeth.</p>
+              <p class="description">Basically, it's a check-up on your teeth's current state. If you haven't seen a dentist in a while, you may be worried or embarrassed about the current state of your teeth.</p>
             </div>
           </div>
 
@@ -336,7 +336,7 @@
             <div class="icon-box icon-box-cyan">
               <div class="icon"><i class="bx bx-command"></i></div>
               <h4 class="title"><a href="">Oral Prophylaxis</a></h4>
-              <p class="description">Used to remove dental plaque and other irritants from the oral cavity. As these deposits build on your teeth, they form dental tartar, which contributes to most dental problems.</p>
+              <p class="description">To get rid of dental plaque and other irritants in the mouth. These deposits produce dental tartar buildup on your teeth, contributing to most dental disorders.</p>
             </div>
           </div>
 
@@ -344,7 +344,7 @@
             <div class="icon-box icon-box-green">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4 class="title"><a href="">Tooth Restoration</a></h4>
-              <p class="description">Treatments used to restore the function, integrity, and morphology of missing tooth structure resulting from caries or external trauma as well as to the replacement of such structure supported by dental implants.</p>
+              <p class="description">To replace missing tooth structure supported by dental implants and restore the function, integrity, and morphology of lost tooth structure caused by caries or external trauma.</p>
             </div>
           </div>
 
@@ -352,7 +352,7 @@
             <div class="icon-box icon-box-blue">
               <div class="icon"><i class="bx bx-horizontal-center"></i></div>
               <h4 class="title"><a href="">Tooth Extraction</a></h4>
-              <p class="description">Removal of teeth from the dental alveolus (socket) in the alveolar bone. To remove teeth which have become unrestorable through tooth decay, periodontal disease, or dental trauma, especially when they are associated with toothache.</p>
+              <p class="description">To remove teeth that have become irreparable due to tooth decay, periodontal disease, or dental trauma, especially when a toothache is present.  </p>
             </div>
           </div>
 
@@ -372,7 +372,7 @@
             <div class="icon-box icon-box-yellow">
               <div class="icon"><i class="bx bx-dna"></i></div>
               <h4 class="title"><a href="">Fluoride Application</a></h4>
-              <p class="description">It is a natural mineral that builds strong teeth and prevents cavities. Fluoride varnish is a highly concentrated form of fluoride which is applied to the tooth's surface, by a dentist, dental hygienist or other health care professional, as a type of topical fluoride therapy. </p>
+              <p class="description">It is a natural mineral that builds strong teeth and prevents cavities. Fluoride varnish is a highly concentrated form of fluoride applied to the tooth's surface, by a dentist, dental hygienist or other health care professional, as a type of topical fluoride therapy.</p>
             </div>
           </div>
 
@@ -380,7 +380,7 @@
             <div class="icon-box icon-box-red">
               <div class="icon"><i class="bx bx-dish"></i></div>
               <h4 class="title"><a href="">Prosthodontic Treatment</a></h4>
-              <p class="description">Whitening and bonding techniques, colour matching, use of veneers to reshape teeth and enhance appearance, and the precise fabrication and placement of fixed prostheses such as crowns and bridges.</p>
+              <p class="description">Techniques for tooth whitening and bonding, colour matching, veneers to modify teeth, improve the look, precise manufacturing, and placement of fixed prostheses like crowns; moreover, bridges are all available.</p>
             </div>
           </div>
 
@@ -388,7 +388,7 @@
             <div class="icon-box icon-box-dgreen">
               <div class="icon"><i class="bx bx-disc"></i></div>
               <h4 class="title"><a href="">Orthodontic Treatment</a></h4>
-              <p class="description">Way of straightening or moving teeth, to improve the appearance of the teeth and how they work. It can also help to look after the long-term health of your teeth, gums and jaw joints, by spreading the biting pressure over all your teeth.</p>
+              <p class="description">To improve the appearance and function of teeth by straightening or relocating them. It can also help to look after your teeth, gums, and jaw joints' long-term health by spreading the biting pressure over all your teeth.</p>
             </div>
           </div>
 
@@ -396,7 +396,7 @@
             <div class="icon-box icon-box-gray">
               <div class="icon"><i class="bx bx-doughnut-chart"></i></div>
               <h4 class="title"><a href="">Periodontic Rehab</a></h4>
-              <p class="description">It is the process of restoring your teeth to their optimum condition. It is a cleaning procedure performed to thoroughly clean the teeth.  Maintenance is an important dental treatment for halting the progression of periodontal disease.</p>
+              <p class="description">It is the procedure for restoring your teeth to their optimum state. It is a cleaning process that is used to clean the teeth thoroughly. Periodontal maintenance is an essential dental therapy to prevent periodontal disease from worsening.</p>
             </div>
           </div>
 
