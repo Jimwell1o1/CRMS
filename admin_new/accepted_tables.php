@@ -35,7 +35,7 @@
             <h1 class="mt-4">Accepted Schedule</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item">
-                <a href="index.html">Dashboard</a>
+                <a href="index.php">Dashboard</a>
               </li>
               <li class="breadcrumb-item active">Accepted Schedule</li>
             </ol>
@@ -116,10 +116,12 @@
                                                 <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
                                                         <button class="btn btn-warning" id="accept-button" name="submit">
-                                                          <i class="fas fa-check"></i> Done
+                                                          <!-- <i class="fas fa-check"></i> -->
+                                                           Done
                                                         </button> 
-                                                        <button class="btn btn-danger">
-                                                          <i class="fas fa-trash"></i>
+                                                        <button class="btn btn-secondary">
+                                                          <!-- <i class="fas fa-trash"></i>  -->
+                                                          Missed
                                                         </button>
                                                     </form> 
                                               </td>

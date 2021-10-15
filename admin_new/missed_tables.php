@@ -32,18 +32,18 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Declined Schedule</h1>
+            <h1 class="mt-4">Missed Schedule</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item">
                 <a href="index.php">Dashboard</a>
               </li>
-              <li class="breadcrumb-item active">Declined Schedules</li>
+              <li class="breadcrumb-item active">Missed Schedules</li>
             </ol>
 
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Declined
+                Missed
               </div>
               <div class="card-body">
                 <table id="datatablesSimple">
@@ -79,7 +79,7 @@
 
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
-                                    if("Declined" === $row['bookingStatus']){ 
+                                    if("Missed" === $row['bookingStatus']){ 
                                       if($_SESSION['admin_branchName'] === $row['bookingBranch']){ ?>
 <tr>
                                               <th scope="row"> <?php echo $row['bookingName'] ?> </th>

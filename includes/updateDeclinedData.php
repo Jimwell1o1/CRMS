@@ -11,27 +11,7 @@
 
         $bookingId = $_GET['bookingId'];
 
-        $bookingStatus = "UPDATE booking SET bookingStatus = 'Done' WHERE bookingId = '$bookingId';";
-
-        if($resultChecked > 0){  
-            while($row = mysqli_fetch_assoc($result)){
-                if($bookingId === $row['bookingId']){
-                    mysqli_query($conn, $bookingStatus);
-                }   
-            }
-        }
-        $_SESSION['Done'] = 'Done';
-        header("location: ../admin_new/accepted_tables.php");
-        exit();
-
-    }else {
-        $sql = "SELECT * FROM booking;";
-        $result = mysqli_query($conn, $sql);
-        $resultChecked = mysqli_num_rows($result);
-
-        $bookingId = $_GET['bookingId'];
-
-        $bookingStatus = "UPDATE booking SET bookingStatus = 'Missed' WHERE bookingId = '$bookingId';";
+        $bookingStatus = "UPDATE booking SET bookingStatus = 'Accepted' WHERE bookingId = '$bookingId';";
 
         if($resultChecked > 0){  
             while($row = mysqli_fetch_assoc($result)){
@@ -40,8 +20,29 @@
                 }
             }
         }
-        $_SESSION['Missed'] = 'Missed';
-        header("location: ../admin_new/accepted_tables.php");
+        $_SESSION['Accepted'] = 'Accepted';
+        header("location: ../admin_new/pending_tables.php");
+        exit();
+
+
+    }else {
+        $sql = "SELECT * FROM booking;";
+        $result = mysqli_query($conn, $sql);
+        $resultChecked = mysqli_num_rows($result);
+
+        $bookingId = $_GET['bookingId'];
+
+        $bookingStatus = "UPDATE booking SET bookingStatus = 'Declined' WHERE bookingId = '$bookingId';";
+
+        if($resultChecked > 0){  
+            while($row = mysqli_fetch_assoc($result)){
+                if($bookingId === $row['bookingId']){
+                    mysqli_query($conn, $bookingStatus);
+                }
+            }
+        }
+        $_SESSION['Declined'] = 'Declined';
+        header("location: ../admin_new/pending_tables.php");
         exit();
     }
 

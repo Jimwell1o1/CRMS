@@ -35,7 +35,7 @@
             <h1 class="mt-4">Pending Schedule</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item">
-                <a href="index.html">Dashboard</a>
+                <a href="index.php">Dashboard</a>
               </li>
               <li class="breadcrumb-item active">Pending Schedule</li>
             </ol>
