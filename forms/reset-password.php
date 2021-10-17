@@ -71,16 +71,55 @@
 
 <div class="form-group">
 
-    <input type="password"  name="pass1" placeholder ="Enter New Password" class="form-control"/>
+    <input type="password" id="passwordVal" name="pass1" placeholder ="Enter New Password" class="form-control"/>
 </div>
 
 <div class="form-group">
 
-    <input type="password"  name="pass2" placeholder ="Re-Enter New Password:"  class="form-control"/>
+    <input type="password" id="confirmVal" name="pass2" placeholder ="Re-Enter New Password"  class="form-control"/>
 </div>
 <input type="hidden" name="email" value="<?php echo $email; ?>"/>
+<input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
 <div class="form-group">
-    <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary"/>
+    <br>
+    <input type="submit" id="reset" value="Reset Password"  onclick="return Validate()" class="btn btn-primary"/>
+
+    <script>
+      function myFunction() {
+         var x = document.getElementById("passwordVal");
+
+         if (x.type === "password") {
+          x.type = "text";
+         
+        } else {
+            x.type = "password";
+          
+         }
+        }
+    </script>
+     <script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("passwordVal").value;
+        var confirmPassword = document.getElementById("confirmVal").value;
+
+        if (password =="") {
+            alert("Field cannot be empty.");
+            return false;
+        }
+       else if(password != confirmPassword){
+        alert("Password do not match.");
+        return false;
+       }
+        else if(password == confirmPassword){
+
+        alert("Password match.");
+          
+
+        
+        }
+        return true;
+    }
+</script>
 </div>
 <br><br><br>
 </form>
