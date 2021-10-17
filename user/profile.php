@@ -105,7 +105,7 @@
     </div>
   </header><!-- End Header -->
 
-
+<br>
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
@@ -117,12 +117,18 @@
     <img src="../forms/img/icon.png" id="icon" alt="User Icon" />
     </div>
     <br>
-    <!-- Login Form -->
-    <form class="fadeIn second" action="../includes/myAccount.inc.php" method="post">
+      <!-- Login Form -->
+      <form class="fadeIn second" action="../includes/myAccount.inc.php" method="post">
     <label>Name:</label><br><input class="fadeIn second" id="textbox" type="text" name="name"  value="<?php echo $usersName ?>"><br>
     <label>Email:</label><br><input class="fadeIn second" id="textbox" type="text" name="email"  value="<?php echo $usersEmail ?>"><br>
     <br>
       <input type="submit" class="fadeIn fourth" value="Update Account" name="save-submit"><br/>
+    
+    </form>
+
+    <form action="reset-password.php" method="POST">
+
+      <input type="submit" class="btn btn-outline-primary fadeIn fourth" value="Change Password" name="submit"><br/>
     
     </form>
     <?php
