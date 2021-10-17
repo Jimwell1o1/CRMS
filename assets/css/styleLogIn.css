@@ -358,3 +358,8 @@ input[type=password]:placeholder {
 #confirmVal {
   text-align: left;
 }
+
+
+#newpass {
+  text-align: left;
+}

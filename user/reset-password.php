@@ -116,27 +116,7 @@
     <!-- Tabs Titles -->
         <div class="section-title" data-aos="fade-up">
        
-        <?php
-                //   $con = mysqli_connect("localhost", "root", "", "phpproject01");
-                //   if (mysqli_connect_errno()) {
-                //       echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                //       die();
-                //   }
 
-                //   $error = "";
-                //     if (isset($_POST["submit"])) {
-                       
-                //         $email = $_POST["email"];
-                //         $curDate = date("Y-m-d H:i:s");
-                       
-                //         if ($row == "") {
-                //             $error .= '<div class="section-title" data-aos="fade-up">
-                //             <br> <h2>Invalid Link</h2><br><br><br></div>';
-                //         } else {
-                //             $row = mysqli_fetch_assoc($query);
-                //             $expDate = $row['expDate'];
-                //             if ($expDate >= $curDate) {
-                                ?> 
                                  <br> <h2>Change Password</h2><br>
         <p>Please enter your new password below</p><br>
            <form method="post" action="../includes/changepass.inc.php" name="update">
@@ -147,36 +127,23 @@
 
 <div class="form-group">
 
-    <input type="password" id="confirmVal" name="pass1" placeholder ="New Password" class="form-control"/>
+    <input type="password" id="passwordVal" name="pass1" placeholder ="New Password" class="form-control"/>
 </div>
 
 <div class="form-group">
 
-    <input type="password" id="passwordVal" name="pass2" placeholder ="Confirm New Password"  class="form-control"/>
+    <input type="password" id="confirmVal" name="pass2" placeholder ="Confirm New Password"  class="form-control"/>
 </div>
 <input type="hidden" name="email" value="<?php echo $email; ?>"/>
 <div class="form-group">
 <br>
-<input type="password" id="current" name="pass0" placeholder ="Current Password" class="form-control"/>
+<input type="password" id="newpass" name="pass0" placeholder ="Enter Current Password" class="form-control" style="text-align: left;"/>
 </div>
 <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
 <div class="form-group">
     <br>
     <input type="submit" name="submit" value="Change Password"  onclick="return Validate()" class="btn btn-primary"/>
 
-    <script>
-      function myFunction() {
-         var x = document.getElementById("current");
-
-         if (x.type === "password") {
-          x.type = "text";
-         
-        } else {
-            x.type = "password";
-          
-         }
-        }
-    </script>
      <script type="text/javascript">
     function Validate() {
         var password = document.getElementById("passwordVal").value;
@@ -203,42 +170,7 @@
 </div>
 <br><br><br>
 </form>
-            <?php
-                    //         } else {
-                                
-                    //             $error .= '<div class="section-title" data-aos="fade-up">
-                    //             <br> <h2>Link Expired.</h2><br><br><br></div>';
-                    //         }
-                    //     }
-                    //     if ($error != "") {
-                    //         echo "<br><br><br><div class='error'>" . $error . "</div><br />";
-                    //     }
-                    // }
-
-
-                    // if (isset($_POST["email"]) && isset($_POST["action"]) && ($_POST["action"] == "update")) {
-                    //     $error = "";
-                    //     $pass1 = mysqli_real_escape_string($con, $_POST["pass1"]);
-                    //     $pass2 = mysqli_real_escape_string($con, $_POST["pass2"]);
-                    //     $email = $_POST["usersEmail"];
-                    //     $curDate = date("Y-m-d H:i:s");
-                    //     if ($pass1 != $pass2) {
-                    //         $error .= "<p>Password do not match, both password should be same.<br /><br /></p>";
-                    //     }
-                    //     if ($error != "") {
-                    //         echo $error;
-                    //     } else {
-
-                    //         $pass1 = password_hash($pass1, PASSWORD_DEFAULT);
-                    //         mysqli_query($con, "UPDATE `users` SET `usersPwd` = '" . $pass1 . "' WHERE `usersEmail` = '" . $email . "'");
-
-                    //         mysqli_query($con, "DELETE FROM `password_reset_temp` WHERE `usersEmail` = '$email'");
-
-                    //         echo '<div class="error"><p>Congratulations! Your password has been updated successfully.</p>';
-                    //         header("Location: ../index.php");
-                    //     }
-                    // }
-                    ?>
+        
             <div class = "bg-success text-white fixed-bottom">
             <br><p>A <b>Strong password</b> helps prevent unauthorized <br>access to your email account.</p>
             <p><a  class = "text-white" href="../index.php">Back to homepage</a></p>
@@ -292,7 +224,7 @@
     <!-- Show Password Function -->
 <script>
       function myFunction() {
-         var y = document.getElementById("current");
+         var y = document.getElementById("newpass");
          if (y.type === "password") {
           y.type = "text";
         } else {

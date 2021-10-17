@@ -77,13 +77,13 @@
   <div id="formContent">
     <!-- Tabs Titles -->
   
-
+ 
     <!-- Icon -->
-    <div>
-      <br><br>
-    <h2>REGISTER</h2>
-    </div>
-    
+    <div class="section-title fadeIn first">  
+    <br>
+    <h2>Create an Account</h2>
+ <br>
+ 
     <!-- Login Form -->
     <form action = "includes/signup.inc.php" method="POST">
       <input type="text" id="textbox" class="fadeIn third" name="name" placeholder="Full Name">
@@ -92,9 +92,9 @@
       <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password">
       <input type="password" id="confirmVal" class="fadeIn third" name="pwdrepeat" placeholder="Confirm Password"><br/>
       <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
-
-      <input type="submit" class="fadeIn fourth" value="Create Account" name = "submit" onclick="return Validate()">
-
+      <br>
+      <input type="submit" class="fadeIn fourth" value="Register" name = "submit" onclick="return Validate()"><br>
+      <label for="">Already a member? <a href="login.php">Log In</a></label>
      <script>
       function myFunction() {
          var x = document.getElementById("confirmVal");
