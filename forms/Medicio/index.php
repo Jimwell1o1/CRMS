@@ -24,7 +24,6 @@
 
 
   <style>
-    
 
     .bg-modal{
         width: 100%;
@@ -223,7 +222,7 @@
             echo "<li class='drop-down'><a href=''> My Account | ". $_SESSION["useruid"] . "</a>";
             echo "<ul>";
             echo "<li><a href='../../user/profile.php'>My Profile</a></li>";
-            echo "<li><a href='../../booking.php'>Set an Appointment</a></li>";
+            echo "<li><a href='forms/Medicio/index.php'>Set an Appointment</a></li>";
             echo "<li><a href='../../user/history.php'>History</a></li>";
             echo "<li><a href='../../forms/includes/logout.inc.php'>Log Out</a></li>";
             echo "</ul></li>";
@@ -934,8 +933,6 @@ document.querySelector('.cancel').addEventListener("click", function() {
 
   <!-- Template Main JS File -->
   <script src="../../assets/appointmentAssets/js/main.js"></script>
-
-
 
   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
