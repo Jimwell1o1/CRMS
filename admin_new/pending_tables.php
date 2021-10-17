@@ -82,9 +82,7 @@
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Pending" === $row['bookingStatus']){ 
-                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ ?>
-                                     
-                                          
+                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ ?>       
 
                                             <tr>
                                             <!-- <th scope="row"> <?php // echo $row['bookingId'] ?> </th> -->
@@ -113,16 +111,14 @@
 
                                               <td class="text-left">
                                               <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                        <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> 
-                                                        <button class="btn btn-outline-danger"> Delete </button>  -->
-
+                                                       
                                                 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                   <i class="fas fa-edit"></i>
                                                 </button>
                                                 <button class="btn btn-warning" id="accept-button" name="submit">
                                                   <i class="fas fa-check"></i>
                                                 </button>
-                                                <button class="btn btn-danger">
+                                                <button class="btn btn-danger" onclick="ConfirmDelete()">
                                                   <i class="fas fa-trash"></i>
                                                 </button>
                                                     </form>
@@ -130,6 +126,7 @@
                                 
                                               </td>
                                             </tr>
+
                                             <?php } 
                                 if($_SESSION['admin_branchName'] === "mainAdmin"){
                                   ?>
@@ -142,8 +139,7 @@
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
                                                 <td class="text-left">
                                                 <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                        <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> 
-                                                        <button class="btn btn-outline-danger"> Delete </button>  -->
+                                                  
 
                                                 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                   <i class="fas fa-edit"></i>
@@ -151,7 +147,7 @@
                                                 <button class="btn btn-warning" id="accept-button" name="submit">
                                                   <i class="fas fa-check"></i>
                                                 </button>
-                                                <button class="btn btn-danger">
+                                                <button class="btn btn-danger" onclick="ConfirmDelete()">
                                                   <i class="fas fa-trash"></i>
                                                 </button>
                                                     </form>
@@ -260,5 +256,18 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/datatables-simple-demo.js"></script>
+
+    
+    <script type="text/javascript">
+
+    <script>
+      function ConfirmDelete(){
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+      return true;
+  else
+    return false;
+    }
+    </script>
   </body>
 </html>

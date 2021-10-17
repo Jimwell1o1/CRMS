@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
@@ -23,6 +24,7 @@
     <?php
         include 'includes/style-links.php';
     ?>
+
   </head>
   <body class="sb-nav-fixed">
 
@@ -96,7 +98,7 @@
                                                         <button class="btn btn-warning" id="accept-button" name="submit">
                                                           <i class="fas fa-check"></i> Done
                                                         </button> 
-                                                        <button class="btn btn-danger">
+                                                        <button class="btn btn-danger" onclick="ConfirmDelete()">
                                                           <i class="fas fa-trash"></i>
                                                         </button>
                                                     </form> 
@@ -118,7 +120,7 @@
                                                         <button class="btn btn-warning" id="accept-button" name="submit">
                                                           <i class="fas fa-check"></i> Done
                                                         </button> 
-                                                        <button class="btn btn-danger">
+                                                        <button class="btn btn-danger" onclick="ConfirmDelete()">
                                                           <i class="fas fa-trash"></i>
                                                         </button>
                                                     </form> 
@@ -167,5 +169,14 @@
     ></script>
     <script src="js/datatables-simple-demo.js"></script>
 
+    <script>
+      function ConfirmDelete(){
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+      return true;
+  else
+    return false;
+    }
+    </script>
   </body>
 </html>
