@@ -79,7 +79,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
                             $output.='<p>Please click on the following link to reset your password.</p>';
                             //replace the site url
-                            $output.='<p><a href="http://localhost/CRMSgawapac/CRMS/forms/reset-password.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">http://localhost/CRMSgawapac/CRMS/forms/reset-password.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
+                            $output.='<p><a href="http://localhost/CRMS/forms/reset-password.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">http://localhost/CRMS/forms/reset-password.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
                             $body = $output;
                             $subject = "Password Recovery";
 
@@ -105,7 +105,7 @@ use PHPMailer\PHPMailer\PHPMailer;
                             if (!$mail->Send()) {
                                 echo "Mailer Error: " . $mail->ErrorInfo;
                             } else {
-                                echo "An email has been sent";
+                                echo "<p class='text-success'>An email has been sent, kindly please<br> check your email account.</p>";
                             }
                         }
                     }
@@ -117,21 +117,22 @@ use PHPMailer\PHPMailer\PHPMailer;
                         <input placeholder="username@email.com" id="textbox" class="form-control" type="text" name="email" require />
                         </div>
 
-                        <br><br>
+                        <br>
                     
                    
 
                         <div class="form-group">
                             <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary"/>
                         </div>
-
+                        <br> <br> <br> <br>
                         <br>
                     </form>
 
                     <div class = "bg-success text-white fixed-bottom">
-                    <br><p><b>Never share your reset link to anyone</b> <br>Use it only for its intended purpose.</p>
-            <p><a  class = "text-white" href="../index.php">Back to homepage</a></p>
-            <br>
+                    <br><p><b>Never share your reset link to anyone</b> <br>Use it only for its intended purpose.</p>         <br>
+                    <a  class = "text-white" href="../index.php"><button type="button" class="btn btn-primary">Go back to homepage</button></a>
+
+            <br><br>
                                 </div>
                 </div>
            

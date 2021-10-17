@@ -110,7 +110,7 @@
     </div>
   </header><!-- End Header -->
 
-<br><br><br>
+<br><br>
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
@@ -168,12 +168,34 @@
     }
 </script>
 </div>
+<?php
+        if (isset($_GET["error"])) {
+            # code...
+            if ($_GET["error"] == "emptyinput") {
+                # code...
+                echo "<p>FILL IN ALL FIELDS!</p>";
+            } 
+            elseif ($_GET["error"] == "none") {
+                # code...
+
+                echo "<p class='text-success'>You've successfully changed your password.</p><br>";
+            }
+             elseif ($_GET["error"] == "wrongpass") {
+                # code...
+
+                echo "<p class='text-danger'>Incorrect Password, please try again.</p><br>";
+            }
+            
+        }
+
+
+    ?>
 <br><br><br>
 </form>
-        
+<br>
             <div class = "bg-success text-white fixed-bottom">
             <br><p>A <b>Strong password</b> helps prevent unauthorized <br>access to your email account.</p>
-            <p><a  class = "text-white" href="../index.php">Back to homepage</a></p>
+            <p><button type="button" class="btn btn-info"><a  class = "text-white" href="../index.php">Back to homepage</a></button></p>
             <br>
                                 </div>
         </div>
