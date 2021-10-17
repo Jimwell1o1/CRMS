@@ -286,7 +286,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                 <div class="card mb-4">
                   <div class="card-header">
                     <i class="fas fa-chart-bar me-1"></i>
-                    Bar Chart Example
+                    MONTHLY APPOINTMENT
                   </div>
                   <div class="card-body">
                     <canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -295,7 +295,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                     var myLineChart = new Chart(ctx, {
                       type: 'line',
                       data: {
-                    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                     datasets: [{
                       label: "Sessions",
                       lineTension: 0.3,
@@ -308,7 +308,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                       pointHoverBackgroundColor: "rgba(2,117,216,1)",
                       pointHitRadius: 50,
                       pointBorderWidth: 2,
-                      data: [52, 12, 32, 88, 13, 65, 24,59, 25, 41, 51, 34, 41],
+                      data: [52, 12, 32, 88, 13, 65, 24,59, 25, 41, 51, 34],
                     }],
                   },
                   options: {
