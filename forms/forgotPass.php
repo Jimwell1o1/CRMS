@@ -43,8 +43,8 @@ use PHPMailer\PHPMailer\PHPMailer;
   <div id="formContent">
     <!-- Tabs Titles -->
         <div class="section-title" data-aos="fade-up">
-        <br> <h2>FORGOT PASSWORD</h2><br>
-        <p>Enter your <b>email address </b> to reset your password <br></p><br>
+        <br> <h2>Forgot Password</h2><br>
+        <p>Enter your <b>email address </b>below and <br>we'll send you a link to reset your password. <br></p><br>
 
                     <?php
                     include('db.php');
@@ -129,7 +129,7 @@ use PHPMailer\PHPMailer\PHPMailer;
                     </form>
 
                     <div class = "bg-success text-white fixed-bottom">
-                    <br><p><b>Never share your link</b> <br>Use it only for its intended purpose.</p>
+                    <br><p><b>Never share your reset link to anyone</b> <br>Use it only for its intended purpose.</p>
             <p><a  class = "text-white" href="../index.php">Back to homepage</a></p>
             <br>
                                 </div>
