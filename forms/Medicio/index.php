@@ -91,6 +91,29 @@
   <link href="../../assets/css/style2.css" rel="stylesheet">
 
   
+  <!-- JS FOR DISABLE PAST DATE -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function(){
+      $(function(){
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+        var maxDate= year + '-' + month + '-' + day;
+        $('#dateControl').attr('min', maxDate);
+      });
+    })
+
+  </script>
+
 
  
 </head>
@@ -248,7 +271,7 @@
             <div class="col-md-6 form-group">
               <h6>Gender:</h6>
               <select class="form-control" name="gender[]">
-                            <option value="" disabled selected>Select Gender</option>
+                            <option value="" disabled selected >Select Gender</option>
                             <!-- TO KEEP THE DETAILS TYPED -------->    
                                 <option value = "Male" <?php
                                   if(isset($_GET['submit']) && (!empty($_GET["gender"]))){
@@ -281,7 +304,7 @@
             
             <div class="col-md-6 form-group">
               <h6>Date:</h6>
-              <input type="date" name="date" class="form-control"  value = "<?PHP print $date ; ?>"  />
+              <input type="date" id = "dateControl" name="date" class="form-control"  value = "<?PHP print $date ; ?>"  />
                   <span class="text-danger"> <?php echo $dateErr;?></span>
                   <div class="validate"></div>
                                 </div>
