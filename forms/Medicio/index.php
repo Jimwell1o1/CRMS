@@ -724,7 +724,7 @@ document.querySelector('.cancel').addEventListener("click", function() {
           
           <h3>In an emergency? Need help now?</h3>
           <p> Having trouble waiting on hold for a long time then not having available time slots?</p>
-          <p>For other concerns please reach us at: mdinfo@metrodental.com.ph</p>
+          <p>For other concerns please reach us at: clinicmcydental@gmail.com</p>
           <a class="cta-btn scrollto" href="#appointment">CALL US NOW!</a>
           
         </div>
@@ -812,27 +812,31 @@ document.querySelector('.cancel').addEventListener("click", function() {
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
                 <h3>San Joaquin, Pasig City</h3>
-                <p class="font-italic">Address: 9M Conception St. San Joaquin 1601 Pasig, Philippines</p>
-                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid"><br/>
-                <p>Email Address: mcysanjoaquin@gmail.com</p>
-                <p>Schedule: 9:00am to 5:00pm</p>
-                <p>Facebook Page: <a href = "https://www.facebook.com/MCYdentalSJ/">MCY Dental Clinic San Joaquin </a></p>
-              </div>
+                <p class="font-italic"><b>Address:</b> 9M Conception St. San Joaquin 1601 Pasig, Philippines</p>
+             
+                <p><b>Email Address:</b> mcysanjoaquin@gmail.com</p>
+                <p><b>Schedule:</b> 9:00am to 5:00pm</p>
+                <p><b>Facebook Page:</b> <a href = "https://www.facebook.com/MCYdentalSJ/">MCY Dental Clinic San Joaquin </a></p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.821201242739!2d121.07188731478861!3d14.552215089833268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a28bc76061%3A0x8796bdc6a86e55fe!2sMCY%20Dental%20Clinic%20San%20Joaquin!5e0!3m2!1sen!2sph!4v1634487024503!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+       
+ </div>
               <div class="tab-pane" id="tab-2">
                 <h3>Pinagbuhatan, Pasig City</h3>
-                <p class="font-italic">Address: 22 Urbano Velasco Ave St. 1602 Pasig, Philippines</p>
-                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid"><br/>
-                <p>Email Address: mcypinagbuhatan@gmail.com</p>
-                <p>Schedule: 9:00am to 5:00pm</p>
-                <p>Facebook Page: <a href = "https://www.facebook.com/MCYPinagbuhatan/">MCY Dental Clinic Pinagbuhatan </a></p>
+                <p class="font-italic"><b>Address: </b>22 Urbano Velasco Ave St. 1602 Pasig, Philippines</p>
+                <p><b>Email Address:</b> mcypinagbuhatan@gmail.com</p>
+                <p><b>Schedule:</b> 9:00am to 5:00pm</p>
+                <p><b>Facebook Page:</b> <a href = "https://www.facebook.com/MCYPinagbuhatan/">MCY Dental Clinic Pinagbuhatan </a></p>
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380.3762212109789!2d121.08532588294001!3d14.557185442325617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7d2f04ccc9b%3A0xe1001ce5191eb0a5!2sMCY%20Dental!5e0!3m2!1sen!2sph!4v1634487131612!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
               </div>
               <div class="tab-pane" id="tab-3">
                 <h3>Malinao, Pasig City</h3>
-                <p class="font-italic">Address: 30 Caruncho Ave, Malinao, Pasig, 1600 Metro Manila</p>
-                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid"><br/>
-                <p>Email Address: mcymalinao@gmail.com</p>
-                <p>Schedule: 9:00am to 5:00pm</p>
-                <p>Facebook Page: <a href = https://www.facebook.com/MCYMalinao/?ref=page_internal"">MCY Dental Clinic Malinao </a></p>
+                <p class="font-italic"><b>Address:</b> 30 Caruncho Ave, Malinao, Pasig, 1600 Metro Manila</p>
+                <p><b>Email Address:</b> mcymalinao@gmail.com</p>
+                <p><b>Schedule:</b> 9:00am to 5:00pm</p>
+                <p><b>Facebook Page:</b> <a href = https://www.facebook.com/MCYMalinao/?ref=page_internal"">MCY Dental Clinic Malinao </a></p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1566.0715030697377!2d121.07896672398165!3d14.559557020682753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7d5fce0f3a5%3A0x7d7d0d04075f188f!2sMCY%20Dental!5e0!3m2!1sen!2sph!4v1634487340114!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
               </div>
             </div>
           </div>
