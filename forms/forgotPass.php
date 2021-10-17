@@ -4,16 +4,47 @@ use PHPMailer\PHPMailer\PHPMailer;
 <html>
     <head>
         <title>Password Recovery using PHP and MySQL</title>
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+
+
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+ <!-- Favicons -->
+ <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+
+  <!-- Pacli  -->
+<link rel = "stylesheet" href = "../assets/css/styleLogIn.css">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
     </head>
     <body>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-
-                    <h2>Forgot Password</h2>   
+    <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+        <div class="section-title" data-aos="fade-up">
+        <br> <h2>FORGOT PASSWORD</h2><br>
+        <p>Enter your <b>email address </b> to reset your password <br></p><br>
 
                     <?php
                     include('db.php');
@@ -82,19 +113,46 @@ use PHPMailer\PHPMailer\PHPMailer;
                     <form method="post" action="" name="reset">
                         
 
-                        <div class="form-group">
-                           <label><strong>Enter Your Email Address:</strong></label>
-                            <input type="email" name="email" placeholder="username@email.com" class="form-control"/>
+                        <div class="input-box">
+                        <input placeholder="username@email.com" id="textbox" class="form-control" type="text" name="email" require />
                         </div>
+
+                        <br><br>
+                    
+                   
 
                         <div class="form-group">
                             <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary"/>
                         </div>
+
+                        <br>
                     </form>
 
+                    <div class = "bg-success text-white fixed-bottom">
+                    <br><p><b>Never share your link</b> <br>Use it only for its intended purpose.</p>
+            <p><a  class = "text-white" href="../index.php">Back to homepage</a></p>
+            <br>
+                                </div>
                 </div>
-                <div class="col-md-4"></div>
-            </div>
+           
+         
         </div>
-    </body>
+
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+ 
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/venobox/venobox.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+    </body>   
 </html>
