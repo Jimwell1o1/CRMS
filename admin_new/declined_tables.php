@@ -34,7 +34,7 @@
           <div class="container-fluid px-4">
             <h1 class="mt-4">Declined Schedule</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item">
+              <li class="breadcrumb-item">&nbsp;&nbsp;
                 <a href="index.php">Dashboard</a>
               </li>
               <li class="breadcrumb-item active">Declined Schedules</li>
