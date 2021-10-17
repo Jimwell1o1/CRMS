@@ -33,6 +33,34 @@ function pwdMatch($password, $confirmpassword){
     return $result;
 };
 
+
+//This function is duplicated take note.
+function uidExist($conn, $username, $email){
+    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        # code...
+        header("Location: ../reset-password.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ss",  $username, $email);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($resultData)) {
+        # code...
+        return $row;
+
+    } else {
+        
+        $result = false;
+        return $result;
+    }
+    mysqli_stmt_close($stmt);
+}
+
+
 function uidExists($conn, $uid){
     $sql = "SELECT * FROM users WHERE usersUid = ?;";
     $stmt = mysqli_stmt_init($conn);
@@ -137,7 +165,7 @@ function loginUser($conn, $uid, $password){
 
 // Function for Login User Account
 function changePass($conn, $uid, $password, $newpassword){
-    $uidExists = uidExists($conn, $uid);
+    $uidExists = uidExist($conn, $uid, $uid);
 
 
     $pwdHashed = $uidExists["usersPwd"];

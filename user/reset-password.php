@@ -1,6 +1,10 @@
 <?php
-    session_start();
-    require_once '../forms/includes/dbh.inc.php';
+      session_start();
+      require_once '../includes/dbh.inc.php';
+      require_once '../includes/emptySession.php';
+      
+      emptyUserSignupSession();
+      
 
     if (!isset($_SESSION['useruid'])){
       header("Location: ../forms/login.php");
@@ -47,9 +51,10 @@
   <title>MCY Dental Clinic</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
-
- <!-- Favicons -->
- <link href="../assets/img/favicon.png" rel="icon">
+<!-- Pacli  -->
+<link rel = "stylesheet" href = "../assets/css/styleLogIn.css">
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -62,17 +67,9 @@
   <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
-
-  <!-- Pacli  -->
-<link rel = "stylesheet" href = "../assets/css/styleLogIn.css">
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
 
@@ -81,7 +78,7 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="../index.php">MCY Dental Clinic</a></h1>
+        <h1 class="text-light"><a href="../index.php"><b>MCY Dental Clinic</b></a></h1>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -112,6 +109,7 @@
 
     </div>
   </header><!-- End Header -->
+
 <br><br><br>
 <div class="wrapper fadeInDown">
   <div id="formContent">
@@ -139,8 +137,8 @@
                 //             $expDate = $row['expDate'];
                 //             if ($expDate >= $curDate) {
                                 ?> 
-                                 <br> <h2>Reset Password</h2><br>
-        <p>Please enter your new password below.</p><br>
+                                 <br> <h2>Change Password</h2><br>
+        <p>Please enter your new password below</p><br>
            <form method="post" action="../includes/changepass.inc.php" name="update">
 
            <input type="hidden" name="action" value="update" class="form-control"/>
@@ -149,17 +147,17 @@
 
 <div class="form-group">
 
-    <input type="password" id="passwordVal" name="pass1" placeholder ="New Password" class="form-control"/>
+    <input type="password" id="confirmVal" name="pass1" placeholder ="New Password" class="form-control"/>
 </div>
 
 <div class="form-group">
 
-    <input type="password" id="confirmVal" name="pass2" placeholder ="Confirm New Password"  class="form-control"/>
+    <input type="password" id="passwordVal" name="pass2" placeholder ="Confirm New Password"  class="form-control"/>
 </div>
 <input type="hidden" name="email" value="<?php echo $email; ?>"/>
 <div class="form-group">
 <br>
-<input type="password" id="confirmVal" name="pass0" placeholder ="Current Password" class="form-control"/>
+<input type="password" id="current" name="pass0" placeholder ="Current Password" class="form-control"/>
 </div>
 <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
 <div class="form-group">
@@ -168,7 +166,7 @@
 
     <script>
       function myFunction() {
-         var x = document.getElementById("passwordVal");
+         var x = document.getElementById("current");
 
          if (x.type === "password") {
           x.type = "text";
@@ -294,7 +292,7 @@
     <!-- Show Password Function -->
 <script>
       function myFunction() {
-         var y = document.getElementById("passwordVal");
+         var y = document.getElementById("current");
          if (y.type === "password") {
           y.type = "text";
         } else {

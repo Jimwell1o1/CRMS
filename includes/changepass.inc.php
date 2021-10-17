@@ -3,12 +3,12 @@
 
     if(isset($_POST['submit'])){
 
-        require_once 'dbh.inc.php';
-        require_once 'functions.inc.php';
+        require_once '../forms/includes/dbh.inc.php';
+        require_once '../forms/includes/functions.inc.php';
 
         $username = $_SESSION["useruid"];
-        $password = $_POST['pass1'];
-        $newpassword = $_POST['pass0'];
+        $password = $_POST['pass0'];
+        $newpassword = $_POST['pass1'];
 
         $_SESSION['loginUsername'] = $username;
         $_SESSION['loginPassword'] = $password;
@@ -17,7 +17,7 @@
         changePass($conn, $username, $password, $newpassword);
 
     }else {
-        header("location: ../login.php");
+        header("location: ../index.php");
         exit();
     }
 
