@@ -82,12 +82,12 @@
     
         <form method="POST">
                 <div class="input-box">
-                <input placeholder="Enter verification code" id="textbox" class="text-input" type="text" name="verification_code" required>
+                <input placeholder="Enter verification code" id="textbox" class="text-input" type="text" name="verification_code" required
                         value="<?php 
                                     if(isset($_SESSION['login_adminUsername'])){
                                         echo htmlspecialchars($_SESSION['login_adminUsername']);
                                     }
-                                ?>">
+                                ?>" >
                                 <br>
                 </div>
              
