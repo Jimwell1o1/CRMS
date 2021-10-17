@@ -28,3 +28,16 @@ CREATE TABLE booking (
 	bookingMessage varchar(300) NOT NULL,
 	bookingStatus varchar(128) NOT NULL
 );
+
+CREATE TABLE `password_reset_temp` (
+  `email` varchar(250) NOT NULL,
+  `key` varchar(250) NOT NULL,
+  `expDate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `password_reset_temp`
+--
+
+INSERT INTO `password_reset_temp` (`email`, `key`, `expDate`) VALUES
+('gajanand.kgn@rediffmail.com', 'f53997f1a58352e1fe65046d6953672562bc648b72', '2020-12-30 11:05:26');

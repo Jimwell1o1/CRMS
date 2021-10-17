@@ -99,7 +99,7 @@
       <p class="fadeIn fourth"><input type="checkbox" id = "showpass" onclick="myFunction()" class="fadeIn fourth"> Show Password</p><br/>
       
       <input type="submit" class="fadeIn fourth" value="Log In" name = "submit"><br/>
-      <a class="underlineHover" href="#">Forgot Password?</a><br>
+      <a class="underlineHover" href="forgotPass.php">Forgot Password?</a><br>
       <a class="underlineHover" href="../admin/login-admin.php">Log in as admin</a><br><br>
       <a class="underlineHover" href="../admin_new/index.php">New admin</a>
 

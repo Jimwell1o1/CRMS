@@ -1,154 +1,100 @@
 <?php
-    session_start();
-    require_once '../includes/emptySession.php';
-
-    emptyAdminSignupSession();
+use PHPMailer\PHPMailer\PHPMailer;
 ?>
+<html>
+    <head>
+        <title>Password Recovery using PHP and MySQL</title>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                    <h2>Forgot Password</h2>   
+
+                    <?php
+                    include('db.php');
+                    if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
+                        $email = $_POST["email"];
+                        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+                        $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+                        if (!$email) {
+                            $error .="Invalid email address";
+                        } else {
+                            $sel_query = "SELECT * FROM `users` WHERE usersEmail='" . $email . "'";
+                            $results = mysqli_query($con, $sel_query);
+                            $row = mysqli_num_rows($results);
+                            if ($row == "") {
+                                $error .= "User Not Found";
+                            }
+                        }
+                        if ($error != "") {
+                            echo $error;
+                        } else {
+
+                            $output = '';
+
+                            $expFormat = mktime(date("H"), date("i"), date("s"), date("m"), date("d") + 1, date("Y"));
+                            $expDate = date("Y-m-d H:i:s", $expFormat);
+                            $key = md5(time());
+                            $addKey = substr(md5(uniqid(rand(), 1)), 3, 10);
+                            $key = $key . $addKey;
+                            // Insert Temp Table
+                            mysqli_query($con, "INSERT INTO `password_reset_temp` (`email`, `key`, `expDate`) VALUES ('" . $email . "', '" . $key . "', '" . $expDate . "');");
 
 
-<!DOCTYPE html>
-<html lang="en">
+                            $output.='<p>Please click on the following link to reset your password.</p>';
+                            //replace the site url
+                            $output.='<p><a href="http://localhost/CRMSgawapac/CRMS/forms/reset-password.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">http://localhost/CRMSgawapac/CRMS/forms/reset-password.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
+                            $body = $output;
+                            $subject = "Password Recovery";
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="sweetalert/jquery-3.5.1.min.js"></script>
-    <script src="sweetalert/sweetalert2.all.min.js"></script>
-    <title> MCY ADMIN </title>
-  <title>MCY Dental Clinic</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
+                            $email_to = $email;
 
- <!-- Favicons -->
- <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+                            //autoload the PHPMailer
+                            require("../vendor/autoload.php");
+                            $mail = new PHPMailer();
+                            $mail->IsSMTP();
+                            $mail->Host = "smtp.gmail.com"; // Enter your host here
+                            $mail->SMTPAuth = true;
+                            $mail->Username = "clinicmcydental@gmail.com"; // Enter your email here
+                            $mail->Password = "MCYdentaladmin01"; //Enter your passwrod here
+                            $mail->Port = 587;
+                            $mail->IsHTML(true);
+                            $mail->From = "clinicmcydental@gmail.com";
+                            $mail->FromName = "MCY Password Recovery";
 
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+                            $mail->Subject = $subject;
+                            $mail->Body = $body;
+                            $mail->AddAddress($email_to);
+                            if (!$mail->Send()) {
+                                echo "Mailer Error: " . $mail->ErrorInfo;
+                            } else {
+                                echo "An email has been sent";
+                            }
+                        }
+                    }
+                    ?>
+                    <form method="post" action="" name="reset">
+                        
 
-  <!-- Pacli  -->
-<link rel = "stylesheet" href = "../assets/css/styleLogIn.css">
+                        <div class="form-group">
+                           <label><strong>Enter Your Email Address:</strong></label>
+                            <input type="email" name="email" placeholder="username@email.com" class="form-control"/>
+                        </div>
 
-  <!-- Template Main CSS File -->
-  <link href="../assets/css/style.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-</head>
-<body>
+                        <div class="form-group">
+                            <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary"/>
+                        </div>
+                    </form>
 
-<br>
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
-        <div class="section-title" data-aos="fade-up">
-        <br> <h2>Forgot Password</h2><br>
-        <p>Please enter your E-mail to send you reset link. </p><br>
-    
-        <form action = "includes/signup.inc.php" method="POST">
-                <div class="input-box">
-                    <input placeholder="Username/Email" id="textbox" class="text-input" type="text" name="admin_username" required 
-                        value="<?php 
-                                    if(isset($_SESSION['login_adminUsername'])){
-                                        echo htmlspecialchars($_SESSION['login_adminUsername']);
-                                    }
-                                ?>">
-                                <br>
-                </div>         
-                <br>
-              
-                <input  class="btn btn-primary" type="submit" name="submit" value="Forgot Password" />
-                <br>
-                <form action = "signup-admin.php">
-                
-                <br><br><br><br>
-            </form>
-            <div class = "bg-warning text-white fixed-bottom">
-            <br><p>  Use strong passwords.</p> <br>
-            <p><a  class = "text-white" href="../index.php">Back to homepage</a></p>
-            <br>
-                                </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
         </div>
-        
-          <!-- Vendor JS Files -->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/venobox/venobox.min.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
     </body>
-
-    
-    <!-- For Checking -->
-    <?php
-        if(isset($_GET["error"])){
-            if($_GET["error"] === "wronglogin"){ ?>
-                <script>
-                    Swal.fire({
-                        icon: 'error',
-                        width: '350',
-                        title: 'Invalid account!',
-                        text: ''
-                    })
-                </script>
-            <?php }
-        
-            if($_GET["error"] === "incorrectpwd"){ ?>
-                <script>
-                    Swal.fire({
-                        icon: 'info',
-                        width: '350',
-                        title: 'Incorrect Password!',
-                        text: ''
-                    })
-                </script>
-            <?php }
-        }
-    ?>
-
-
-    <!-- Show Password Function -->
-<script>
-      function myFunction() {
-         var y = document.getElementById("passwordVal");
-         if (y.type === "password") {
-          y.type = "text";
-        } else {
-            y.type = "password";
-         }
-        }
-    </script>
-
-
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/venobox/venobox.min.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
-</body></html>
+</html>
