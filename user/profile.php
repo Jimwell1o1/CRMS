@@ -73,7 +73,7 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="../index.php">MCY Dental Clinic</a></h1>
+        <h1 class="text-light"><a href="../index.php"><b>MCY Dental Clinic</b></a></h1>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
