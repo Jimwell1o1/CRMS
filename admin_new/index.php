@@ -101,8 +101,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  
 
- 
-
+   
 
   </head>
   <body class="sb-nav-fixed">
@@ -266,19 +265,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                  
                   <canvas id="myPieChart" width="100%" height="40"></canvas>
                   
-                  <script>
-                      var ctx = document.getElementById("myPieChart");
-                  var myPieChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                      labels: [ "Decline", "Pending", "Accepted"],
-                      datasets: [{
-                        data: [  <?php echo $decline; ?>, <?php echo $pending; ?>,<?php echo $accepted; ?>],
-                        backgroundColor: ['#dc3545', '#ffc107', '#28a745'],
-                      }],
-                    },
-                  });
-                 </script>
+                
                   </div>
                 </div>
               </div>
@@ -565,7 +552,19 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
     <script src="js/datatables-simple-demo.js"></script>
 
 
-   
+    <script>
+                      var ctx = document.getElementById("myPieChart");
+                  var myPieChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                      labels: [ "Decline", "Pending", "Accepted"],
+                      datasets: [{
+                        data: [  <?php echo $decline; ?>, <?php echo $pending; ?>,<?php echo $accepted; ?>],
+                        backgroundColor: ['#dc3545', '#ffc107', '#28a745'],
+                      }],
+                    },
+                  });
+                 </script>
 
   </body>
 </html>
