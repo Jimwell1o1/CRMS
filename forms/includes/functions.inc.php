@@ -138,3 +138,34 @@ function loginUser($conn, $username, $pwd){
         exit();
     }
 }
+
+function changePass($conn, $username, $pwd, $newpassword){
+
+    $uidExists =  uidExists($conn, $username, $username);
+
+    if ($uidExists === false) {
+        # code...
+        header("Location: ../user/history.php?error=uidnotexist");
+        exit();
+    }
+
+    $pwdHashed = $uidExists["usersPwd"];
+    $checkPwd = password_verify($pwd, $pwdHashed);
+
+
+    if ($checkPwd === false) {
+        # code...
+        header("Location: ../login.php?error=wrongpass");
+        exit();
+    }
+    elseif ($checkPwd === true) {
+        # code...
+      
+        $pass1 = password_hash($newpassword, PASSWORD_DEFAULT);
+        mysqli_query($conn, "UPDATE `users` SET `usersPwd` = '" . $pass1 . "' WHERE `usersUid` = '" . $username . "'");
+
+    
+    header("location: ../user/reset-password.php?error=none");
+    exit();
+    }
+}
