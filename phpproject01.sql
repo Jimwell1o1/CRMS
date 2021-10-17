@@ -10,6 +10,7 @@ CREATE TABLE users(
 CREATE TABLE adminAcc (
 	adminAcc int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	adminAccName varchar(128) NOT NULL,
+	adminAccBranch varchar(128) NOT NULL,
 	adminAccEmail varchar(128) NOT NULL,
 	adminAccUid varchar(128) NOT NULL,
 	adminAccPwd varchar(128) NOT NULL

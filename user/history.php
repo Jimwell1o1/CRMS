@@ -107,7 +107,7 @@
 
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
-                                    if($_SESSION["useruid"] === $row['bookingUserName']){ ?>
+                                    if($_SESSION["useruid"] === $row['bookingUsername']){ ?>
 
                                    
                                             <tr>
