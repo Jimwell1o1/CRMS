@@ -1,6 +1,6 @@
 <?php
       session_start();
-      require_once '../includes/dbh.inc.php';
+      require_once '../forms/includes/dbh.inc.php';
       require_once '../includes/emptySession.php';
       
       emptyUserSignupSession();
@@ -182,7 +182,7 @@
 <input type="hidden" name="email" value="<?php echo $email; ?>"/>
 <div class="form-group">
 <br>
-<input type="password" id="newpass" name="pass0" placeholder ="Enter Current Password" class="form-control" style="text-align: left;"/>
+<input type="password"  name="pass0" placeholder ="Enter Current Password" class="form-control"/>
 </div>
 <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
 <div class="form-group">

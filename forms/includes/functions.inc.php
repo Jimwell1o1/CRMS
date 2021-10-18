@@ -155,7 +155,7 @@ function changePass($conn, $username, $pwd, $newpassword){
 
     if ($checkPwd === false) {
         # code...
-        header("Location: ../user/reset-password.php?error=wrongpass");
+        header("Location: ../login.php?error=wrongpass");
         exit();
     }
     elseif ($checkPwd === true) {
