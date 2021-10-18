@@ -148,12 +148,12 @@
                 </div>
                 Accounts
               </a>
-
+              <div class="sb-sidenav-menu-heading">Tasks</div>
               <a class="nav-link" href="add_patient.php">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-plus-circle"></i>
                 </div>
-                Add Patient
+                Add Appointment
               </a>
 
 
@@ -168,7 +168,7 @@
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-tasks"></i>
                 </div>
-                Add Task
+                Create Events
               </a>
 
               
