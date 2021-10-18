@@ -128,19 +128,53 @@
       dp.message(result.message);
     };
 
-   dp.eventDeleteHandling = "Update";
 
-        dp.onEventDeleted = function (args) {
-            dp.message("Event deleted: " + args.e.text());
-        };
+  // // AYUSIN TONG DELETE
+  //   var dp = new DayPilot.Calendar("dp");
+  //  dp.eventDeleteHandling = "Update";
 
+  //  dp.onEventDelete = async(args)  {
+  //    if (!confirm("Do you really want to delete this event?")) {
+  //      args.preventDefault();
+  //    }
+  //  };
+
+  //  dp.onEventDeleted = async(args) {
+  //    // AJAX call to the server, this example uses jQuery
+  //    $.post(
+  //      "task/backend_delete.php", 
+  //      { id: args.e.id()}, 
+  //      function(result) {
+  //        dp.message(result.message);   // "Delete successful" received from the server
+  //      }
+  //    );
+  //  };
+
+
+// // event creating
+// var dp = new DayPilot.Calendar("dp");
+// dp.eventDeleteHandling = "Update";
+
+// dp.onEventDelete = async (args) => {
+// const modal = await DayPilot.Modal.prompt("Do you really want to delete this event?");
+// const {data: result} = await DayPilot.Http.post("task/backend_delete.php", data);
+// var e = {
+//   id: result.id,
+//   text: modal.result
+// };
+// dp.events.add(e);
+// dp.message(result.message);
+// };
+
+
+  
     dp.onEventClick = (args) => {
       DayPilot.Modal.alert(args.e.text());
     };
-
- dp.onBeforeCellRender = function (args) {
+    
+    dp.onBeforeCellRender = function (args) {
             if (args.cell.start.getTime() === new DayPilot.Date().getDatePart().getTime()) {
-                args.cell.backColor = "#ac0";
+                args.cell.backColor = "#ADD8E6";
             }
         };	
 
