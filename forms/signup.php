@@ -92,8 +92,57 @@
       <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password">
       <input type="password" id="confirmVal" class="fadeIn third" name="pwdrepeat" placeholder="Confirm Password"><br/>
       <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
+ 
+      <input type="submit" class="fadeIn fourth" value="Register" name = "submit" >
+      <!-- //onclick="return Validate()" -->
       <br>
-      <input type="submit" class="fadeIn fourth" value="Register" name = "submit" onclick="return Validate()"><br>
+    <?php
+        if (isset($_GET["error"])) {
+            # code...
+            if ($_GET["error"] == "emptyinput") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                Kindly please fill out all the fields.
+              </div>";
+            } 
+             elseif ($_GET["error"] == "invaliduid") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                Please choose a proper username.
+              </div>";
+            }
+            elseif ($_GET["error"] == "invalidemail") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                Please enter a correct email.
+              </div>";
+            }
+            elseif ($_GET["error"] == "passwordsdontmatch") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                Password does not match, please try again.
+              </div>";
+            }
+            elseif ($_GET["error"] == "usernametaken") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                  Username is already taken, please try again.
+              </div>";
+            }
+            elseif ($_GET["error"] == "none") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                Congratulations! You've successfully signed up.
+              </div>";
+            }
+        }
+?>
       <label for="">Already a member? <a href="login.php">Log In</a></label>
      <script>
       function myFunction() {
@@ -143,39 +192,6 @@
     </form>
     
 
-    <?php
-        if (isset($_GET["error"])) {
-            # code...
-            if ($_GET["error"] == "emptyinput") {
-                # code...
-                echo "<p>FILL IN ALL FIELDS!</p>";
-            } 
-             elseif ($_GET["error"] == "invaliduid") {
-                # code...
-                echo "<p>CHOOSE A PROPER USERNAME!</p>";
-            }
-            elseif ($_GET["error"] == "invalidemail") {
-                # code...
-                echo "<p>CHOOSE A PROPER EMAIL!</p>";
-            }
-            elseif ($_GET["error"] == "passwordsdontmatch") {
-                # code...
-                echo "<p>PASSWORD DOESN'T MATCH!</p>";
-            }
-            elseif ($_GET["error"] == "usernametaken") {
-                # code...
-                echo "<p>USERNAME ALREADY TAKEN!</p>";
-            }
-            elseif ($_GET["error"] == "invaliduid") {
-                # code...
-                echo "<p>CHOOSE A PROPER USERNAME!</p>";
-            }
-            elseif ($_GET["error"] == "none") {
-                # code...
-                echo "<p>YOU HAVE SUCCESSFULLY SIGNED UP!</p>";
-            }
-        }
-?>
   </div>
 </div>
 
