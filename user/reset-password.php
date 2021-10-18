@@ -146,9 +146,9 @@
           }
             elseif ($_GET["error"] == "wrong") {
               # code...
-              echo "<div class='alert alert-warning alert-dismissible'>
+              echo "<div class='alert alert-danger alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert'>&times;</button>
-              Password does not match .
+              Password does not match.
             </div>";
           }
             elseif ($_GET["error"] == "none") {
