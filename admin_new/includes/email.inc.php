@@ -69,13 +69,14 @@ use PHPMailer\PHPMailer\PHPMailer;
                                     if (!$mail->Send()) {
                                         echo "Mailer Error: " . $mail->ErrorInfo;
                                     } else {
-                                        echo "<p class='text-success'>An email has been sent, kindly please<br> check your email account.</p>";
+                                        header("Location: ../email_sender.php?error=none");
+                                        
                                     }
                                 
 
 
                              }else{
-                                 echo "No data Found.";
+                                header("Location: ../email_sender.php?error=nodatafound");
                              }
                         }
                     

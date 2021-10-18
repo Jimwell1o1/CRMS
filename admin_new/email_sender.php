@@ -86,8 +86,19 @@
           <div class="container mt-4 mb-4">
       <div class="row justify-content-md-center">
         <div class="col-md-12 col-lg-8">
-           
-
+           <?php
+           if (isset($_GET["error"])){
+                        if ($_GET["error"] == "none") {
+                            echo '<div class="alert alert-success alert-dismissible">
+                              The system has successfully sent the email to the users.
+                          </div>';
+           }else if($_GET["error"] == "nodatafound") {
+            echo '<div class="alert alert-danger alert-dismissible">
+              No data found, please try again next time.
+          </div>';
+}
+          }
+              ?>
             <div class="form-group">
               <label for="email">Send to:</label>
 
