@@ -100,22 +100,47 @@
           }
               ?>
             <div class="form-group">
-              <label for="email">Send to:</label>
+              <label for="email"><h5>Send to:</h5></label>
 
               <form action="includes/email.inc.php" method="post">
               <!-- <input type="email" class="form-control" id="email" placeholder="Enter email"> -->
-              <select class="form-control"  name="sendto" id="">
-              <option value="">Select:</option> 
-                <option value="All">All Customers</option>
-              </select>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="All" name="sendto" id="flexRadioDefault1" checked onclick="myFunction()">
+              <label class="form-check-label" for="flexRadioDefault1">
+                All Registered Users
+              </label>
+            </div>
+            <div class="form-check" >
+              <input class="form-check-input" type="radio" value="user" name="sendto" id="flexRadioDefault2" onclick="myFunction2()">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Individual User
+              </label>
+            </div>
+            <script>
+      function myFunction() {
+                    document.getElementById("name").style.display = "none";
+                  }
+                  function myFunction2() {
+                    document.getElementById("name").style.display = "flex";
+                  }
+                  </script>
+  
+            <br>
+            <div class="form-group" >
+              <div  style="display:none;"  id="name">
+                <input type="email" name="useremail" class="form-control" placeholder="Enter E-mail of the user. ex: username@mail.com">
+                </div>
+            </div>
+
+            
               <small class="form-text text-muted">Log In As Main Administrator to Send to All branches.</small>
             </div>
             <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" name="subject" class="form-control" id="name" placeholder="Your name">
+            <h5><label for="name">Subject</label></h5>
+                <input type="text" name="subject" class="form-control" id="name" placeholder="MCY Dental Clinic...">
             </div>
             <div class="form-group">
-              <label>Body:</label>
+            <h5><label>Body:</label></h5>
               <textarea name="body" id="editor"></textarea>
             </div>
 
@@ -153,10 +178,10 @@
         </footer>
       </div>
     </div>
-    <script
+    
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
-    ></script>
+    </script>
     <script src="js/scripts.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
