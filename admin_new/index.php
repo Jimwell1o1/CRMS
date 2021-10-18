@@ -31,50 +31,11 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>MCY Admin</title>
-    
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-
-      <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-<!-- Vendor CSS Files -->
-<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-<link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-<link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
-<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-
-<!-- Template Main CSS File -->
-<link href="../assets/css/style.css" rel="stylesheet">
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
-      rel="stylesheet"
-    />
-    <link href="css/styles.css" rel="stylesheet" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
-      crossorigin="anonymous"
-    ></script>
-
-    
+    <?php
+        include 'includes/style-links.php';
+    ?>
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- 
-
-   
-
   </head>
   <body class="sb-nav-fixed">
 

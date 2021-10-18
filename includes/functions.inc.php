@@ -163,35 +163,6 @@ function loginUser($conn, $uid, $password){
 };
 
 
-// Function for Login User Account
-function changePass($conn, $uid, $password, $newpassword){
-    $uidExists = uidExist($conn, $uid, $uid);
-
-
-    $pwdHashed = $uidExists["usersPwd"];
-    $checkPwd = password_verify($password, $pwdHashed);
-    
-    if($checkPwd === false){
-        header("location: ../reset-password.php?error=incorrectpwd");
-        exit();
-    }else if ($checkPwd === true){
-      
-
-            $pass1 = password_hash($newpassword, PASSWORD_DEFAULT);
-            mysqli_query($con, "UPDATE `users` SET `usersPwd` = '" . $pass1 . "' WHERE `usersUid` = '" . $uid . "'");
-
-        
-        header("location: ../reset-password.php?error=none");
-        exit();
-    }
-
-};
-
-
-
-
-
-
 // Function for Sign Up of Admin Account
 function admin_uidExists($conn, $admin_uid){
     $sql = "SELECT * FROM adminAcc WHERE adminAccUid = ?;";

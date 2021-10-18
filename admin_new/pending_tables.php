@@ -54,8 +54,8 @@
                       <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
-                      <th>Consultation</th>
                       <th>Branch</th>
+                      <th>Consultation</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -66,8 +66,8 @@
                     <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
-                      <th>Consultation</th>
                       <th>Branch</th>
+                      <th>Consultation</th>
                       <th>Action</th>
                     </tr>
                   </tfoot>
@@ -82,78 +82,13 @@
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Pending" === $row['bookingStatus']){ 
-                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ ?>       
-
-                                            <tr>
-                                            <!-- <th scope="row"> <?php // echo $row['bookingId'] ?> </th> -->
-                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
-                                              <td> <?php echo $row['bookingGender'] ?> </td>
-                                                <td> <?php echo $row['bookingDate'] ?> </td>
-                                                <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td> <?php echo $row['bookingBranch'] ?> </td>
-                                                <!-- <td class="status"> 
-                                                    <?php if($row['bookingStatus'] == 'Pending'): ?>
-                                                        <span class="badge badge-warning">Pending Request</span>
-                                                    <?php endif ?>
-                                                    <?php if($row['bookingStatus'] == 'Accepted'): ?>
-                                                        <span class="badge badge-primary">Confirmed</span>
-                                                    <?php endif ?>
-                                                    <?php if($row['bookingStatus'] == 'Declined'): ?>
-                                                        <span class="badge badge-danger">Declined</span>
-                                                    <?php endif ?>
-                                                    <?php if($row['bookingStatus'] == 'Done'): ?>
-                                                        <span class="badge badge-info">Done</span>
-                                                    <?php endif ?>
-                                                </td> -->
-
-
-
-                                              <td class="text-left">
-                                              <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                       
-                                                <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                  <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn btn-warning" id="accept-button" name="submit">
-                                                  <i class="fas fa-check"></i>
-                                                </button>
-                                                <button class="btn btn-danger" onclick="ConfirmDelete()">
-                                                  <i class="fas fa-trash"></i>
-                                                </button>
-                                                    </form>
-
-                                
-                                              </td>
-                                            </tr>
-
-                                            <?php } 
+                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){
+                                        include 'includes/tables/pending_tables.inc.php';
+                                        
+                                        } 
                                 if($_SESSION['admin_branchName'] === "mainAdmin"){
-                                  ?>
-                                  <tr>
-                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
-                                              <td> <?php echo $row['bookingGender'] ?> </td>
-                                                <td> <?php echo $row['bookingDate'] ?> </td>
-                                                <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingBranch'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td class="text-left">
-                                                <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                  
-
-                                                <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                  <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn btn-warning" id="accept-button" name="submit">
-                                                  <i class="fas fa-check"></i>
-                                                </button>
-                                                <button class="btn btn-danger" onclick="ConfirmDelete()">
-                                                  <i class="fas fa-trash"></i>
-                                                </button>
-                                                    </form>
-                                              </td>
-                                            </tr>
-                          <?php
+                                        include 'includes/tables/pending_tables.inc.php';
+                                  
                           } } } } ?>
                    
                   </tbody>
@@ -177,27 +112,19 @@
       <div class="modal-body">
         <div>
           <label class="form-label">Name</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" disabled>
         </div>
         <div>
-          <label class="form-label">Date</label>
-          <input type="date" class="form-control">
+          <label class="form-label">Gender</label>
+          <input type="text" class="form-control" disabled>
+        </div>
+        <div>
+          <label class="form-label">Appointment Date</label>
+          <input type="date" class="form-control" disabled>
         </div>
         <div>
           <label class="form-label">Time</label>
-          <select class="form-select">
-            <option selected>Select Time...</option>
-            <option>8:00 A.M</option>
-            <option>9:00 A.M</option>
-            <option>10:00 A.M</option>
-            <option>11:00 A.M</option>
-            <option>12:00 P.M</option>
-            <option>1:00 P.M</option>
-            <option>2:00 P.M</option>
-            <option>3:00 P.M</option>
-            <option>4:00 P.M</option>
-            <option>5:00 P.M</option>
-          </select>
+          <input type="text" class="form-control" disabled>
         </div>
         <div>
           <label class="form-label">Dental Clinic</label>
