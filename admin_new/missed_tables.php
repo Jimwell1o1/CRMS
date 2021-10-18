@@ -80,49 +80,18 @@
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Missed" === $row['bookingStatus']){ 
-                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ ?>
-<tr>
-                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
-                                              <td> <?php echo $row['bookingGender'] ?> </td>
-                                                <td> <?php echo $row['bookingDate'] ?> </td>
-                                                <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingBranch'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td>
-                                              <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                  <i class="fas fa-edit"></i>
-                                                </button>
-                                                    </form>
+                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ 
+                                        include 'includes/tables/declined_tables.inc.php';
 
-                                          
-                                              </td>
-                                            </tr>
-                                            <?php } 
+                                       } 
                                 if($_SESSION['admin_branchName'] === "mainAdmin"){
-                                  ?>
-                                  <tr>
-                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
-                                              <td> <?php echo $row['bookingGender'] ?> </td>
-                                                <td> <?php echo $row['bookingDate'] ?> </td>
-                                                <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingBranch'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td>
-                                              <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                  <i class="fas fa-edit"></i>
-                                                </button>
-                                                    </form>
-
-                                          
-                                              </td>
-                                            </tr>
-                          <?php
-                          } } } } ?>
-
-
-                 
+                                        include 'includes/tables/declined_tables.inc.php';
+                            }
+                          } 
+                        } 
+                      } 
+                      
+                  ?>
                   </tbody>
                 </table>
               </div>

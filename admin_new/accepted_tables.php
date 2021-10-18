@@ -84,55 +84,15 @@
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Accepted" === $row['bookingStatus']){ 
-                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ ?>
-                                      <tr>
-                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
-                                              <td> <?php echo $row['bookingGender'] ?> </td>
-                                                <td> <?php echo $row['bookingDate'] ?> </td>
-                                                <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingBranch'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td class="text-left">
-                                                    <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                        <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
-                                                        <button class="btn btn-warning" id="accept-button" name="submit">
-                                                          <i class="fas fa-check"></i> Done
-                                                        </button> 
-                                                        <button class="btn btn-danger" onclick="ConfirmDelete()">
-                                                          <i class="fas fa-trash"></i>
-                                                        </button>
-                                                    </form> 
-                                              </td>
-                                            </tr>
-                            <?php } 
+                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ 
+                                             include 'includes/tables/accepted_tables.inc.php';
+                                } 
                                 if($_SESSION['admin_branchName'] === "mainAdmin"){
-                                  ?>
-                                  <tr>
-                                              <th scope="row"> <?php echo $row['bookingName'] ?> </th>
-                                              <td> <?php echo $row['bookingGender'] ?> </td>
-                                                <td> <?php echo $row['bookingDate'] ?> </td>
-                                                <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingBranch'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td class="text-left">
-                                                    <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                        <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
-                                                        <button class="btn btn-warning" id="accept-button" name="submit">
-                                                          <i class="fas fa-check"></i> Done
-                                                        </button> 
-                                                        <button class="btn btn-danger" onclick="ConfirmDelete()">
-                                                          <i class="fas fa-trash"></i>
-                                                        </button>
-                                                    </form> 
-                                              </td>
-                                           
-                                            </tr>
-                          <?php
+                                 
+                                  include 'includes/tables/accepted_tables.inc.php';
+                         
                           } } } } ?>
-                   
 
-
-                 
                   </tbody>
                 </table>
               </div>
