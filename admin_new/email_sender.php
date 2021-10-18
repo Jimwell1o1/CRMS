@@ -90,36 +90,35 @@
 
             <div class="form-group">
               <label for="email">Send to:</label>
+
+              <form action="includes/email.inc.php" method="post">
               <!-- <input type="email" class="form-control" id="email" placeholder="Enter email"> -->
-              <select class="form-control"  name="Branches" id="">
-              <option value="">Select:</option>
-                <option value="">ALL BRANCHES</option>
-                <option value=""><?PHP echo $_SESSION['admin_branchName']; ?></option>
+              <select class="form-control"  name="sendto" id="">
+              <option value="">Select:</option> 
+                <option value="All">All Customers</option>
               </select>
               <small class="form-text text-muted">Log In As Main Administrator to Send to All branches.</small>
             </div>
             <div class="form-group">
                 <label for="name">Subject</label>
-                <input type="text" class="form-control" id="name" placeholder="Your name">
+                <input type="text" name="subject" class="form-control" id="name" placeholder="Your name">
             </div>
             <div class="form-group">
               <label>Body:</label>
-              <textarea id="editor"></textarea>
+              <textarea name="body" id="editor"></textarea>
             </div>
 
-            <div class="form-group">
-                <label for="phone">Primary phone number</label>
-                <input type="text" class="form-control" id="phone" placeholder="">
-            </div>
+      
             <br>
             <hr>
 
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="terms">
+                <input type="checkbox" class="form-check-input" id="terms" required>
                 <label class="form-check-label" for="terms">I agree to the <a href="#">terms and conditions</a></label>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
 </div>

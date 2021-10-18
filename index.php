@@ -4,7 +4,7 @@
     require_once 'includes/emptySession.php';
     
     emptyUserSignupSession();
-    
+    emptyAdminLoginSession();
 ?>
 
 

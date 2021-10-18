@@ -62,7 +62,11 @@
                             $expDate = $row['expDate'];
                             if ($expDate >= $curDate) {
                                 ?> 
-                                 <br> <h2>Reset Password</h2><br>
+                                  <div class="fadeIn first">
+    <br>
+    <img src="img/icon.png" id="icon" alt="User Icon" />
+    </div><br>
+                                 <h2>Reset Password</h2><br>
         <p>Please enter your new password below.</p><br>
            <form method="post" action="" name="update">
 

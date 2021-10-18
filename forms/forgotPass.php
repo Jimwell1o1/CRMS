@@ -105,7 +105,10 @@ use PHPMailer\PHPMailer\PHPMailer;
                             if (!$mail->Send()) {
                                 echo "Mailer Error: " . $mail->ErrorInfo;
                             } else {
-                                echo "<p class='text-success'>An email has been sent, kindly please<br> check your email account.</p>";
+                                echo "<div class='alert alert-success alert-dismissible'>
+                                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                                An email has been sent, kindly please<br> check your email account.
+                              </div>";
                             }
                         }
                     }

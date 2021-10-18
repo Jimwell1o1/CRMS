@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once '../includes/emptySession.php';
-
+    emptyAdminLoginSession();
     emptyAdminSignupSession();
 ?>
 
@@ -53,7 +53,11 @@
   <div id="formContent">
     <!-- Tabs Titles -->
         <div class="section-title" data-aos="fade-up">
-        <br> <h2>Admin Login</h2><br>
+        <div class="fadeIn first">
+    <br>
+    <img src="../forms/img/icon.png" id="icon" alt="User Icon" />
+    </div><br>
+     <h2>Admin Login</h2><br>
     
           <form class="form" action="../includes/login-admin.inc.php" method="POST">
                 <div class="input-box">

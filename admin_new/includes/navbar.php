@@ -170,7 +170,14 @@
             Admin - <?php
                 echo $_SESSION["admin_branchName"];
             ?>
+<a class="nav-link" href="../includes/logout-admin.inc.php">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-sign-out-alt"></i>
+                </div>
+                Log out
+              </a>
           </div>
+          
         </nav>
       </div>
 
