@@ -8,8 +8,9 @@ use PHPMailer\PHPMailer\PHPMailer;
                 date_default_timezone_set('Asia/Manila');
                 $error = "";
                 
-                //$senttoall = "rjohnjimwell@gmail.com";
-                $senttoall = $_POST['sendto'];
+                //$recipient = "rjohnjimwell@gmail.com";
+                $recipient = $_POST['sendto'];
+                $userOne = $_POST['useremail'];
                 $subject = $_POST['subject'];
                 $body2 = $_POST['body'];
 
@@ -27,9 +28,9 @@ use PHPMailer\PHPMailer\PHPMailer;
                 $body = $output;
                 $subject = $_POST['subject'];
 
-                //$email_to = $senttoall;
+                //$email_to = $recipient;
 
-                mysqli_query($conn, "INSERT INTO `emails` (`emailReceiver`, `emailSubject`, `emailBody`, `emailDate`, `emailTime`) VALUES ('" . $senttoall . "', '" . $subject . "', '" . $body . "', '" . $currentdate . "', '" . $currenttime . "');");
+                mysqli_query($conn, "INSERT INTO `emails` (`emailReceiver`, `emailSubject`, `emailBody`, `emailDate`, `emailTime`) VALUES ('" . $recipient . "', '" . $subject . "', '" . $body . "', '" . $currentdate . "', '" . $currenttime . "');");
 
 
 
@@ -55,6 +56,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 
                      if (isset($_POST["submit"])) {
+
+                        if($_POST['sendto'] == "All"){
                             $sql = "SELECT * FROM users;";
                             $result = mysqli_query($conn, $sql);//
                             if(mysqli_num_rows($result) > 0){
@@ -64,21 +67,23 @@ use PHPMailer\PHPMailer\PHPMailer;
                                     $mail->addBCC($x['usersEmail']);
                                 }
 
-
-
-                                    if (!$mail->Send()) {
-                                        echo "Mailer Error: " . $mail->ErrorInfo;
-                                    } else {
-                                        header("Location: ../email_sender.php?error=none");
-                                        
-                                    }
-                                
-
-
                              }else{
                                 header("Location: ../email_sender.php?error=nodatafound");
                              }
+                        }elseif($_POST['sendto'] == "user"){
+                            $email_to = $userOne;
+                            $mail->AddAddress($email_to);
+                            
                         }
+
+                        if (!$mail->Send()) {
+                            echo "Mailer Error: " . $mail->ErrorInfo;
+                        } else {
+                            header("Location: ../email_sender.php?error=none");
+                            
+                        }
+                    
+                    }
                     
 
                     ?>
