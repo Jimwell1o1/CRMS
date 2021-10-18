@@ -164,6 +164,13 @@
                 Send Email
               </a>
 
+              <a class="nav-link" href="task.php">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tasks"></i>
+                </div>
+                Add Task
+              </a>
+
               
           <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>

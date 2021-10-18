@@ -68,35 +68,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
       crossorigin="anonymous"
     ></script>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Schedule', 'Appointment per Schedule'],
-          ['Pending',     <?php 
-                                  echo $pending; 
-                                ?>],
-          ['Decline',      <?php 
-                                  echo $decline; 
-                                ?>],
-          ['Accepted', <?php 
-                                  echo $accepted; 
-                                ?>],
-        ]);
-
-        var options = {
-          title: 'Schedule Percentage'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
+    
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  
