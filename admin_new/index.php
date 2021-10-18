@@ -253,9 +253,9 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                 </div>
             </div>
 
-              <!-- Customer History -->
+              <!--   Today's total appointment -->
               <div class="col-xl-3 col-md-6 mb-4 ">
-              <div class="card border-left-primary shadow h-55 bg-secondary">
+              <div class="card border-left-primary shadow h-55 bg-info">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -269,16 +269,16 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-calendar-day fa-1x text-gray-300 text-white"></i>
+                                <i class="fas fa-calendar-day fa-2x text-gray-300 text-white"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-               <!-- Customer History -->
+               <!-- Last 7 days total Appointments -->
               <div class="col-xl-3 col-md-6 mb-4 ">
-              <div class="card border-left-primary shadow h-55 bg-secondary">
+              <div class="card border-left-primary shadow h-55 bg-success">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -292,15 +292,15 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-calendar-week fa-1x text-gray-300 text-white"></i>
+                                <i class="fas fa-calendar-week fa-2x text-gray-300 text-white"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Customer History -->
+            <!-- Total Appointment this Month -->
             <div class="col-xl-3 col-md-6 mb-4 ">
-              <div class="card border-left-primary shadow h-55 bg-secondary">
+              <div class="card border-left-primary shadow h-55 bg-warning">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -314,15 +314,15 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-calendar-plus fa-1x text-gray-300 text-white"></i>
+                                <i class="fas fa-calendar-plus fa-2x text-gray-300 text-white "></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Customer History -->
+            <!-- Total Register -->
             <div class="col-xl-3 col-md-6 mb-4 ">
-              <div class="card border-left-primary shadow h-55 bg-dark">
+              <div class="card border-left-primary shadow h-55 bg-primary">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -336,7 +336,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-user-plus fa-1x text-gray-300 text-white"></i>
+                                <i class="fas fa-user-plus fa-2x text-gray-300 text-white"></i>
                             </div>
                         </div>
                     </div>
