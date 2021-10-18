@@ -111,6 +111,7 @@
   </header><!-- End Header -->
 
 <br><br>
+<br>
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
@@ -119,6 +120,50 @@
 
                                  <br> <h2>Change Password</h2><br>
         <p>Please enter your new password below</p><br>
+        <?php
+        if (isset($_GET["error"])) {
+            # code...
+            if ($_GET["error"] == "emptyinput") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              Please Fill out all the fields.
+            </div>";
+            } 
+             elseif ($_GET["error"] == "wrongpass") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                The password you entered is incorrect.
+              </div>";
+            }
+            elseif ($_GET["error"] == "sameasoldpass") {
+              # code...
+              echo "<div class='alert alert-danger alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              Your new password cannot be <br>the same as old password.
+            </div>";
+          }
+            elseif ($_GET["error"] == "wrong") {
+              # code...
+              echo "<div class='alert alert-warning alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              Password does not match .
+            </div>";
+          }
+            elseif ($_GET["error"] == "none") {
+              # code...
+              echo "<div class='alert alert-success alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              You've successfully changed your password..
+            </div>";
+          }
+            
+        }
+
+
+    ?>
+    
            <form method="post" action="../includes/changepass.inc.php" name="update">
 
            <input type="hidden" name="action" value="update" class="form-control"/>
@@ -142,7 +187,7 @@
 <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
 <div class="form-group">
     <br>
-    <input type="submit" name="submit" value="Change Password"  onclick="return Validate()" class="btn btn-primary"/>
+    <input type="submit" name="submit" value="Change Password"  class="btn btn-primary"/>
 
      <script type="text/javascript">
     function Validate() {
@@ -168,28 +213,7 @@
     }
 </script>
 </div>
-<?php
-        if (isset($_GET["error"])) {
-            # code...
-            if ($_GET["error"] == "emptyinput") {
-                # code...
-                echo "<p>FILL IN ALL FIELDS!</p>";
-            } 
-            elseif ($_GET["error"] == "none") {
-                # code...
 
-                echo "<p class='text-success'>You've successfully changed your password.</p><br>";
-            }
-             elseif ($_GET["error"] == "wrongpass") {
-                # code...
-
-                echo "<p class='text-danger'>Incorrect Password, please try again.</p><br>";
-            }
-            
-        }
-
-
-    ?>
 <br><br><br>
 </form>
 <br>

@@ -90,7 +90,29 @@
     <div class="fadeIn first">
     <br><br>
     <img src="img/icon.png" id="icon" alt="User Icon" />
-    </div>
+    </div><br>
+    <?php
+        if (isset($_GET["error"])) {
+            # code...
+            if ($_GET["error"] == "emptyinput") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              Please Fill out all the fields.
+            </div>";
+            } 
+             elseif ($_GET["error"] == "wronglogin") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                The username or password you  <br>entered is incorrect.
+              </div>";
+            }
+            
+        }
+
+
+    ?>
     
     <!-- Login Form -->
     <form action="includes/login.inc.php" method="post">
@@ -104,22 +126,8 @@
       <a class="underlineHover" href="../admin_new/index.php">New admin</a>
 
     </form>
-    <?php
-        if (isset($_GET["error"])) {
-            # code...
-            if ($_GET["error"] == "emptyinput") {
-                # code...
-                echo "<p>FILL IN ALL FIELDS!</p>";
-            } 
-             elseif ($_GET["error"] == "wronglogin") {
-                # code...
-                echo "<p>INCORRECT LOG IN INFORMATION!</p>";
-            }
-            
-        }
-
-
-    ?>
+    
+   
 
 
     <!-- Remind Password -->

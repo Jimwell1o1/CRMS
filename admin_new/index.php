@@ -253,6 +253,95 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                 </div>
             </div>
 
+              <!-- Customer History -->
+              <div class="col-xl-3 col-md-6 mb-4 ">
+              <div class="card border-left-primary shadow h-55 bg-secondary">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase text-white mb-1">
+                                  Today's total appointment</div>
+                                <div class="h4 mb-0 font-weight-bold text-white">
+                                  <?php
+                                   echo $done;
+                                    ?>
+
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar-day fa-1x text-gray-300 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+               <!-- Customer History -->
+              <div class="col-xl-3 col-md-6 mb-4 ">
+              <div class="card border-left-primary shadow h-55 bg-secondary">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase text-white mb-1">
+                                  Last 7 days total appointment</div>
+                                <div class="h4 mb-0 font-weight-bold text-white">
+                                  <?php
+                                   echo $done;
+                                    ?>
+
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar-week fa-1x text-gray-300 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Customer History -->
+            <div class="col-xl-3 col-md-6 mb-4 ">
+              <div class="card border-left-primary shadow h-55 bg-secondary">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase text-white mb-1">
+                                  Total appointment this Month</div>
+                                <div class="h4 mb-0 font-weight-bold text-white">
+                                  <?php
+                                   echo $pending;
+                                    ?>
+
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar-plus fa-1x text-gray-300 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Customer History -->
+            <div class="col-xl-3 col-md-6 mb-4 ">
+              <div class="card border-left-primary shadow h-55 bg-dark">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase text-white mb-1">
+                                  Total Registered Patients</div>
+                                <div class="h4 mb-0 font-weight-bold text-white">
+                                  <?php
+                                   echo $usercount;
+                                    ?>
+
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-user-plus fa-1x text-gray-300 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
               
             <div class="row">
               <div class="col-xl-6">
