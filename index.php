@@ -695,13 +695,26 @@
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message" required></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
+
+
                 <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="form-check form-group ps-0">
+              <label class="form-check-label ps-1" for="privacy-policy" style=
+              " display: block;">
+                <input id="privacy-policy" type="checkbox" name="privacy" value="accept" required style=
+                "   vertical-align: middle;
+            position: relative;
+            bottom: 1px;">
+               
+               I accept the <a href="terms.html">terms of service</a> and <a href="privacy.html">privacy policy</a>.
+                </label>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
