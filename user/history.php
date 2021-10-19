@@ -110,8 +110,10 @@
                                 while($row = mysqli_fetch_assoc($result)){
                                     if($_SESSION["useruid"] === $row['bookingUsername']){ ?>
 
+                                       <form action="../includes/cancelbook.inc.php" method="post">  
                                    
                                             <tr>
+                                                <input type="hidden" name="bookId" value="<?php echo $row['bookingId']; ?>">
                                                 <td> <?php echo $row['bookingName'] ?> </td>
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
@@ -119,11 +121,21 @@
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
                                                 <td class="status"> <?php echo $row['bookingStatus'] ?> </td>
                                                 
-                                                <td>
-                                                <button class="btn btn-danger" onclick="ConfirmDelete()">
-                                                  <i>Cancel</i>
-                                                </button>
-                                                </td>
+                                                <?php 
+                                                  if($row['bookingStatus'] === "Cancelled"){
+                                                      echo '<td> - - n/a - - </td>';
+                                                    
+                                                  }else{
+                                                      echo '<td>
+                                                      <button type="submit" name="submit" class="btn btn-danger" onclick="ConfirmDelete()">
+                                                        <i>Cancel</i>
+                                                      </button>
+                                                      </td>';
+                                                  }
+                                                  ?>
+                                                
+                                                </form>   
+                                              
                                                 </tr>
                                         </tbody>
                             
