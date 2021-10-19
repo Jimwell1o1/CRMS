@@ -165,7 +165,7 @@
                 </div>
                 Create Events
               </a>
-              <button type="button" class="btn btn-light"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i>  Add Appointment</button>
+              <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i>  Add Appointment</button>
               <a class="nav-link" href="../includes/logout-admin.inc.php">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-sign-out-alt"></i>
