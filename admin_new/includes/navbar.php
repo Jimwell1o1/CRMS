@@ -149,12 +149,7 @@
                 Accounts
               </a>
               <div class="sb-sidenav-menu-heading">Tasks</div>
-              <a class="nav-link" href="add_patient.php">
-                <div class="sb-nav-link-icon">
-                  <i class="fas fa-plus-circle"></i>
-                </div>
-                Add Appointment
-              </a>
+              
 
 
               <a class="nav-link" href="email_sender.php">
@@ -170,13 +165,15 @@
                 </div>
                 Create Events
               </a>
-
+              <button type="button" class="btn btn-light"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i>  Add Appointment</button>
               <a class="nav-link" href="../includes/logout-admin.inc.php">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-sign-out-alt"></i>
                 </div>
                 Log out
               </a>
+              
+
               
           <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>

@@ -127,6 +127,12 @@
               </div>
             </div>
           </div>
+          </main>
+          <?php 
+          include 'modalAddpatient.php';
+
+          ?>
+
         </footer>
       </div>
     </div>

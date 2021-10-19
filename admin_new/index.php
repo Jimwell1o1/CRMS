@@ -474,71 +474,10 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
             </div>
           </div>
         </main>
+          <?php 
+          include 'modalAddpatient.php';
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update Patient</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <label class="form-label">Name</label>
-          <input type="text" class="form-control">
-        </div>
-        <div>
-          <label class="form-label">Date</label>
-          <input type="date" class="form-control">
-        </div>
-        <div>
-          <label class="form-label">Time</label>
-          <select class="form-select">
-            <option selected>Select Time...</option>
-            <option>8:00 A.M</option>
-            <option>9:00 A.M</option>
-            <option>10:00 A.M</option>
-            <option>11:00 A.M</option>
-            <option>12:00 P.M</option>
-            <option>1:00 P.M</option>
-            <option>2:00 P.M</option>
-            <option>3:00 P.M</option>
-            <option>4:00 P.M</option>
-            <option>5:00 P.M</option>
-          </select>
-        </div>
-        <div>
-          <label class="form-label">Dental Clinic</label>
-          <select class="form-select">
-            <option selected>Choose...</option>
-            <option>Malinao</option>
-            <option>San Joaquin</option>
-            <option>Pinagbutan</option>
-          </select>
-        </div>
-        <div>
-          <label class="form-label">Procedure/Dental Service</label>
-          <select id="inputState" class="form-select">
-            <option selected>Select Procedure...</option>
-            <option value="">Oral Prophylaxis</option>
-            <option value="">Tooth Restoration</option>
-            <option value="">Tooth Extraction</option>
-            <option value="">Fluoride Application</option>
-            <option value="">Prosthodontic Treatment</option>
-            <option value="">Orthodontic Treatment</option>
-            <option value="">Periodontic Rehab</option>
-          </select>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+          ?>
 
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid px-4">

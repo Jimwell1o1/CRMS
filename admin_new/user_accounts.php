@@ -94,6 +94,11 @@
             </div>
           </div>
 
+          </main>
+          <?php 
+          include 'modalAddpatient.php';
+
+          ?>
 
 
         <footer class="py-4 bg-light mt-auto">
