@@ -25,32 +25,103 @@
         include 'includes/style-links.php';
     ?> 
 
-<!-- Neww -->
-<meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
 
-	<meta name="referrer" content="no-referrer-when-downgrade" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style type="text/css">
-      p, body, td, input, select, button { font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px; }
-      body { padding: 0px; margin: 0px; background-color: #ffffff; }
-      a { color: #1155a3; }
-      .space { margin: 10px 0px 10px 0px; }
-      .header { background: #003267; background: linear-gradient(to right, #011329 0%, #00639e 44%, #011329 100%); padding: 20px 10px; color: white; box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75); }
-      .header a { color: white; }
-      .header h1 a { text-decoration: none; }
-      .header h1 { padding: 0px; margin: 0px; }
-      .main { padding: 10px; margin-top: 10px; }
-  </style>
-
-  <link href="task/main.css?v=2021.4.5120" type="text/css" rel="stylesheet"/>
-  <script src="task/daypilot-all.min.js?v=2021.4.5120"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
-  <!-- daypilot libraries -->
-  <script src="task/js/daypilot/daypilot-all.min.js" type="text/javascript"></script>
-
-
+  <script>
+   
+   $(document).ready(function() {
+    var calendar = $('#calendar').fullCalendar({
+     editable:true,
+     header:{
+      left:'prev,next today',
+      center:'title',
+      right:'month,agendaWeek,agendaDay'
+     },
+     events: 'load.php',
+     selectable:true,
+     selectHelper:true,
+     select: function(start, end, allDay)
+     {
+      var title = prompt("Enter Event Title");
+      if(title)
+      {
+       var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+       var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+       $.ajax({
+        url:"insert.php",
+        type:"POST",
+        data:{title:title, start:start, end:end},
+        success:function()
+        {
+         calendar.fullCalendar('refetchEvents');
+         alert("Added Successfully");
+        }
+       })
+      }
+     },
+     editable:true,
+     eventResize:function(event)
+     {
+      var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+      var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+      var title = event.title;
+      var id = event.id;
+      $.ajax({
+       url:"update.php",
+       type:"POST",
+       data:{title:title, start:start, end:end, id:id},
+       success:function(){
+        calendar.fullCalendar('refetchEvents');
+        alert('Event Update');
+       }
+      })
+     },
+ 
+     eventDrop:function(event)
+     {
+      var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+      var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+      var title = event.title;
+      var id = event.id;
+      $.ajax({
+       url:"update.php",
+       type:"POST",
+       data:{title:title, start:start, end:end, id:id},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Event Updated");
+       }
+      });
+     },
+ 
+     eventClick:function(event)
+     {
+      if(confirm("Are you sure you want to remove it?"))
+      {
+       var id = event.id;
+       $.ajax({
+        url:"delete.php",
+        type:"POST",
+        data:{id:id},
+        success:function()
+        {
+         calendar.fullCalendar('refetchEvents');
+         alert("Event Removed");
+        }
+       })
+      }
+     },
+ 
+    });
+   });
+    
+   </script>
     <!-- /head -->
   </head>
   <body class="sb-nav-fixed">
@@ -69,135 +140,10 @@
             
           <label for="basic-url" class="form-label">Monthly Task</label>
 
-
-<!-- START -->          
-<div class="main">
-
-  <div id="dp"></div>
-
-  <script type="text/javascript">
-    const dp = new DayPilot.Month("dp");
-
-    // view
-
- 	dp.startDate = new DayPilot.Date();
-
-    dp.onEventMoved = async (args) => {
-      const data = {
-        id: args.e.id(),
-        start: args.newStart.toString(),
-        end: args.newEnd.toString()
-      };
-      const {data: result} = await DayPilot.Http.post("task/backend_move.php", data);
-      dp.message("Moved: " + result.message);
-    };
-
-    dp.onEventResized = async (args) => {
-      const data = {
-        id: args.e.id(),
-        start: args.newStart.toString(),
-        end: args.newEnd.toString()
-      };
-      const {data: result} = await DayPilot.Http.post("task/backend_move.php", data);
-      dp.message("Resized: " + result.message);
-    };
-
-    // event creating
-    dp.onTimeRangeSelected = async (args) => {
-
-      const modal = await DayPilot.Modal.prompt("New event name:", "Event");
-
-      dp.clearSelection();
-      if (modal.canceled) {
-        return;
-      }
-
-      const data = {
-        start: args.start.toString(),
-        end: args.end.toString(),
-        text: modal.result
-      };
-      const {data: result} = await DayPilot.Http.post("task/backend_create.php", data);
-      var e = {
-        start: args.start,
-        end: args.end,
-        id: result.id,
-        text: modal.result
-      };
-      dp.events.add(e);
-      dp.message(result.message);
-    };
-
-
-  // // AYUSIN TONG DELETE
-  //   var dp = new DayPilot.Calendar("dp");
-  //  dp.eventDeleteHandling = "Update";
-
-  //  dp.onEventDelete = async(args)  {
-  //    if (!confirm("Do you really want to delete this event?")) {
-  //      args.preventDefault();
-  //    }
-  //  };
-
-  //  dp.onEventDeleted = async(args) {
-  //    // AJAX call to the server, this example uses jQuery
-  //    $.post(
-  //      "task/backend_delete.php", 
-  //      { id: args.e.id()}, 
-  //      function(result) {
-  //        dp.message(result.message);   // "Delete successful" received from the server
-  //      }
-  //    );
-  //  };
-
-
-// // event creating
-// var dp = new DayPilot.Calendar("dp");
-// dp.eventDeleteHandling = "Update";
-
-// dp.onEventDelete = async (args) => {
-// const modal = await DayPilot.Modal.prompt("Do you really want to delete this event?");
-// const {data: result} = await DayPilot.Http.post("task/backend_delete.php", data);
-// var e = {
-//   id: result.id,
-//   text: modal.result
-// };
-// dp.events.add(e);
-// dp.message(result.message);
-// };
-
-
-  
-    dp.onEventClick = (args) => {
-      DayPilot.Modal.alert(args.e.text());
-    };
-    
-    dp.onBeforeCellRender = function (args) {
-            if (args.cell.start.getTime() === new DayPilot.Date().getDatePart().getTime()) {
-                args.cell.backColor = "#ADD8E6";
-            }
-        };	
-
-
- 	
-    dp.init();
-
-    loadEvents();
-
-    function loadEvents() {
-      dp.events.load("task/backend_events.php");
-    }
-
-  </script>
-
-</template>
-
-<script src="task/app.js?v=2021.4.5120"></script>
-<!-- /bottom -->
-</div>
-
-
-
+          <!-- CALENDAR -->
+          <div id="calendar"></div>
+          
+ 
 
         </main>
         <footer class="py-4 bg-light mt-auto">
