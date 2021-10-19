@@ -108,6 +108,13 @@
                 The username or password you  <br>entered is incorrect.
               </div>";
             }
+            elseif ($_GET["error"] == "loginerror") {
+              # code...
+              echo "<div class='alert alert-info alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              To book an appointment, you must log in first.
+            </div>";
+          }
             
         }
 
@@ -122,8 +129,8 @@
       
       <input type="submit" class="fadeIn fourth" value="Log In" name = "submit"><br/>
       <a class="underlineHover" href="forgotPass.php">Forgot Password?</a><br>
-      <a class="underlineHover" href="../admin/login-admin.php">Log in as admin</a><br><br>
-      <a class="underlineHover" href="../admin_new/index.php">New admin</a>
+      <a class="underlineHover" href="../admin/login-admin.php">Log In as Admin</a><br><br>
+ 
 
     </form>
     

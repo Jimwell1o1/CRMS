@@ -52,3 +52,14 @@ CREATE TABLE emails (
 	emailDate varchar(128) NOT NULL,
 	emailTime varchar(128) NOT NULL,
 );
+
+
+CREATE TABLE contactus (
+	concernId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	concernName varchar(128) NOT NULL,
+	concernEmail varchar(128) NOT NULL,
+	concernSubject varchar(128) NOT NULL,
+	concernBody varchar(1000) NOT NULL,
+	concernDate varchar(128) NOT NULL,
+	concernTime varchar(128) NOT NULL,
+);

@@ -147,7 +147,7 @@
         }
         else {
             # code...
-            echo "Click <a href='forms/login.php'>Here</a> to Set an Appointment!</h2>";
+            echo "Click <a href='forms/login.php?error=loginerror'>Here</a> to Set an Appointment!</h2>";
 
         }
         ?>

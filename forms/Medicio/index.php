@@ -6,7 +6,7 @@
     emptyUserSignupSession();
     
     if (!isset($_SESSION['useruid'])){
-    header("Location: ../login.php");
+    header("Location: ../login.php?error=loginerror");
     die();
 }
 ?>
