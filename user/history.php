@@ -97,6 +97,7 @@
                                             <th scope="col">Consultation</th>
                                             <th scope="col">Branch</th>
                                             <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -118,7 +119,11 @@
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
                                                 <td class="status"> <?php echo $row['bookingStatus'] ?> </td>
                                                 
-                                            
+                                                <td>
+                                                <button class="btn btn-danger" onclick="ConfirmDelete()">
+                                                  <i>Cancel</i>
+                                                </button>
+                                                </td>
                                                 </tr>
                                         </tbody>
                             
