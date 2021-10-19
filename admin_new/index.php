@@ -152,7 +152,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                     </div>
                 </div>
             </div>
-
+              <!-- Decline -->
               <div class="col-xl-3 col-md-6 mb-4 ">
                 <div class="card border-left-primary shadow h-55  bg-danger">
                     <div class="card-body">
@@ -187,7 +187,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
             </div>
 
               <!--   Today's total appointment -->
-              <div class="col-xl-3 col-md-6 mb-4 ">
+              <!-- <div class="col-xl-3 col-md-6 mb-4 ">
               <div class="card border-left-primary shadow h-55 bg-info">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -207,10 +207,10 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
                <!-- Last 7 days total Appointments -->
-              <div class="col-xl-3 col-md-6 mb-4 ">
+              <!-- <div class="col-xl-3 col-md-6 mb-4 ">
               <div class="card border-left-primary shadow h-55 bg-success">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -230,9 +230,9 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Total Appointment this Month -->
-            <div class="col-xl-3 col-md-6 mb-4 ">
+            <!-- <div class="col-xl-3 col-md-6 mb-4 ">
               <div class="card border-left-primary shadow h-55 bg-warning">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -252,9 +252,9 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Total Register -->
-            <div class="col-xl-3 col-md-6 mb-4 ">
+            <!-- <div class="col-xl-3 col-md-6 mb-4 ">
               <div class="card border-left-primary shadow h-55 bg-primary">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -274,7 +274,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
               
             <div class="row">
               <div class="col-xl-6">
