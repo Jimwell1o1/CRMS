@@ -562,7 +562,7 @@
           
           
           <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>> Click  <a href="">Here </a> To Review MCY's Dental Clinic Data Privacy Notice.
-              I hereby give my full consent having reviewed and understood the Data Privacy Notice of MetroDental to allow the company to process my data in accordance to the Data Privacy Act of 2012. </label><br>
+              I hereby give my full consent having reviewed and understood the Data Privacy Notice of MCY Dental Clinic to allow the company to process my data in accordance to the Data Privacy Act of 2012. </label><br>
               <span class="text-danger"> <?php echo $checkedErr;?></span>
               <br>
 
@@ -725,7 +725,7 @@ document.querySelector('.cancel').addEventListener("click", function() {
           <h3>In an emergency? Need help now?</h3>
           <p> Having trouble waiting on hold for a long time then not having available time slots?</p>
           <p>For other concerns please reach us at: clinicmcydental@gmail.com</p>
-          <a class="cta-btn scrollto" href="#appointment">CALL US NOW!</a>
+          <a class="cta-btn scrollto" href="../../index.php#contact">CALL US NOW!</a>
           
         </div>
 
@@ -861,8 +861,8 @@ document.querySelector('.cancel').addEventListener("click", function() {
               <p>
                 Buting<br>
                 Pasig City,PH<br><br>
-                <strong>Phone:</strong> 8643-4413<br>
-                <strong>Email:</strong> mcydentalclinic@example.com<br>
+                <strong>Phone:</strong> +(02) 640 5536<br>
+                <strong>Email:</strong> clinicmcydental@gmail.com<br>
               </p>
               <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -889,21 +889,21 @@ document.querySelector('.cancel').addEventListener("click", function() {
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Consultation</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Oral Prophylaxis</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Tooth Restoration</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Tooth Extraction</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Flouride Application</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Prosthodontic Treatment</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Orthodontic Treatment</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Periodontic Rehab</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Consultation</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Oral Prophylaxis</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Tooth Restoration</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Tooth Extraction</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Flouride Application</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Prosthodontic Treatment</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Orthodontic Treatment</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Periodontic Rehab</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Have us subscribe on our newsletter!</p>
-            <form action="" method="post">
+            <form action="../signup.php" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
 
