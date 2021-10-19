@@ -105,10 +105,21 @@
               <form action="includes/email.inc.php" method="post">
               <!-- <input type="email" class="form-control" id="email" placeholder="Enter email"> -->
             <div class="form-check">
-              <input class="form-check-input" type="radio" value="All" name="sendto" id="flexRadioDefault1" checked onclick="myFunction()">
-              <label class="form-check-label" for="flexRadioDefault1">
-                All Registered Users
-              </label>
+              <?php 
+                  if($_SESSION['admin_branchName'] == "mainAdmin"){
+                      echo '<input class="form-check-input" type="radio" value="All" name="sendto" id="flexRadioDefault1" checked onclick="myFunction()">';
+                      echo '<label class="form-check-label" for="flexRadioDefault1">';
+                      echo '  All Registered Users
+                      </label>';
+                    }
+                    else{
+                      echo '<input class="form-check-input" type="radio" value="All" name="sendto" id="flexRadioDefault1" onclick="myFunction()" disabled>';
+                      echo '<label class="form-check-label" for="flexRadioDefault1">';
+                      echo '  All Registered Users
+                      </label>';
+                    }
+              ?>
+              
             </div>
             <div class="form-check" >
               <input class="form-check-input" type="radio" value="user" name="sendto" id="flexRadioDefault2" onclick="myFunction2()">
@@ -116,6 +127,7 @@
                 Individual User
               </label>
             </div>
+            <small class="form-text text-muted">To send to all registered users, you must log in as the main administrator.</small>
             <script>
       function myFunction() {
                     document.getElementById("name").style.display = "none";
@@ -133,7 +145,7 @@
             </div>
 
             
-              <small class="form-text text-muted">Log In As Main Administrator to Send to All branches.</small>
+            
             </div>
             <div class="form-group">
             <h5><label for="name">Subject</label></h5>
@@ -141,7 +153,7 @@
             </div>
             <div class="form-group">
             <h5><label>Body:</label></h5>
-              <textarea name="body" id="editor"></textarea>
+              <textarea name="body" rows="12" id="editor"></textarea>
             </div>
 
       
