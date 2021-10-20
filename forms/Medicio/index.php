@@ -424,82 +424,82 @@
                 <option value="" disabled selected>Select Procedure</option>
 
   
-                             <!-- TO KEEP THE DETAILS TYPED Preventive Care-------->        
-                             <option value = "Preventive Care" <?php
+                             <!-- TO KEEP THE DETAILS TYPED Oral Prophylaxis-------->        
+                             <option value = "Oral Prophylaxis" <?php
                                if(isset($_GET['submit']) && (!empty($_GET["procedure"]))){
                                     
                                 $procedure = isset($_GET['procedure']) ? $_GET['procedure'] : '';
                                 for($i = 0; $i < count($procedure); $i++) {
                                       $final = $procedure[$i];
                                     }  
-                                  echo($final == 'Preventive Care') ? ' selected="selected"' : '';
-                                  }?>>Preventive Care </option>
+                                  echo($final == 'Oral Prophylaxis') ? ' selected="selected"' : '';
+                                  }?>>Oral Prophylaxis</option>
 
-                                  <!-- TO KEEP THE DETAILS TYPED Restorative treatment-------->        
-                             <option value = "Restorative Treatment" <?php
+                                  <!-- TO KEEP THE DETAILS TYPED Tooth Restoration-------->        
+                             <option value = "Tooth Restoration" <?php
                                if(isset($_GET['submit']) && (!empty($_GET["procedure"]))){
                                     
                                 $procedure = isset($_GET['procedure']) ? $_GET['procedure'] : '';
                                 for($i = 0; $i < count($procedure); $i++) {
                                       $final = $procedure[$i];
                                     }  
-                                  echo($final == 'Restorative Treatment') ? ' selected="selected"' : '';
-                                  }?>>Restorative Treatment</option>
+                                  echo($final == 'Tooth Restoration') ? ' selected="selected"' : '';
+                                  }?>>Tooth Restoration</option>
 
-                                  <!-- TO KEEP THE DETAILS TYPED Periodontics-------->        
-                             <option value = "Periodontics" <?php
+                                  <!-- TO KEEP THE DETAILS TYPED Tooth Extraction-------->        
+                             <option value = "Tooth Extraction" <?php
                                if(isset($_GET['submit']) && (!empty($_GET["procedure"]))){
                                     
                                 $procedure = isset($_GET['procedure']) ? $_GET['procedure'] : '';
                                 for($i = 0; $i < count($procedure); $i++) {
                                       $final = $procedure[$i];
                                     }  
-                                  echo($final == 'Periodontics') ? ' selected="selected"' : '';
-                                  }?>>Periodontics</option>
+                                  echo($final == 'Tooth Extraction') ? ' selected="selected"' : '';
+                                  }?>>Tooth Extraction</option>
 
-                                  <!-- TO KEEP THE DETAILS TYPED Oral Surgery-------->        
-                             <option value = "Oral Surgery" <?php
+                                  <!-- TO KEEP THE DETAILS TYPED Flouride Application-------->        
+                             <option value = "Flouride Application" <?php
                                if(isset($_GET['submit']) && (!empty($_GET["procedure"]))){
                                     
                                 $procedure = isset($_GET['procedure']) ? $_GET['procedure'] : '';
                                 for($i = 0; $i < count($procedure); $i++) {
                                       $final = $procedure[$i];
                                     }  
-                                  echo($final == 'Oral Surgery') ? ' selected="selected"' : '';
-                                  }?>>Oral Surgery</option>
+                                  echo($final == 'Flouride Application') ? ' selected="selected"' : '';
+                                  }?>>Flouride Application</option>
 
-                                  <!-- TO KEEP THE DETAILS TYPED Veeners-------->        
-                             <option value = "Veeners" <?php
+                                  <!-- TO KEEP THE DETAILS TYPED Prosthodontic Treatment-------->        
+                             <option value = "Prosthodontic Treatment" <?php
                                if(isset($_GET['submit']) && (!empty($_GET["procedure"]))){
                                     
                                 $procedure = isset($_GET['procedure']) ? $_GET['procedure'] : '';
                                 for($i = 0; $i < count($procedure); $i++) {
                                       $final = $procedure[$i];
                                     }  
-                                  echo($final == 'Veeners') ? ' selected="selected"' : '';
-                                  }?>>Veeners</option>
+                                  echo($final == 'Prosthodontic Treatment') ? ' selected="selected"' : '';
+                                  }?>>Prosthodontic Treatment</option>
 
-                                  <!-- TO KEEP THE DETAILS TYPED Prosthodontics-------->        
-                             <option value = "Prosthodontics" <?php
+                                  <!-- TO KEEP THE DETAILS TYPED Orthodontic Treatment-------->        
+                             <option value = "Orthodontic Treatment" <?php
                                if(isset($_GET['submit']) && (!empty($_GET["procedure"]))){
                                     
                                 $procedure = isset($_GET['procedure']) ? $_GET['procedure'] : '';
                                 for($i = 0; $i < count($procedure); $i++) {
                                       $final = $procedure[$i];
                                     }  
-                                  echo($final == 'Prosthodontics') ? ' selected="selected"' : '';
-                                  }?>>Prosthodontics</option>
+                                  echo($final == 'Orthodontic Treatment') ? ' selected="selected"' : '';
+                                  }?>>Orthodontic Treatment</option>
 
-                                  <!-- TO KEEP THE DETAILS TYPED Orthodontic-------->        
-                             <option value = "Orthodontic" <?php
+                                  <!-- TO KEEP THE DETAILS TYPED Periodontic Rehab-------->        
+                             <option value = "Periodontic Rehab" <?php
                                if(isset($_GET['submit']) && (!empty($_GET["procedure"]))){
                                     
                                 $procedure = isset($_GET['procedure']) ? $_GET['procedure'] : '';
                                 for($i = 0; $i < count($procedure); $i++) {
                                       $final = $procedure[$i];
                                     }  
-                                  echo($final == 'Orthodontic') ? ' selected="selected"' : '';
-                                  }?>>Orthodontic</option>
+                                  echo($final == 'Periodontic Rehab') ? ' selected="selected"' : '';
+                                  }?>>Periodontic Rehab</option>
 
                         </select>
                         <span class="text-danger"> <?php echo $procedureErr;?></span>

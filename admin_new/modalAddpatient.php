@@ -50,8 +50,7 @@
         <div>
           <label class="form-label">Procedure/Dental Service</label>
           <select name="procedure" id="inputState" class="form-select" required>
-            <option selected>Select Procedure...</option>
-            <option value="Consultation">Consultation</option>
+            <option disabled selected>Select Procedure...</option>
             <option value="Oral Prophylaxis">Oral Prophylaxis</option>
             <option value="Tooth Restoration">Tooth Restoration</option>
             <option value="Tooth Extraction">Tooth Extraction</option>
