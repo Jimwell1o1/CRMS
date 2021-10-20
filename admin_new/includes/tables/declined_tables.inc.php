@@ -8,7 +8,7 @@
   <td>
 <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
           
-<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal2">
     <i class="fas fa-edit"></i>
   </button>
       </form>

@@ -10,55 +10,56 @@
       <div class="modal-body">
         <form action="../includes/bookingDetails-admin.inc.php" method="post">
         <div>
-          <label class="form-label"><b>Patient Name:</b></label>
-          <input type="text" class="form-control" placeholder="Enter full name">
+          <label class="form-label">Patient Name:</label>
+          <input name="name" type="text" class="form-control" placeholder="Enter full name" required>
         </div>
         <div>
           <label class="form-label">Gender:</label>
-          <select class="form-select">
-            <option selected>Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
+          <select name="gender" class="form-select" required>
+            <option disabled selected>Select Gender</option>
+            <option value = "Male">Male</option>
+            <option value = "Female">Female</option>
           </select>
         </div>
         <div>
           <label class="form-label">Appointment Date:</label>
-          <input type="date" class="form-control" >
+          <input name="date" type="date" class="form-control" required>
         </div>
         <div>
           <label class="form-label">Time:</label>
-          <select class="form-select">
-            <option selected>Select Time</option>
-            <option>8:00 AM</option>
-            <option>9:00 AM</option>
-            <option>10:00 AM</option>
-            <option>1:00 AM</option>
-            <option>2:00 AM</option>
-            <option>3:00 AM</option>
-            <option>4:00 AM</option>
-            <option>5:00 AM</option>
+          <select class="form-select" name="time" required>
+            <option disabled selected>Select Time</option>
+            <option value = "8:00 AM">8:00 AM</option>
+            <option value = "9:00 AM">9:00 AM</option>
+            <option value = "10:00 AM">10:00 AM</option>
+            <option value = "1:00 AM">1:00 PM</option>
+            <option value = "2:00 AM">2:00 PM</option>
+            <option value = "3:00 AM">3:00 PM</option>
+            <option value = "4:00 AM">4:00 PM</option>
+            <option value = "5:00 AM">5:00 PM</option>
                         </select>
         </div>
         <div>
           <label class="form-label">Dental Clinic:</label>
-          <select class="form-select">
-            <option selected>Select Branch</option>
-            <option>Malinao</option>
-            <option>San Joaquin</option>
-            <option>Pinagbutan</option>
+          <select name="branch" class="form-select" required>
+            <option disabled selected>Select Branch</option>
+            <option value="Malinao">Malinao</option>
+            <option value="San Joaquin">San Joaquin</option>
+            <option value="Pinagbuhatan">Pinagbuhatan</option>
           </select>
         </div>
         <div>
           <label class="form-label">Procedure/Dental Service</label>
-          <select id="inputState" class="form-select">
+          <select name="procedure" id="inputState" class="form-select" required>
             <option selected>Select Procedure...</option>
-            <option value="">Oral Prophylaxis</option>
-            <option value="">Tooth Restoration</option>
-            <option value="">Tooth Extraction</option>
-            <option value="">Fluoride Application</option>
-            <option value="">Prosthodontic Treatment</option>
-            <option value="">Orthodontic Treatment</option>
-            <option value="">Periodontic Rehab</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Oral Prophylaxis">Oral Prophylaxis</option>
+            <option value="Tooth Restoration">Tooth Restoration</option>
+            <option value="Tooth Extraction">Tooth Extraction</option>
+            <option value="Fluoride Application">Fluoride Application</option>
+            <option value="Prosthodontic Treatment">Prosthodontic Treatment</option>
+            <option value="Orthodontic Treatment">Orthodontic Treatment</option>
+            <option value="Periodontic Rehab">Periodontic Rehab</option>
           </select>
         </div>
    
