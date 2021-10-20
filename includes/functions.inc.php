@@ -322,7 +322,7 @@ function bookingDetails_admin($conn, $username, $name, $gender, $date, $time, $c
 
     $_SESSION["doneBooking"] = "doneBooking";
 
-    header("location: ../admin_new/add_patient.php?donebooking");
+    header("location: ../admin_new/index.php?donebooking");
     exit();
 };
 

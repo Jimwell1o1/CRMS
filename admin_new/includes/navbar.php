@@ -1,4 +1,27 @@
 <!--========= NAV BAR =========-->
+<!-- JS FOR DISABLE PAST DATE -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function(){
+      $(function(){
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+        var maxDate= year + '-' + month + '-' + day;
+        $('#dateControl').attr('min', maxDate);
+      });
+    })
+
+  </script>
+
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
       <a class="navbar-brand ps-3" href="../index.php">MCY Dental Clinic</a>
@@ -109,6 +132,7 @@
                 aria-expanded="false"
                 aria-controls="collapseSched"
               >
+
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-columns"></i>
                 </div>
@@ -165,7 +189,13 @@
                 </div>
                 Create Events
               </a>
-              <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i>  Add Appointment</button>
+
+              <a>
+              <button type="button" class="btn btn-dark"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fas fa-plus-circle" style = "color:#595C5F;"></i>  Add Appointment
+              </button>
+               </a>
+
               <a class="nav-link" href="../includes/logout-admin.inc.php">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-sign-out-alt"></i>

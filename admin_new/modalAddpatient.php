@@ -23,7 +23,7 @@
         </div>
         <div>
           <label class="form-label">Appointment Date:</label>
-          <input name="date" type="date" class="form-control" required>
+          <input id = "dateControl"  name="date" type="date" class="form-control" required>
         </div>
         <div>
           <label class="form-label">Time:</label>
