@@ -14,10 +14,10 @@
       <i class="fas fa-edit"></i>
     </button> -->
     <button class="btn btn-warning" id="accept-button" name="submit">
-      <i class="fas fa-check"></i>
+    <i class="fas fa-user-check"></i> Accept
     </button>
     <button class="btn btn-danger" onclick="ConfirmDelete()">
-      <i class="fas fa-trash"></i>
+    <i class="fas fa-trash-alt"></i> 
     </button>
   </form>
   </td>

@@ -9,10 +9,10 @@
         <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
             <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> -->
             <button class="btn btn-warning" id="accept-button" name="submit">
-              <i class="fas fa-check"></i> Done
+            <i class="fas fa-check-circle"></i> Done
             </button> 
             <button class="btn btn-danger" onclick="ConfirmDelete()">
-              <i class="fas fa-trash"></i>
+            <i class="fas fa-trash-alt"></i>
             </button>
         </form> 
   </td>

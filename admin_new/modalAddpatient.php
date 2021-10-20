@@ -11,7 +11,7 @@
         <form action="../includes/bookingDetails-admin.inc.php" method="post">
         <div>
           <label class="form-label">Patient Name:</label>
-          <input name="name" type="text" class="form-control" placeholder="Enter full name" required>
+          <input name="name" type="text" class="form-control" placeholder="Enter Patient Name" required>
         </div>
         <div>
           <label class="form-label">Gender:</label>
