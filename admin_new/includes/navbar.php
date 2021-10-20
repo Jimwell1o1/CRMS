@@ -1,27 +1,4 @@
 <!--========= NAV BAR =========-->
-<!-- JS FOR DISABLE PAST DATE -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script>
-
-    $(document).ready(function(){
-      $(function(){
-        var dtToday = new Date();
-
-        var month = dtToday.getMonth() + 1;
-        var day = dtToday.getDate();
-        var year = dtToday.getFullYear();
-    if(month < 10)
-        month = '0' + month.toString();
-    if(day < 10)
-        day = '0' + day.toString();
-
-        var maxDate= year + '-' + month + '-' + day;
-        $('#dateControl').attr('min', maxDate);
-      });
-    })
-
-  </script>
-
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
       <a class="navbar-brand ps-3" href="../index.php">MCY Dental Clinic</a>
