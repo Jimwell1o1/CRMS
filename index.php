@@ -782,7 +782,7 @@
             <h4>Our Newsletter</h4>
             <p>Have us subscribe on our newsletter!</p>
             <form action="forms/signup.php" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email" required><input type="submit" value="Subscribe">
             </form>
 
           </div>
