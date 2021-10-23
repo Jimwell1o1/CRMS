@@ -482,7 +482,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
 
           ?>
 
-          
+
 <!-- Modal -->
 <div class="modal fade" id="update_modal" tabindex="-1" aria-labelledby="update_modalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -533,7 +533,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid px-4">
             <div class="d-flex align-items-center justify-content-between small">
-              <div class="text-muted">Copyright &copy; Your Website 2021</div>
+              <div class="text-muted">Copyright &copy; MCY Dental Clinic 2021</div>
               <div>
                 <a href="#">Privacy Policy</a>
                 &middot;
