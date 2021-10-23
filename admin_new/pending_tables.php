@@ -132,8 +132,6 @@
     <script src="js/datatables-simple-demo.js"></script>
 
     
-    
-
     <script>
     function ConfirmDelete(){
     var x = confirm("Are you sure you want to delete?");
@@ -142,6 +140,7 @@
     else
       return false;
       }
-    </script>
-  </body>
+</script>
+
+   
 </html>

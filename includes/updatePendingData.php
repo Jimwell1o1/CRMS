@@ -42,7 +42,7 @@
             }
         }
         $_SESSION['Declined'] = 'Declined';
-        header("location: ../admin_new/decline_tables.php");
+        header("location: ../admin_new/declined_tables.php");
         exit();
     }
 

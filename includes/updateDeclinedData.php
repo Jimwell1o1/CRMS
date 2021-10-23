@@ -25,14 +25,14 @@
         exit();
 
 
-    }else {
+    }else if(isset($_POST['done'])) {
         $sql = "SELECT * FROM booking;";
         $result = mysqli_query($conn, $sql);
         $resultChecked = mysqli_num_rows($result);
 
         $bookingId = $_GET['bookingId'];
 
-        $bookingStatus = "UPDATE booking SET bookingStatus = 'Accepted' WHERE bookingId = '$bookingId';";
+        $bookingStatus = "UPDATE booking SET bookingStatus = 'Done' WHERE bookingId = '$bookingId';";
 
         if($resultChecked > 0){  
             while($row = mysqli_fetch_assoc($result)){
@@ -41,8 +41,8 @@
                 }
             }
         }
-        $_SESSION['Accepted'] = 'Accepted';
-        header("location: ../admin_new/pending_tables.php");
+        $_SESSION['Done'] = 'Done';
+        header("location: ../admin_new/customer_history.php");
         exit();
     }
 

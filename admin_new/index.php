@@ -35,7 +35,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
         include 'includes/style-links.php';
     ?>
     
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body class="sb-nav-fixed">
 
@@ -185,7 +185,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                     </div>
                 </div>
             </div>
-
+      <p>
               <!--   Today's total appointment -->
               <!-- <div class="col-xl-3 col-md-6 mb-4 ">
               <div class="card border-left-primary shadow h-55 bg-info">
@@ -275,7 +275,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                     </div>
                 </div>
             </div> -->
-              
+      </p>             
             <div class="row">
               <div class="col-xl-6">
                 <div class="card mb-4">
@@ -476,6 +476,13 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
           </div>
         </main>
           
+
+        <?php 
+          include 'modalAddpatient.php';
+
+          ?>
+
+          
 <!-- Modal -->
 <div class="modal fade" id="update_modal" tabindex="-1" aria-labelledby="update_modalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -485,7 +492,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="../includes/bookingDetails-admin.inc.php" method="post">
+        <form action="" method="post">
         <div>
           <label class="form-label">Patient Name:</label>
           <input name="name" type="text" class="form-control" placeholder="Enter Patient Name" required>
@@ -525,9 +532,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
 
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid px-4">
-            <div
-              class="d-flex align-items-center justify-content-between small"
-            >
+            <div class="d-flex align-items-center justify-content-between small">
               <div class="text-muted">Copyright &copy; Your Website 2021</div>
               <div>
                 <a href="#">Privacy Policy</a>
@@ -539,10 +544,11 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
         </footer>
       </div>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
-    ></s>
+    ></script>
     <script src="js/scripts.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
@@ -557,7 +563,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
     <script src="js/datatables-simple-demo.js"></script>
 
 
-    <script>
+             <script>
                       var ctx = document.getElementById("myPieChart");
                   var myPieChart = new Chart(ctx, {
                     type: 'doughnut',
@@ -572,15 +578,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                  </script>
 
 
-    <script>
-    function ConfirmDelete(){
-    var x = confirm("Are you sure you want to delete?");
-    if (x)
-        return true;
-    else
-      return false;
-      }
-    </script>
+ 
   </body>
   </body>
 </html>

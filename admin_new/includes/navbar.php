@@ -169,7 +169,7 @@
 
               <a>
               <button type="button" class="btn btn-dark"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fas fa-plus-circle" style = "color:#595C5F;"></i>  Add Appointment
+                <i class="fas fa-plus-circle" style = "color:#595C5F;"></i> Add Appointment
               </button>
                </a>
 
