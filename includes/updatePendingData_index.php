@@ -21,7 +21,7 @@
             }
         }
         $_SESSION['Accepted'] = 'Accepted';
-        header("location: ../admin_new/accepted_tables.php");
+        header("location: ../admin_new/index.php");
         exit();
 
 
@@ -42,7 +42,7 @@
             }
         }
         $_SESSION['Declined'] = 'Declined';
-        header("location: ../admin_new/decline_tables.php");
+        header("location: ../admin_new/index.php");
         exit();
     }
 

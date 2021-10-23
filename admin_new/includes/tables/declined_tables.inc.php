@@ -6,10 +6,11 @@
   <td> <?php echo $row['bookingBranch'] ?> </td>
   <td> <?php echo $row['bookingConsultation'] ?> </td>
   <td>
-<form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+<form action="../includes/updateDeclinedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
           
-<button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#exampleModal2">
-<i class="fas fa-edit"></i>
+<button class="btn btn-success" id="accept-button" name="submit">
+<i class="fas fa-redo"></i> Recover
+</button>
       </form>
 
 

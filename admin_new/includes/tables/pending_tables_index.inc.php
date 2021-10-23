@@ -8,7 +8,7 @@
   <td> <?php echo $row['bookingConsultation'] ?> </td>
   <td> <?php echo $row['bookingBranch'] ?> </td>
   <td class="text-left">
-  <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+  <form action="../includes/updatePendingData_index.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
             
     <!-- <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
       <i class="fas fa-edit"></i>
@@ -22,7 +22,6 @@
   </form>
   </td>
 </tr>
-
 <script>
     function ConfirmDelete(){
     var x = confirm("Are you sure you want to delete?");
@@ -32,4 +31,4 @@
       return false;
       }
     </script>
-  </body>    
+  </body>

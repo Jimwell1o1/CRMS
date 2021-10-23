@@ -426,11 +426,11 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
 
 
                                               <td class="text-left">
-                                              <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+                                              <form action="../includes/updatePendingData_index.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
                                                         <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> 
                                                         <button class="btn btn-outline-danger"> Delete </button>  -->
 
-                                                        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                  <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#update_modal">
                                                   <i class="fas fa-edit"></i>
                                                 </button>
                                                 <button class="btn btn-warning" id="accept-button" name="submit">
@@ -475,10 +475,53 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
             </div>
           </div>
         </main>
-          <?php 
-          include 'modalAddpatient.php';
+          
+<!-- Modal -->
+<div class="modal fade" id="update_modal" tabindex="-1" aria-labelledby="update_modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="update_modalLabel">Update Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="../includes/bookingDetails-admin.inc.php" method="post">
+        <div>
+          <label class="form-label">Patient Name:</label>
+          <input name="name" type="text" class="form-control" placeholder="Enter Patient Name" required>
+        </div>
+        <div>
+          <label class="form-label">Gender:</label>
+          <input name="gender" type="text" class="form-control" placeholder="Enter Patient Name" required>
+        </div>
+        <div>
+          <label class="form-label">Appointment Date:</label>
+          <input name="date" type="text" class="form-control" placeholder="YYYY/MM/DD" required>
+        </div>
+        <div>
+          <label class="form-label">Time:</label>
+          <input name="time" type="text" class="form-control" placeholder="00:000AM/PM" required>
+        </div>
+        <div>
+          <label class="form-label">Dental Clinic:</label>
+          <input name="branch" type="text" class="form-control" placeholder="Enter Clinic" required>
+        </div>
+        <div>
+          <label class="form-label">Procedure/Dental Service</label>
+          <input name="procedure" type="text" class="form-control" placeholder="Enter Procedure" required>
+        </div>
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button  type="submit" name="confirm-submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-          ?>
+
 
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid px-4">
@@ -528,5 +571,16 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                   });
                  </script>
 
+
+    <script>
+    function ConfirmDelete(){
+    var x = confirm("Are you sure you want to delete?");
+    if (x)
+        return true;
+    else
+      return false;
+      }
+    </script>
+  </body>
   </body>
 </html>

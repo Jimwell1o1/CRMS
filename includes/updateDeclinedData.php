@@ -11,7 +11,7 @@
 
         $bookingId = $_GET['bookingId'];
 
-        $bookingStatus = "UPDATE booking SET bookingStatus = 'Accepted' WHERE bookingId = '$bookingId';";
+        $bookingStatus = "UPDATE booking SET bookingStatus = 'Pending' WHERE bookingId = '$bookingId';";
 
         if($resultChecked > 0){  
             while($row = mysqli_fetch_assoc($result)){
@@ -20,7 +20,7 @@
                 }
             }
         }
-        $_SESSION['Accepted'] = 'Accepted';
+        $_SESSION['Pending'] = 'Pending';
         header("location: ../admin_new/pending_tables.php");
         exit();
 
@@ -32,7 +32,7 @@
 
         $bookingId = $_GET['bookingId'];
 
-        $bookingStatus = "UPDATE booking SET bookingStatus = 'Declined' WHERE bookingId = '$bookingId';";
+        $bookingStatus = "UPDATE booking SET bookingStatus = 'Accepted' WHERE bookingId = '$bookingId';";
 
         if($resultChecked > 0){  
             while($row = mysqli_fetch_assoc($result)){
@@ -41,7 +41,7 @@
                 }
             }
         }
-        $_SESSION['Declined'] = 'Declined';
+        $_SESSION['Accepted'] = 'Accepted';
         header("location: ../admin_new/pending_tables.php");
         exit();
     }
