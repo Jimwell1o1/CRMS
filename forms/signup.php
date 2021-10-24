@@ -136,7 +136,7 @@
             }
             elseif ($_GET["error"] == "none") {
                 # code...
-                echo "<div class='alert alert-danger alert-dismissible'>
+                echo "<div class='alert alert-success alert-dismissible'>
                 <button type='button' class='close' data-dismiss='alert'>&times;</button>
                 Congratulations! You've successfully signed up.
               </div>";
