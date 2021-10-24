@@ -427,19 +427,20 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
 
                                               <td class="text-left">
                                               <form action="../includes/updatePendingData_index.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-                                                        <!-- <button class="btn btn-outline-primary"id="accept-button" name="submit"> Update </button> 
-                                                        <button class="btn btn-outline-danger"> Delete </button>  -->
-
+                                              <div class = "d-flex p-1">
                                                   <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#update_modal">
-                                                  <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn btn-warning" id="accept-button" name="submit">
-                                                  <i class="fas fa-check"></i>
-                                                </button>
-                                                <button class="btn btn-danger">
-                                                  <i class="fas fa-trash"></i>
-                                                </button>
-                                                    </form>
+                                                    <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <label>&nbsp;</label>
+                                                    <button class="btn btn-warning" id="accept-button" name="submit">
+                                                      <i class="fas fa-check"></i>
+                                                    </button>
+                                                    <label>&nbsp;</label>
+                                                    <button class="btn btn-danger" onclick="ConfirmDelete()">
+                                                      <i class="fas fa-trash"></i>
+                                                    </button>
+                                                    <div>
+                                                </form>
 
                                           
                                               </td>

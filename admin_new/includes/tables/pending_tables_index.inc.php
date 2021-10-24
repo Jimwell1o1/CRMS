@@ -10,9 +10,7 @@
   <td class="text-left">
   <form action="../includes/updatePendingData_index.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
             
-    <!-- <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class="fas fa-edit"></i>
-    </button> -->
+   
     <button class="btn btn-warning" id="accept-button" name="submit">
     <i class="fas fa-user-check"></i> Accept
     </button>
