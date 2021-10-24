@@ -39,7 +39,7 @@
   'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
   'table emoticons template paste help'
 ],
-  toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
+  toolbar: 'insertfile undo redo | styleselect | bold italic fullscreen | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
   menu: {
   favs: {title: 'Email', items: 'code visualaid | searchreplace | emoticons'}
   },
@@ -61,7 +61,43 @@
         (editor.getContainer().style.borderColor = "");
     });
   },
-  
+
+   //Image uploader 
+    images_upload_url: 'upload_send.php',
+    
+   
+    // override default upload handler to simulate successful upload
+    images_upload_handler: function (blobInfo, success, failure) {
+        var xhr, formData;
+      
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', 'upload_send.php');
+      
+        xhr.onload = function() {
+            var json;
+        
+            if (xhr.status != 200) {
+                failure('HTTP Error: ' + xhr.status);
+                return;
+            }
+        
+            json = JSON.parse(xhr.responseText);
+        
+            if (!json || typeof json.location != 'string') {
+                failure('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+        
+            success(json.location);
+        };
+      
+        formData = new FormData();
+        formData.append('file', blobInfo.blob(), blobInfo.filename());
+      
+        xhr.send(formData);
+    },
+
   color_map: [
     '000000', 'Black',
     '808080', 'Gray',
