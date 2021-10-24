@@ -34,10 +34,17 @@
   tinymce.init({
   selector: "textarea#editor",
   skin: "bootstrap",
-  plugins: "lists, link, image, media",
-  toolbar:
-    "h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help",
-  menubar: false,
+  plugins: [
+  'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+  'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+  'table emoticons template paste help'
+],
+  toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
+  menu: {
+  favs: {title: 'Email', items: 'code visualaid | searchreplace | emoticons'}
+  },
+  menubar: 'favs file edit view insert format tools table help',
+  content_css: 'css/content.css',
   setup: (editor) => {
     // Apply the focus effect
     editor.on("init", () => {
@@ -54,7 +61,19 @@
         (editor.getContainer().style.borderColor = "");
     });
   },
+  
+  color_map: [
+    '000000', 'Black',
+    '808080', 'Gray',
+    'FFFFFF', 'White',
+    'FF0000', 'Red',
+    'FFFF00', 'Yellow',
+    '008000', 'Green',
+    '0000FF', 'Blue'
+  ]
+  
 });
+
 
  
 </script>
