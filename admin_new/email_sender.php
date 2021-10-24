@@ -170,16 +170,14 @@
               <textarea name="body" rows="12" id="editor"></textarea>
             </div>
 
-      
-            <br>
             <hr>
 
-            <div class="form-group form-check">
+            <div class="form-group form-check text-center">
                 <input type="checkbox" class="form-check-input" id="terms" required>
-                <label class="form-check-label" for="terms">I agree to the <a href="#">terms and conditions</a></label>
+                <label class="form-check-label" for="terms"><h5>I agree to the <a href="#">terms and conditions</h5></a></label>
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Submit Email</button>
             </form>
         </div>
     </div>
