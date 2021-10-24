@@ -9,17 +9,18 @@
   <td> <?php echo $row['bookingBranch'] ?> </td>
   <td class="text-left">
   <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-            
-    <!-- <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class="fas fa-edit"></i>
-    </button> -->
-    <button class="btn btn-warning" id="accept-button" name="submit">
-    <i class="fas fa-user-check"></i> Accept
+   <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#update_modal">
+     <i class="fas fa-edit"></i>
     </button>
-    <button class="btn btn-danger" onclick="ConfirmDelete()">
-    <i class="fas fa-trash-alt"></i> 
+    <button class="btn btn-warning" id="accept-button" name="submit">
+      <i class="fas fa-check"></i>
+    </button>
+    <button class="btn btn-danger">
+      <i class="fas fa-trash"></i>
     </button>
   </form>
+
+  </td>
   </td>
 </tr>
 
