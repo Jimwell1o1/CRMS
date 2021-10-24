@@ -134,9 +134,9 @@
                   <a class="nav-link" href="declined_tables.php"
                     >Declined Schedules</a
                   >
-                  <a class="nav-link" href="missed_tables.php"
+                  <!-- <a class="nav-link" href="missed_tables.php"
                     >Missed Schedules</a
-                  >
+                  > -->
                   <a class="nav-link" href="customer_history.php"
                     >Customer History</a
                   >
