@@ -17,6 +17,8 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
 
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -295,7 +297,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                 <div class="card mb-4">
                   <div class="card-header">
                     <i class="fas fa-chart-bar me-1"></i>
-                    MONTHLY APPOINTMENT
+                    MONTHLY APPOINTMENT( <?php echo $year; ?>)
                   </div>
                   <div class="card-body">
                     <canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -317,7 +319,11 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                       pointHoverBackgroundColor: "rgba(2,117,216,1)",
                       pointHitRadius: 50,
                       pointBorderWidth: 2,
-                      data: [52, 12, 32, 88, 13, 65, 24,59, 25, 41, 51, 34],
+                      data: [<?php echo $decline; ?>, <?php echo $pending; ?>, <?php echo $accepted; ?>, <?php echo $accepted; ?>
+                      , <?php echo $decline; ?>, <?php echo $pending; ?>
+                      , <?php echo $decline; ?>,<?php echo $pending; ?>,
+                      <?php echo $pending; ?>, <?php echo $pending; ?>, <?php echo $accepted; ?>
+                      , <?php echo $decline; ?>],
                     }],
                   },
                   options: {

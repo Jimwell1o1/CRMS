@@ -44,6 +44,18 @@ while($row = mysqli_fetch_assoc($query_result)){
   $usercount = $row['userCount'];
 }
 
+$query = "SELECT bookingDate  FROM booking";
+$query_result = mysqli_query($conn,$query);
+ while($row = mysqli_fetch_assoc($query_result)){
+  $year = date('Y');
+}
+
+
+
+
+
+
+
 
 
 ?>
