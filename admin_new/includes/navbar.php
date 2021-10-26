@@ -20,6 +20,8 @@
           my-2 my-md-0
         "
       >
+
+    
         <div class="input-group">
           <input
             class="form-control"
@@ -29,7 +31,8 @@
             aria-describedby="btnNavbarSearch"
             id="btnNavbarSearch"
             onchange="openPage()"
-          />
+            />
+        
           <button class="btn btn-primary" id="btnNavbarSearch">
             <i class="fas fa-search"></i>
           </button>
@@ -37,28 +40,38 @@
       </form>
 
       <!-- Script for Searching Page -->
-     <script>
+      <script>
        function openPage(){
-         var x = document.getElementById("btnNavbarSearch").value;
+        var x = document.getElementById("btnNavbarSearch").value
 
-         if(x === "pending" || x =="PENDING"){
-          window.open("pending_tables.php","_self");
-         }
-        else if(x == "declined" || x =="DECLINED"){
-          window.open("declined_tables.php","_self");
-         }
-         else if(x == "accepted" || x =="ACCEPTED"){
-          window.open("accepted_tables.php","_self");
-         }
-         else if(x == "history" || x == "HISTORY"){
-          window.open("customer_history.php","_self");
-         }
-         else if(x == "patient" || x =="PATIENT"){
-          window.open("add_patient.php","_self");
-         }
 
-       }
+         if(x === "pending" || x == "PENDING"){
+          window.open("pending_tables.php","_self") + document.getElementById('btnNavbarSearch').value;
+        }
+         if(x == "declined" || x =="DECLINED"){
+          window.open("declined_tables.php","_self") + document.getElementById('btnNavbarSearch').value;
+         }
+     
+          if(x == "accepted" || x =="ACCEPTED"){
+          window.open("accepted_tables.php","_self") + document.getElementById('btnNavbarSearch').value;
+         }
+          if(x == "history" || x == "HISTORY"){
+          window.open("customer_history.php","_self") + document.getElementById('btnNavbarSearch').value;
+         }
+         if(x == "email" || x =="EMAIL" || x =="send" || x =="send email"){
+          window.open("email_sender.php","_self") + document.getElementById('btnNavbarSearch').value;
+         }
+         if(x == "events" || x =="EVENTS" || x =="create events" || x =="create"){
+          window.open("task.php","_self") + document.getElementById('btnNavbarSearch').value;
+         }
+        if(x == "user" || x =="USER" || x =="user accounts" || x =="accounts"){
+          window.open("user_accounts.php","_self") + document.getElementById('btnNavbarSearch').value;
+         }
+         
+        }
+       
      </script>
+     
 
       <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
         <li class="nav-item dropdown">
