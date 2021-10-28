@@ -16,6 +16,13 @@ CREATE TABLE adminAcc (
 	adminAccPwd varchar(128) NOT NULL
 );
 
+INSERT INTO `adminAcc` (`adminAccName`, `adminAccBranch`, `adminAccEmail`, `adminAccUid`, `adminAccPwd`) VALUES
+('admin malinao', 'Malinao', 'mcyadminmalinao@gmail.com', 'adminmalinao', '$2y$10$r0kVCKJp.E9KCyDdDISXiubAs.MJAJL1bm4kEinQWO.ATKBNMPqsq'),
+('admin pinagbuhatan', 'Pinagbuhatan', 'mcyadminpinag@gmail.com', 'adminpinag', '$2y$10$lgZ12.Z7HirKikOIdk7H4OQhvw/CiauIwQ3yC.ktzV7mE3DBEKs8a'),
+('admin san joaquin', 'San Joaquin', 'mcyadminsq@gmail.com', 'adminsq', 'adminsq'),
+('admin main', 'mainAdmin', 'mainadminMcy@gmail.com', 'adminmain', 'adminmain');
+
+
 
 CREATE TABLE booking (
 	bookingId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -50,7 +57,7 @@ CREATE TABLE emails (
 	emailSubject varchar(128) NOT NULL,
 	emailBody varchar(1000) NOT NULL,
 	emailDate varchar(128) NOT NULL,
-	emailTime varchar(128) NOT NULL,
+	emailTime varchar(128) NOT NULL
 );
 
 
