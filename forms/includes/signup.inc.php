@@ -13,6 +13,7 @@ if (isset($_POST["submit"])) {
     $pwdRepeat = $_POST["pwdrepeat"];
 
 
+
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
@@ -26,6 +27,11 @@ if (isset($_POST["submit"])) {
         header("Location: ../signup.php?error=invaliduid");
         exit();
     }
+    if (usernamelimit($username) !== false) {
+        # code...
+        header("Location: ../signup.php?error=uidlimit");
+        exit();
+    }
     if (invalidEmail($email) !== false) {
         # code...
         header("Location: ../signup.php?error=invalidemail");
@@ -34,6 +40,11 @@ if (isset($_POST["submit"])) {
     if (pwdMatch($pwd, $pwdRepeat) !== false) {
         # code...
         header("Location: ../signup.php?error=passwordsdontmatch");
+        exit();
+    }
+    if (strpass($pwd) !== false) {
+        # code...
+        header("Location: ../signup.php?error=usestrngpass");
         exit();
     }
     if (uidExists($conn, $username, $email) !== false) {

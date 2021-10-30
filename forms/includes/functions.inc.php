@@ -1,4 +1,5 @@
 <?php
+
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat){
     $result;
     if (empty($name) || empty($email) || empty($username)|| empty($pwd) || empty($pwdRepeat) ) {
@@ -25,6 +26,23 @@ function invalidUid($username){
     return $result;
 }
 
+function usernamelimit($username){
+    $result;
+    if (strlen($username) > 6) {
+        # code...
+        $result = true;
+        
+    } else {
+        
+        $result = false;
+    }
+    return $result;
+}
+
+
+
+
+
 function invalidEmail($email){
     $result;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -49,6 +67,19 @@ function pwdMatch($pwd, $pwdRepeat){
         $result = false;
     }
     return $result;
+}
+
+function strpass($pwd){
+$result;
+if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $pwd)) {
+    $result = true;
+        
+} else {
+    
+    $result = false;
+}
+return $result;
+
 }
 
 function uidExists($conn, $username, $email){

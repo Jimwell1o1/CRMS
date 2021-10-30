@@ -82,20 +82,6 @@
     <div class="section-title fadeIn first">  
     <br>
     <h2>Create an Account</h2>
- <br>
- 
-    <!-- Login Form -->
-    <form action = "includes/signup.inc.php" method="POST">
-      <input type="text" id="textbox" class="fadeIn third" name="name" placeholder="Full Name">
-      <input type="text" id="textbox" class="fadeIn third" name="email" placeholder="Email">
-      <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username">
-      <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password">
-      <input type="password" id="confirmVal" class="fadeIn third" name="pwdrepeat" placeholder="Confirm Password"><br/>
-      <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
- 
-      <input type="submit" class="fadeIn fourth" value="Register" name = "submit" >
-      <!-- //onclick="return Validate()" -->
-      <br>
     <?php
         if (isset($_GET["error"])) {
             # code...
@@ -134,6 +120,20 @@
                   Username is already taken, please try again.
               </div>";
             }
+            elseif ($_GET["error"] == "uidlimit") {
+              # code...
+              echo "<div class='alert alert-danger alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              Username must be at least 6 characters .
+            </div>";
+          }
+            elseif ($_GET["error"] == "usestrngpass") {
+              # code...
+              echo "<div class='alert alert-danger alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+               Please use a Strong Password.
+            </div>";
+          }
             elseif ($_GET["error"] == "none") {
                 # code...
                 echo "<div class='alert alert-success alert-dismissible'>
@@ -143,6 +143,21 @@
             }
         }
 ?>
+ <br>
+ 
+    <!-- Login Form -->
+    <form action = "includes/signup.inc.php" method="POST">
+      <input type="text" id="textbox" class="fadeIn third" name="name" placeholder="Full Name">
+      <input type="text" id="textbox" class="fadeIn third" name="email" placeholder="Email">
+      <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username">
+      <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password">
+      <input type="password" id="confirmVal" class="fadeIn third" name="pwdrepeat" placeholder="Confirm Password"><br/>
+      <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
+ 
+      <input type="submit" class="fadeIn fourth" value="Register" name = "submit" >
+      <!-- //onclick="return Validate()" -->
+      <br>
+  
       <label for="">Already a member? <a href="login.php">Log In</a></label>
      <script>
       function myFunction() {
