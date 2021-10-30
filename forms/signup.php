@@ -82,7 +82,11 @@
     <div class="section-title fadeIn first">  
     <br>
     <h2>Create an Account</h2>
-    <?php
+  
+ <br>
+
+  <!-- ERROR MESSAGES -->
+ <?php
         if (isset($_GET["error"])) {
             # code...
             if ($_GET["error"] == "emptyinput") {
@@ -143,13 +147,12 @@
             }
         }
 ?>
- <br>
  
     <!-- Login Form -->
     <form action = "includes/signup.inc.php" method="POST">
       <input type="text" id="textbox" class="fadeIn third" name="name" placeholder="Full Name">
       <input type="text" id="textbox" class="fadeIn third" name="email" placeholder="Email">
-      <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username">
+      <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username" maxlength="10">
       <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password">
       <input type="password" id="confirmVal" class="fadeIn third" name="pwdrepeat" placeholder="Confirm Password"><br/>
       <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
@@ -157,6 +160,8 @@
       <input type="submit" class="fadeIn fourth" value="Register" name = "submit" >
       <!-- //onclick="return Validate()" -->
       <br>
+
+    
   
       <label for="">Already a member? <a href="login.php">Log In</a></label>
      <script>
