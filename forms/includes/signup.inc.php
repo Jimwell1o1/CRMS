@@ -27,11 +27,7 @@ if (isset($_POST["submit"])) {
         header("Location: ../signup.php?error=invaliduid");
         exit();
     }
-    if (usernamelimit($username) !== false) {
-        # code...
-        header("Location: ../signup.php?error=uidlimit");
-        exit();
-    }
+    
     if (invalidEmail($email) !== false) {
         # code...
         header("Location: ../signup.php?error=invalidemail");
@@ -40,6 +36,11 @@ if (isset($_POST["submit"])) {
     if (pwdMatch($pwd, $pwdRepeat) !== false) {
         # code...
         header("Location: ../signup.php?error=passwordsdontmatch");
+        exit();
+    }
+    if (usernamelimit($username) !== false) {
+        # code...
+        header("Location: ../signup.php?error=uidlimit");
         exit();
     }
     if (strpass($pwd) !== false) {
