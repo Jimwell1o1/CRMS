@@ -389,7 +389,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                                                       <i class="fas fa-trash"></i>
                                                     </button>
                                                     <label>&nbsp;</label>
-                                                    <button class="btn btn-primary">
+                                                    <button class="btn btn-primary" onClick="this.disabled=true; this.value='Sending…';">
                                                       <i class="fas fa-bell"></i>
                                                     </button>
                                                     <div>
