@@ -1,4 +1,5 @@
 <!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -22,6 +23,7 @@
         </div>
         <div>
           <label class="form-label">Appointment Date:</label>
+         
           <input id = "dateControl"  name="date" type="date" class="form-control" required>
         </div>
         <div>
@@ -31,11 +33,11 @@
             <option value = "8:00 AM">8:00 AM</option>
             <option value = "9:00 AM">9:00 AM</option>
             <option value = "10:00 AM">10:00 AM</option>
-            <option value = "1:00 AM">1:00 PM</option>
-            <option value = "2:00 AM">2:00 PM</option>
-            <option value = "3:00 AM">3:00 PM</option>
-            <option value = "4:00 AM">4:00 PM</option>
-            <option value = "5:00 AM">5:00 PM</option>
+            <option value = "1:00 PM">1:00 PM</option>
+            <option value = "2:00 PM">2:00 PM</option>
+            <option value = "3:00 PM">3:00 PM</option>
+            <option value = "4:00 PM">4:00 PM</option>
+            <option value = "5:00 PM">5:00 PM</option>
                         </select>
         </div>
         <div>
