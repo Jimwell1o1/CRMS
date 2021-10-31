@@ -385,7 +385,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                                                       <i class="fas fa-check"></i>
                                                     </button>
                                                     <label>&nbsp;</label>
-                                                    <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">
+                                                    <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this record?');">
                                                       <i class="fas fa-trash"></i>
                                                     </button>
                                                     <label>&nbsp;</label>
