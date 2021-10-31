@@ -20,7 +20,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Tables - SB Admin</title>
+    <title>Accepted - Admin</title>
     <?php
         include 'includes/style-links.php';
     ?>

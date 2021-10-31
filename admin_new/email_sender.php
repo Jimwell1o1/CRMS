@@ -20,7 +20,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Add Patient - Admin</title>
+    <title>Send Email - Admin</title>
     <?php
         include 'includes/style-links.php';
     ?> 

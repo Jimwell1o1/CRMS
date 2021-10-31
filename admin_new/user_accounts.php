@@ -19,7 +19,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Tables - SB Admin</title>
+    <title>User Accounts - Admin</title>
     <?php
         include 'includes/style-links.php';
     ?>

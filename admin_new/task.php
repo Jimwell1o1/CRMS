@@ -20,7 +20,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Add Patient - Admin</title>
+    <title>Task Manager - Admin</title>
     <?php
         include 'includes/style-links.php';
     ?> 
@@ -99,24 +99,25 @@
        }
       });
      },
+     
  
      eventClick:function(event)
+    {
+     if(confirm("Are you sure you want to remove it?"))
      {
-      if(confirm("Are you sure you want to remove it?"))
-      {
-       var id = event.id;
-       $.ajax({
-        url:"delete.php",
-        type:"POST",
-        data:{id:id},
-        success:function()
-        {
-         calendar.fullCalendar('refetchEvents');
-         alert("Event Removed");
-        }
-       })
-      }
-     },
+      var id = event.id;
+      $.ajax({
+       url:"delete.php",
+       type:"POST",
+       data:{id:id},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Event Removed");
+       }
+      })
+     }
+    },
  
     });
    });

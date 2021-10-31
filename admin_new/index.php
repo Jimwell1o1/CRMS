@@ -32,7 +32,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>MCY Admin</title>
+    <title>Dashboard- MCY Admin</title>
     <?php
         include 'includes/style-links.php';
     ?>
