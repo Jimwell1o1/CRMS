@@ -283,13 +283,10 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                 <div class="card mb-4">
                   <div class="card-header">
                     <i class="fas fa-chart-area me-1"></i>
-                    SCHDULE PERCENTAGE
+                    Schedule Status
                   </div>
-                  <div class="card-body">
-                 
+                  <div class="card-body">         
                   <canvas id="myPieChart" width="100%" height="40"></canvas>
-                  
-                
                   </div>
                 </div>
               </div>
@@ -297,65 +294,11 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                 <div class="card mb-4">
                   <div class="card-header">
                     <i class="fas fa-chart-bar me-1"></i>
-                    MONTHLY APPOINTMENT( <?php echo $year; ?>)
+                    Mothly Appointment( <?php echo $year; ?>)
                   </div>
                   <div class="card-body">
                     <canvas id="myAreaChart" width="100%" height="40"></canvas>
-                    <script>
-                    var ctx = document.getElementById("myAreaChart");
-                    var myLineChart = new Chart(ctx, {
-                      type: 'line',
-                      data: {
-                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                    datasets: [{
-                      label: "Sessions",
-                      lineTension: 0.3,
-                      backgroundColor: "rgba(2,117,216,0.2)",
-                      borderColor: "rgba(2,117,216,1)",
-                      pointRadius: 5,
-                      pointBackgroundColor: "rgba(2,117,216,1)",
-                      pointBorderColor: "rgba(255,255,255,0.8)",
-                      pointHoverRadius: 5,
-                      pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                      pointHitRadius: 50,
-                      pointBorderWidth: 2,
-                      data: [<?php echo $decline; ?>, <?php echo $pending; ?>, <?php echo $accepted; ?>, <?php echo $accepted; ?>
-                      , <?php echo $decline; ?>, <?php echo $pending; ?>
-                      , <?php echo $decline; ?>,<?php echo $pending; ?>,
-                      <?php echo $pending; ?>, <?php echo $pending; ?>, <?php echo $accepted; ?>
-                      , <?php echo $decline; ?>],
-                    }],
-                  },
-                  options: {
-                    scales: {
-                      xAxes: [{
-                        time: {
-                          unit: 'date'
-                        },
-                        gridLines: {
-                          display: false
-                        },
-                        ticks: {
-                          maxTicksLimit: 7
-                        }
-                      }],
-                      yAxes: [{
-                        ticks: {
-                          min: 0,
-                          max: 100,
-                          maxTicksLimit: 5
-                        },
-                        gridLines: {
-                          color: "rgba(0, 0, 0, .125)",
-                        }
-                      }],
-                    },
-                    legend: {
-                      display: false
-                    }
-                  }
-                });
-                    </script>
+                   
 
                     
                   </div>
@@ -571,7 +514,8 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
 
 
              <script>
-                      var ctx = document.getElementById("myPieChart");
+              
+                  var ctx = document.getElementById("myPieChart");
                   var myPieChart = new Chart(ctx, {
                     type: 'doughnut',
                     data: {
@@ -580,12 +524,67 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                         data: [  <?php echo $decline; ?>, <?php echo $pending; ?>,<?php echo $accepted; ?>],
                         backgroundColor: ['#dc3545', '#ffc107', '#28a745'],
                       }],
+                    
                     },
+
+                    
+
                   });
                  </script>
 
 
- 
+<script>
+                    var ctx = document.getElementById("myAreaChart");
+                    var myLineChart = new Chart(ctx, {
+                      type: 'line',
+                      data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    datasets: [{
+                      label: "Sessions",
+                      lineTension: 0.3,
+                      backgroundColor: "rgba(2,117,216,0.2)",
+                      borderColor: "rgba(2,117,216,1)",
+                      pointRadius: 5,
+                      pointBackgroundColor: "rgba(2,117,216,1)",
+                      pointBorderColor: "rgba(255,255,255,0.8)",
+                      pointHoverRadius: 5,
+                      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+                      pointHitRadius: 50,
+                      pointBorderWidth: 2,
+                      data: [<?php echo $decline; ?>, <?php echo $pending; ?>, <?php echo $accepted; ?>, <?php echo $accepted; ?>
+                      , <?php echo $decline; ?>, <?php echo $pending; ?>
+                      , <?php echo $decline; ?>,<?php echo $pending; ?>,
+                      <?php echo $pending; ?>, <?php echo $bookCount; ?>, <?php echo $accepted; ?>
+                      , <?php echo $decline; ?>],
+                    }],
+                  },
+                  options: {
+                    scales: {
+                      xAxes: [{
+                        time: {
+                          unit: 'date'
+                        },
+                        gridLines: {
+                          display: false
+                        },
+                        
+                      }],
+                      yAxes: [{
+                        ticks: {
+                          min: 0,
+                          maxTicksLimit: 8
+                        },
+                        gridLines: {
+                          color: "rgba(0, 0, 0, .125)",
+                        }
+                      }],
+                    },
+                    legend: {
+                      display: false
+                    }
+                  }
+                });
+                    </script>
   </body>
   </body>
 </html>

@@ -50,7 +50,13 @@ $query_result = mysqli_query($conn,$query);
   $year = date('Y');
 }
 
+$query = "SELECT COUNT(*) as bookCount FROM booking";
 
+$query_result = mysqli_query($conn,$query);
+while($row = mysqli_fetch_assoc($query_result)){
+
+  $bookCount = $row['bookCount'];
+}
 
 
 
