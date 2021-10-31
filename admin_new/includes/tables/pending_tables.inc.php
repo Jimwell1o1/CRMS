@@ -10,7 +10,7 @@
   <td class="text-left">
   <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
   <div class = "d-flex p-1">
-  <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#update_modal">
+  <button type="button" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#update_modal">
      <i class="fas fa-edit"></i>
     </button>
     <label>&nbsp;</label>
@@ -18,8 +18,12 @@
       <i class="fas fa-check"></i>
     </button>
     <label>&nbsp;</label>
-    <button class="btn btn-danger" onclick="ConfirmDelete()">
+    <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this record?');">
       <i class="fas fa-trash"></i>
+    </button>
+    <label>&nbsp;</label>
+    <button class="btn btn-primary">
+      <i class="fas fa-bell"></i>
     </button>
     <div>
   </form>

@@ -56,3 +56,16 @@
     })
 
   </script>
+
+ 
+<script>
+    function ConfirmDelete(){
+    var x = window.confirm("Are you sure yosu want to delete?");
+    if (x){
+        return true;
+    }
+    else if(x){
+      return false;
+    }
+      }
+</script>
