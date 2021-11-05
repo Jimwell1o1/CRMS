@@ -25,12 +25,12 @@
             <option value = "Female">Female</option>
           </select>
         </div>
-        <div>
+        <div class = "row"> 
+        <div class = "col">
           <label class="form-label">Appointment Date:</label>
-         
           <input id = "dateControl"  name="date" type="date" class="form-control" required>
         </div>
-        <div>
+        <div class = "col">
           <label class="form-label">Time:</label>
           <select class="form-select" name="time" required>
             <option disabled selected>Select Time</option>
@@ -44,6 +44,7 @@
             <option value = "5:00 PM">5:00 PM</option>
                         </select>
         </div>
+      </div>
         <div>
           <label class="form-label">Dental Clinic:</label>
           <select name="branch" class="form-select" required>
