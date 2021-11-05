@@ -287,15 +287,15 @@ function usersInformation($conn, $name, $email, $uid, $password, $address, $gend
 
 
 // Function for Booking inserting to Database
-function bookingDetails($conn, $username, $name, $gender, $date, $time, $consultation, $branch, $message, $status){
-    $sql = "INSERT INTO booking (bookingUsername, bookingName, bookingGender, bookingDate, bookingTime, bookingConsultation, bookingBranch, bookingMessage, bookingStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+function bookingDetails($conn, $username, $name, $email, $gender, $date, $time, $consultation, $branch, $message, $status){
+    $sql = "INSERT INTO booking (bookingUsername, bookingName, bookingemail, bookingGender, bookingDate, bookingTime, bookingConsultation, bookingBranch, bookingMessage, bookingStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: bookingDetails.php?error=stmtfailed");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "sssssssss", $username, $name, $gender, $date, $time, $consultation, $branch, $message, $status);
+    mysqli_stmt_bind_param($stmt, "ssssssssss", $username, $name, $email, $gender, $date, $time, $consultation, $branch, $message, $status);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
@@ -308,15 +308,15 @@ function bookingDetails($conn, $username, $name, $gender, $date, $time, $consult
 
 
 // Function for Admin Inserting booking
-function bookingDetails_admin($conn, $username, $name, $gender, $date, $time, $consultation, $branch, $message, $status){
-    $sql = "INSERT INTO booking (bookingUsername, bookingName, bookingGender, bookingDate, bookingTime, bookingConsultation, bookingBranch, bookingMessage, bookingStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+function bookingDetails_admin($conn, $username, $name, $email, $gender, $date, $time, $consultation, $branch, $message, $status){
+    $sql = "INSERT INTO booking (bookingUsername, bookingName, bookingemail, bookingGender, bookingDate, bookingTime, bookingConsultation, bookingBranch, bookingMessage, bookingStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: bookingDetails_admin.php?error=stmtfailed");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "sssssssss", $username, $name, $gender, $date, $time, $consultation, $branch, $message, $status);
+    mysqli_stmt_bind_param($stmt, "ssssssssss", $username, $name, $email, $gender, $date, $time, $consultation, $branch, $message, $status);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 

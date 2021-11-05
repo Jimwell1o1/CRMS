@@ -8,6 +8,7 @@
 
         $username = $_SESSION["admin_branchName"];
         $name = $_POST["name"];
+        $email = $_POST["email"];
         $gender = $_POST["gender"];
         $date = $_POST["date"];
         $time = $_POST["time"];
@@ -17,7 +18,7 @@
         $status = "Pending";
         
         //echo  $username . $name . $gender.  $branch;
-        bookingDetails_admin($conn, $username, $name, $gender, $date, $time, $consultation, $branch, $message, $status);
+        bookingDetails_admin($conn, $username, $name, $email, $gender, $date, $time, $consultation, $branch, $message, $status);
   
     }else {
         header("location: ../booking.php");

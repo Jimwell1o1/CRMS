@@ -14,6 +14,10 @@
           <input name="name" type="text" class="form-control" placeholder="Enter Patient Name" required>
         </div>
         <div>
+          <label class="form-label">Patient Email:</label>
+          <input name="email" type="text" class="form-control" placeholder="Enter Patient email" required>
+        </div>
+        <div>
           <label class="form-label">Gender:</label>
           <select name="gender" class="form-select" required>
             <option disabled selected>Select Gender</option>

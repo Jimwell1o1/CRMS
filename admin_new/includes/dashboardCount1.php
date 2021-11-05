@@ -50,13 +50,28 @@ $query_result = mysqli_query($conn,$query);
   $year = date('Y');
 }
 
-$query = "SELECT COUNT(*) as bookCount FROM booking";
-
+$query = "SELECT COUNT(*) as bookCount FROM booking" ;
 $query_result = mysqli_query($conn,$query);
 while($row = mysqli_fetch_assoc($query_result)){
 
   $bookCount = $row['bookCount'];
+  $month = $row['month'];
+
+  
+
+  }
+
+
+
+  $query = "SELECT MONTH('bookingDate') as month FROM booking WHERE `bookingId` = 1";
+  $query_result = mysqli_query($conn,$query);
+ while($row = mysqli_fetch_assoc($query_result)){
+
+  $month = $row['month'];
+ 
 }
+  
+
 
 
 

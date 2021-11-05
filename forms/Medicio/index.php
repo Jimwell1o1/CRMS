@@ -122,7 +122,7 @@
 <?php
 
     //initialize variables into empty strings
-    $nameErr =  $genderErr = $dateErr = $timeErr = $procedureErr = $branchErr = $message = $checked = "";
+    $nameErr = $emailErr = $genderErr = $dateErr = $timeErr = $procedureErr = $branchErr = $message = $checked = "";
     $name =  $gender = $date = $time = $procedure = $branch = $checkedErr = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET['submit'])) { //if submit button is clicked this will be the action
@@ -139,6 +139,18 @@
            $nameErr = "* Name is required";
         }
 
+        if (!empty($_GET["email"])){  //this is for the email validation
+
+         if (!filter_var($_GET["email"], FILTER_VALIDATE_EMAIL)){    
+          $emailErr = "Invalid email format";
+        }else{
+          $email = test_input($_GET["email"]);
+       } 
+      }else{
+           
+        $emailErr = "* email is required";
+     }
+      
         
         if (empty($_GET["gender"])){     //this is for the gender validation
           $genderErr = "* Gender is required";
@@ -163,6 +175,7 @@
          }else{
             $procedure = test_input($_GET["procedure"]);
          } 
+
 
         if (empty($_GET["branch"])){    //this is for the branch validation
             $branchErr = "* Branch is required";
@@ -260,14 +273,21 @@
           <h4>Patient Details</h4><br>
           <div class="form-row">
             
-            <div class="col-md-6 form-group">
+            <div class="col-md-5 form-group">
               <h6>Name:</h6>
-              <input type="text" value = "<?PHP print $name ; ?>"  name="name" class="form-control" id="name" placeholder="Patient or Parent Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="text" value = "<?PHP print $name ; ?>"  name="name" class="form-control" id="name" placeholder="Patient or Parent Name" data-rule="minlen:4" data-msg="Please enter Patient name">
               <span class="text-danger"> <?php echo $nameErr;?></span>
               <div class="validate"></div>
             </div>
 
-            <div class="col-md-6 form-group">
+            <div class="col-md-5 form-group">
+              <h6>Email:</h6>
+              <input type="text" value = "<?PHP print $email ; ?>"  name="email" class="form-control" id="email" placeholder="Email Address" data-rule="minlen:4" data-msg="Please enter Patients email">
+              <span class="text-danger"> <?php echo $emailErr;?></span>
+              <div class="validate"></div>
+            </div>
+
+            <div class="col-md-2 form-group">
               <h6>Gender:</h6>
               <select class="form-control" name="gender[]">
                             <option value="" disabled selected >Select Gender</option>
@@ -295,6 +315,10 @@
                                   }?>>Female</option>
                         </select>
             </div>
+
+
+            
+
           </div>
           <br><Br>
           <h4>Appointment Details</h4>
@@ -605,6 +629,10 @@
            $userName = $_SESSION["useruid"];
            $_SESSION["bookingUsername"] = $userName;
            $_SESSION["bookingName"] = $nameFinal; 
+           
+           $emailFinal = $email;
+           $_SESSION["bookingemail"] = $emailFinal; 
+
            $messageFinal = $message;
            $_SESSION["bookingMessage"] = $messageFinal;
            ?>
@@ -628,7 +656,7 @@
 
                ?>
                 
-                
+                <input name="email" type="text" class="form-control" value = "<?php echo ("Your email is: " . $emailFinal); ?>" READONLY><br>
                 <input name="gender" type="text" class="form-control" value = "<?php echo ("Your Gender is: " . $genderFinal); ?>" READONLY><br>
                 <input name="date" type="text" class="form-control" value = "<?php echo ("The Date is: " . $date); ?>" READONLY ><br>
                 <input name="time" type="text" class="form-control" value = "<?php echo ("Designated Time is: " . $timeFinal); ?>" READONLY><br>
@@ -674,9 +702,10 @@
 
     <?php
 
-if (isset($_GET['submit'])){  // if page is not submitted to itself echo the form
+if (isset($_GET['confirm-submit'])){  // if page is not submitted to itself echo the form
   //    $name =  $gender = $date = $time = $procedure = $branch = $checked = "";
   $name = isset($_GET['name']) ? $_GET['name'] : '';
+  $email = isset($_GET['email']) ? $_GET['email'] : '';
   $gender = isset($_GET['gender']) ? $_GET['gender'] : '';
   $date = isset($_GET['date']) ? $_GET['date'] : '';
   $time = isset($_GET['time']) ? $_GET['time'] : '';
@@ -686,7 +715,7 @@ if (isset($_GET['submit'])){  // if page is not submitted to itself echo the for
   $message = isset($_GET['message']) ? $_GET['message'] : '';
 
 
-  if((!empty($_GET["name"])) and (!empty($_GET["gender"])) and (!empty($_GET["date"])) and (!empty($_GET["time"])) and (!empty($_GET["procedure"])) and  (!empty($_GET["checked"])) ){
+  if((!empty($_GET["name"])) and (!empty($_GET["email"])) and (!empty($_GET["gender"])) and (!empty($_GET["date"])) and (!empty($_GET["time"])) and (!empty($_GET["procedure"])) and  (!empty($_GET["checked"])) ){
 
 
     ?>
