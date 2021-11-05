@@ -558,7 +558,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                       pointHoverBackgroundColor: "rgba(2,117,216,1)",
                       pointHitRadius: 50,
                       pointBorderWidth: 2,
-                      data: [<?php echo $month; ?>, <?php echo $pending; ?>, <?php echo $accepted; ?>, <?php echo $accepted; ?>
+                      data: [<?php echo $decline; ?>, <?php echo $pending; ?>, <?php echo $accepted; ?>, <?php echo $accepted; ?>
                       , <?php echo $decline; ?>, <?php echo $pending; ?>
                       , <?php echo $decline; ?>,<?php echo $pending; ?>,
                       <?php echo $pending; ?>, <?php echo $bookCount; ?>, <?php echo $accepted; ?>

@@ -55,7 +55,7 @@ $query_result = mysqli_query($conn,$query);
 while($row = mysqli_fetch_assoc($query_result)){
 
   $bookCount = $row['bookCount'];
-  $month = $row['month'];
+  
 
   
 
@@ -63,13 +63,13 @@ while($row = mysqli_fetch_assoc($query_result)){
 
 
 
-  $query = "SELECT MONTH('bookingDate') as month FROM booking WHERE `bookingId` = 1";
-  $query_result = mysqli_query($conn,$query);
- while($row = mysqli_fetch_assoc($query_result)){
+//   $query = "SELECT MONTH('bookingDate') as month FROM booking WHERE `bookingId` = 1";
+//   $query_result = mysqli_query($conn,$query);
+//  while($row = mysqli_fetch_assoc($query_result)){
 
-  $month = $row['month'];
+//   $month = $row['month'];
  
-}
+// }
   
 
 
