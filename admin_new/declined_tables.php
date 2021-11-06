@@ -53,8 +53,8 @@
                       <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
-                      <th>Branch</th>
                       <th>Consultation</th>
+                      <th>Branch</th>                     
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -64,8 +64,8 @@
                       <th>Gender</th>
                       <th>Date</th>
                       <th>Time</th>
-                      <th>Branch</th>
                       <th>Consultation</th>
+                      <th>Branch</th>                     
                       <th>Action</th>
                     </tr>
                   </tfoot>

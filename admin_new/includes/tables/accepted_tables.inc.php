@@ -3,8 +3,8 @@
   <td> <?php echo $row['bookingGender'] ?> </td>
     <td> <?php echo $row['bookingDate'] ?> </td>
     <td> <?php echo $row['bookingTime'] ?> </td>
-    <td> <?php echo $row['bookingBranch'] ?> </td>
     <td> <?php echo $row['bookingConsultation'] ?> </td>
+    <td> <?php echo $row['bookingBranch'] ?> </td>  
     <td class="text-left">
         <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
             <button class="btn btn-warning" id="accept-button" name="submit">

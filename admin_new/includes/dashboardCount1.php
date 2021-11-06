@@ -77,6 +77,9 @@ while($row = mysqli_fetch_assoc($query_result)){
  while($row = mysqli_fetch_assoc($query_result)){
 
   $month = $row['month'];
+
+ 
+ 
  
  }
   
