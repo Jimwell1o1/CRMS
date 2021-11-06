@@ -51,7 +51,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
             <h1 class="mt-4">Dashboard - <?php echo $_SESSION['admin_branchName']; ?> </h1>
           
             <ol class="breadcrumb mb-4">&nbsp;&nbsp;
-              <li class="breadcrumb-item active"> <b> <?php echo 'Today is '. date('M d Y, h:i A');?></b>
+              <li class="breadcrumb-item active"> <b><?php echo 'Today is '. date('M d Y, h:i A');?></b>
        
           </li>
             </ol>
@@ -69,7 +69,8 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
                                   Customer History</div>
                                 <div class="h4 mb-0 font-weight-bold text-white">
                                   <?php
-                                   echo $done;
+                                  //  echo $done;
+                                  echo $history;
                                     ?>
 
                                 </div>
