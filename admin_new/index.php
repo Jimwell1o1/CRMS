@@ -471,9 +471,15 @@ $(function(){
           <label class="form-label">Patient Name:</label>
           <input name="name" type="text" class="form-control" placeholder="Enter Patient Name" required>
         </div>
+        
+        <div>
+          <label class="form-label">Email:</label>
+          <input name="name" type="text" class="form-control" placeholder="xxxxx@gmail.com" required>
+        </div>
+
         <div>
           <label class="form-label">Gender:</label>
-          <input name="gender" type="text" class="form-control" placeholder="Enter Patient Name" required>
+          <input name="gender" type="text" class="form-control" placeholder="Male/Female" required>
         </div>
         <div>
           <label class="form-label">Appointment Date:</label>
