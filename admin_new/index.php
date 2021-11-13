@@ -333,7 +333,7 @@ display_c5();
                 <div class="card mb-4">
                   <div class="card-header">
                     <i class="fas fa-chart-bar me-1"></i>
-                    Monthly Appointment ( <?php echo $year; ?>)( <?php echo $month; ?>)
+                    Monthly Appointment ( <?php echo $year; ?>)
                   </div>
                   <div class="card-body">
                     <canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -500,13 +500,16 @@ display_c5();
           <label class="form-label">Gender:</label>
           <input name="gender" type="text" class="form-control" placeholder="Male/Female" required>
         </div>
-        <div>
+        <div class = "row">
+        <div class = "col">
           <label class="form-label">Appointment Date:</label>
           <input name="date" type="text" class="form-control" placeholder="YYYY/MM/DD" required>
         </div>
-        <div>
+       
+        <div  class = "col">
           <label class="form-label">Time:</label>
           <input name="time" type="text" class="form-control" placeholder="00:000AM/PM" required>
+        </div>
         </div>
         <div>
           <label class="form-label">Dental Clinic:</label>
