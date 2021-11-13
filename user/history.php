@@ -108,13 +108,14 @@
 
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
+                                  if("Pending" === $row['bookingStatus']){ 
                                     if($_SESSION["useruid"] === $row['bookingUsername']){ ?>
 
                                        <form action="../includes/cancelbook.inc.php" method="post">  
                                    
                                             <tr>
                                                 <input type="hidden" name="bookId" value="<?php echo $row['bookingId']; ?>">
-                                                <td> <?php echo $row['bookingName'] ?> </td>
+                                                <td> <?php echo $row['bookingName'] ?> </td>                                
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
@@ -122,6 +123,7 @@
                                                 <td class="status"> <?php echo $row['bookingStatus'] ?> </td>
                                                 
                                                 <?php 
+                                                
                                                   if($row['bookingStatus'] === "Cancelled"){
                                                       echo '<td> - - n/a - - </td>';
                                                     
@@ -141,7 +143,7 @@
                             
                          
                                         
-                            <?php } } } ?>
+                            <?php } }} } ?>
                             </table>
 
 

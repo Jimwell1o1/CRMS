@@ -126,7 +126,8 @@
     $name = $email = $gender = $date = $time = $procedure = $branch = $checkedErr = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET['submit'])) { //if submit button is clicked this will be the action
-        if (!empty($_GET["name"])){         //this is for the name validation
+        
+      if (!empty($_GET["name"])){         //this is for the name validation
            
            if (!preg_match("/^[a-zA-Z-' ]*$/",$_GET["name"])) {
             $nameErr = "* Only letters and white space allowed";
@@ -142,7 +143,7 @@
         if (!empty($_GET["email"])){  //this is for the email validation
 
          if (!filter_var($_GET["email"], FILTER_VALIDATE_EMAIL)){    
-          $emailErr = "Invalid email format";
+          $emailErr = "* Invalid email format";
         }else{
           $email = test_input($_GET["email"]);
        } 
@@ -658,7 +659,7 @@
 
             ?>
                 
-                <input name="email" type="text" class="form-control" value = "<?php echo ("Your email is: " . $emailFinal); ?>" READONLY><br>
+                <input name="email" type="text" class="form-control" value = "<?php echo ("Your Email is: " . $email); ?>" READONLY><br>
                 <input name="gender" type="text" class="form-control" value = "<?php echo ("Your Gender is: " . $genderFinal); ?>" READONLY><br>
                 <input name="date" type="text" class="form-control" value = "<?php echo ("The Date is: " . $date); ?>" READONLY ><br>
                 <input name="time" type="text" class="form-control" value = "<?php echo ("Designated Time is: " . $timeFinal); ?>" READONLY><br>
@@ -668,7 +669,7 @@
                     $procedureFinal = $procedure[$i];
                     }
                     $_SESSION["bookingConsultation"] = $procedureFinal;
-                    ?>
+                ?>
                 <input name="consultation" type="text" class="form-control" value = "<?php echo ("The Procedure is: " . $procedureFinal); ?>" READONLY><br>
                 <?php
                 for($i = 0; $i < count($branch); $i++) {
@@ -676,7 +677,7 @@
                     $branchFinal = $branch[$i];
                     }
                     $_SESSION["bookingBranch"] = $branchFinal;
-                    ?>
+                 ?>
                 <input name="branches" type="text" class="form-control" value = "<?php echo ("The Branch is: " . $branchFinal); ?>" READONLY><br>
                 
           
@@ -684,8 +685,7 @@
                if(isset($_GET['message'])){
                
                     echo "<textarea name='message' type='text' class='form-control' READONLY>Your Message is: $messageFinal</textarea>";
-            
-
+  
                 }
                     
                           ?>
@@ -704,7 +704,7 @@
 
     <?php
 
-if (isset($_GET['confirm-submit'])){  // if page is not submitted to itself echo the form
+if (isset($_GET['submit'])){  // if page is not submitted to itself echo the form
   //    $name =  $gender = $date = $time = $procedure = $branch = $checked = "";
   $name = isset($_GET['name']) ? $_GET['name'] : '';
   $email = isset($_GET['email']) ? $_GET['email'] : '';
