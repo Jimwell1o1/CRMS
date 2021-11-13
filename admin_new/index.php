@@ -40,6 +40,23 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
+<script type="text/javascript">
+function display_ct5() {
+var x = new Date()
+var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+
+var x1= ""; 
+x1 = x1 +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds()  + ampm;
+document.getElementById('ct5').innerHTML = x1;
+display_c5();
+ }
+ function display_c5(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct5()',refresh)
+}
+display_c5();
+ </script>
+
   </head>
   <body class="sb-nav-fixed">
 
@@ -47,20 +64,27 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
   
       <div id="layoutSidenav_content">
         <main>
+        
           <div class="container-fluid px-4" >
               
           
             <h1 class="mt-4">Dashboard - <?php echo $_SESSION['admin_branchName']; ?> </h1>
           
-            <ol class="breadcrumb mb-4">&nbsp;&nbsp;
+            <ol class="breadcrumb mb-4 ">&nbsp;&nbsp;
               <li class="breadcrumb-item active"> 
                 <b>
               <?php
-  
-         echo "Date: ".date("F j, Y") . "<br>" ."Time: " . date("g:i A");
+         date_default_timezone_set('Asia/Manila');
+         echo "Date: ".date("M j, Y"."(l)");
+        
+         echo "<br> Time: <span  id='ct5'></span>";
+        
     
               ?>
               </b>
+              
+ 
+            
        
           </li>
             </ol>
