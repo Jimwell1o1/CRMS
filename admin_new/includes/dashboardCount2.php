@@ -31,7 +31,7 @@ $query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Do
 $query_result = mysqli_query($conn,$query);
 while($row = mysqli_fetch_assoc($query_result)){
 
-  $done = $row['bookingCount'];
+  $history = $row['bookingCount'];
 }
 $query = "SELECT COUNT(*) as userCount FROM users";
 

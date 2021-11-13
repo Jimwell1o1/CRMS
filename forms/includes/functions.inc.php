@@ -69,18 +69,18 @@ function pwdMatch($pwd, $pwdRepeat){
     return $result;
 }
 
-function strpass($pwd){
-$result;
-if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $pwd)) {
-    $result = true;
+// function strpass($pwd){
+// $result;
+// if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $pwd)) {
+//     $result = true;
         
-} else {
+// } else {
     
-    $result = false;
-}
-return $result;
+//     $result = false;
+// }
+// return $result;
 
-}
+// }
 
 function uidExists($conn, $username, $email){
     $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";

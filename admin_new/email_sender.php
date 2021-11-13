@@ -210,7 +210,7 @@
 
             <div class="form-group form-check text-center">
                 <input type="checkbox" class="form-check-input" id="terms" required>
-                <label class="form-check-label" for="terms"><h5>I agree to the <a href="#">terms and conditions</h5></a></label>
+                <label class="form-check-label" for="terms"><h6>I hereby declare that the information provided above is true and correct. </h6></a></label>
             </div>
 
             <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Submit Email</button>

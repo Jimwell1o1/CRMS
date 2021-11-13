@@ -43,11 +43,11 @@ if (isset($_POST["submit"])) {
         header("Location: ../signup.php?error=uidlimit");
         exit();
     }
-    if (strpass($pwd) !== false) {
-        # code...
-        header("Location: ../signup.php?error=usestrngpass");
-        exit();
-    }
+    // if (strpass($pwd) !== false) {
+    //     # code...
+    //     header("Location: ../signup.php?error=usestrngpass");
+    //     exit();
+    // }
     if (uidExists($conn, $username, $email) !== false) {
         # code...
         header("Location: ../signup.php?error=usernametaken");
