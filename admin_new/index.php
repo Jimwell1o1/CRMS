@@ -40,18 +40,6 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-var timestamp = '<?=time();?>';
-function updateTime(){
-  $('#time').html(Date(timestamp));
-  timestamp++;
-}
-$(function(){
-  setInterval(updateTime, 1000);
-});
-</script>
-
   </head>
   <body class="sb-nav-fixed">
 
@@ -60,12 +48,19 @@ $(function(){
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4" >
-              <!-- LAGYAN NG DESIGN -->
+              
           
             <h1 class="mt-4">Dashboard - <?php echo $_SESSION['admin_branchName']; ?> </h1>
           
             <ol class="breadcrumb mb-4">&nbsp;&nbsp;
-              <li class="breadcrumb-item active"> <b  id="time"></b>
+              <li class="breadcrumb-item active"> 
+                <b>
+              <?php
+  
+         echo "Date: ".date("F j, Y") . "<br>" ."Time: " . date("g:i A");
+    
+              ?>
+              </b>
        
           </li>
             </ol>
