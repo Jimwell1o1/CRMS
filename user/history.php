@@ -120,7 +120,17 @@
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
-                                                <td class="status"> <?php echo $row['bookingStatus'] ?> </td>
+                                                <td class="status">   <?php 
+                                                if($row['bookingStatus'] == "Pending"){
+                                                     echo '<span class="badge badge-warning">Pending</span>';}
+                                                else if($row['bookingStatus'] == "Declined"){
+                                                echo '<span class="badge badge-danger">Declined</span>';}
+                                                else if($row['bookingStatus'] == "Accepted"){
+                                                echo '<span class="badge badge-success">Accepted</span>';}
+                                                else if($row['bookingStatus'] == "Done"){
+                                                  echo '<span class="badge badge-info">Accepted</span>';}
+                                                ?>
+                                                      </td>
                                                 
                                                 <?php 
                                                 
