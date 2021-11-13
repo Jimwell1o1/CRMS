@@ -108,7 +108,7 @@
 
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
-                                  if("Pending" === $row['bookingStatus']){ 
+                                  if("Pending" === $row['bookingStatus'] or "Accepted" === $row['bookingStatus'] or "Done" === $row['bookingStatus'] ){ 
                                     if($_SESSION["useruid"] === $row['bookingUsername']){ ?>
 
                                        <form action="../includes/cancelbook.inc.php" method="post">  
@@ -124,16 +124,17 @@
                                                 
                                                 <?php 
                                                 
-                                                  if($row['bookingStatus'] === "Cancelled"){
+                                                  if($row['bookingStatus'] === "Cancelled" or $row['bookingStatus'] === "Done"){
                                                       echo '<td> - - n/a - - </td>';
                                                     
                                                   }else{
                                                       echo '<td>
                                                       <button type="submit" name="submit" class="btn btn-danger" onclick="ConfirmDelete()">
-                                                        <i>Cancel</i>
+                                                        Cancel
                                                       </button>
                                                       </td>';
                                                   }
+
                                                   ?>
                                                 
                                                 </form>   
