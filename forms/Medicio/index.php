@@ -123,7 +123,7 @@
 
     //initialize variables into empty strings
     $nameErr = $emailErr = $genderErr = $dateErr = $timeErr = $procedureErr = $branchErr = $message = $checked = "";
-    $name =  $gender = $date = $time = $procedure = $branch = $checkedErr = "";
+    $name = $email = $gender = $date = $time = $procedure = $branch = $checkedErr = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET['submit'])) { //if submit button is clicked this will be the action
         if (!empty($_GET["name"])){         //this is for the name validation
@@ -635,7 +635,9 @@
 
            $messageFinal = $message;
            $_SESSION["bookingMessage"] = $messageFinal;
+           
            ?>
+
            <?php
            for($i = 0; $i < count($gender); $i++) {
                $gender[$i];
@@ -654,7 +656,7 @@
                  }
                $_SESSION["bookingTime"] = $timeFinal;
 
-               ?>
+            ?>
                 
                 <input name="email" type="text" class="form-control" value = "<?php echo ("Your email is: " . $emailFinal); ?>" READONLY><br>
                 <input name="gender" type="text" class="form-control" value = "<?php echo ("Your Gender is: " . $genderFinal); ?>" READONLY><br>
