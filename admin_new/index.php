@@ -469,7 +469,7 @@ $(function(){
         <form action="" method="post">
         <div>
           <label class="form-label">Patient Name:</label>
-          <input name="name" type="text" class="form-control" placeholder="Enter Patient Name" required>
+          <input name="name" type="text"  class="form-control" placeholder="Enter Patient Name" required>
         </div>
         
         <div>
