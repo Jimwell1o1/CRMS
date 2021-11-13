@@ -129,7 +129,7 @@
                                                     
                                                   }else{
                                                       echo '<td>
-                                                      <button type="submit" name="submit" class="btn btn-danger" onclick="ConfirmDelete()">
+                                                      <button type="submit" name="submit" class="btn btn-danger" onclick="return ConfirmDelete()">
                                                         Cancel
                                                       </button>
                                                       </td>';
@@ -161,5 +161,16 @@
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
+
+
+  <script>
+    function ConfirmDelete(){
+    var x = confirm("Are you sure you want to cancel your appointment?");
+    if (x)
+        return true;
+    else
+      return false;
+      }
+</script>
 </body>
 </html>
