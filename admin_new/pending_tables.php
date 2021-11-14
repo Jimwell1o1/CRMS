@@ -40,6 +40,19 @@
               <li class="breadcrumb-item active">Pending Schedule</li>
             </ol>
 
+            <?php
+           if (isset($_GET["error"])){
+                        if ($_GET["error"] == "successful") {
+                            echo '<div class="alert alert-success alert-dismissible">
+                            The system has successfully updated the information. 
+                          </div>';
+           }else if($_GET["error"] == "unsuccessful") {
+            echo '<div class="alert alert-danger alert-dismissible">
+              Updating data error occured, please try again.
+          </div>';
+}
+          }
+              ?>
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>

@@ -23,10 +23,6 @@
     <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this record?');">
       <i class="fas fa-trash"></i>
     </button>
-    <label>&nbsp;</label>
-    <button class="btn btn-primary" onClick="this.disabled=true; this.value='Sending…';">
-      <i class="fas fa-bell"></i>
-    </button>
     <div>
   </form>
 
@@ -43,7 +39,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="" method="post">
+        <form action="../includes/updateBooking.inc.php" method="POST">
+        <input name="bookid" type="hidden" class="form-control" value="<?php echo $row['bookingId']; ?>" required>
         <div>
           <label class="form-label">Patient Name:</label>
           <input name="name" type="text" class="form-control" value="<?php echo $row['bookingName']; ?>" required>
@@ -65,14 +62,18 @@
           <input name="branch" type="text" class="form-control" value="<?php echo $row['bookingBranch']; ?>"  required>
         </div>
         <div>
-          <label class="form-label">Procedure/Dental Service</label>
+          <label class="form-label">Procedure/Dental Service:</label>
           <input name="procedure" type="text" class="form-control" value="<?php echo $row['bookingConsultation']; ?>"  required>
+        </div>
+        <div>
+          <label class="form-label">Status:</label>
+          <input name="status" type="text" class="form-control" value="<?php echo $row['bookingStatus']; ?>"  required>
         </div>
    
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button  type="submit" name="confirm-submit" class="btn btn-primary">Update</button>
+        <button  type="submit" name="submit" class="btn btn-primary">Update</button>
         </form>
       </div>
     </div>

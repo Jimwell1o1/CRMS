@@ -326,5 +326,17 @@ function bookingDetails_admin($conn, $username, $name, $email, $gender, $date, $
     exit();
 };
 
-
+// Function for Booking inserting to Database
+function bookingUpdate($conn, $id, $name, $gender, $date, $time, $consultation, $branch, $status){
+    $sql = "UPDATE booking SET bookingName = '$name', bookingGender = '$gender', bookingDate = '$date', bookingTime = '$time', bookingConsultation = '$consultation', bookingBranch = '$branch',  bookingStatus = '$status' WHERE bookingId = '$id';";
+    $query_run = mysqli_query($conn, $sql);
+    
+    if($query_run){
+        header("location: ../admin_new/pending_tables.php?error=successful");
+                exit();
+            }else {
+                header("location: ../admin_new/pending_tables.php?error=unsuccessful");
+                exit();
+            }
+};
 ?>
