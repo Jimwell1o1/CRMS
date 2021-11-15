@@ -78,21 +78,21 @@
                                 ?>">
                 </div>
              
-                <p><a href="signup-admin.php"> Create Account </a> </p>
+                <!-- <p><a href="signup-admin.php"> Create Account </a> </p> -->
              
                 <br>
                 <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/><br>
                 <input  class="btn btn-primary" type="submit" name="submit" value="Log In" />
                 <br>
-                <form action = "signup-admin.php">
+                <!-- <form action = "signup-admin.php"> -->
                 
                 <br><br><br><br>
-            </form>
+            <!-- </form> -->
             <div class = "bg-danger text-white fixed-bottom">
             <br><p>  This page is not for the clients.</p>
             <p><a  class = "text-white" href="../index.php">Back to homepage</a></p>
             <br>
-                                </div>
+</div>
         </div>
         
           <!-- Vendor JS Files -->

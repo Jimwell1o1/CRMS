@@ -45,6 +45,7 @@
             bookingId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
             bookingUsername varchar(128) NOT NULL,
             bookingName varchar(128) NOT NULL,
+            bookingemail varchar(128) NOT NULL,
             bookingGender varchar(128) NOT NULL,
             bookingDate varchar(128) NOT NULL,
             bookingTime varchar(128) NOT NULL,

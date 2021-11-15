@@ -17,11 +17,15 @@ CREATE TABLE adminAcc (
 );
 
 INSERT INTO `adminAcc` (`adminAccName`, `adminAccBranch`, `adminAccEmail`, `adminAccUid`, `adminAccPwd`) VALUES
-('admin malinao', 'Malinao', 'mcyadminmalinao@gmail.com', 'adminmalinao', '$2y$10$r0kVCKJp.E9KCyDdDISXiubAs.MJAJL1bm4kEinQWO.ATKBNMPqsq'),
-('admin pinagbuhatan', 'Pinagbuhatan', 'mcyadminpinag@gmail.com', 'adminpinag', '$2y$10$lgZ12.Z7HirKikOIdk7H4OQhvw/CiauIwQ3yC.ktzV7mE3DBEKs8a'),
-('admin san joaquin', 'San Joaquin', 'mcyadminsq@gmail.com', 'adminsq', 'adminsq'),
-('admin main', 'mainAdmin', 'mainadminMcy@gmail.com', 'adminmain', 'adminmain');
+('admin malinao', 'Malinao', 'mcyadminmalinao@gmail.com', 'adminmalinao', '$2y$10$PfyxaGIDgdC1cnHoWnYL/ujTyVF.LCeAIJstWDNBnwzpAJqKQp35K'),
+('admin pinagbuhatan', 'Pinagbuhatan', 'mcyadminpinag@gmail.com', 'adminpinag', '$2y$10$y854VLh1TCk38hlxKZRWoupky19VyvUD.odAO9u5xzMg6wJT.GiIC'),
+('admin san joaquin', 'San Joaquin', 'mcyadminsq@gmail.com', 'adminsq', '$2y$10$3lrUKyYgwuh/HfE0Xn.VSeQvmWszO2jURYocwOOa/CC9GQDtprv9W'),
+('admin main', 'mainAdmin', 'mainadminMcy@gmail.com', 'adminmain', '$2y$10$dFggUbzUfFcd3hE1Gn5QSurcuDfTWJyqAC0nDbej0RBjWqeJ8MUKy');
 
+-- Malinao			 Username: adminmalinao 				password: adminmalinao15
+-- Pinagbuhatan		 Username: adminpinagbuhatan 			password: mcypinag16
+-- San Joaquin		 Username: adminsq 						password: adminsq12
+-- Main admin		 Username: adminmain 					password: mcymainadmin34
 
 
 CREATE TABLE booking (
