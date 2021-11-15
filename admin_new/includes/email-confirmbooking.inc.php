@@ -22,8 +22,9 @@ use PHPMailer\PHPMailer\PHPMailer;
                 
                 $output="<h3>Appointment Confirmation</h3>";
                 $output.="<h4>Hi " .$name. "!</h4>";
-                $output.='<p>This is MCY Dental Clinic. We want to know that your appointment is now successfully confirmed on ' . $date .' at '.$time. '. <br>Please call (02)8640-5536 or text 0945 568 4584
-                if you need to reschedule or cancel your appointment. Thank you and stay safe! </p>';
+                $output.='<p>This is MCY Dental Clinic. We want to know that your appointment is now successfully confirmed on ' . $date .' at '.$time. '. <br>Please call us on (02)8640-5536 or text 0945 568 4584
+                if you have any concerns regarding your appoinment. Thank you and stay safe! </p>';
+                $output.='<p> Kindly please contact us on our website <a href="">www.mcydentalclinic.com/crms/index#contactus </a>if you need to reschedule or cancel your appointment. </p>';
                 $output.='<p>Thanks,</p>';
                 $output.='<p>The MCY Dental Team</p>';
                 $body = $output;

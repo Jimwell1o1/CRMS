@@ -269,6 +269,18 @@
            
           <br> You wouldn't want to miss important dates, right?<br> <h6>Make an appointment now to <a href="">enjoy 5% off </a>on your first booking!</h6></p>
         </div>
+        <?php
+        if (isset($_GET["error"])) {
+            # code...
+            if ($_GET["error"] == "stmtfailed") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&plus;</button>
+              Appointment Scheduling failed. Please try again later.
+            </div>";
+            } 
+          }
+            ?>
 
         <form action="<?php echo ($_SERVER["PHP_SELF"]);?>" method="GET"  data-aos="fade-up" data-aos-delay="100">
           <h4>Patient Details</h4><br>

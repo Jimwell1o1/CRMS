@@ -88,7 +88,19 @@
           <h2>History</h2>
           <p>This is your recently schedule appointments.<br> Please wait for the administrator's response before approving your pending appointments.</p>
         </div>
-        <table class="table" data-aos="fade-left">
+        <?php
+        if (isset($_GET["error"])) {
+            # code...
+            if ($_GET["error"] == "donebooking") {
+                # code...
+                echo "<div data-aos='fade-left' class='alert alert-warning alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              Appointment Scheduling pending. Please wait for the confirmation email.
+            </div>";
+            } 
+          }
+            ?>
+        <table class="table" data-aos="fade-right">
                                     <thead class="thead-light">
                                             <tr>
                                             <th scope="col">Patient</th>
