@@ -23,7 +23,7 @@ INSERT INTO `adminAcc` (`adminAccName`, `adminAccBranch`, `adminAccEmail`, `admi
 ('admin main', 'mainAdmin', 'mainadminMcy@gmail.com', 'adminmain', '$2y$10$dFggUbzUfFcd3hE1Gn5QSurcuDfTWJyqAC0nDbej0RBjWqeJ8MUKy');
 
 -- Malinao			 Username: adminmalinao 				password: adminmalinao15
--- Pinagbuhatan		 Username: adminpinagbuhatan 			password: mcypinag16
+-- Pinagbuhatan		 Username: adminpinag 					password: mcypinag16
 -- San Joaquin		 Username: adminsq 						password: adminsq12
 -- Main admin		 Username: adminmain 					password: mcymainadmin34
 
@@ -32,6 +32,7 @@ CREATE TABLE booking (
 	bookingId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	bookingUsername varchar(128) NOT NULL,
 	bookingName varchar(128) NOT NULL,
+	bookingemail varchar(128) NOT NULL,
 	bookingGender varchar(128) NOT NULL,
 	bookingDate varchar(128) NOT NULL,
 	bookingTime varchar(128) NOT NULL,
