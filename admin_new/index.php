@@ -368,7 +368,7 @@ display_c7()
                    <table id="datatablesSimple">
                   <thead>
                     <tr>
-                    <th>ID</th>
+                  
                     <th>Name</th>
                       <th>Gender</th>
                       <th>Date</th>
@@ -380,7 +380,6 @@ display_c7()
                   </thead>
                   <tfoot>
                     <tr>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>Gender</th>
                       <th>Date</th>
