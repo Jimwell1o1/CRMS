@@ -40,22 +40,36 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-<script type="text/javascript">
-function display_ct5() {
+  <script>function display_ct7() {
 var x = new Date()
 var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+hours = x.getHours( ) % 12;
+hours = hours ? hours : 12;
+hours=hours.toString().length==1? 0+hours.toString() : hours;
+
+var minutes=x.getMinutes().toString()
+minutes=minutes.length==1 ? 0+minutes : minutes;
+
+var seconds=x.getSeconds().toString()
+seconds=seconds.length==1 ? 0+seconds : seconds;
+
+var month=(x.getMonth() +1).toString();
+month=month.length==1 ? 0+month : month;
+
+var dt=x.getDate().toString();
+dt=dt.length==1 ? 0+dt : dt;
 
 var x1= ""; 
-x1 = x1 +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds()  + ampm;
-document.getElementById('ct5').innerHTML = x1;
-display_c5();
+x1 = x1 +  hours + ":" +  minutes + ":" +  seconds + " " + ampm;
+document.getElementById('ct7').innerHTML = x1;
+display_c7();
  }
- function display_c5(){
+ function display_c7(){
 var refresh=1000; // Refresh rate in milli seconds
-mytime=setTimeout('display_ct5()',refresh)
+mytime=setTimeout('display_ct7()',refresh)
 }
-display_c5();
- </script>
+display_c7()
+</script>
 
   </head>
   <body class="sb-nav-fixed">
@@ -77,7 +91,7 @@ display_c5();
          date_default_timezone_set('Asia/Manila');
          echo "Date: ".date("M j, Y"."(l)");
         
-         echo "<br> Time: <span  id='ct5'></span>";
+         echo "<br> Time: <span  id='ct7'></span>";
         
     
               ?>
@@ -354,6 +368,7 @@ display_c5();
                    <table id="datatablesSimple">
                   <thead>
                     <tr>
+                    <th>ID</th>
                     <th>Name</th>
                       <th>Gender</th>
                       <th>Date</th>
@@ -365,6 +380,7 @@ display_c5();
                   </thead>
                   <tfoot>
                     <tr>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Gender</th>
                       <th>Date</th>
