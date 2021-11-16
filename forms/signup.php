@@ -139,6 +139,13 @@
                Please use a Strong Password.
             </div>";
           }
+          elseif ($_GET["error"] == "nocaptcha") {
+            # code...
+            echo "<div class='alert alert-danger alert-dismissible'>
+            <button type='button' class='close' data-dismiss='alert'>&times;</button>
+             Please complete the captcha below.
+          </div>";
+        }
             elseif ($_GET["error"] == "none") {
                 # code...
                 echo "<div class='alert alert-success alert-dismissible'>
@@ -151,8 +158,11 @@
  
     <!-- Login Form -->
     <form action = "includes/signup.inc.php" method="POST">
-      <input type="text" id="textbox" class="fadeIn third" name="name" placeholder="Full Name">
-      <input type="text" id="textbox" class="fadeIn third" name="email" placeholder="Email">
+      <input type="text" id="textbox" class="fadeIn third" id="validationCustom01" name="name" placeholder="Full Name">
+      <div class="valid-feedback">
+      Looks good!
+    </div>
+      <input type="text" id="textbox" class="fadeIn third" name="email" placeholder="Email" required>
       <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username" min="6" maxlength="12">
       <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password">
       <input type="password" id="confirmVal" class="fadeIn third" name="pwdrepeat" placeholder="Confirm Password"><br/>

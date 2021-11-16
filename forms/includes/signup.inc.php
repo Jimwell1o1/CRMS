@@ -63,6 +63,6 @@ if (isset($_POST["submit"]) && $_POST['g-recaptcha-response'] != "") {
     }
 
 } else {
-    header("Location: ../signup.php");
+    header("Location: ../signup.php?error=nocaptcha");
     exit();
 }
