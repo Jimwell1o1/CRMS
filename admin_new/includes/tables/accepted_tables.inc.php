@@ -7,12 +7,16 @@
     <td> <?php echo $row['bookingBranch'] ?> </td>  
     <td class="text-left">
         <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-            <button class="btn btn-success" id="accept-button" name="submit">
+        <div class = "d-flex p-1">
+        <button class="btn btn-success" id="accept-button" name="submit">
             <i class="fas fa-check-circle"></i>
             </button> 
+            <label>&nbsp;</label>
             <button class="btn btn-danger" name="delete" onclick="ConfirmDelete()">
             <i class="fas fa-trash-alt"></i>
+
             </button>
+            <label>&nbsp;</label>
         </form> 
         <form action="includes/email-confirmbooking.inc.php" method="POST">
         <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
@@ -22,6 +26,7 @@
             <button type="submit" class="btn btn-primary">
                   <i class="fas fa-bell"></i>
                 </button>
+                </div>
           </form>
   </td>
 </tr>

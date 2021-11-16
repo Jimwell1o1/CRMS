@@ -5,15 +5,17 @@
   <td> <?php echo $row['bookingTime'] ?> </td>
   <td> <?php echo $row['bookingConsultation'] ?> </td>
   <td> <?php echo $row['bookingBranch'] ?> </td>
-  <td>
-<form action="../includes/updateDeclinedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-          
-<button class="btn btn-success" id="accept-button" name="submit">
-<i class="fas fa-redo"></i> Recover
-</button>
-<button class="btn btn-warning" id="accept-button" name="done">
-<i class="fas fa-check"></i> Done
-</button>
+  <td class="text-left">
+  <form action="../includes/updateDeclinedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+  <div  class = "d-flex p-1">
+  <button class="btn btn-success" id="accept-button" name="submit">
+  <i class="fas fa-redo"></i> Recover
+  </button>
+  <label>&nbsp;</label>
+  <button class="btn btn-warning" id="accept-button" name="done">
+  <i class="fas fa-check"></i> Done
+  </button>
+  </div>
       </form>
 
 
