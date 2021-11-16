@@ -31,6 +31,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
@@ -128,7 +129,7 @@
               # code...
               echo "<div class='alert alert-danger alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert'>&times;</button>
-              Username must be at least 6 characters .
+              Username must not exceed at 12 characters .
             </div>";
           }
             elseif ($_GET["error"] == "usestrngpass") {
@@ -152,11 +153,12 @@
     <form action = "includes/signup.inc.php" method="POST">
       <input type="text" id="textbox" class="fadeIn third" name="name" placeholder="Full Name">
       <input type="text" id="textbox" class="fadeIn third" name="email" placeholder="Email">
-      <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username" maxlength="10">
+      <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username" min="6" maxlength="12">
       <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password">
       <input type="password" id="confirmVal" class="fadeIn third" name="pwdrepeat" placeholder="Confirm Password"><br/>
       <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
- 
+      <br>
+      <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LdDOTkdAAAAAJvyTa8sZJ0qMxAy1XRdPw6D96NZ"></div>
       <input type="submit" class="fadeIn fourth" value="Register" name = "submit" >
       <!-- //onclick="return Validate()" -->
       <br>

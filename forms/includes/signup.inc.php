@@ -2,9 +2,13 @@
 
 
 //kapag ang user pumunta dito babalik siya sa home page
-if (isset($_POST["submit"])) {
+if (isset($_POST["submit"]) && $_POST['g-recaptcha-response'] != "") {
     # code...
     echo "It works!"; //pang testing
+
+    $secret='6LdDOTkdAAAAAAhioXaKhLgS-aZw6ZbNzEO94cBN';
+    $verifyResponse = file_get_contents('https://google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+    $responseData = json_decode($verifyResponse);
 
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -17,6 +21,7 @@ if (isset($_POST["submit"])) {
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
+    if($responseData->success){
     if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
         # code...
         header("Location: ../signup.php?error=emptyinput");
@@ -55,7 +60,7 @@ if (isset($_POST["submit"])) {
     }
 
     createUser($conn, $name, $email, $username, $pwd);
-
+    }
 
 } else {
     header("Location: ../signup.php");

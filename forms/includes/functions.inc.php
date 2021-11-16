@@ -28,7 +28,7 @@ function invalidUid($username){
 
 function usernamelimit($username){
     $result;
-    if (strlen($username) > 6) {
+    if (strlen($username) > 12) {
         # code...
         $result = true;
         
