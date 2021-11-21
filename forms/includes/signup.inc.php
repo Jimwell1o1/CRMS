@@ -1,5 +1,7 @@
 <?php
 
+    require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
 
 //kapag ang user pumunta dito babalik siya sa home page
 if (isset($_POST["submit"]) && $_POST['g-recaptcha-response'] != "") {
@@ -16,36 +18,71 @@ if (isset($_POST["submit"]) && $_POST['g-recaptcha-response'] != "") {
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
 
+    $error = "";
 
 
-    require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
 
     if($responseData->success){
+
+        if(empty($name)){
+            # code...
+            $error = $error . "&name=empty";
+       }else{
+        $error = $error . "&name=".$name;
+       }
+        if(empty($email)){
+            # code...
+            $error = $error . "&email=empty";
+        }else{
+            $error =$error."&email=".$email;
+           }
+        if(empty($username)){
+            # code...
+            $error = $error . "&username=empty";
+        }else{
+            $error =$error."&username=".$username;
+           }
+        if(empty($pwd)){
+            # code...
+            $error = $error . "&pwd=empty";
+        }
+        if(empty($pwdRepeat)){
+            # code...
+            $error = $error . "&pwdrepeat=empty";
+        }
+    if(empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat)){
+        
+        $_SESSION['name'] = $name;
+     
+         header("Location: ../signup.php?error=emptyinput$error");
+         exit();
+    }
+    
+
     if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
         # code...
-        header("Location: ../signup.php?error=emptyinput");
+        header("Location: ../signup.php?error=emptyinput$error");
         exit();
     }
     if (invalidUid($username) !== false) {
         # code...
-        header("Location: ../signup.php?error=invaliduid");
+        header("Location: ../signup.php?error=invaliduid$error");
         exit();
     }
     
     if (invalidEmail($email) !== false) {
         # code...
-        header("Location: ../signup.php?error=invalidemail");
+        header("Location: ../signup.php?error=invalidemail$error");
         exit();
     }
     if (pwdMatch($pwd, $pwdRepeat) !== false) {
         # code...
-        header("Location: ../signup.php?error=passwordsdontmatch");
+        header("Location: ../signup.php?error=passwordsdontmatch$error");
         exit();
     }
     if (usernamelimit($username) !== false) {
         # code...
-        header("Location: ../signup.php?error=uidlimit");
+        header("Location: ../signup.php?error=uidlimit$error");
         exit();
     }
     // if (strpass($pwd) !== false) {
@@ -55,7 +92,7 @@ if (isset($_POST["submit"]) && $_POST['g-recaptcha-response'] != "") {
     // }
     if (uidExists($conn, $username, $email) !== false) {
         # code...
-        header("Location: ../signup.php?error=usernametaken");
+        header("Location: ../signup.php?error=usernametaken$error");
         exit();
     }
 
@@ -63,6 +100,7 @@ if (isset($_POST["submit"]) && $_POST['g-recaptcha-response'] != "") {
     }
 
 } else {
+
     header("Location: ../signup.php?error=nocaptcha");
     exit();
 }

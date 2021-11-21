@@ -102,7 +102,7 @@
             echo "<li class='drop-down'><a href=''> My Account | ". $_SESSION["useruid"] . "</a>";
             echo "<ul>";
             echo "<li><a href='user/profile.php'>My Profile</a></li>";
-            echo "<li><a href='forms/Medicio/index.php'>Set an Appointment</a></li>";
+            echo "<li><a href='forms/appointment/index.php'>Set an Appointment</a></li>";
             echo "<li><a href='user/history.php'>History</a></li>";
             echo "<li><a href='forms/includes/logout.inc.php'>Log Out</a></li>";
             echo "</ul></li>";
@@ -142,7 +142,7 @@
       <?php
         if (isset($_SESSION["useruid"])) {
             # code...
-            echo "Click <a href='forms/Medicio/index.php'>Here</a> to Set an Appointment!</h2>";
+            echo "Click <a href='forms/appointment/index.php'>Here</a> to Set an Appointment!</h2>";
             
         }
         else {

@@ -158,14 +158,64 @@
  
     <!-- Login Form -->
     <form action = "includes/signup.inc.php" method="POST">
-      <input type="text" id="textbox" class="fadeIn third" id="validationCustom01" name="name" placeholder="Full Name">
-      <div class="valid-feedback">
-      Looks good!
-    </div>
-      <input type="text" id="textbox" class="fadeIn third" name="email" placeholder="Email" required>
-      <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username" min="6" maxlength="12">
-      <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password">
+      <input type="text" id="textbox" class="fadeIn third" id="validationCustom01" name="name" placeholder="Full Name" value="<?php
+       if (isset($_GET["name"]) && $_GET["name"] !== "empty"){
+         echo $_GET["name"];
+        }
+      ?>"><br>
+      <?php
+      if (isset($_GET["name"])){
+          if ($_GET["name"] == "empty") {
+            # code...
+            echo '<small><span class="fadeIn third text-danger">*Name is required</span></small>';
+        } 
+      }
+      ?>
+
+      <input type="text" id="textbox" class="fadeIn third" name="email" placeholder="Email"value="<?php
+       if (isset($_GET["email"]) && $_GET["email"] !== "empty"){
+         echo $_GET["email"];
+        }
+      ?>"><br>
+      <?php
+      if (isset($_GET["email"])){
+          if ($_GET["email"] == "empty") {
+            # code...
+            echo '<small><span class="fadeIn third text-danger">*Email is required</span></small>';
+        } 
+      }
+      ?>
+      <input type="text" id="textbox" class="fadeIn third" name="uid" placeholder="Username" min="6" maxlength="12" value="<?php
+       if (isset($_GET["username"]) && $_GET["username"] !== "empty"){
+         echo $_GET["username"];
+        }
+      ?>"><br>
+      <?php
+      if (isset($_GET["username"])){
+          if ($_GET["username"] == "empty") {
+            # code...
+            echo '<small><span class="fadeIn third text-danger">*Username is required</span></small>';
+        } 
+      }
+      ?>
+      <input type="password" id="passwordVal" class="fadeIn third" name="pwd" placeholder="Password"><br>
+      <?php
+      if (isset($_GET["pwd"])){
+          if ($_GET["pwd"] == "empty") {
+            # code...
+            echo '<small><span class="fadeIn third text-danger">*Password is required</span></small>';
+        } 
+      }
+      ?>
       <input type="password" id="confirmVal" class="fadeIn third" name="pwdrepeat" placeholder="Confirm Password"><br/>
+      <?php
+      if (isset($_GET["pwdrepeat"])){
+          if ($_GET["pwdrepeat"] == "empty") {
+            # code...
+            echo '<small><span class="fadeIn third text-danger">*Confirm password is required</span></small><br>';
+        } 
+      }
+      ?><br>
       <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
       <br>
       <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LdDOTkdAAAAAJvyTa8sZJ0qMxAy1XRdPw6D96NZ"></div>

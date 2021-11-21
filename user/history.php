@@ -61,7 +61,7 @@
             echo "<li class='drop-down'><a href=''> My Account | ". $_SESSION["useruid"] . "</a>";
             echo "<ul>";
             echo "<li><a href='profile.php'>My Profile</a></li>";
-            echo "<li><a href='../forms/Medicio/index.php'>Set an Appointment</a></li>";
+            echo "<li><a href='../forms/appointment/index.php'>Set an Appointment</a></li>";
             echo "<li><a href='history.php'>History</a></li>";
             echo "<li><a href='../forms/includes/logout.inc.php'>Log Out</a></li>";
             echo "</ul></li>";
@@ -168,8 +168,8 @@
                                         
                             <?php } }} } ?>
                             </table>
-
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+                                                </div></div></div>
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/jquery/jquery.min.js"></script>

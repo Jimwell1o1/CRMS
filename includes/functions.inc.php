@@ -291,7 +291,7 @@ function bookingDetails($conn, $username, $name, $email, $gender, $date, $time, 
     $sql = "INSERT INTO booking (bookingUsername, bookingName, bookingemail, bookingGender, bookingDate, bookingTime, bookingConsultation, bookingBranch, bookingMessage, bookingStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../forms/Medicio/index.php?error=stmtfailed");
+        header("location: ../forms/appointment/index.php?error=stmtfailed");
         exit();
     }
 
