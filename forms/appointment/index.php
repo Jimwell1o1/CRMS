@@ -225,11 +225,7 @@
           <li class="active"><a href="#appointment">Book Now</a></li>
           <li><a href="#featured-services">Services</a></li>
           <li><a href="#departments">Branches</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
+        
           <?php
         if (isset($_SESSION["useruid"])) {
             # code...
