@@ -31,43 +31,32 @@
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center">
-        <i class="icofont-clock-time"></i> Monday - Saturday, 8AM to 10PM
-      </div>
-      <div class="d-flex align-items-center">
-        <i class="icofont-phone"></i> Call us now +1 5589 55488 55
-      </div>
-    </div>
-  </div>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      
-    <a href="../index.php" class="logo mr-auto text-white font-weight-bold">MCY Dental Clinic</a>
-
+    <div class="logo mr-auto">
+        <h1 class="text-light"><a href="../index.php">MCY Dental Clinic</a></h1>
+      </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
+        <li class="active"><a href='../index.php'>Home</a></li>
           <?php
           if (isset($_SESSION["useruid"])) {
               # code...
               echo "<li class='drop-down'><a href=''> My Account | ". $_SESSION["useruid"] . "</a>";
               echo "<ul>";
-              echo "<li><a href='user/profile.php'>My Profile</a></li>";
-              echo "<li><a href='forms/appointment/index.php'>Set an Appointment</a></li>";
-              echo "<li><a href='user/history.php'>History</a></li>";
-              echo "<li><a href='forms/includes/logout.inc.php'>Log Out</a></li>";
+              echo "<li><a href='../user/profile.php'>My Profile</a></li>";
+              echo "<li><a href='../forms/appointment/index.php'>Set an Appointment</a></li>";
+              echo "<li><a href='../user/history.php'>History</a></li>";
+              echo "<li><a href='../forms/includes/logout.inc.php'>Log Out</a></li>";
               echo "</ul></li>";
           }
           else {
               # code...
-              echo "<li><a href='forms/signup.php'>REGISTER</a></li>";
-              echo "<li><a href='forms/login.php'>LOG IN</a></li>";
+              echo "<li><a href='../forms/signup.php'>REGISTER</a></li>";
+              echo "<li><a href='../forms/login.php'>LOG IN</a></li>";
           }
          
       ?>
@@ -87,7 +76,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Terms of Service</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li>Terms of Service</li>
           </ol>
         </div>
@@ -229,26 +218,26 @@ These terms of use together with our End User License Agreement (EULA), constitu
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#about">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#steps">How to appoint?</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#priorities">Priorities</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#portfolio">Gallery</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#contact">Contact Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#about">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#steps">How to appoint?</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#priorities">Priorities</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#portfolio">Gallery</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#contact">Contact Us</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Consultation</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Oral Prophylaxis</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Tooth Restoration</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Tooth Extraction</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Flouride Application</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Prosthodontic Treatment</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Orthodontic Treatment</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="../../index.php#services">Periodontic Rehab</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Consultation</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Oral Prophylaxis</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Tooth Restoration</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Tooth Extraction</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Flouride Application</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Prosthodontic Treatment</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Orthodontic Treatment</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.php#services">Periodontic Rehab</a></li>
             </ul>
           </div>
 
@@ -299,8 +288,6 @@ These terms of use together with our End User License Agreement (EULA), constitu
   <script src="../assets/vendor/venobox/venobox.min.js"></script>
   <script src="../assets/vendor/aos/aos.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
 
 
 </body>
