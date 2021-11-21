@@ -87,7 +87,7 @@
         <ul>
           <li class="active"><a href="index.php">Home</a></li>
           <li><a href="#about">Intro</a></li>
-          <li class="drop-down"><a href="#priorities">About Us</a>
+          <li class="drop-down"><a href="">About Us</a>
             <ul>
               <li><a href="#priorities">Our Priorities</a></li>
               <li><a href="#steps">How to appoint?</a></li>
