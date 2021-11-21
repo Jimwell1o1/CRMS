@@ -538,7 +538,7 @@
           <div class="form-group">
           
           
-          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>> Click  <a data-toggle="modal" data-target="#exampleModalLong" href="#exampleModalLong">Here </a> To Review MCY's Dental Clinic Data Privacy Notice.
+          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>> Click  <a target="_blank" href="../../policy/terms.php">Here </a> To Review MCY's Dental Clinic Data Privacy Notice.
               I hereby give my full consent having reviewed and understood the Data Privacy Notice of MCY Dental Clinic to allow the company to process my data in accordance to the Data Privacy Act of 2012. </label><br>
               <span class="text-danger"> <?php echo $checkedErr;?></span>
               <br>
@@ -813,19 +813,20 @@ $(document).ready(function(){
               <li class="nav-item">
                 <a class="nav-link active show" data-toggle="tab" href="#tab-1">
                   <h4>SAN JOAQUIN</h4>
-                  <p>Contacts:(02)8640-5536 </p>
+                  <h6><span class="badge badge-secondary">Contact:</span> (02) 8640-5536</h6>
+
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-toggle="tab" href="#tab-2">
                   <h4>PINAGBUHATAN</h4>
-                  <p>Contacts:(02)8984-47311 .</p>
+                  <h6><span class="badge badge-secondary">Contact:</span> (02) 8984-47311</h6>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-toggle="tab" href="#tab-3">
                   <h4>MALINAO</h4>
-                  <p>Contacts:(02)8656-0856</p>
+                  <h6><span class="badge badge-secondary">Contact:</span> (02) 8656-0856</h6>
                 </a>
               </li>
 
@@ -836,11 +837,10 @@ $(document).ready(function(){
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
                 <h3>San Joaquin, Pasig City</h3>
-                <p class="font-italic"><b>Address:</b> 9M Conception St. San Joaquin 1601 Pasig, Philippines</p>
-             
+                <p class="font-italic"><b><span class="badge badge-pill badge-info">9M Conception St. San Joaquin 1601 Pasig, Philippines</span></b> </p>
                 <p><b>Email Address:</b> mcysanjoaquin@gmail.com</p>
                 <p><b>Schedule:</b> 9:00am to 5:00pm</p>
-                <p><b>Facebook Page:</b> <a href = "https://www.facebook.com/MCYdentalSJ/">MCY Dental Clinic San Joaquin </a></p>
+                <p><b>Facebook Page:</b> <a target="_blank" href = "https://www.facebook.com/MCYdentalSJ/">MCY Dental Clinic San Joaquin </a></p>
       
                 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
                 <iframe class  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.821201242739!2d121.07188731478861!3d14.552215089833268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a28bc76061%3A0x8796bdc6a86e55fe!2sMCY%20Dental%20Clinic%20San%20Joaquin!5e0!3m2!1sen!2sph!4v1634487024503!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -848,10 +848,10 @@ $(document).ready(function(){
  </div>
               <div class="tab-pane" id="tab-2">
                 <h3>Pinagbuhatan, Pasig City</h3>
-                <p class="font-italic"><b>Address: </b>22 Urbano Velasco Ave St. 1602 Pasig, Philippines</p>
+                <p class="font-italic"><b><span class="badge badge-pill badge-info">22 Urbano Velasco Ave St. 1602 Pasig, Philippines</span></b> </p>
                 <p><b>Email Address:</b> mcypinagbuhatan@gmail.com</p>
                 <p><b>Schedule:</b> 9:00am to 5:00pm</p>
-                <p><b>Facebook Page:</b> <a href = "https://www.facebook.com/MCYPinagbuhatan/">MCY Dental Clinic Pinagbuhatan </a></p>
+                <p><b>Facebook Page:</b> <a target="_blank" href = "https://www.facebook.com/MCYPinagbuhatan/">MCY Dental Clinic Pinagbuhatan </a></p>
                 
                 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380.3762212109789!2d121.08532588294001!3d14.557185442325617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7d2f04ccc9b%3A0xe1001ce5191eb0a5!2sMCY%20Dental!5e0!3m2!1sen!2sph!4v1634487131612!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -860,11 +860,11 @@ $(document).ready(function(){
                 </div>
               <div class="tab-pane" id="tab-3">
                 <h3>Malinao, Pasig City</h3>
-                <p class="font-italic"><b>Address:</b> 30 Caruncho Ave, Malinao, Pasig, 1600 Metro Manila</p>
+                <p class="font-italic"><b><span class="badge badge-pill badge-info"> 30 Caruncho Ave, Malinao, 1600 Pasig, Philippines</span></b> </p>
                 <p><b>Email Address:</b> mcymalinao@gmail.com</p>
                 <p><b>Schedule:</b> 9:00am to 5:00pm</p>
 
-                <p><b>Facebook Page:</b> <a href = https://www.facebook.com/MCYMalinao/?ref=page_internal"">MCY Dental Clinic Malinao </a></p>
+                <p><b>Facebook Page:</b> <a target="_blank" href = https://www.facebook.com/MCYMalinao/?ref=page_internal"">MCY Dental Clinic Malinao </a></p>
                 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
 
                 <p><b>Facebook Page:</b> <a href = "https://www.facebook.com/MCYMalinao/?ref=page_internal">MCY Dental Clinic Malinao </a></p>
@@ -939,7 +939,7 @@ $(document).ready(function(){
             <h4>Our Newsletter</h4>
             <p>Have us subscribe on our newsletter!</p>
             <form action="../signup.php" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email" required><input type="submit" value="Subscribe">
             </form>
 
           </div>
