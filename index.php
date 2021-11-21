@@ -256,31 +256,34 @@
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
                 <a class="nav-link active show" data-toggle="tab" href="#tab-1">
-                  <h4>How to make an appointment?</h4>
+                  <h4>How to make an Appointment?</h4>
                   <p>Here are the steps of how you can communicate us in every different ways.</p>
+                </a>
+              </li>
+
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-toggle="tab" href="#tab-3">
+                  <h4>MCY Dental Clinic Website</h4>
+                  <p>- Register / Log In an Account<br>
+                  <p>- Fill out Appointment Details<br>
+                  <p>- Wait to be accepted by the MCY Dental Admin</p>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-toggle="tab" href="#tab-2">
                   <h4>Online: (Facebook Page)</h4>
-                  <p>- patient inquiries answered by a representative <br>
-                    - reservation fee done thru bank transfer <br>
-                    - screening form (covid 19) <br>
-                    - appointment confirmation <br></p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-toggle="tab" href="#tab-3">
-                  <h4>Over-the-counter reservation</h4>
-                  <p>- Cash reservation</p>
+                  <p>- Patient inquiries answered by a representative <br>
+                    - Reservation fee done thru bank transfer <br>
+                    - Screening form (Covid 19) <br>
+                    - Appointment Confirmation <br></p>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-toggle="tab" href="#tab-4">
-                  <h4>Walk-in (if No Patient on the dot)</h4>
-                  <p>- screening form <br>
-                    - dental record filled out <br>
-                    - treatment</p>
+                  <h4>Walk-in (if no patient on the dot)</h4>
+                  <p>- Screening form <br>
+                    - Dental Form to be fill out <br>
+                    - Treatment</p>
                 </a>
               </li>
             </ul>
