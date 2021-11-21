@@ -23,59 +23,12 @@
   <meta content="" name="keywords">
 
 
-  <style>
-
-    .bg-modal{
-        width: 100%;
-        height: 250%;
-        background-color:rgba(0, 0, 0, 0.7);
-        position: absolute;
-        top: 65px;
-        justify-content: center;
-        display: none;
-    }
-    
-    .bg-modal .modal-content{
-        top: 20;
-        width: 500px;
-        height: 500px;
-        background-color: white;
-        border-radius: 4px;
-        text-align: center;
-        padding: 20px;
-        position: relative;
-    }
-    
-    
-    .bg-modal .modal{
-      margin: 15px auto;
-      display: block;
-      width: 75%;
-      padding: 8px;
-      border: 1px solid gray;
-      font-family: sans-serif;
-    }
-    
-    
-    .close{
-        position: absolute;
-      top: 0;
-      right: 10px;
-      font-size: 42px;
-      color: #333;
-      transform: rotate(45deg);
-      cursor: pointer;
-      &:hover {
-        color: #666;
-      }
-    } 
-    </style>
   <!-- Favicons -->
   <link href="../../assets/appointmentAssets/img/favicon.png" rel="icon">
   <link href="../../assets/appointmentAssets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ <!-- Google Fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../../assets/appointmentAssets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -88,10 +41,8 @@
 
   <!-- Template Main CSS File -->
   <link href="../../assets/css/style2.css" rel="stylesheet">
-  <link href="../../assets/css/style3.css" rel="stylesheet">
- 
 
-
+  
   <!-- JS FOR DISABLE PAST DATE -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
@@ -204,17 +155,6 @@
      }
 ?>
 
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center">
-        <i class="icofont-clock-time"></i> Monday - Saturday, 9AM to 7PM
-      </div>
-      <div class="d-flex align-items-center">
-        <i class="icofont-phone"></i> Call us now (02)8640-5536
-      </div>
-    </div>
-  </div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -250,7 +190,7 @@
     ?>
 
         </ul>
-
+      </nav>
     </div>
   </header><!-- End Header -->
 
@@ -261,7 +201,7 @@
     <!-- ======= Appointment Section ======= -->
     <section id="appointment" class="appointment section-bg">
       <div class="container" data-aos="fade-up">
-      <br><br><br>
+      <br><br>
         <div class="section-title">
           <h2>Make an Appointment</h2>
 
@@ -598,7 +538,7 @@
           <div class="form-group">
           
           
-          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>> Click  <a href="">Here </a> To Review MCY's Dental Clinic Data Privacy Notice.
+          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>> Click  <a data-toggle="modal" data-target="#exampleModalLong" href="#exampleModalLong">Here </a> To Review MCY's Dental Clinic Data Privacy Notice.
               I hereby give my full consent having reviewed and understood the Data Privacy Notice of MCY Dental Clinic to allow the company to process my data in accordance to the Data Privacy Act of 2012. </label><br>
               <span class="text-danger"> <?php echo $checkedErr;?></span>
               <br>
@@ -623,20 +563,26 @@
       </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display=none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Appointment Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="../../includes/bookingDetails.inc.php" method="POST">
 
-      <!-- THIS PART IS HIDDEN -------->
-<!-- IF THE CONDITION IS TRUE THEN THIS WILL BE DISPLAYED AS THE DETAILS FORM -------->
-<div class="bg-modal" style="height:150%;opacity: 1;display=none;margin-top:55px;">
-        <div class="modal-content" style="height:630px;">
-            <div class="close">+</div>
-            
-            <form action="../../includes/bookingDetails.inc.php" method="POST">
+      <div class="form-group row">
+          <label for="inputName" class="col-sm-2 col-form-label">Name:</label>
+          <div class="col-sm-10">
+            <input type="text" name="name" class="form-control" id="inputName" value = "<?php echo $name; ?>" READONLY>
+          </div>
+      </div>  
            
-           <h4 style="text-align:left;" class = "success">PLEASE CHECK YOUR DETAILS: </h4>
-           <hr>
-           <br>
-           <input type="text" name="name" class="form-control" value = "<?php echo ("Your Name is: " . $name); ?>" READONLY><br>
-
            <?php 
            $nameFinal = $name;
            $userName = $_SESSION["useruid"];
@@ -648,10 +594,7 @@
 
            $messageFinal = $message;
            $_SESSION["bookingMessage"] = $messageFinal;
-           
-           ?>
-
-           <?php
+  
            for($i = 0; $i < count($gender); $i++) {
                $gender[$i];
                $genderFinal = $gender[$i];
@@ -669,49 +612,86 @@
                  }
                $_SESSION["bookingTime"] = $timeFinal;
 
-            ?>
-                
-                <input name="email" type="text" class="form-control" value = "<?php echo ("Your Email is: " . $email); ?>" READONLY><br>
-                <input name="gender" type="text" class="form-control" value = "<?php echo ("Your Gender is: " . $genderFinal); ?>" READONLY><br>
-                <input name="date" type="text" class="form-control" value = "<?php echo ("The Date is: " . $date); ?>" READONLY ><br>
-                <input name="time" type="text" class="form-control" value = "<?php echo ("Designated Time is: " . $timeFinal); ?>" READONLY><br>
-                <?php
+          
                 for($i = 0; $i < count($procedure); $i++) {
                     $procedure[$i];
                     $procedureFinal = $procedure[$i];
                     }
                     $_SESSION["bookingConsultation"] = $procedureFinal;
-                ?>
-                <input name="consultation" type="text" class="form-control" value = "<?php echo ("The Procedure is: " . $procedureFinal); ?>" READONLY><br>
-                <?php
+
                 for($i = 0; $i < count($branch); $i++) {
                     $branch[$i];
                     $branchFinal = $branch[$i];
                     }
                     $_SESSION["bookingBranch"] = $branchFinal;
                  ?>
-                <input name="branches" type="text" class="form-control" value = "<?php echo ("The Branch is: " . $branchFinal); ?>" READONLY><br>
-                
+      <div class="form-group row">
+          <label for="inputEmail" class="col-sm-2 col-form-label">Email:</label>
+          <div class="col-sm-10">
+            <input type="text" name="email" class="form-control" id="inputEmail" value = "<?php echo $email; ?>" READONLY>
+          </div>
+      </div>  
+
+      <div class="form-group row">
+          <label for="inputGender" class="col-sm-2 col-form-label">Gender:</label>
+          <div class="col-sm-10">
+            <input type="text" name="gender" class="form-control" id="inputGender" value = "<?php echo $genderFinal; ?>" READONLY>
+          </div>
+      </div>  
+
+      <div class="form-group row">
+          <label for="inputDate" class="col-sm-2 col-form-label">Date:</label>
+          <div class="col-sm-10">
+            <input type="text" name="date" class="form-control" id="inputDate" value = "<?php echo $date; ?>" READONLY>
+          </div>
+      </div>  
+
+      <div class="form-group row">
+          <label for="inputTime" class="col-sm-2 col-form-label">Time:</label>
+          <div class="col-sm-10">
+            <input type="text" name="time" class="form-control" id="inputTime" value = "<?php echo $timeFinal; ?>" READONLY>
+          </div>
+      </div>  
+
+      <div class="form-group row">
+          <label for="inputconsultation" class="col-sm-2 col-form-label">Procedure: </label>
+          <div class="col-sm-10">
+            <input type="text" name="consultation" class="form-control" id="inputconsultation" value = "<?php echo $procedureFinal; ?>" READONLY>
+          </div>
+      </div>  
+
+      <div class="form-group row">
+          <label for="inputBranch" class="col-sm-2 col-form-label">Branch:</label>
+          <div class="col-sm-10">
+            <input type="text" name="branches" class="form-control" id="inputBranch" value = "<?php echo $branchFinal; ?>" READONLY>
+          </div>
+      </div>  
           
                 <?php
                if(isset($_GET['message'])){
-               
-                    echo "<textarea name='message' type='text' class='form-control' READONLY>Your Message is: $messageFinal</textarea>";
-  
+                if(!empty($_GET['message'])){
+
+              ?>
+      <div class="form-group row">
+          <label for="inputMessage" class="col-sm-2 col-form-label">Message:</label>
+          <div class="col-sm-10">
+            <textarea name="message" class="form-control" id="inputMessage" READONLY><?php echo $messageFinal; ?></textarea>
+          </div>
+      </div>  
+      <?php
                 }
-                    
+              }
                           ?>
-                   
-               <br>
-        <button  type="submit" name="confirm-submit" class="btn btn-primary">Confirm</button>
-        <button type="button" class="btn btn-danger cancel">Cancel</button>
-        
-      
-            </form>
-            
-        </div>
+                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="submit" name="confirm-submit" class="btn btn-info">Submit</button>
+      </div>
     </div>
-    <!-- END OF THE HIDDEN FORM -------->
+  </div>
+</div>
+
 
 
     <?php
@@ -734,25 +714,25 @@ if (isset($_GET['submit'])){  // if page is not submitted to itself echo the for
 
     ?>
 
-  <script>
-   document.querySelector('.bg-modal').style.display = 'flex';
-   </script>
+<script>
+$(document).ready(function(){
+  // Show the Modal on load
+  $("#exampleModal").modal("show");
+    
+  // Hide the Modal
+  $("#myBtn").click(function(){
+    $("#exampleModal").modal("hide");
+  });
+});
+</script>
     
 <?php
 }
 }
 
  ?>
-
-<script>
-document.querySelector('.close').addEventListener("click", function() {
-	document.querySelector('.bg-modal').style.display = "none";
-});
-
-document.querySelector('.cancel').addEventListener("click", function() {
-	document.querySelector('.bg-modal').style.display = "none";
-});
-</script>
+ 
+ 
 
 
     </section><!-- End Appointment Section -->
@@ -816,6 +796,7 @@ document.querySelector('.cancel').addEventListener("click", function() {
 
       </div>
     </section><!-- End Featured Services Section -->
+
 
     <!-- ======= Departments Section ======= -->
     <section id="departments" class="departments">
@@ -897,6 +878,7 @@ document.querySelector('.cancel').addEventListener("click", function() {
 
       </div>
     </section><!-- End Departments Section -->
+
 
   
 
@@ -988,24 +970,17 @@ document.querySelector('.cancel').addEventListener("click", function() {
   <script src="../../assets/appointmentAssets/vendor/venobox/venobox.min.js"></script>
   <script src="../../assets/appointmentAssets/vendor/aos/aos.js"></script>
 
-  <!-- Template Main JS File-->
-  <script src="../../assets/appointmentAssets/js/main.js"></script> 
+  <!-- Template Main JS File -->
+  <script src="../../assets/appointmentAssets/js/main.js"></script>
 
-  <!-- <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="../../assets/vendor/php-email-form/validate.js"></script>
   <script src="../../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../../assets/vendor/venobox/venobox.min.js"></script>
-  <script src="../../assets/vendor/aos/aos.js"></script> -->
-
-
-  <!-- Template Main JS File -->
-  <!-- <script src="../../assets/js/main.js"></script> -->
-
-
-
+  <script src="../../assets/vendor/aos/aos.js"></script>
 
 </body>
 </html>
