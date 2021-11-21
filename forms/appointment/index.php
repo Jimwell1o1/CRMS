@@ -977,10 +977,5 @@ document.querySelector('.cancel').addEventListener("click", function() {
   <script src="../../assets/vendor/venobox/venobox.min.js"></script>
   <script src="../../assets/vendor/aos/aos.js"></script>
 
-
-
-
-
 </body>
-
 </html>
