@@ -215,15 +215,18 @@
             echo '<small><span class="fadeIn third text-danger">*Confirm password is required</span></small><br>';
         } 
       }
-      ?><br>
-      <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
+      ?>
+      <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password
+      <br>
+<!-- 
+      <p style="margin-top: 5em; font-size: 0.7em;"><input type="checkbox" id = "showpass" onclick="myFunction()">  I have read and agree to the <a target="_blank" href="../../policy/privacy.php">Privacy Policy</a> <br>and  <a target="_blank" href="../../policy/terms.php">Terms of Service</a>.</p><br/> -->
       <br>
       <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6LdDOTkdAAAAAJvyTa8sZJ0qMxAy1XRdPw6D96NZ"></div>
       <input type="submit" class="fadeIn fourth" value="Register" name = "submit" >
       <!-- //onclick="return Validate()" -->
       <br>
 
-    
+     
   
       <label for="">Already a member? <a href="login.php">Log In</a></label>
      <script>
