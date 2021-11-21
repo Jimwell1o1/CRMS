@@ -74,8 +74,8 @@
   <link href="../../assets/appointmentAssets/img/favicon.png" rel="icon">
   <link href="../../assets/appointmentAssets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ <!-- Google Fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../../assets/appointmentAssets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -88,10 +88,8 @@
 
   <!-- Template Main CSS File -->
   <link href="../../assets/css/style2.css" rel="stylesheet">
-  <link href="../../assets/css/style3.css" rel="stylesheet">
- 
 
-
+  
   <!-- JS FOR DISABLE PAST DATE -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
@@ -204,17 +202,6 @@
      }
 ?>
 
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center">
-        <i class="icofont-clock-time"></i> Monday - Saturday, 9AM to 7PM
-      </div>
-      <div class="d-flex align-items-center">
-        <i class="icofont-phone"></i> Call us now (02)8640-5536
-      </div>
-    </div>
-  </div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -250,7 +237,7 @@
     ?>
 
         </ul>
-
+      </nav>
     </div>
   </header><!-- End Header -->
 
@@ -261,7 +248,7 @@
     <!-- ======= Appointment Section ======= -->
     <section id="appointment" class="appointment section-bg">
       <div class="container" data-aos="fade-up">
-      <br><br><br>
+      <br><br>
         <div class="section-title">
           <h2>Make an Appointment</h2>
 
@@ -978,20 +965,18 @@ document.querySelector('.cancel').addEventListener("click", function() {
   <script src="../../assets/appointmentAssets/vendor/venobox/venobox.min.js"></script>
   <script src="../../assets/appointmentAssets/vendor/aos/aos.js"></script>
 
-  <!-- Template Main JS File-->
-  <script src="../../assets/appointmentAssets/js/main.js"></script> 
+  <!-- Template Main JS File -->
+  <script src="../../assets/appointmentAssets/js/main.js"></script>
 
-  <!-- <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="../../assets/vendor/php-email-form/validate.js"></script>
   <script src="../../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../../assets/vendor/venobox/venobox.min.js"></script>
-  <script src="../../assets/vendor/aos/aos.js"></script> -->
+  <script src="../../assets/vendor/aos/aos.js"></script>
 
-  <!-- Template Main JS File -->
-  <!-- <script src="../../assets/js/main.js"></script> -->
 
 
 

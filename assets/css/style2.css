@@ -105,56 +105,23 @@ h6 {
 
 .back-to-top:hover {
   color: #fff;
-  background: #1bac91;
+  background: #18967e;
   transition: background 0.2s ease-in-out;
-}
-
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
-
-/*--------------------------------------------------------------
-# Top Bar
---------------------------------------------------------------*/
-#topbar {
-  background: #1bac91;
-  color: #fff;
-  height: 40px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.5s;
-}
-
-#topbar.topbar-scrolled {
-  top: -40px;
-}
-
-#topbar i {
-  padding-right: 6px;
 }
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgb(0, 0, 0);
+  height: 72px;
   transition: all 0.5s;
   z-index: 997;
-  padding: 20px 0;
-  top: 40px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+  padding: 15px 0;
+  background: #000;
 }
 
-#header.header-scrolled {
-  top: 0;
-}
-
-#header .logo {
+#header .logo h1 {
   font-size: 30px;
   margin: 0;
   padding: 6px 0;
@@ -181,8 +148,8 @@ h6 {
     height: 60px;
     padding: 8px 0;
   }
-
 }
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -324,6 +291,7 @@ h6 {
   }
 }
 
+
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
@@ -415,139 +383,6 @@ h6 {
   left: 0;
   position: fixed;
   background: rgba(16, 31, 29, 0.6);
-  overflow: hidden;
-  display: none;
-  transition: ease-in-out 0.2s;
-}
-
-.mobile-nav-active {
-  overflow: hidden;
-}
-
-.mobile-nav-active .mobile-nav {
-  opacity: 1;
-  visibility: visible;
-}
-
-.mobile-nav-active .mobile-nav-toggle i {
-  color: #fff;
-}
-/* Appointment Button */
-.appointment-btn {
-  margin-left: 25px;
-  background: #1bac91;
-  color: #fff;
-  border-radius: 4px;
-  padding: 8px 25px;
-  white-space: nowrap;
-  transition: 0.3s;
-  font-size: 14px;
-  display: inline-block;
-}
-
-.appointment-btn:hover {
-  background: #1bac91;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .appointment-btn {
-    margin: 0 48px 0 0;
-    padding: 6px 18px;
-  }
-}
-
-/* Mobile Navigation */
-.mobile-nav-toggle {
-  position: fixed;
-  right: 15px;
-  top: 20px;
-  z-index: 9998;
-  border: 0;
-  background: none;
-  font-size: 24px;
-  transition: all 0.4s;
-  outline: none !important;
-  line-height: 1;
-  cursor: pointer;
-  text-align: right;
-}
-
-.mobile-nav-toggle i {
-  color: #555555;
-}
-
-.mobile-nav {
-  position: fixed;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  z-index: 9999;
-  overflow-y: auto;
-  background: #fff;
-  transition: ease-in-out 0.2s;
-  opacity: 0;
-  visibility: hidden;
-  border-radius: 10px;
-  padding: 10px 0;
-}
-
-.mobile-nav * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.mobile-nav a {
-  display: block;
-  position: relative;
-  color: #555555;
-  padding: 10px 20px;
-  font-weight: 500;
-  outline: none;
-}
-
-.mobile-nav a:hover,
-.mobile-nav .active>a,
-.mobile-nav li:hover>a {
-  color: #1bac91;
-  text-decoration: none;
-}
-
-.mobile-nav .drop-down>a:after {
-  content: "\ea99";
-  font-family: IcoFont;
-  padding-left: 10px;
-  position: absolute;
-  right: 15px;
-}
-
-.mobile-nav .active.drop-down>a:after {
-  content: "\eaa1";
-}
-
-.mobile-nav .drop-down>a {
-  padding-right: 35px;
-}
-
-.mobile-nav .drop-down ul {
-  display: none;
-  overflow: hidden;
-}
-
-.mobile-nav .drop-down li {
-  padding-left: 20px;
-}
-
-.mobile-nav-overly {
-  width: 100%;
-  height: 100%;
-  z-index: 9997;
-  top: 0;
-  left: 0;
-  position: fixed;
-  background: rgba(60, 60, 60, 0.6);
   overflow: hidden;
   display: none;
   transition: ease-in-out 0.2s;
