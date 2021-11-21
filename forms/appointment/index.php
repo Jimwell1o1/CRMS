@@ -890,7 +890,7 @@ document.querySelector('.cancel').addEventListener("click", function() {
               <h3>MCY Dental Clinic</h3>
               <p>
                 Buting<br>
-                Pasig City,PH<br><br>
+                Pasig City, PH<br><br>
                 <strong>Phone:</strong> +(02) 640 5536<br>
                 <strong>Email:</strong> clinicmcydental@gmail.com<br>
               </p>
