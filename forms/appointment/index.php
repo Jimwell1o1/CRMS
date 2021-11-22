@@ -88,7 +88,7 @@
 
   <!-- Template Main CSS File -->
   <link href="../../assets/css/style2.css" rel="stylesheet">
-
+  <link href="../../assets/css/style3.css" rel="stylesheet">
   
   <!-- JS FOR DISABLE PAST DATE -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -218,7 +218,9 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex">
 
-      <a href="../../index.php" class="logo mr-auto text-white font-weight-bold">MCY Dental Clinic</a>
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="../../index.php">MCY Dental Clinic</a></h1>
+      </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
@@ -257,11 +259,11 @@
  
 
   <main id="main">
-<br><br><br><br>
+
     <!-- ======= Appointment Section ======= -->
     <section id="appointment" class="appointment section-bg">
       <div class="container" data-aos="fade-up">
-        
+      <br><br><br>
         <div class="section-title">
           <h2>Make an Appointment</h2>
 
