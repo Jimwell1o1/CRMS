@@ -102,7 +102,7 @@
        } 
       }else{
            
-        $emailErr = "* email is required";
+        $emailErr = "* Email is required";
      }
       
         
@@ -229,14 +229,14 @@
             <div class="col-md-5 form-group">
               <h6>Name:</h6>
               <input type="text" value = "<?PHP print $name ; ?>"  name="name" class="form-control" id="name" placeholder="Patient or Parent Name" data-rule="minlen:4" data-msg="Please enter Patient name">
-              <span class="text-danger"> <?php echo $nameErr;?></span>
+              <span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $nameErr;?></span>
               <div class="validate"></div>
             </div>
 
             <div class="col-md-5 form-group">
               <h6>Email:</h6>
               <input type="text" value = "<?PHP print $email ; ?>"  name="email" class="form-control" id="email" placeholder="Email Address" data-rule="minlen:4" data-msg="Please enter Patients email">
-              <span class="text-danger"> <?php echo $emailErr;?></span>
+              <span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $emailErr;?></span>
               <div class="validate"></div>
             </div>
 
@@ -267,6 +267,7 @@
                                   echo($final == 'Female') ? ' selected="selected"' : '';
                                   }?>>Female</option>
                         </select>
+                        <span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $genderErr;?></span>
             </div>
 
 
@@ -281,7 +282,7 @@
             <div class="col-md-6 form-group">
               <h6>Date:</h6>
               <input type="date" id = "dateControl" name="date" class="form-control"  value = "<?PHP print $date ; ?>"  />
-                  <span class="text-danger"> <?php echo $dateErr;?></span>
+                  <span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $dateErr;?></span>
                   <div class="validate"></div>
                                 </div>
 
@@ -387,7 +388,7 @@
                                     }?>
                                     >5:00 PM</option>
                         </select>
-                        <span class="text-danger"> <?php echo $timeErr;?></span>
+                        <span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $timeErr;?></span>
                 <div class="validate"></div>
             </div>
           </div>
@@ -479,7 +480,7 @@
                                   }?>>Periodontic Rehab</option>
 
                         </select>
-                        <span class="text-danger"> <?php echo $procedureErr;?></span>
+                        <span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $procedureErr;?></span>
                 <div class="validate"></div>
             </div>
             <div class="col-md-6 form-group">
@@ -522,7 +523,7 @@
                                   }?>>San Joaquin</option>
 
                         </select>
-                        <span class="text-danger"> <?php echo $branchErr;?></span>
+                        <span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $branchErr;?></span>
               <div class="validate"></div>
             </div>
   
@@ -537,9 +538,9 @@
 
           <div class="form-group">
           <div class="section-title">
-          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>> I have read and agreed to the  Here To Review MCY's Dental Clinic <a target="_blank" href="../../policy/terms.php">Terms and Conditions</a>. <br>
-              I hereby give my full consent having reviewed and understood  <br>the <a target="_blank" href="../../policy/privacy.php">Data Privacy Notice </a>of MCY Dental Clinic. </br></label>
-              <span class="text-danger"> <?php echo $checkedErr;?></span>
+          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>>I have read and agreed to the  Here To Review MCY's Dental Clinic <a target="_blank" href="../../policy/terms.php">Terms and Conditions</a>. <br>
+              I hereby give my full consent having reviewed and understood  <br>the <a target="_blank" href="../../policy/privacy.php">Data Privacy Notice </a>of MCY Dental Clinic. </label>
+              <br><span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $checkedErr;?></span>
               <br>
 
           </div>
@@ -720,11 +721,7 @@ if (isset($_GET['submit'])){  // if page is not submitted to itself echo the for
 $(document).ready(function(){
   // Show the Modal on load
   $("#exampleModal").modal("show");
-    
-  // Hide the Modal
-  $("#myBtn").click(function(){
-    $("#exampleModal").modal("hide");
-  });
+  
 });
 </script>
     
