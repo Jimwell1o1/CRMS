@@ -270,7 +270,7 @@
     <!-- Show Password Function -->
 <script>
       function myFunction() {
-         var y = document.getElementById("newpass");
+         var y = document.getElementById("currentVal");
          if (y.type === "password") {
           y.type = "text";
         } else {
