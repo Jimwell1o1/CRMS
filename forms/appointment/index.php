@@ -205,7 +205,7 @@
 ?>
 
   <!-- ======= Top Bar ======= -->
-  <!-- <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center">
         <i class="icofont-clock-time"></i> Monday - Saturday, 9AM to 7PM
@@ -214,7 +214,7 @@
         <i class="icofont-phone"></i> Call us now (02)8640-5536
       </div>
     </div>
-  </div> -->
+  </div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
