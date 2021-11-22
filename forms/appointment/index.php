@@ -536,14 +536,14 @@
 
 
           <div class="form-group">
-          
-          
-          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>> Click  <a target="_blank" href="../../policy/terms.php">Here </a> To Review MCY's Dental Clinic Data Privacy Notice.
-              I hereby give my full consent having reviewed and understood the Data Privacy Notice of MCY Dental Clinic to allow the company to process my data in accordance to the Data Privacy Act of 2012. </label><br>
+          <div class="section-title">
+          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>> I have read and agreed to the  Here To Review MCY's Dental Clinic <a target="_blank" href="../../policy/terms.php">Terms and Conditions</a>. <br>
+              I hereby give my full consent having reviewed and understood  <br>the <a target="_blank" href="../../policy/privacy.php">Data Privacy Notice </a>of MCY Dental Clinic. </br></label>
               <span class="text-danger"> <?php echo $checkedErr;?></span>
               <br>
 
           </div>
+        </div>
           <div class="form-group">
           
 
@@ -551,12 +551,13 @@
 
           
 
+        <div class="form-group" data-aos="zoom-in">
           <div class="text-center">
             <button  class="btn btn-success"  type="submit" name="submit" data-toggle="modal" data-target="#exampleModal" data-backdrop="static">
             Make an Appointment
              </button>
           </div>
-
+       </div>
          
         </form>
 
@@ -687,6 +688,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
         <button type="submit" name="confirm-submit" class="btn btn-info">Submit</button>
+            </form>
       </div>
     </div>
   </div>

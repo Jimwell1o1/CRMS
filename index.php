@@ -448,7 +448,7 @@
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
             <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-            <h3>Dr. Gerlie Jose</h3>
+            <h3>Dr. Wally</h3>
             <h4>Dentist</h4>
           </div>
 
