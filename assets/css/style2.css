@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: #65c9cd;
+  color: #22d8b6;
   text-decoration: none;
 }
 
@@ -85,27 +85,28 @@ h6 {
 .back-to-top {
   position: fixed;
   display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
   right: 15px;
   bottom: 15px;
+  background: #1bac91;
+  color: #fff;
+  transition: display 0.5s ease-in-out;
   z-index: 99999;
 }
 
 .back-to-top i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background: #1bac91;
-  color: #fff;
-  transition: all 0.4s;
+  position: absolute;
+  top: 8px;
+  left: 8px;
 }
 
-.back-to-top i:hover {
-  background: #5ec6ca;
+.back-to-top:hover {
   color: #fff;
+  background: #1bac91;
+  transition: background 0.2s ease-in-out;
 }
 
 /*--------------------------------------------------------------
@@ -121,7 +122,7 @@ h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #3fbbc0;
+  background: #1bac91;
   color: #fff;
   height: 40px;
   font-size: 16px;
@@ -149,98 +150,116 @@ h6 {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 992px) {
-  #header {
-    padding: 15px 0;
-  }
-}
-
 #header.header-scrolled {
   top: 0;
 }
 
 #header .logo {
-  font-size: 28px;
+  font-size: 30px;
   margin: 0;
-  padding: 0;
+  padding: 6px 0;
   line-height: 1;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-#header .logo a {
-  color: #555555;
+#header .logo h1 a,
+#header .logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 #header .logo img {
+  padding: 0;
+  margin: 0;
   max-height: 40px;
 }
 
 @media (max-width: 992px) {
   #header {
-    top: 0;
+    height: 60px;
+    padding: 8px 0;
   }
 
-  #header .logo {
-    font-size: 28px;
-  }
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
-.nav-menu ul {
+.nav-menu,
+.nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.nav-menu>ul {
-  display: flex;
-}
-
 .nav-menu>ul>li {
   position: relative;
   white-space: nowrap;
-  padding: 10px 0 10px 28px;
+  float: left;
 }
 
 .nav-menu a {
   display: block;
   position: relative;
-  color: #dbd6d6;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 8px 0 12px 0;
   transition: 0.3s;
-  font-size: 13px;
+  font-size: 14px;
   font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-menu>ul>li+li {
+  margin-left: 30px;
+}
+
+.nav-menu>ul>li>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 3px;
+  left: 0;
+  background-color: #1bac91;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-menu a:hover:before,
+.nav-menu li:hover>a:before,
+.nav-menu .active>a:before {
+  visibility: visible;
+  width: 100%;
 }
 
 .nav-menu a:hover,
 .nav-menu .active>a,
 .nav-menu li:hover>a {
-  color: #3fbbc0;
+  color: #fff;
+  text-decoration: none;
 }
+
 
 .nav-menu .drop-down ul {
   display: block;
   position: absolute;
-  left: 15px;
-  top: calc(100% + 30px);
+  left: 0;
+  top: 100%;
   z-index: 99;
   opacity: 0;
   visibility: hidden;
   padding: 10px 0;
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: 0.3s;
+  transition: ease all 0.3s;
 }
 
 .nav-menu .drop-down:hover>ul {
   opacity: 1;
-  top: 100%;
   visibility: visible;
 }
 
@@ -254,7 +273,7 @@ h6 {
   font-size: 14px;
   font-weight: 500;
   text-transform: none;
-  color: #194b4d;
+  color: #062822;
 }
 
 .nav-menu .drop-down ul a:hover,
@@ -305,6 +324,114 @@ h6 {
   }
 }
 
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  color: #fff;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 9999;
+  overflow-y: auto;
+  background: #fff;
+  transition: ease-in-out 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.mobile-nav * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #21413c;
+  padding: 10px 20px;
+  font-weight: 500;
+  outline: none;
+}
+
+.mobile-nav a:hover,
+.mobile-nav .active>a,
+.mobile-nav li:hover>a {
+  color: #1bac91;
+  text-decoration: none;
+}
+
+.mobile-nav .drop-down>a:after {
+  content: "\ea99";
+  font-family: IcoFont;
+  padding-left: 10px;
+  position: absolute;
+  right: 15px;
+}
+
+.mobile-nav .active.drop-down>a:after {
+  content: "\eaa1";
+}
+
+.mobile-nav .drop-down>a {
+  padding-right: 35px;
+}
+
+.mobile-nav .drop-down ul {
+  display: none;
+  overflow: hidden;
+}
+
+.mobile-nav .drop-down li {
+  padding-left: 20px;
+}
+
+.mobile-nav-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(16, 31, 29, 0.6);
+  overflow: hidden;
+  display: none;
+  transition: ease-in-out 0.2s;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
 /* Appointment Button */
 .appointment-btn {
   margin-left: 25px;
@@ -319,7 +446,7 @@ h6 {
 }
 
 .appointment-btn:hover {
-  background: #65c9cd;
+  background: #1bac91;
   color: #fff;
 }
 
