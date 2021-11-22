@@ -74,8 +74,8 @@
   <link href="../../assets/appointmentAssets/img/favicon.png" rel="icon">
   <link href="../../assets/appointmentAssets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
- <!-- Google Fonts -->
- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../../assets/appointmentAssets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -88,8 +88,10 @@
 
   <!-- Template Main CSS File -->
   <link href="../../assets/css/style2.css" rel="stylesheet">
+  <link href="../../assets/css/style3.css" rel="stylesheet">
+ 
 
-  
+
   <!-- JS FOR DISABLE PAST DATE -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
@@ -202,6 +204,17 @@
      }
 ?>
 
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <i class="icofont-clock-time"></i> Monday - Saturday, 9AM to 7PM
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="icofont-phone"></i> Call us now (02)8640-5536
+      </div>
+    </div>
+  </div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -237,7 +250,7 @@
     ?>
 
         </ul>
-      </nav>
+
     </div>
   </header><!-- End Header -->
 
@@ -248,7 +261,7 @@
     <!-- ======= Appointment Section ======= -->
     <section id="appointment" class="appointment section-bg">
       <div class="container" data-aos="fade-up">
-      <br><br>
+      <br><br><br>
         <div class="section-title">
           <h2>Make an Appointment</h2>
 
@@ -837,8 +850,8 @@ document.querySelector('.cancel').addEventListener("click", function() {
 
             </ul>
           </div>
-          <div class="col-lg-8">
-            <divlass="col-lg-8">
+         
+            <div class="col-lg-8">
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
                 <h3>San Joaquin, Pasig City</h3>
@@ -847,9 +860,10 @@ document.querySelector('.cancel').addEventListener("click", function() {
                 <p><b>Email Address:</b> mcysanjoaquin@gmail.com</p>
                 <p><b>Schedule:</b> 9:00am to 5:00pm</p>
                 <p><b>Facebook Page:</b> <a href = "https://www.facebook.com/MCYdentalSJ/">MCY Dental Clinic San Joaquin </a></p>
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.821201242739!2d121.07188731478861!3d14.552215089833268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a28bc76061%3A0x8796bdc6a86e55fe!2sMCY%20Dental%20Clinic%20San%20Joaquin!5e0!3m2!1sen!2sph!4v1634487024503!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-       
+      
+                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                <iframe class  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.821201242739!2d121.07188731478861!3d14.552215089833268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a28bc76061%3A0x8796bdc6a86e55fe!2sMCY%20Dental%20Clinic%20San%20Joaquin!5e0!3m2!1sen!2sph!4v1634487024503!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
  </div>
               <div class="tab-pane" id="tab-2">
                 <h3>Pinagbuhatan, Pasig City</h3>
@@ -858,16 +872,21 @@ document.querySelector('.cancel').addEventListener("click", function() {
                 <p><b>Schedule:</b> 9:00am to 5:00pm</p>
                 <p><b>Facebook Page:</b> <a href = "https://www.facebook.com/MCYPinagbuhatan/">MCY Dental Clinic Pinagbuhatan </a></p>
                 
+                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380.3762212109789!2d121.08532588294001!3d14.557185442325617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7d2f04ccc9b%3A0xe1001ce5191eb0a5!2sMCY%20Dental!5e0!3m2!1sen!2sph!4v1634487131612!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-              </div>
+                </div>
+
+                </div>
               <div class="tab-pane" id="tab-3">
                 <h3>Malinao, Pasig City</h3>
                 <p class="font-italic"><b>Address:</b> 30 Caruncho Ave, Malinao, Pasig, 1600 Metro Manila</p>
                 <p><b>Email Address:</b> mcymalinao@gmail.com</p>
                 <p><b>Schedule:</b> 9:00am to 5:00pm</p>
                 <p><b>Facebook Page:</b> <a href = https://www.facebook.com/MCYMalinao/?ref=page_internal"">MCY Dental Clinic Malinao </a></p>
+                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1566.0715030697377!2d121.07896672398165!3d14.559557020682753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7d5fce0f3a5%3A0x7d7d0d04075f188f!2sMCY%20Dental!5e0!3m2!1sen!2sph!4v1634487340114!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-              </div>
+                </div>
+                </div>
             </div>
           </div>
         </div>
@@ -965,18 +984,20 @@ document.querySelector('.cancel').addEventListener("click", function() {
   <script src="../../assets/appointmentAssets/vendor/venobox/venobox.min.js"></script>
   <script src="../../assets/appointmentAssets/vendor/aos/aos.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="../../assets/appointmentAssets/js/main.js"></script>
+  <!-- Template Main JS File-->
+  <script src="../../assets/appointmentAssets/js/main.js"></script> 
 
-  <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+  <!-- <script src="../../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="../../assets/vendor/php-email-form/validate.js"></script>
   <script src="../../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../../assets/vendor/venobox/venobox.min.js"></script>
-  <script src="../../assets/vendor/aos/aos.js"></script>
+  <script src="../../assets/vendor/aos/aos.js"></script> -->
 
+  <!-- Template Main JS File -->
+  <!-- <script src="../../assets/js/main.js"></script> -->
 
 
 
