@@ -89,7 +89,9 @@
   <!-- Template Main CSS File -->
   <link href="../../assets/css/style2.css" rel="stylesheet">
   <link href="../../assets/css/style3.css" rel="stylesheet">
-  
+ 
+
+
   <!-- JS FOR DISABLE PAST DATE -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
@@ -203,7 +205,7 @@
 ?>
 
   <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+  <!-- <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center">
         <i class="icofont-clock-time"></i> Monday - Saturday, 9AM to 7PM
@@ -212,7 +214,7 @@
         <i class="icofont-phone"></i> Call us now (02)8640-5536
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -976,20 +978,20 @@ document.querySelector('.cancel').addEventListener("click", function() {
   <script src="../../assets/appointmentAssets/vendor/venobox/venobox.min.js"></script>
   <script src="../../assets/appointmentAssets/vendor/aos/aos.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="../../assets/appointmentAssets/js/main.js"></script>
+  <!-- Template Main JS File-->
+  <script src="../../assets/appointmentAssets/js/main.js"></script> 
 
-  <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+  <!-- <script src="../../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="../../assets/vendor/php-email-form/validate.js"></script>
   <script src="../../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../../assets/vendor/venobox/venobox.min.js"></script>
-  <script src="../../assets/vendor/aos/aos.js"></script>
+  <script src="../../assets/vendor/aos/aos.js"></script> -->
 
   <!-- Template Main JS File -->
-  <script src="../../assets/js/main.js"></script>
+  <!-- <script src="../../assets/js/main.js"></script> -->
 
 
 
