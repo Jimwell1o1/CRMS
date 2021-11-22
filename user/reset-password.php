@@ -172,22 +172,22 @@
 
 <div class="form-group">
 
-    <input type="password" id="passwordVal" name="pass1" placeholder ="New Password" class="form-control"/>
+    <input type="password" id="passwordVal" name="pass1" placeholder ="Enter new password" class="form-control"/>
 </div>
 
 <div class="form-group">
 
-    <input type="password" id="confirmVal" name="pass2" placeholder ="Confirm New Password"  class="form-control"/>
+    <input type="password" id="confirmVal" name="pass2" placeholder ="Confirm new password"  class="form-control"/>
 </div>
 <input type="hidden" name="email" value="<?php echo $email; ?>"/>
 <div class="form-group">
 <br>
-<input type="password"  name="pass0" placeholder ="Enter Current Password" class="form-control"/>
+<input type="password" id="currentVal" name="pass0" placeholder ="Enter current password" class="form-control"/><br>
 </div>
 <input type="checkbox" id = "showpass" onclick="myFunction()"> Show Password<br/>
 <div class="form-group">
     <br>
-    <input type="submit" name="submit" value="Change Password"  class="btn btn-primary"/>
+    <input type="submit" name="submit" value="Submit"  class="btn btn-primary"/>
 
      <script type="text/javascript">
     function Validate() {

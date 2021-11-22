@@ -359,6 +359,9 @@ input[type=password]:placeholder {
   text-align: left;
 }
 
+#currentVal {
+  text-align: left;
+}
 
 #newpass {
   text-align: left;
