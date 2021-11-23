@@ -24,6 +24,8 @@
   <meta content="" name="keywords">
 
   <style>
+
+ 
     .dtHorizontalVerticalExampleWrapper {
       max-width: 600px;
       margin: 0 auto;
@@ -61,6 +63,9 @@
   <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 </head>
@@ -124,13 +129,14 @@
           }
             ?>
             
-        <table id="dtHorizontalVerticalExample" class="table table-striped table-bordered table-sm " cellspacing="0"
+        <table id="dtHorizontalVerticalExample" class="table table-striped table-bordered table-responsive" cellspacing="0"
   width="100%" data-aos="fade-right">
                                     <thead class="thead-light">
                                             <tr>
                                             <th scope="col">Patient</th>
                                             <th scope="col">Date</th>
                                             <th scope="col">Time</th>
+                                            <th scope="col">Email</th>
                                             <th scope="col">Consultation</th>
                                             <th scope="col">Branch</th>
                                             <th scope="col">Status</th>
@@ -155,6 +161,7 @@
                                                 <td> <?php echo $row['bookingName'] ?> </td>                                
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
+                                                <td> <?php echo $row['bookingemail'] ?> </td>
                                                 <td> <?php echo $row['bookingConsultation'] ?> </td>
                                                 <td> <?php echo $row['bookingBranch'] ?> </td>
                                                 <td class="status">   <?php 
@@ -172,9 +179,10 @@
                                                 <?php 
                                                 
                                                   if($row['bookingStatus'] === "Cancelled" or $row['bookingStatus'] === "Done"){
-                                                      echo '<td> - - n/a - - </td>';
-                                                    
-                                                  }else{
+                                                      echo '<td class = "text-center"><i class="fa fa-check-square" style="font-size:30px;color:green;"></i></td>';
+
+                                                    }
+                                                  else{
                                                       echo '<td>
                                                       <button type="submit" name="submit" class="btn btn-danger" onclick="return ConfirmDelete()">
                                                         Cancel
