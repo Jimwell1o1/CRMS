@@ -865,10 +865,10 @@ $(document).ready(function(){
                 <p><b>Schedule:</b> 9:00am to 5:00pm</p>
 
                 <p><b>Facebook Page:</b> <a target="_blank" href = https://www.facebook.com/MCYMalinao/?ref=page_internal"">MCY Dental Clinic Malinao </a></p>
-                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+               
 
                 <p><b>Facebook Page:</b> <a href = "https://www.facebook.com/MCYMalinao/?ref=page_internal">MCY Dental Clinic Malinao </a></p>
-
+                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1566.0715030697377!2d121.07896672398165!3d14.559557020682753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c7d5fce0f3a5%3A0x7d7d0d04075f188f!2sMCY%20Dental!5e0!3m2!1sen!2sph!4v1634487340114!5m2!1sen!2sph" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 </div>
