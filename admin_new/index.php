@@ -17,7 +17,7 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
 
 }
 
-
+ 
 
 ?>
 
@@ -482,12 +482,13 @@ display_c7()
 
 <script>
                     var ctx = document.getElementById("myAreaChart");
+                  
                     var myLineChart = new Chart(ctx, {
                       type: 'line',
                       data: {
                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                     datasets: [{
-                      label: "Sessions",
+                      label: "Appointment",
                       lineTension: 0.3,
                       backgroundColor: "rgba(2,117,216,0.2)",
                       borderColor: "rgba(2,117,216,1)",
@@ -498,11 +499,11 @@ display_c7()
                       pointHoverBackgroundColor: "rgba(2,117,216,1)",
                       pointHitRadius: 50,
                       pointBorderWidth: 2,
-                      data: [<?php echo $decline; ?>, <?php echo $pending; ?>, <?php echo $accepted; ?>, <?php echo $accepted; ?>
-                      , <?php echo $decline; ?>, <?php echo $pending; ?>
-                      , <?php echo $decline; ?>,<?php echo $pending; ?>,
-                      <?php echo $pending; ?>, <?php echo $bookCount; ?>, <?php echo $accepted; ?>
-                      , <?php echo $decline; ?>],
+                      data: [<?php echo $tjan; ?>, <?php echo $tfeb; ?>, <?php echo $tmar; ?>, <?php echo $tapr; ?>
+                      , <?php echo $tmay; ?>, <?php echo $tjun; ?>
+                      , <?php echo $tjul; ?>,<?php echo $taug; ?>,
+                      <?php echo $tsep; ?>, <?php echo $toct; ?>, <?php echo $tnov; ?>
+                      , <?php echo $tdec; ?>],
                     }],
                   },
                   options: {
@@ -532,6 +533,8 @@ display_c7()
                   }
                 });
                     </script>
+
+
   </body>
   </body>
 </html>
