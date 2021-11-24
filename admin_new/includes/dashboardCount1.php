@@ -64,21 +64,21 @@ $query_result = mysqli_query($conn,$query);
 
 
 //on process pa 
-$query = "SELECT COUNT(*) as bookCount FROM booking" ;
-$query_result = mysqli_query($conn,$query);
-while($row = mysqli_fetch_assoc($query_result)){
-  $bookCount = $row['bookCount'];
-  }
+// $query = "SELECT COUNT(*) as bookCount FROM booking" ;
+// $query_result = mysqli_query($conn,$query);
+// while($row = mysqli_fetch_assoc($query_result)){
+//   $bookCount = $row['bookCount'];
+//   }
 
 
 //on process pa 
-  $query = "SELECT MONTH('2021/03/23') as month FROM booking";
-  $query_result = mysqli_query($conn,$query);
- while($row = mysqli_fetch_assoc($query_result)){
+//   $query = "SELECT MONTH('2021/03/23') as month FROM booking";
+//   $query_result = mysqli_query($conn,$query);
+//  while($row = mysqli_fetch_assoc($query_result)){
 
-  $month = $row['month'];
+//   $month = $row['month'];
  
- }
+//  }
 
 
 
@@ -88,7 +88,7 @@ while($row = mysqli_fetch_assoc($query_result)){
     $total=array();
     for ($month = 1; $month <= 12; $month ++){
      
-        $query="SELECT *, COUNT(*) as bookCount from booking where month(bookingDate)='$month'";
+        $query="SELECT *, COUNT(*) as bookCount from booking where month(bookingDate)='$month' AND bookingBranch = '".$sessionbranch."'";
         $query_result = mysqli_query($conn,$query);
         while($row = mysqli_fetch_assoc($query_result)){
  
