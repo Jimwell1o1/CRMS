@@ -129,7 +129,7 @@
           }
             ?>
     
-<div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
+<div class="table-responsive-xl" data-aos="fade-up" data-aos-delay="200">
 <table class="table">
       <thead>
         <tr>
