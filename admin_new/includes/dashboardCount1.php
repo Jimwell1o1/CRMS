@@ -59,29 +59,6 @@ $query_result = mysqli_query($conn,$query);
   $year = date('Y');
 }
 
-
-
-
-
-//on process pa 
-// $query = "SELECT COUNT(*) as bookCount FROM booking" ;
-// $query_result = mysqli_query($conn,$query);
-// while($row = mysqli_fetch_assoc($query_result)){
-//   $bookCount = $row['bookCount'];
-//   }
-
-
-//on process pa 
-//   $query = "SELECT MONTH('2021/03/23') as month FROM booking";
-//   $query_result = mysqli_query($conn,$query);
-//  while($row = mysqli_fetch_assoc($query_result)){
-
-//   $month = $row['month'];
- 
-//  }
-
-
-
     //set timezone
     //date_default_timezone_set('Asia/Manila');
     $year = date('Y');

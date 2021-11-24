@@ -111,7 +111,7 @@
         <section id="services" class="services section-bg">
       <div class="container">
 
-        <div class="section-title" data-aos="fade-right">
+        <div class="section-title" data-aos="fade-up" data-aos-delay="100">
             
           <h2>History</h2>
           <p>This is your recently schedule appointments.<br> Please wait for the administrator's response before approving your pending appointments.</p>
@@ -128,23 +128,23 @@
             } 
           }
             ?>
-            
-        <table id="dtHorizontalVerticalExample" class="table table-striped table-bordered table-responsive" cellspacing="0"
-  width="100%" data-aos="fade-right">
-                                    <thead class="thead-light">
-                                            <tr>
-                                            <th scope="col">Patient</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Time</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Consultation</th>
-                                            <th scope="col">Branch</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Action</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-        <?php
+    
+<div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
+<table class="table">
+      <thead>
+        <tr>
+            <th scope="col">Id #</th>
+            <th scope="col">Patient</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Email</th>
+            <th scope="col">Consultation</th>
+            <th scope="col">Branch</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+      </thead>
+  <?php
                             $sql = "SELECT * FROM booking;";
                             $result = mysqli_query($conn, $sql);
                             $resultChecked = mysqli_num_rows($result);
@@ -158,6 +158,7 @@
                                    
                                             <tr>
                                                 <input type="hidden" name="bookId" value="<?php echo $row['bookingId']; ?>">
+                                                <th> <?php echo $row['bookingId'] ?> </th>    
                                                 <td> <?php echo $row['bookingName'] ?> </td>                                
                                                 <td> <?php echo $row['bookingDate'] ?> </td>
                                                 <td> <?php echo $row['bookingTime'] ?> </td>
@@ -200,7 +201,8 @@
                          
                                         
                             <?php } }} } ?>
-                            </table>
+</table>
+</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
                                                 </div></div></div>
 

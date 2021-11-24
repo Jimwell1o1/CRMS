@@ -26,7 +26,7 @@ while($row = mysqli_fetch_assoc($query_result)){
   $decline = $row['bookingCount'];
 }
 
-$query = "SELECT COUNT(*) as bookingCount FROM booking WHERE bookingStatus = 'Done'";
+$query = "SELECT COUNT(*) as bookingCount FROM booking";
 
 $query_result = mysqli_query($conn,$query);
 while($row = mysqli_fetch_assoc($query_result)){
