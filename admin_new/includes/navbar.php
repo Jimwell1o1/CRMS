@@ -154,16 +154,33 @@
                   >
                 </nav>
               </div>
-              <div class="sb-sidenav-menu-heading">Users</div>
+              <div class="sb-sidenav-menu-heading">Accounts</div>
               <a class="nav-link" href="user_accounts.php">
                 <div class="sb-nav-link-icon">
                 <i class="fas fa-archive"></i>
                 </div>
-                Accounts
+                User
               </a>
+
+              <?php
+                if($_SESSION['admin_branchName'] === "mainAdmin"){
+
+              echo '<a class="nav-link" href="admin_accounts.php">
+              <div class="sb-nav-link-icon">
+              <i class="fas fa-archive"></i>
+              </div>
+              Admin 
+              </a>';
+
+              }; ?>
+
+
+
+
               <div class="sb-sidenav-menu-heading">Tasks</div>
               
 
+            
 
               <a class="nav-link" href="email_sender.php">
                 <div class="sb-nav-link-icon">
