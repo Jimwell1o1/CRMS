@@ -93,7 +93,7 @@ display_c7()
               <li class="breadcrumb-item active"> 
                 <b>
               <?php
-         date_default_timezone_set('Asia/Manila');
+      
          echo "Date: ".date("M j, Y"."(l)");
         
          echo "<br> Time: <span  id='ct7'></span>";

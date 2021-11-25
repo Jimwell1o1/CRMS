@@ -94,7 +94,7 @@ display_c7()
               <li class="breadcrumb-item active"> 
                 <b>
               <?php
-         date_default_timezone_set('Asia/Manila');
+         
          echo "Date: ".date("M j, Y"."(l)");
         
          echo "<br> Time: <span  id='ct7'></span>";
@@ -344,6 +344,7 @@ display_c7()
                     <i class="fas fa-chart-area me-1"></i>
                     Schedule Status
                   </div>
+                 
                   <div class="card-body">         
                   <canvas id="myPieChart" width="100%" height="40"></canvas>
                   </div>
@@ -356,12 +357,10 @@ display_c7()
                     Monthly Appointment ( <?php echo $year; ?>)
                   </div>
                   <div class="card-body">
-                    <canvas id="myAreaChart" width="100%" height="40"></canvas>
-                   
-
-                    
+                    <canvas id="myAreaChart" width="100%" height="40"></canvas>    
                   </div>
                 </div>
+
               </div>
             </div>
             
