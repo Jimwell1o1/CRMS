@@ -9,6 +9,7 @@
         $id = $_POST["bookid"];
         $name = $_POST["name"];
         $gender = $_POST["gender"];
+        $email = $_POST["email"];
         $date = $_POST["date"];
         $time = $_POST["time"];
         $consultation = $_POST["procedure"];
@@ -16,7 +17,7 @@
         $status = $_POST["status"];
         $message = $_POST["message"];
 
-        bookingUpdate($conn, $id, $name, $gender, $date, $time, $consultation, $status,$message);
+        bookingUpdate($conn, $id, $name, $gender, $email, $date, $time, $consultation,$branch, $status,$message);
 
     }else {
         header("location: ../admin_new/pending_tables.php");

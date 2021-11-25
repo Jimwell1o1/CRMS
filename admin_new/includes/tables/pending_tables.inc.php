@@ -42,11 +42,13 @@
       <div class="modal-body">
         <form action="../includes/updateBooking.inc.php" method="POST">
         <input name="bookid" type="hidden" class="form-control" value="<?php echo $row['bookingId']; ?>" required>
-        <div>
+       
+        <div class = "row">        
+        <div class = "col">
           <label class="form-label">Patient Name:</label>
           <input name="name" type="text" class="form-control" value="<?php echo $row['bookingName']; ?>" required>
         </div>
-        <div>
+        <div class = "col">
           <label class="form-label">Gender:</label>
           <select name="gender" class="form-control" class="input-field box">
               <option value="" disabled>Select Gender:</option>
@@ -63,11 +65,20 @@
                     }?>>Female</option>
         </select>
         </div>
+                  </div>
+
+
         <div>
+          <label class="form-label">Email:</label>
+          <input name="email" type="text" class="form-control" value="<?php echo $row['bookingemail']; ?>" required>
+        </div>
+
+        <div class = "row">
+        <div class = "col">
           <label class="form-label">Appointment Date:</label>
           <input name="date" type="date" class="form-control" value="<?php echo $row['bookingDate']; ?>"  required>
         </div>
-        <div>
+        <div class = "col">
           <label class="form-label">Time:</label>
           <select name="time" class="form-control" class="input-field box">
 
@@ -110,6 +121,7 @@
 
               </select>
         </div>
+                  </div>
         <div>
           <label class="form-label">Dental Clinic:</label>
           <select name="branch" class="form-control" class="input-field box">
