@@ -1,19 +1,19 @@
 <?php
  session_start();
- require_once '../includes/dbh.inc.php';
- require_once '../includes/emptySession.php';
+ require_once '../../includes/dbh.inc.php';
+ require_once '../../includes/emptySession.php';
 
  if (!isset($_SESSION['admin_branchName'])){
-  header("Location: ../admin/login-admin.php");
+  header("Location: ../../admin/login-admin.php");
   die();
 }
  
 if($_SESSION['admin_branchName'] == "Pinagbuhatan" || $_SESSION['admin_branchName'] == "Malinao" || $_SESSION['admin_branchName'] == "San Joaquin"){
-  include 'includes/dashboardCount1.php';
+  include '../includes/dashboardCount1.php';
 
 }
 elseif($_SESSION['admin_branchName'] == "mainAdmin"){
-  include 'includes/dashboardCount2.php';
+  include '../includes/dashboardCount2.php';
 
 }
 
@@ -34,12 +34,12 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
     <meta name="author" content="" />
     
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../../assets/img/favicon.png" rel="icon">
+  <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   
     <title>Dashboard- MCY Admin</title>
     <?php
-        include 'includes/style-links.php';
+        include 'style-links.php';
     ?>
     
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -79,9 +79,8 @@ display_c7()
   </head>
   <body class="sb-nav-fixed">
 
-  <?php include "includes/navbar.php"; ?> <!--==== NAV BAR ====-->
+  <?php include "../includes/navbar_light.php"; ?> <!--==== NAV BAR ====-->
   
-
       <div id="layoutSidenav_content">
         <main>
         
@@ -409,11 +408,11 @@ display_c7()
                                 while($row = mysqli_fetch_assoc($result)){
                                     if("Pending" === $row['bookingStatus']){ 
                                       if($_SESSION['admin_branchName'] === $row['bookingBranch']){
-                                        include 'includes/tables/pending_tables.inc.php';
+                                        include '../includes/tables/pending_tables.inc.php';
                                         
                                         } 
                                 if($_SESSION['admin_branchName'] === "mainAdmin"){
-                                        include 'includes/tables/pending_tables.inc.php';
+                                        include '../includes/tables/pending_tables.inc.php';
                                   
                           } } } } ?>
                    
@@ -449,7 +448,7 @@ display_c7()
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
       crossorigin="anonymous"
@@ -460,7 +459,7 @@ display_c7()
       src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
       crossorigin="anonymous"
     ></script>
-    <script src="js/datatables-simple-demo.js"></script>
+    <script src="../js/datatables-simple-demo.js"></script>
 
 
              <script>

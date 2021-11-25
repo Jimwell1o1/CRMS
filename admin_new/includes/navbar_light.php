@@ -1,5 +1,5 @@
 <!--========= NAV BAR =========-->
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
       <!-- Navbar Brand-->
       <a class="navbar-brand ps-3" href="index.php">MCY Dental Clinic</a>
       <!-- Sidebar Toggle-->
@@ -88,18 +88,18 @@
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
           >
-            <li><a class="dropdown-item" href="light/index-light.php">Light Dashboard</a></li>
+            <li><a class="dropdown-item" href="../index.php">Dark Dashboard</a></li>
             <li><a class="dropdown-item" onClick="window.print()">Print Report</a></li>
             <li><a class="dropdown-item" href="#!">Activity Log</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="../includes/logout-admin.inc.php">Logout</a></li>
+            <li><a class="dropdown-item" href="../../includes/logout-admin.inc.php">Logout</a></li>
           </ul>
         </li>
       </ul>
     </nav>
     <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
           <div class="sb-sidenav-menu">
             <div class="nav">
               <div class="sb-sidenav-menu-heading">General</div>
@@ -139,23 +139,23 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="pending_tables.php"
+                  <a class="nav-link" href="../pending_tables.php"
                     >Pending Schedules</a
                   >
-                  <a class="nav-link" href="accepted_tables.php"
+                  <a class="nav-link" href="../accepted_tables.php"
                     >Accepted Schedules</a
                   >
-                  <a class="nav-link" href="declined_tables.php"
+                  <a class="nav-link" href="../declined_tables.php"
                     >Declined Schedules</a
                   >
                 
-                  <a class="nav-link" href="customer_history.php"
+                  <a class="nav-link" href="../customer_history.php"
                     >Customer History</a
                   >
                 </nav>
               </div>
               <div class="sb-sidenav-menu-heading">Users</div>
-              <a class="nav-link" href="user_accounts.php">
+              <a class="nav-link" href="../user_accounts.php">
                 <div class="sb-nav-link-icon">
                 <i class="fas fa-archive"></i>
                 </div>
@@ -165,14 +165,14 @@
               
 
 
-              <a class="nav-link" href="email_sender.php">
+              <a class="nav-link" href="../email_sender.php">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-envelope"></i>
                 </div>
                 Send Email
               </a>
 
-              <a class="nav-link" href="task.php">
+              <a class="nav-link" href="../task.php">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-tasks"></i>
                 </div>
@@ -180,12 +180,12 @@
               </a>
 
               <a>
-              <button type="button" class="btn btn-dark"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <button type="button" class="btn btn-light"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fas fa-plus-circle" style = "color:#595C5F;"></i> Add Appointment
               </button>
                </a>
 
-              <a class="nav-link" href="../includes/logout-admin.inc.php">
+              <a class="nav-link" href="../../includes/logout-admin.inc.php">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-sign-out-alt"></i>
                 </div>
