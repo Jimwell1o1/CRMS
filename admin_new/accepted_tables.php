@@ -70,6 +70,7 @@
                     <tr>
                       <th>Name</th>
                       <th>Gender</th>
+                      <th>Email</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>
@@ -81,6 +82,7 @@
                     <tr>
                       <th>Name</th>
                       <th>Gender</th>
+                      <th>Email</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>

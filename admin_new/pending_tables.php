@@ -68,6 +68,7 @@
                       <!-- <th>Booking ID</th> -->
                     <th>Name</th>
                       <th>Gender</th>
+                      <th>Email</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>
@@ -80,6 +81,7 @@
                     <!-- <th>Booking ID</th> -->
                     <th>Name</th>
                     <th>Gender</th>
+                    <th>Email</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>

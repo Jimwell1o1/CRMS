@@ -4,6 +4,7 @@
   <!-- <th scope="row"> <?php // echo $row['bookingId'] ?> </th> -->
   <th scope="row"> <?php echo $row['bookingName'] ?> </th>
   <td> <?php echo $row['bookingGender'] ?> </td>
+  <td> <?php echo $row['bookingemail'] ?> </td>
   <td> <?php echo $row['bookingDate'] ?> </td>
   <td> <?php echo $row['bookingTime'] ?> </td>
   <td> <?php echo $row['bookingConsultation'] ?> </td>
@@ -202,6 +203,17 @@
                         </select>
         </div>
    
+        <div>
+          <label class="form-label">Message:</label>
+          <input name="message" type="text" class="form-control" 
+          value="<?php
+           if($row['bookingMessage'] == NULL){
+            echo "No Message";
+          }
+          else{
+            echo $row['bookingMessage'];
+          }; ?>" readonly>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

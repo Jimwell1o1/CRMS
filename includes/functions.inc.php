@@ -327,8 +327,8 @@ function bookingDetails_admin($conn, $username, $name, $email, $gender, $date, $
 };
 
 // Function for Booking inserting to Database
-function bookingUpdate($conn, $id, $name, $gender, $date, $time, $consultation, $branch, $status){
-    $sql = "UPDATE booking SET bookingName = '$name', bookingGender = '$gender', bookingDate = '$date', bookingTime = '$time', bookingConsultation = '$consultation', bookingBranch = '$branch',  bookingStatus = '$status' WHERE bookingId = '$id';";
+function bookingUpdate($conn, $id, $name, $gender, $date, $time, $consultation, $branch, $status,$message){
+    $sql = "UPDATE booking SET bookingName = '$name', bookingGender = '$gender', bookingDate = '$date', bookingTime = '$time', bookingConsultation = '$consultation', bookingBranch = '$branch',  bookingStatus = '$status',  bookingMessage = '$message' WHERE bookingId = '$id';";
     $query_run = mysqli_query($conn, $sql);
     
     if($query_run){

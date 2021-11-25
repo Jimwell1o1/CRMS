@@ -14,8 +14,9 @@
         $consultation = $_POST["procedure"];
         $branch = $_POST["branch"];
         $status = $_POST["status"];
+        $message = $_POST["message"];
 
-        bookingUpdate($conn, $id, $name, $gender, $date, $time, $consultation, $branch, $status);
+        bookingUpdate($conn, $id, $name, $gender, $date, $time, $consultation, $status,$message);
 
     }else {
         header("location: ../admin_new/pending_tables.php");

@@ -376,6 +376,7 @@ display_c7()
                   
                     <th>Name</th>
                       <th>Gender</th>
+                      <th>Email</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>
@@ -387,6 +388,7 @@ display_c7()
                     <tr>
                     <th>Name</th>
                     <th>Gender</th>
+                    <th>Email</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>

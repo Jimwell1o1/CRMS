@@ -1,6 +1,7 @@
 <tr>
   <th scope="row"> <?php echo $row['bookingName'] ?> </th>
   <td> <?php echo $row['bookingGender'] ?> </td>
+  <td> <?php echo $row['bookingemail'] ?> </td>
     <td> <?php echo $row['bookingDate'] ?> </td>
     <td> <?php echo $row['bookingTime'] ?> </td>
     <td> <?php echo $row['bookingConsultation'] ?> </td>
@@ -30,3 +31,4 @@
           </form>
   </td>
 </tr>
+
