@@ -25,7 +25,7 @@ $output.='<p>Please click on the following link to validate your account.</p>';
 //replace the site url
 $output.="<p><a href='http://localhost/crms/forms/activate.php?uid=$uid&code=$key' target='_blank'>CLICK HERE TO ACTIVATE</a></p>";
 $body = $output;
-$subject = "MCY ACCOUNT VERIFY";
+$subject = "MCY Account Verification - " . $username;
 
 $email_to = $email;
 

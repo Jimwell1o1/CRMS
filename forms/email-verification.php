@@ -101,11 +101,11 @@
                 We've sent the <b>Verification link</b> in your email <br>Please check to verify your account</p>
               </div>";
             } 
-             elseif ($_GET["error"] == "invaliduid") {
+             elseif ($_GET["error"] == "notverified") {
                 # code...
                 echo "<div class='alert alert-danger alert-dismissible'>
                 <button type='button' class='close' data-dismiss='alert'>&times;</button>
-                Please choose a proper username.
+                Your Account is not yet verified.
               </div>";
             }
         }
