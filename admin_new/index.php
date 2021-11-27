@@ -400,7 +400,7 @@ display_c7()
 
                   <?php
                
- 
+    
                             $sql = "SELECT * FROM booking WHERE bookingDate = CURDATE()";
                             $result = mysqli_query($conn, $sql);
                             $resultChecked = mysqli_num_rows($result);

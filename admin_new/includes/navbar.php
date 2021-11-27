@@ -88,7 +88,6 @@
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
           >
-            <li><a class="dropdown-item" href="light/index-light.php">Light Dashboard</a></li>
             <li><a class="dropdown-item" onClick="window.print()">Print Report</a></li>
             <li><a class="dropdown-item" href="#!">Activity Log</a></li>
             <li><hr class="dropdown-divider" /></li>
