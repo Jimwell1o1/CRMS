@@ -538,7 +538,7 @@
 
           <div class="form-group">
           <div class="section-title">
-          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>>I have read and agreed to the  Here To Review MCY's Dental Clinic <a target="_blank" href="../../policy/terms.php">Terms and Conditions</a>. <br>
+          <label><input type = "checkbox" name = "checked" <?php echo ($checked=='on')?'checked':'' ?>>I have read and agreed to the MCY Dental Clinic's <a target="_blank" href="../../policy/terms.php">Terms and Conditions</a>. <br>
               I hereby give my full consent having reviewed and understood  <br>the <a target="_blank" href="../../policy/privacy.php">Data Privacy Notice </a>of MCY Dental Clinic. </label>
               <br><span style="margin-top: 5em; font-size: 0.7em;" class="text-danger"> <?php echo $checkedErr;?></span>
               <br>

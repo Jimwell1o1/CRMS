@@ -217,14 +217,14 @@
    
         <div>
           <label class="form-label">Message:</label>
-          <input name="message" type="text" class="form-control" 
-          value="<?php
+          <textarea name="message" type="text" class="form-control" 
+           readonly><?php
            if($row['bookingMessage'] == NULL){
             echo "No Message";
           }
           else{
             echo $row['bookingMessage'];
-          }; ?>" readonly>
+          }; ?></textarea>
         </div>
       </div>
       <div class="modal-footer">

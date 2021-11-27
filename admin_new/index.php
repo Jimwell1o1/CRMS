@@ -17,7 +17,6 @@ elseif($_SESSION['admin_branchName'] == "mainAdmin"){
 
 }
 
- 
 
 ?>
 
@@ -94,7 +93,7 @@ display_c7()
               <li class="breadcrumb-item active"> 
                 <b>
               <?php
-         
+          date_default_timezone_set('Asia/Manila');
          echo "Date: ".date("M j, Y"."(l)");
         
          echo "<br> Time: <span  id='ct7'></span>";
@@ -400,6 +399,8 @@ display_c7()
                     
 
                   <?php
+               
+ 
                             $sql = "SELECT * FROM booking WHERE bookingDate = CURDATE()";
                             $result = mysqli_query($conn, $sql);
                             $resultChecked = mysqli_num_rows($result);
