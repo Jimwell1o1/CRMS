@@ -764,6 +764,8 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Gallery</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="policy/privacy.php">Privacy Policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="policy/terms.php">Terms of Service</a></li>
             </ul>
           </div>
 
@@ -784,7 +786,7 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Have us subscribe on our newsletter!</p>
-            <form action="forms/signup.php" method="post">
+            <form action="forms/signup.php" method="GET">
               <input type="email" name="email" required><input type="submit" value="Subscribe">
             </form>
 
