@@ -8,10 +8,10 @@
   die();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
@@ -23,31 +23,32 @@
      <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <title>Pending - Admin</title>
+    <title>TomorrowSched - Admin</title>
     <?php
         include 'includes/style-links.php';
     ?>
+
   </head>
   <body class="sb-nav-fixed">
-    
-  <?php include "includes/navbar.php"; ?> <!--==== NAV BAR ====-->
+
+    <?php include "includes/navbar.php"; ?> <!--==== NAV BAR ====-->
+
 
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Pending Schedule</h1>
+            <h1 class="mt-4">Tomorrow Schedule</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item">&nbsp;&nbsp;
+              <li class="breadcrumb-item">
                 <a href="index.php">Dashboard</a>
               </li>
-              <li class="breadcrumb-item active">Pending Schedule</li>
+              <li class="breadcrumb-item active">Tomorrow Schedule</li>
             </ol>
-
             <?php
            if (isset($_GET["error"])){
-                        if ($_GET["error"] == "successful") {
+                        if ($_GET["error"] == "none") {
                             echo '<div class="alert alert-success alert-dismissible">
-                            The system has successfully updated the information. 
+                            The system has successfully sent the email to the user. 
                           </div>';
            }else if($_GET["error"] == "unsuccessful") {
             echo '<div class="alert alert-danger alert-dismissible">
@@ -59,29 +60,29 @@
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Pending
+                Tomorrow's Appointment
               </div>
               <div class="card-body">
-                <table id="datatablesSimple">
+               
+
+              <table id="datatablesSimple">
                   <thead>
                     <tr>
-                      <!-- <th>Booking ID</th> -->
-                    <th>Name</th>
+                      <th>Name</th>
                       <th>Gender</th>
                       <th>Email</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>
-                      <th>Branch</th>                   
+                      <th>Branch</th>                     
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                    <!-- <th>Booking ID</th> -->
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Email</th>
+                      <th>Name</th>
+                      <th>Gender</th>
+                      <th>Email</th>
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>
@@ -93,40 +94,40 @@
                     
 
                     <?php
-                            $sql = "SELECT * FROM booking;";
+                            $sql = "SELECT * FROM booking WHERE bookingDate = DATE_ADD(CURDATE(), INTERVAL 1 DAY)";
                             $result = mysqli_query($conn, $sql);
                             $resultChecked = mysqli_num_rows($result);
 
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
-                                    if("Pending" === $row['bookingStatus']){ 
-                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){
-                                        include 'includes/tables/pending_tables.inc.php';
-                                        
-                                        } 
+                                    if("Accepted" === $row['bookingStatus']){ 
+                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ 
+                                             include 'includes/tables/accepted_tables.inc.php';
+                                } 
                                 if($_SESSION['admin_branchName'] === "mainAdmin"){
-                                        include 'includes/tables/pending_tables.inc.php';
-                                  
+                                 
+                                  include 'includes/tables/accepted_tables.inc.php';
+                         
                           } } } } ?>
-                   
+
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-        </main>
-
-      <?php 
+                        </main>
+          <?php 
           include 'modalAddpatient.php';
 
           ?>
+
 
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid px-4">
             <div
               class="d-flex align-items-center justify-content-between small"
             >
-              <div class="text-muted">Copyright &copy; Your Website 2021</div>
+              <div class="text-muted">Copyright &copy; MCY Dental Clinic 2021</div>
               <div>
                 <a href="#">Privacy Policy</a>
                 &middot;
@@ -137,6 +138,7 @@
         </footer>
       </div>
     </div>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
@@ -148,16 +150,16 @@
     ></script>
     <script src="js/datatables-simple-demo.js"></script>
 
-    
     <script>
-    function ConfirmDelete(){
-    var x = confirm("Are you sure you want to delete?");
-    if (x)
-        return true;
-    else
-      return false;
-      }
-</script>
+      function ConfirmDelete(){
 
-   
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+      return true;
+  else
+    return false;
+    }
+    </script>
+    
+  </body>
 </html>

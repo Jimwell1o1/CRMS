@@ -90,7 +90,7 @@
           >
             <li><a class="dropdown-item" href="../index.php">Dark Dashboard</a></li>
             <li><a class="dropdown-item" onClick="window.print()">Print Report</a></li>
-            <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+            <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="../../includes/logout-admin.inc.php">Logout</a></li>
           </ul>

@@ -366,7 +366,8 @@ display_c7()
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-               Today's Appointment
+               <label>Today's Appointment</label>
+
               </div>
               <div class="card-body">
                    <table id="datatablesSimple">
@@ -396,8 +397,6 @@ display_c7()
                     </tr>
                   </tfoot>
                   <tbody>
-                    
-
                   <?php
                
  
@@ -407,34 +406,15 @@ display_c7()
 
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){                                 
-                                    if("Pending" === $row['bookingStatus']){ 
+                                    if("Accepted" === $row['bookingStatus']){ 
                                       if($_SESSION['admin_branchName'] === $row['bookingBranch']){
-                                        include 'includes/tables/pending_tables.inc.php';
+                                        include 'includes/tables/accepted_tables.inc.php';
                                         
                                         } 
                                 if($_SESSION['admin_branchName'] === "mainAdmin"){
-                                        include 'includes/tables/pending_tables.inc.php';
+                                        include 'includes/tables/accepted_tables.inc.php';
                                   
-                          } }   } } ?>
-
-
-                             <!-- $today = date("Y/m/d");
-                            $sql = "SELECT * FROM booking WHERE bookingDate = '$today'";
-                            $result = mysqli_query($conn, $sql);
-                            $resultChecked = mysqli_num_rows($result);
-
-                            if($resultChecked > 0){  
-                                while($row = mysqli_fetch_assoc($result)){
-                                    if( $today === $row['bookingDate']){ 
-                                    if("Pending" === $row['bookingStatus']){ 
-                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){
-                                        include 'includes/tables/pending_tables.inc.php';
-                                        
-                                        } 
-                                if($_SESSION['admin_branchName'] === "mainAdmin"){
-                                        include 'includes/tables/pending_tables.inc.php';
-                                  
-                          } } } } } ?>  -->
+                          } }   } } ?>                 
                    
                   </tbody>
                 </table>
@@ -556,7 +536,8 @@ display_c7()
                 });
                     </script>
 
+<script>
 
-  </body>
+</script>
   </body>
 </html>

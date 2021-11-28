@@ -88,9 +88,9 @@
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
           >
-            <li><a class="dropdown-item" href="light/index-light.php">Light Dashboard</a></li>
+            <!-- <li><a class="dropdown-item" href="light/index-light.php">Light Dashboard</a></li> -->
             <li><a class="dropdown-item" onClick="window.print()">Print Report</a></li>
-            <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+            <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="../includes/logout-admin.inc.php">Logout</a></li>
           </ul>
@@ -139,6 +139,9 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" href="tomsched_tables.php"
+                    >Tomorrow Schedule</a
+                  >
                   <a class="nav-link" href="pending_tables.php"
                     >Pending Schedules</a
                   >
