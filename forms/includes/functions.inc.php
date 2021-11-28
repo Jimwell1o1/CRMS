@@ -208,7 +208,7 @@ function loginUser($conn, $username, $pwd){
     elseif ($checkPwd === true) {
         # code...
  
-        $query=mysqli_query($conn,"select * from users where usersUid='$username'");
+        $query=mysqli_query($conn,"select * from users where usersUid='$username' OR usersEmail='$username'");
         $row=mysqli_fetch_array($query);
     
         if($row['usersVerify']==0){
