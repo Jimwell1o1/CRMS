@@ -8,12 +8,12 @@
   <td class="text-left">
   <form action="../includes/updateDeclinedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
   <div  class = "d-flex p-1">
-  <button class="btn btn-success" id="accept-button" name="submit">
+  <button class="btn btn-primary" id="accept-button" name="submit" onclick="return confirm('Do you want to recover this appointment?');">
   <i class="fas fa-redo"></i>
   </button>
   <label>&nbsp;</label>
-  <button class="btn btn-warning" id="accept-button" name="done">
-  <i class="fas fa-check"></i>
+  <button class="btn btn-success" id="accept-button" name="done" onclick="return confirm('Does the appointment finish?');">
+  <i class="fas fa-check-circle"></i>
   </button>
   </div>
       </form>
