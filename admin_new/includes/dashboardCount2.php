@@ -33,6 +33,8 @@ while($row = mysqli_fetch_assoc($query_result)){
 
   $history = $row['bookingCount'];
 }
+
+
 $query = "SELECT COUNT(*) as userCount FROM users";
 
 $query_result = mysqli_query($conn,$query);
@@ -71,6 +73,12 @@ while($row = mysqli_fetch_assoc($query_result)){
     $tdec = $total[11];
 
     
+    $query = "SELECT bookingDate FROM booking";
 
+    $query_result = mysqli_query($conn,$query);
+    while($row = mysqli_fetch_assoc($query_result)){
+    
+      $booking = date('d M Y', strtotime($row['bookingDate']));
+    }
 
 ?>

@@ -2,7 +2,7 @@
   <th scope="row"> <?php echo $row['bookingName'] ?> </th>
   <td> <?php echo $row['bookingGender'] ?> </td>
   <td> <?php echo $row['bookingemail'] ?> </td>
-    <td> <?php echo $row['bookingDate'] ?> </td>
+    <td> <?php echo date('M-d-Y', strtotime($row['bookingDate'])); ?> </td>
     <td> <?php echo $row['bookingTime'] ?> </td>
     <td> <?php echo $row['bookingConsultation'] ?> </td>
     <td> <?php echo $row['bookingBranch'] ?> </td>  
@@ -81,7 +81,7 @@
         <div class = "row">
         <div class = "col">
           <label class="form-label">Appointment Date:</label>
-          <input name="date" type="date" class="form-control" value="<?php echo $row['bookingDate']; ?>"  required>
+          <input name="date" type="date" id = "dateControl" class="form-control" value="<?php echo $row['bookingDate']; ?>"  required>
         </div>
         <div class = "col">
           <label class="form-label">Time:</label>

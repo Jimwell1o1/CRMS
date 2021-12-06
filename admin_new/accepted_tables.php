@@ -28,6 +28,28 @@
         include 'includes/style-links.php';
     ?>
 
+<!-- JS FOR DISABLE PAST DATE -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function(){
+      $(function(){
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+        var maxDate= year + '-' + month + '-' + day;
+        $('#dateControl').attr('min', maxDate);
+      });
+    })
+
+  </script>
   </head>
   <body class="sb-nav-fixed">
 
@@ -73,7 +95,7 @@
               ?>
             <div class="card mb-4">
               <div class="card-header">
-                <i class="fas fa-table me-1"></i>
+                <i class="far fa-calendar-check me-1"></i>
                 Accepted
               </div>
               <div class="card-body">

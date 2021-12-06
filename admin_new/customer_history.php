@@ -102,11 +102,11 @@
                                   <th scope="row"> <?php echo $row['bookingId'] ?> </th>
                                               <td > <?php echo $row['bookingName'] ?> </td>
                                               <td> <?php echo $row['bookingGender'] ?> </td>
-                                                <td> <?php echo $row['bookingDate'] ?> </td>
-                                                <td> <?php echo $row['bookingTime'] ?> </td>
-                                                <td> <?php echo $row['bookingBranch'] ?> </td>
-                                                <td> <?php echo $row['bookingConsultation'] ?> </td>
-                                                <td> <?php echo $row['bookingStatus'] ?> </td>
+                                              <td> <?php echo date('M-d-Y', strtotime($row['bookingDate'])); ?> </td>
+                                              <td> <?php echo $row['bookingTime'] ?> </td>
+                                              <td> <?php echo $row['bookingBranch'] ?> </td>
+                                              <td> <?php echo $row['bookingConsultation'] ?> </td>
+                                              <td> <?php echo $row['bookingStatus'] ?> </td>
                                               </td>
                                             </tr>
                           <?php

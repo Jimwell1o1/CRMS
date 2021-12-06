@@ -113,7 +113,7 @@
                 </div>
                 Dashboard
               </a>
-              <div class="sb-sidenav-menu-heading">Function</div>
+              <div class="sb-sidenav-menu-heading">Data Table</div>
 
               <a
                 class="nav-link collapsed"
@@ -139,9 +139,9 @@
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link" href="tomsched_tables.php"
+                <!-- <a class="nav-link" href="tomsched_tables.php"
                     >Tomorrow Schedule</a
-                  >
+                  > -->
                   <a class="nav-link" href="pending_tables.php"
                     >Pending Schedules</a
                   >
@@ -158,11 +158,18 @@
                 </nav>
               </div>
 
-              <a class="nav-link" href="ongoing_app.php">
+              <a class="nav-link" href="tomsched_tables.php">
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-columns"></i>
+                  <i class="fas fa-calendar-day"></i>
                 </div>
-                Ongoing  
+                Tomorrow Schedule  
+              </a>
+
+              <a class="nav-link" href="plan_app.php">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-table"></i>
+                </div>
+                Follow-up Schedule
               </a>
 
 
@@ -179,7 +186,7 @@
 
               echo '<a class="nav-link" href="admin_accounts.php">
               <div class="sb-nav-link-icon">
-              <i class="fas fa-archive"></i>
+              <i class="fas fa-user-alt"></i>
               </div>
               Admin 
               </a>';
@@ -203,14 +210,15 @@
 
               <a class="nav-link" href="task.php">
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-tasks"></i>
+                  <i class="fas fa-calendar-plus"></i>
                 </div>
                 Create Events
               </a>
 
               <a>
               <button type="button" class="btn btn-dark"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fas fa-plus-circle" style = "color:#595C5F;"></i> Add Appointment
+                <i class="fas fa-plus-circle" style = "color:#595C5F;"></i><label>&nbsp;</label> 
+                Add Appointment
               </button>
                </a>
 
