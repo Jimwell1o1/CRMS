@@ -109,8 +109,8 @@
         }
         else {
             # code...
-            echo "<li><a href='forms/signup.php'>REGISTER</a></li>";
-            echo "<li><a href='forms/login.php'>LOG IN</a></li>";
+            echo "<li><a href='forms/signup.php'>Register</a></li>";
+            echo "<li><a href='forms/login.php'>Sign In</a></li>";
         }
        
     ?>

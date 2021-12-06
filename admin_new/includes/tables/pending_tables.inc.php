@@ -17,7 +17,11 @@
      <i class="fas fa-edit"></i>
     </button>
     <label>&nbsp;</label>
-    <button class="btn btn-warning" id="accept-button" name="submit">
+        <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
+        <input type="hidden" name="useremail" value="<?php echo htmlspecialchars($row['bookingemail'])?>" >
+        <input type="hidden" name="usertime" value="<?php echo htmlspecialchars($row['bookingTime'])?>" >
+        <input type="hidden" name="userdate" value="<?php echo htmlspecialchars($row['bookingDate'])?>" >
+    <button class="btn btn-warning" id="accept-button" name="submit" onclick = call()>
       <i class="fas fa-check"></i>
     </button>
     <label>&nbsp;</label>
@@ -27,6 +31,7 @@
     <div>
   </form>
 
+  
   </td>
   </td>
 </tr>

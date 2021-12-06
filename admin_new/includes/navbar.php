@@ -157,6 +157,15 @@
                   >
                 </nav>
               </div>
+
+              <a class="nav-link" href="ongoing_app.php">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-columns"></i>
+                </div>
+                Ongoing  
+              </a>
+
+
               <div class="sb-sidenav-menu-heading">Accounts</div>
               <a class="nav-link" href="user_accounts.php">
                 <div class="sb-nav-link-icon">
