@@ -298,10 +298,10 @@ function bookingUpdate($conn, $id, $name, $gender, $email, $date, $time, $consul
     $query_run = mysqli_query($conn, $sql);
     
     if($query_run){
-        header("location: ../admin_new/pending_tables.php?error=successful");
+        header("location: ../admin_new/accepted_tables.php?error=successful");
                 exit();
             }else {
-                header("location: ../admin_new/pending_tables.php?error=unsuccessful");
+                header("location: ../admin_new/accepted_tables.php?error=unsuccessful");
                 exit();
             }
 };

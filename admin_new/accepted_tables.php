@@ -46,8 +46,22 @@
             </ol>
             <?php
            if (isset($_GET["error"])){
-                        if ($_GET["error"] == "none") {
+                        if ($_GET["error"] == "successful") {
                             echo '<div class="alert alert-success alert-dismissible">
+                            The system has successfully updated the information. 
+                          </div>';
+           }else if($_GET["error"] == "unsuccessful") {
+            echo '<div class="alert alert-danger alert-dismissible">
+              Updating data error occured, please try again.
+          </div>';
+}
+          }
+              ?>
+
+            <?php
+           if (isset($_GET["error"])){
+                        if ($_GET["error"] == "none") {
+                            echo '<div class="alert alert-primary alert-dismissible">
                             The system has successfully sent the email to the user. 
                           </div>';
            }else if($_GET["error"] == "unsuccessful") {

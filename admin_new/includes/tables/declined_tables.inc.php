@@ -9,11 +9,11 @@
   <form action="../includes/updateDeclinedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
   <div  class = "d-flex p-1">
   <button class="btn btn-success" id="accept-button" name="submit">
-  <i class="fas fa-redo"></i> Recover
+  <i class="fas fa-redo"></i>
   </button>
   <label>&nbsp;</label>
   <button class="btn btn-warning" id="accept-button" name="done">
-  <i class="fas fa-check"></i> Done
+  <i class="fas fa-check"></i>
   </button>
   </div>
       </form>
