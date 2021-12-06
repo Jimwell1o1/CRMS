@@ -148,11 +148,25 @@
         }
             elseif ($_GET["error"] == "none") {
                 # code...
-                echo "<div class='alert alert-success alert-dismissible'>
+                echo "<div class='alert alert-warning alert-dismissible'>
                 <button type='button' class='close' data-dismiss='alert'>&times;</button>
-                Congratulations! You've successfully signed up.
+                We've sent an email to verify your account,<br>kindly please check your email.
               </div>";
             }
+            elseif ($_GET["error"] == "verifysuccessful") {
+              # code...
+              echo "<div class='alert alert-success alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>&times;</button>
+              Account successfully verified, you can now log in.
+            </div>";
+          }
+          elseif ($_GET["error"] == "erroroccured") {
+            # code...
+            echo "<div class='alert alert-danger alert-dismissible'>
+            <button type='button' class='close' data-dismiss='alert'>&times;</button>
+            Something went wrong, please try again later.
+          </div>";
+        }
         }
 ?>
  

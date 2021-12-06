@@ -129,40 +129,6 @@ function createUser($conn, $name, $age, $address, $gender, $birthday, $email, $u
 };
 
 
-
-
-// Function for Login User Account
-function loginUser($conn, $uid, $password){
-    $uidExists = uidExists($conn, $uid);
-
-    if($uidExists === false){
-        header("location: ../login.php?error=wronglogin");
-        exit();
-    }
-
-    $pwdHashed = $uidExists["usersPwd"];
-    $checkPwd = password_verify($password, $pwdHashed);
-    
-    if($checkPwd === false){
-        header("location: ../login.php?error=incorrectpwd");
-        exit();
-    }else if ($checkPwd === true){
-
-        session_start();
-        $_SESSION["userid"] = $uidExists["usersId"];
-        $_SESSION["useruid"] = $uidExists["usersUid"];
-        $_SESSION["username"] = $uidExists["usersName"];
-        $_SESSION["userName"] = $uidExists["usersName"];
-        
-        $_SESSION["userPassword"] = $pwdHashed;
-        
-        header("location: ../home.php");
-        exit();
-    }
-
-};
-
-
 // Function for Sign Up of Admin Account
 function admin_uidExists($conn, $admin_uid){
     $sql = "SELECT * FROM adminAcc WHERE adminAccUid = ?;";

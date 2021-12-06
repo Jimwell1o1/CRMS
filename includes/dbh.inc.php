@@ -24,8 +24,9 @@
             usersName varchar(128) NOT NULL,
             usersEmail varchar(128) NOT NULL,
             usersUid varchar(128) NOT NULL,
-            usersPwd varchar(128) NOT NULL
-         
+            usersPwd varchar(128) NOT NULL,
+            usersCode varchar(20) NOT NULL,
+            usersVerify int(1) NOT NULL
          );       
         ';
 

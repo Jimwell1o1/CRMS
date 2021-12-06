@@ -1,4 +1,5 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
 
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat){
     $result;
@@ -108,7 +109,7 @@ function uidExists($conn, $username, $email){
 }
 
 function createUser($conn, $name, $email, $username, $pwd){
-    $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
+    $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd, usersCode, usersVerify) VALUES (?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         # code...
@@ -118,10 +119,56 @@ function createUser($conn, $name, $email, $username, $pwd){
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssss",  $name, $email, $username, $hashedPwd);
+    $set='123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	$key=substr(str_shuffle($set), 0, 12);
+    $verify=0;
+    mysqli_stmt_bind_param($stmt, "ssssss",  $name, $email, $username, $hashedPwd, $key, $verify);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
+   
+    $uid=mysqli_insert_id($conn);
+
+    //start email
+    $output = '';
+
+    $output.='<p>Please click on the following link to validate your account.</p>';
+    //replace the site url
+    $output.="<p><a href='http://localhost/crms/forms/activate.php?uid=$uid&code=$key' target='_blank'>CLICK HERE TO ACTIVATE</a></p>";
+    $body = $output;
+    $subject = "MCY ACCOUNT VERIFY";
+
+    $email_to = $email;
+
+
+     //autoload the PHPMailer
+     require("../../vendor/autoload.php");
+     $mail = new PHPMailer();
+     $mail->IsSMTP();
+     $mail->Host = "smtp.gmail.com"; // Enter your host here
+     $mail->SMTPAuth = true;
+     $mail->Username = "clinicmcydental@gmail.com"; // Enter your email here
+     $mail->Password = "MCYdentaladmin01"; //Enter your passwrod here
+     $mail->Port = 587;
+     $mail->IsHTML(true);
+     $mail->From = "clinicmcydental@gmail.com";
+     $mail->FromName = "MCY Dental Clinic Account Verification";
+
+     $mail->Subject = $subject;
+     $mail->Body = $body;
+     $mail->AddAddress($email_to);
+
+     if (!$mail->Send()) {
+         echo "Mailer Error: " . $mail->ErrorInfo;
+     } else {
+         echo "<div class='alert alert-success alert-dismissible'>
+         <button type='button' class='close' data-dismiss='alert'>&times;</button>
+         An email has been sent, kindly please<br> check your email account.
+       </div>";
+     }
+
+
+    $_SESSION['sign_msg'] = "Verification code sent to your email.";
     header("Location: ../signup.php?error=none");
     exit();
 }
@@ -160,13 +207,24 @@ function loginUser($conn, $username, $pwd){
     }
     elseif ($checkPwd === true) {
         # code...
-        session_start();
-        $_SESSION["userid"] = $uidExists["usersId"];
-        $_SESSION["useruid"] = $uidExists["usersUid"];
-        $_SESSION["username"] = $uidExists["usersName"];
-        $_SESSION["userPassword"] = $pwdHashed;
-        header("Location: ../../index.php");
-        exit();
+ 
+        $query=mysqli_query($conn,"select * from users where usersUid='$username' OR usersEmail='$username'");
+        $row=mysqli_fetch_array($query);
+    
+        if($row['usersVerify']==0){
+            session_start();
+            $_SESSION["useruid"] = $uidExists["usersUid"];
+            header('location:../email-verification.php?error=notverified');
+            }
+            else{
+                session_start();
+                $_SESSION["userid"] = $uidExists["usersId"];
+                $_SESSION["useruid"] = $uidExists["usersUid"];
+                $_SESSION["username"] = $uidExists["usersName"];
+                $_SESSION["userPassword"] = $pwdHashed;
+                header("Location: ../../index.php");
+                exit();
+            }
     }
 }
 

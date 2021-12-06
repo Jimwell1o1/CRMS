@@ -58,7 +58,7 @@ use PHPMailer\PHPMailer\PHPMailer;
                      if (isset($_POST["submit"])) {
 
                         if($_POST['sendto'] == "All"){
-                            $sql = "SELECT * FROM users;";
+                            $sql = "SELECT * FROM users WHERE usersVerify = 1;";
                             $result = mysqli_query($conn, $sql);//
                             if(mysqli_num_rows($result) > 0){
 

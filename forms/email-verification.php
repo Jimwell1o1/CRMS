@@ -4,48 +4,25 @@
 
     emptyAdminSignupSession();
 
- 
-    if (isset($_POST["verify_email"]))
-    {
-        $email = $_POST["email"];
-        $verification_code = $_POST["verification_code"];
- 
-        // connect with database
-        $conn = mysqli_connect("localhost:8889", "root", "root", "test");
- 
-        // mark email as verified
-        $sql = "UPDATE users SET email_verified_at = NOW() WHERE email = '" . $email . "' AND verification_code = '" . $verification_code . "'";
-        $result  = mysqli_query($conn, $sql);
- 
-        if (mysqli_affected_rows($conn) == 0)
-        {
-            die("Verification code failed.");
-        }
- 
-        echo "<p>You can login now.</p>";
-        exit();
+    if(!isset($_SESSION['useruid'])){
+
+      header("Location: signup.php?error=erroroccured");
+      die();
     }
- 
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
+  
+<meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="sweetalert/jquery-3.5.1.min.js"></script>
-    <script src="sweetalert/sweetalert2.all.min.js"></script>
-    <title> MCY ADMIN </title>
+
   <title>MCY Dental Clinic</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
- <!-- Favicons -->
- <link href="../assets/img/favicon.png" rel="icon">
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -58,46 +35,89 @@
   <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
-
-  <!-- Pacli  -->
-<link rel = "stylesheet" href = "../assets/css/styleLogIn.css">
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
+
+<link rel = "stylesheet" href = "../assets/css/styleLogIn.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
 
-<br>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="../index.php"><b>MCY Dental Clinic</b></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li ><a href="../index.php">Home</a></li>
+          <li><a href="../index.php#about">Intro</a></li>
+          <li class="drop-down"><a href="../index.php#about">About Us</a>
+            <ul>
+              <li><a href="../index.php#priorities">Our Priorities</a></li>
+              <li><a href="../index.php#steps">How to Appoint?</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.php#services">Services</a></li>
+          <li><a href="../index.php#portfolio">Gallery</a></li>
+
+          
+          <li><a href="../index.php#contact">Contact Us</a></li>
+          <li class="active"><a href="signup.php">REGISTER</a></li>
+          <li ><a href="login.php">LOG IN</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+
+
+  </header><!-- End Header -->
+
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
         <div class="section-title" data-aos="fade-up">
-        <br> <h2>Verification</h2><br>
-        <p>We've sent the <b>OTP</b> in your E-mail <br>Please enter the <b>OTP</b> below to verify your account</p><br>
+        <br> <h2>Account Verification</h2><br>
+        <p>Please click the button below to <br>resend the link verification.</p><br>
+        <!-- ERROR MESSAGES -->
+ <?php
+        if (isset($_GET["error"])) {
+            # code...
+            if ($_GET["error"] == "sent") {
+                # code...
+                echo "<div class='alert alert-success alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                We've sent the <b>Verification link</b> in your email <br>Please check to verify your account</p>
+              </div>";
+            } 
+             elseif ($_GET["error"] == "notverified") {
+                # code...
+                echo "<div class='alert alert-danger alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                Your Account is not yet verified.
+              </div>";
+            }
+        }
+            ?>
+        
     
-        <form method="POST">
+        <form action="includes/resendemail.inc.php" method="POST">
                 <div class="input-box">
-                <input placeholder="Enter verification code" id="textbox" class="text-input" type="text" name="verification_code" required
-                        value="<?php 
-                                    if(isset($_SESSION['login_adminUsername'])){
-                                        echo htmlspecialchars($_SESSION['login_adminUsername']);
-                                    }
-                                ?>" >
-                                <br>
-                </div>
-             
-                <p><a href="signup-admin.php"> Resend Again</a> </p>
-             
+                <input type="hidden" name="username" value="<?php echo $_SESSION['useruid']; ?>">
+                <input  class="btn btn-primary" type="submit" name="submit" value="Resend Verification Email" />
                 <br>
-                <input type="checkbox" required> I agree to the <a href="">terms and policies. </a><br/><br>
-                <input  class="btn btn-primary" type="submit" name="submit" value="Submit" />
-                <br>
-                <form action = "signup-admin.php">
+            
                 
                 <br><br><br><br>
             </form>
