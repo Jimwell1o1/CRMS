@@ -23,7 +23,7 @@
      <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <title>Plan - Admin</title>
+    <title>Follow-up - Admin</title>
     <?php
         include 'includes/style-links.php';
     ?>
@@ -37,12 +37,12 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Plan Appointment</h1>
+            <h1 class="mt-4">Follow-up Appointment</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item">
                 <a href="index.php">Dashboard</a>
               </li>
-              <li class="breadcrumb-item active">Plan Appointment</li>
+              <li class="breadcrumb-item active">Follow-up Appointment</li>
             </ol>
             <?php
            if (isset($_GET["error"])){
@@ -60,7 +60,7 @@
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Accepted
+                Follow-up
               </div>
               <div class="card-body">
                

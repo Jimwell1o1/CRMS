@@ -13,7 +13,7 @@
      <i class="fas fa-edit"></i>
     </button>
     <label>&nbsp;</label>
-        <button class="btn btn-success" id="accept-button" name="submit">
+        <button class="btn btn-success" id="accept-button" name="submit" onclick="return confirm('Are you sure you want to accept this record?');">
             <i class="fas fa-check-circle"></i>
             </button> 
             <label>&nbsp;</label>
