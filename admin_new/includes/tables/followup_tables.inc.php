@@ -1,38 +1,45 @@
-
-
 <tr>
-  <!-- <th scope="row"> <?php // echo $row['bookingId'] ?> </th> -->
   <th scope="row"> <?php echo $row['bookingName'] ?> </th>
   <td> <?php echo $row['bookingGender'] ?> </td>
   <td> <?php echo $row['bookingemail'] ?> </td>
-  <td> <?php echo date('M-d-Y', strtotime($row['bookingDate'])); ?> </td>
-  <td> <?php echo $row['bookingTime'] ?> </td>
-  <td> <?php echo $row['bookingConsultation'] ?> </td>
-  <td> <?php echo $row['bookingBranch'] ?> </td>
-  <td class="text-left">
-  <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
-  <!-- <form action="" method="POST"> -->
-  <div class = "d-flex p-1">
-  <!-- <button type="button" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#update_modal<?php echo $row['bookingId'] ?>">
+    <td> <?php echo date('M-d-Y', strtotime($row['bookingDate'])); ?> </td>
+    <td> <?php echo $row['bookingTime'] ?> </td>
+    <td> <?php echo $row['bookingConsultation'] ?> </td>
+    <td> <?php echo $row['bookingBranch'] ?> </td>  
+    <td>   
+      <select class = "form-control" name="" id="">
+              <option value="">Weekly</option>
+              <option value="">Monthly</option>
+              <option value="">Customize</option>
+              <option value="">Done</option>
+      </select>
+    </td>
+    <td class="text-left">
+        <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
+        <div class = "d-flex p-1">
+        <button type="button" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#update_modal<?php echo $row['bookingId'] ?>">
      <i class="fas fa-edit"></i>
-    </button> -->
+    </button>
     <label>&nbsp;</label>
+        <button class="btn btn-success" id="accept-button" name="submit" onclick="return confirm('Do want to finish the appointment?');">
+            <i class="fas fa-check-circle"></i>
+            </button> 
+            <label>&nbsp;</label>
+            <button class="btn btn-danger" name="delete" onclick="return confirm('Are you sure you want to delete this record?');">
+            <i class="fas fa-trash-alt"></i>
+            </button>
+            <label>&nbsp;</label>        
+        </form> 
+        <!-- <form action="includes/email-confirmbooking.inc.php" method="POST">
         <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
         <input type="hidden" name="useremail" value="<?php echo htmlspecialchars($row['bookingemail'])?>" >
         <input type="hidden" name="usertime" value="<?php echo htmlspecialchars($row['bookingTime'])?>" >
         <input type="hidden" name="userdate" value="<?php echo htmlspecialchars($row['bookingDate'])?>" >
-    <button class="btn btn-warning" name="submit" onclick="return confirm('Are you sure you want to Accept this record?');">
-      <i class="fas fa-check"></i>
-    </button>
-    <label>&nbsp;</label>
-    <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this record?');">
-      <i class="fas fa-trash"></i>
-    </button>
-    <div>
-  </form>
-
-  
-  </td>
+            <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-bell"></i>
+                </button>
+                </div>
+          </form> -->
   </td>
 </tr>
 
@@ -81,7 +88,7 @@
         <div class = "row">
         <div class = "col">
           <label class="form-label">Appointment Date:</label>
-          <input name="date" type="date" class="form-control" value="<?php echo $row['bookingDate']; ?>"  required>
+          <input name="date" type="date" id = "dateControl" class="form-control" value="<?php echo $row['bookingDate']; ?>"  required>
         </div>
         <div class = "col">
           <label class="form-label">Time:</label>
@@ -240,6 +247,3 @@
     </div>
   </div>
 </div>
-
-
- 

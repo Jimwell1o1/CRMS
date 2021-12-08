@@ -100,7 +100,7 @@
     ?>
 
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav>
 
     </div>
   </header><!-- End Header -->

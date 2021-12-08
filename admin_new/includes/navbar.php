@@ -165,7 +165,7 @@
                 Tomorrow Schedule  
               </a>
 
-              <a class="nav-link" href="plan_app.php">
+              <a class="nav-link" href="followup_app.php">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-table"></i>
                 </div>
