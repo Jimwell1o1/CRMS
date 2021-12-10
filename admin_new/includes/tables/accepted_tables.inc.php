@@ -13,7 +13,7 @@
      <i class="fas fa-edit"></i>
     </button>
     <label>&nbsp;</label>
-    <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
+        <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
         <input type="hidden" name="useremail" value="<?php echo htmlspecialchars($row['bookingemail'])?>" >
         <input type="hidden" name="usertime" value="<?php echo htmlspecialchars($row['bookingTime'])?>" >
         <input type="hidden" name="userdate" value="<?php echo htmlspecialchars($row['bookingDate'])?>" >
@@ -24,8 +24,8 @@
             <label>&nbsp;</label>
             <button class="btn btn-danger" name="delete" onclick="return confirm('Are you sure you want to delete this record?');">
             <i class="fas fa-trash-alt"></i>
-
             </button>
+
             <label>&nbsp;</label>
         </form> 
         <!-- <form action="includes/email-confirmbooking.inc.php" method="POST">

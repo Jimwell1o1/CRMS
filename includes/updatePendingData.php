@@ -108,6 +108,71 @@ use PHPMailer\PHPMailer\PHPMailer;
                 }
             }
         }
+
+          //Start email
+          if (mysqli_connect_errno()) {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            die();
+        }
+        date_default_timezone_set('Asia/Manila');
+        $error = "";
+        
+        //$recipient = "username@gmail.com";
+        $name = $_POST['username'];
+        $recipient = $_POST['useremail'];
+        $time = $_POST['usertime'];
+        $date = $_POST['userdate'];
+        $branch = $_POST['userbranch'];
+        //$expFormat = mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y"));
+        $currentdate = date("Y-m-d H:i:s");
+        $currenttime = date("h:i:s");
+        
+        // Insert Temp Table
+        
+        $output="<h3>Appointment was Declined!</h3>";
+        $output.="<h4>Hi " .$name. "!</h4>";
+        $output.='<p>MCY Dental Clinic is where you&#8217;ll find all of your dental needs. Thank you very much for setting an appointment with us! We appreciate your effort and time in allowing us to serve you. You are always welcome in MCY Dental Clinic, and by that, we want you to know that we are eager for your teeth to be the best they can be with the assistance of our dental professionals. </b></p>';
+        $output.='<p>Please call us on (02) 8640-5536 and text 0945 568 4584 or visit our website on <a href="mcydentalclinic.epizy.com/index.php#contact">MCY Dental Clinic</a> ,if you have any concerns beyond our service. Thank you and stay safe! </p>';
+        $output.='<p>Sincerely,</p>';
+        $output.='<p>The MCY Dental Clinic</p>';
+        $body = $output;
+        $subject = "MCY Dental Clinic Appointment Completed - " . $branch;
+
+        $email_to = $recipient;
+
+        //mysqli_query($conn, "INSERT INTO `emails` (`emailReceiver`, `emailSubject`, `emailBody`, `emailDate`, `emailTime`) VALUES ('" . $recipient . "', '" . $subject . "', '" . $body . "', '" . $currentdate . "', '" . $currenttime . "');");
+
+
+
+        //autoload the PHPMailer
+        require("../vendor/autoload.php");
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->Host = "smtp.gmail.com"; // Enter your host here
+        $mail->SMTPAuth = true;
+        $mail->Username = "clinicmcydental@gmail.com"; // Enter your email here
+        $mail->Password = "MCYdentaladmin01"; //Enter your passwrod here
+        $mail->Port = 587;
+        $mail->IsHTML(true);
+        $mail->From = "clinicmcydental@gmail.com";
+        $mail->FromName = "MCY Dental Clinic";
+
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->AddAddress($email_to);
+
+    
+
+                if (!$mail->Send()) {
+                    echo "Mailer Error: " . $mail->ErrorInfo;
+                } else {
+                    header("Location: ..admin_new/customer_history.php?error=none");
+                    
+                }
+            
+    //End of Emailing
+
+      
         $_SESSION['Declined'] = 'Declined';
         header("location: ../admin_new/declined_tables.php");
         exit();

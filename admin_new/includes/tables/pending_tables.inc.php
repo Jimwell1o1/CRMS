@@ -13,9 +13,9 @@
   <form action="../includes/updatePendingData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
   <!-- <form action="" method="POST"> -->
   <div class = "d-flex p-1">
-  <!-- <button type="button" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#update_modal<?php echo $row['bookingId'] ?>">
+  <button type="button" class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#update_modal<?php echo $row['bookingId'] ?>">
      <i class="fas fa-edit"></i>
-    </button> -->
+    </button>
     <label>&nbsp;</label>
         <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
         <input type="hidden" name="useremail" value="<?php echo htmlspecialchars($row['bookingemail'])?>" >

@@ -173,22 +173,26 @@
                                                 else if($row['bookingStatus'] == "Accepted"){
                                                 echo '<span class="badge badge-success">Accepted</span>';}
                                                 else if($row['bookingStatus'] == "Done"){
-                                                  echo '<span class="badge badge-info">Accepted</span>';}
+                                                  echo '<span class="badge badge-info">Done</span>';}
                                                 ?>
                                                       </td>
                                                 
                                                 <?php 
                                                 
-                                                  if($row['bookingStatus'] === "Cancelled" or $row['bookingStatus'] === "Done"){
+                                                  if($row['bookingStatus'] === "Cancelled" or $row['bookingStatus'] === "Done" or $row['bookingStatus'] === "Accepted"){
                                                       echo '<td class = "text-center"><i class="fa fa-check-square" style="font-size:30px;color:green;"></i></td>';
 
+                                                    
+                                                      
                                                     }
                                                   else{
+                                                    
                                                       echo '<td>
                                                       <button type="submit" name="submit" class="btn btn-danger" onclick="return ConfirmDelete()">
                                                         Cancel
                                                       </button>
                                                       </td>';
+                                                     
                                                   }
 
                                                   ?>

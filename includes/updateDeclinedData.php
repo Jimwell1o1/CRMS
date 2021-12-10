@@ -41,6 +41,8 @@
                 }
             }
         }
+
+        
         $_SESSION['Done'] = 'Done';
         header("location: ../admin_new/customer_history.php");
         exit();

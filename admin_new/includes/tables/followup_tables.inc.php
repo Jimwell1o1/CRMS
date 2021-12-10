@@ -8,10 +8,10 @@
     <td> <?php echo $row['bookingBranch'] ?> </td>  
     <td>   
       <select class = "form-control" name="" id="">
+              <option value="" selected disabled>Select</option>
               <option value="">Weekly</option>
               <option value="">Monthly</option>
               <option value="">Customize</option>
-              <option value="">Done</option>
       </select>
     </td>
     <td class="text-left">
