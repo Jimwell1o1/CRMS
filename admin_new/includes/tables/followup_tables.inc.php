@@ -31,10 +31,18 @@
             <label>&nbsp;</label>        
         </form> 
         <!-- <form action="includes/email-confirmbooking.inc.php" method="POST">
-        <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
-        <input type="hidden" name="useremail" value="<?php echo htmlspecialchars($row['bookingemail'])?>" >
-        <input type="hidden" name="usertime" value="<?php echo htmlspecialchars($row['bookingTime'])?>" >
-        <input type="hidden" name="userdate" value="<?php echo htmlspecialchars($row['bookingDate'])?>" >
+        <input type="hidden" name="username" value="<?php 
+        // echo htmlspecialchars($row['bookingName'])
+        ?>" >
+        <input type="hidden" name="useremail" value="<?php 
+        //echo htmlspecialchars($row['bookingemail'])
+        ?>" >
+        <input type="hidden" name="usertime" value="<?php 
+        //echo htmlspecialchars($row['bookingTime'])
+        ?>" >
+        <input type="hidden" name="userdate" value="<?php 
+        //echo htmlspecialchars($row['bookingDate'])
+        ?>" >
             <button type="submit" class="btn btn-primary">
                   <i class="fas fa-bell"></i>
                 </button>

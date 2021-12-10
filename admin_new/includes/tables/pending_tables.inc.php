@@ -21,6 +21,7 @@
         <input type="hidden" name="useremail" value="<?php echo htmlspecialchars($row['bookingemail'])?>" >
         <input type="hidden" name="usertime" value="<?php echo htmlspecialchars($row['bookingTime'])?>" >
         <input type="hidden" name="userdate" value="<?php echo htmlspecialchars($row['bookingDate'])?>" >
+        <input type="hidden" name="userbranch" value="<?php echo htmlspecialchars($row['bookingBranch'])?>" >
     <button class="btn btn-warning" name="submit" onclick="return confirm('Are you sure you want to Accept this record?');">
       <i class="fas fa-check"></i>
     </button>

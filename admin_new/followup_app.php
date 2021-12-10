@@ -104,17 +104,15 @@
 
                             if($resultChecked > 0){  
                                 while($row = mysqli_fetch_assoc($result)){
-                                    if("Accepted" === $row['bookingStatus']){ 
-                                      if($row['bookingConsultation'] == 'Orthodontic Treatment'){
+                                    if($row['bookingStatus'] === "Follow Up"){ 
                                      
-                                      if($_SESSION['admin_branchName'] === $row['bookingBranch']){ 
-                                             include 'includes/tables/followup_tables.inc.php';
-                                } 
-                                if($_SESSION['admin_branchName'] === "mainAdmin"){
-                                 
-                                  include 'includes/tables/followup_tables.inc.php';
-                         
-                          } } } } } ?>
+                                          if($_SESSION['admin_branchName'] === $row['bookingBranch']){ 
+                                                include 'includes/tables/followup_tables.inc.php';
+                                          } 
+                                          if($_SESSION['admin_branchName'] === "mainAdmin"){
+                                                include 'includes/tables/followup_tables.inc.php';
+                            
+                          } } } } ?>
 
                   </tbody>
                 </table>

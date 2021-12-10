@@ -40,6 +40,17 @@
               <li class="breadcrumb-item active">Customer History</li>
             </ol>
 
+            <?php
+           if (isset($_GET["error"])){
+                        if ($_GET["error"] == "none") {
+                            echo '<div class="alert alert-success alert-dismissible">
+                            The system has successfully updated the information. 
+                          </div>';
+           }
+          }
+              ?>
+
+
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>

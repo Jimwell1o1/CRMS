@@ -13,6 +13,11 @@
      <i class="fas fa-edit"></i>
     </button>
     <label>&nbsp;</label>
+    <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
+        <input type="hidden" name="useremail" value="<?php echo htmlspecialchars($row['bookingemail'])?>" >
+        <input type="hidden" name="usertime" value="<?php echo htmlspecialchars($row['bookingTime'])?>" >
+        <input type="hidden" name="userdate" value="<?php echo htmlspecialchars($row['bookingDate'])?>" >
+        <input type="hidden" name="userbranch" value="<?php echo htmlspecialchars($row['bookingBranch'])?>" >
         <button class="btn btn-success" id="accept-button" name="submit" onclick="return confirm('Are you sure you want to accept this record?');">
             <i class="fas fa-check-circle"></i>
             </button> 
@@ -23,7 +28,7 @@
             </button>
             <label>&nbsp;</label>
         </form> 
-        <form action="includes/email-confirmbooking.inc.php" method="POST">
+        <!-- <form action="includes/email-confirmbooking.inc.php" method="POST">
         <input type="hidden" name="username" value="<?php echo htmlspecialchars($row['bookingName'])?>" >
         <input type="hidden" name="useremail" value="<?php echo htmlspecialchars($row['bookingemail'])?>" >
         <input type="hidden" name="usertime" value="<?php echo htmlspecialchars($row['bookingTime'])?>" >
@@ -32,7 +37,7 @@
                   <i class="fas fa-bell"></i>
                 </button>
                 </div>
-          </form>
+          </form> -->
   </td>
 </tr>
 
@@ -216,6 +221,10 @@
                                if($row['bookingStatus'] == 'Done'){
                                   echo ' selected="selected"';
                                   }?>>Done</option>  
+                             <option value = "Follow Up" <?php
+                               if($row['bookingStatus'] == 'Follow Up'){
+                                  echo ' selected="selected"';
+                                  }?>>Follow Up</option>  
 
                         </select>
         </div>
