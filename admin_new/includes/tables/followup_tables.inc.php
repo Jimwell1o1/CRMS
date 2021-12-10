@@ -53,7 +53,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="../includes/updateBooking.inc.php" method="POST">
+        <form action="../includes/updatefollowBooking.inc.php" method="POST">
         <input name="bookid" type="hidden" class="form-control" value="<?php echo $row['bookingId']; ?>" required>
        
         <div class = "row">        

@@ -305,4 +305,19 @@ function bookingUpdate($conn, $id, $name, $gender, $email, $date, $time, $consul
                 exit();
             }
 };
+
+
+// Function for Follow up Booking inserting to Database
+function bookingfollowUpdate($conn, $id, $name, $gender, $email, $date, $time, $consultation, $branch, $status,$reminder,$message){
+    $sql = "UPDATE booking SET bookingName = '$name', bookingGender = '$gender', bookingemail = '$email', bookingDate = '$date', bookingTime = '$time', bookingConsultation = '$consultation', bookingBranch = '$branch',  bookingStatus = '$status', bookingReminder = '$reminder',  bookingMessage = '$message' WHERE bookingId = '$id';";
+    $query_run = mysqli_query($conn, $sql);
+    
+    if($query_run){
+        header("location: ../admin_new/followup_app.php?error=successful");
+                exit();
+            }else {
+                header("location: ../admin_new/followup_app.php?error=unsuccessful");
+                exit();
+            }
+};
 ?>

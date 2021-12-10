@@ -18,10 +18,10 @@
         $reminder = $_POST["reminder"];
         $message = $_POST["message"];
 
-        bookingUpdate($conn, $id, $name, $gender, $email, $date, $time, $consultation, $branch, $status,$reminder,$message);
+        bookingfollowUpdate($conn, $id, $name, $gender, $email, $date, $time, $consultation, $branch, $status,$reminder,$message);
 
     }else {
-        header("location: ../admin_new/pending_tables.php");
+        header("location: ../admin_new/followup_tables.php");
         exit();
     }
 ?>
