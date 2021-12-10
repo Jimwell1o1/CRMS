@@ -6,14 +6,7 @@
     <td> <?php echo $row['bookingTime'] ?> </td>
     <td> <?php echo $row['bookingConsultation'] ?> </td>
     <td> <?php echo $row['bookingBranch'] ?> </td>  
-    <td>   
-      <select class = "form-control" name="" id="">
-              <option value="" selected disabled>Select</option>
-              <option value="">Weekly</option>
-              <option value="">Monthly</option>
-              <option value="">Customize</option>
-      </select>
-    </td>
+    <td> <?php echo $row['bookingReminder']?></td>
     <td class="text-left">
         <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
         <div class = "d-flex p-1">
@@ -85,7 +78,7 @@
                     }?>>Female</option>
         </select>
         </div>
-                  </div>
+          </div>
 
 
         <div>
@@ -208,7 +201,8 @@
 
                         </select>
         </div>
-        <div>
+        <div class="row">
+        <div class = "col">
           <label class="form-label">Status:</label>
           <select name="status" class="form-control" class="input-field box">
 
@@ -227,6 +221,10 @@
                                if($row['bookingStatus'] == 'Declined'){
                                   echo ' selected="selected"';
                                   }?>>Declined</option>  
+                            <option value = "Follow Up" <?php
+                               if($row['bookingStatus'] == 'Follow Up'){
+                                  echo ' selected="selected"';
+                                  }?>>Follow Up</option>  
                              <option value = "Done" <?php
                                if($row['bookingStatus'] == 'Done'){
                                   echo ' selected="selected"';
@@ -234,7 +232,25 @@
 
                         </select>
         </div>
-   
+
+        <div class = "col">
+        <label class="form-label">Reminder:</label>
+          <select name="reminder" class="form-control" class="input-field box">
+              <option value="" disabled>Select Reminder:</option>
+
+              <!-- TO KEEP THE DETAILS TYPED Malinao-------->        
+              <option value = "Weekly" <?php
+                if($row['bookingReminder'] == 'Weekly'){
+                    echo ' selected="selected"';
+                    }?>>Weekly</option>
+
+              <option value = "Monthly" <?php
+                if($row['bookingReminder'] == 'Monthly'){
+                    echo ' selected="selected"';
+                    }?>>Monthly</option>
+        </select>
+        </div>
+        </div>
         <div>
           <label class="form-label">Message:</label>
           <textarea name="message" type="text" class="form-control" 
