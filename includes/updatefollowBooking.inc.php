@@ -15,10 +15,9 @@
         $consultation = $_POST["procedure"];
         $branch = $_POST["branch"];
         $status = $_POST["status"];
-        $reminder = $_POST["reminder"];
         $message = $_POST["message"];
 
-        bookingfollowUpdate($conn, $id, $name, $gender, $email, $date, $time, $consultation, $branch, $status,$reminder,$message);
+        bookingfollowUpdate($conn, $id, $name, $gender, $email, $date, $time, $consultation, $branch, $status, $message);
 
     }else {
         header("location: ../admin_new/followup_tables.php");

@@ -6,7 +6,6 @@
     <td> <?php echo $row['bookingTime'] ?> </td>
     <td> <?php echo $row['bookingConsultation'] ?> </td>
     <td> <?php echo $row['bookingBranch'] ?> </td>  
-    <td> <?php echo $row['bookingReminder']?></td>
     <td class="text-left">
         <form action="../includes/updateAcceptedData.php?bookingId=<?php echo htmlspecialchars($row['bookingId'])?>" method="POST">
         <div class = "d-flex p-1">
@@ -233,23 +232,6 @@
                         </select>
         </div>
 
-        <div class = "col">
-        <label class="form-label">Reminder:</label>
-          <select name="reminder" class="form-control" class="input-field box">
-              <option value="" disabled>Select Reminder:</option>
-
-              <!-- TO KEEP THE DETAILS TYPED Malinao-------->        
-              <option value = "Weekly" <?php
-                if($row['bookingReminder'] == 'Weekly'){
-                    echo ' selected="selected"';
-                    }?>>Weekly</option>
-
-              <option value = "Monthly" <?php
-                if($row['bookingReminder'] == 'Monthly'){
-                    echo ' selected="selected"';
-                    }?>>Monthly</option>
-        </select>
-        </div>
         </div>
         <div>
           <label class="form-label">Message:</label>

@@ -18,7 +18,7 @@
         $reminder = $_POST["reminder"];
         $message = $_POST["message"];
 
-        bookingUpdate($conn, $id, $name, $gender, $email, $date, $time, $consultation, $branch, $status,$reminder,$message);
+        bookingUpdate($conn, $id, $name, $gender, $email, $date, $time, $consultation, $branch, $status, $message);
 
     }else {
         header("location: ../admin_new/pending_tables.php");

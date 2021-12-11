@@ -39,10 +39,10 @@
           <div class="container-fluid px-4">
             <h1 class="mt-4">Tomorrow Schedule</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item">
+              <li class="breadcrumb-item"> &nbsp;
                 <a href="index.php">Dashboard</a>
               </li>
-              <li class="breadcrumb-item active">Tomorrow Schedule</li>
+              <li class="breadcrumb-item active">Tomorrow Schedule (Accepted)</li>
             </ol>
             <?php
            if (isset($_GET["error"])){

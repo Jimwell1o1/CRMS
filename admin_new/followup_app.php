@@ -41,16 +41,16 @@
           <div class="container-fluid px-4">
             <h1 class="mt-4">Follow-up Appointment</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item">
+              <li class="breadcrumb-item"> &nbsp;
                 <a href="index.php">Dashboard</a>
               </li>
-              <li class="breadcrumb-item active">Follow-up Appointment</li>
+              <li class="breadcrumb-item active">Follow-up Appointment (Accepted)</li>
             </ol>
             <?php
            if (isset($_GET["error"])){
-                        if ($_GET["error"] == "none") {
+                        if ($_GET["error"] == "successful") {
                             echo '<div class="alert alert-success alert-dismissible">
-                            The system has successfully sent the email to the user. 
+                            The system has successfully updated the information. 
                           </div>';
            }else if($_GET["error"] == "unsuccessful") {
             echo '<div class="alert alert-danger alert-dismissible">
@@ -76,8 +76,7 @@
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>
-                      <th>Branch</th>   
-                      <th>Reminder</th>                   
+                      <th>Branch</th>                    
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -89,7 +88,6 @@
                       <th>Date</th>
                       <th>Time</th>
                       <th>Consultation</th>
-                      <th>Reminder</th> 
                       <th>Branch</th>                     
                       <th>Action</th>
                     </tr>
