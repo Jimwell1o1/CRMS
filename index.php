@@ -110,7 +110,7 @@
         else {
             # code...
             echo "<li><a href='forms/signup.php'>Register</a></li>";
-            echo "<li><a href='forms/login.php'>Sign In</a></li>";
+            echo "<li><a href='forms/login.php'>Log In</a></li>";
         }
        
     ?>

@@ -67,8 +67,8 @@
           <li><a href="../index.php#services">Services</a></li>
           <li><a href="../index.php#portfolio">Gallery</a></li>
           <li><a href="../index.php#contact">Contact Us</a></li>
-          <li><a href="signup.php">REGISTER</a></li>
-          <li class="active"><a href="login.php">LOG IN</a></li>
+          <li><a href="signup.php">Register</a></li>
+          <li class="active"><a href="login.php">Log In</a></li>
           
 
         </ul>

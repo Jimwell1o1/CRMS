@@ -61,8 +61,8 @@
 
           
           <li><a href="../index.php#contact">Contact Us</a></li>
-          <li class="active"><a href="signup.php">REGISTER</a></li>
-          <li ><a href="login.php">LOG IN</a></li>
+          <li class="active"><a href="signup.php">Register</a></li>
+          <li ><a href="login.php">Log In</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
