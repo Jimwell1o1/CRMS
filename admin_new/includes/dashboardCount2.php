@@ -72,13 +72,6 @@ while($row = mysqli_fetch_assoc($query_result)){
     $tnov = $total[10];
     $tdec = $total[11];
 
-    
-    $query = "SELECT bookingDate FROM booking";
-
-    $query_result = mysqli_query($conn,$query);
-    while($row = mysqli_fetch_assoc($query_result)){
-    
-      $booking = date('d M Y', strtotime($row['bookingDate']));
-    }
+  
 
 ?>
