@@ -68,7 +68,7 @@
             </ol>
             <?php
            if (isset($_GET["error"])){
-                        if ($_GET["error"] == "successful") {
+          if ($_GET["error"] == "successful") {
                             echo '<div class="alert alert-success alert-dismissible">
                             The system has successfully updated the information. 
                           </div>';
@@ -79,20 +79,7 @@
 }
           }
               ?>
-
-            <?php
-           if (isset($_GET["error"])){
-                        if ($_GET["error"] == "none") {
-                            echo '<div class="alert alert-primary alert-dismissible">
-                            The system has successfully sent the email to the user. 
-                          </div>';
-           }else if($_GET["error"] == "unsuccessful") {
-            echo '<div class="alert alert-danger alert-dismissible">
-              Updating data error occured, please try again.
-          </div>';
-}
-          }
-              ?>
+              
             <div class="card mb-4">
               <div class="card-header">
                 <i class="far fa-calendar-check me-1"></i>
