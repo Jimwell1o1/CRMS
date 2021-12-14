@@ -212,9 +212,7 @@ function loginUser($conn, $username, $pwd){
         $row=mysqli_fetch_array($query);
     
         if($row['usersVerify']==0){
-            session_start();
-            $_SESSION["useruid"] = $uidExists["usersUid"];
-            header('location:../email-verification.php?error=notverified');
+            header('location:../email-verification.php?error=notverified&useruid='.$uidExists["usersUid"]);
             }
             else{
                 session_start();

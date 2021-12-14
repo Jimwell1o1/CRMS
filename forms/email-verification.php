@@ -4,7 +4,7 @@
 
     emptyAdminSignupSession();
 
-    if(!isset($_SESSION['useruid'])){
+    if(!isset($_GET['useruid'])){
 
       header("Location: signup.php?error=erroroccured");
       die();
@@ -114,7 +114,7 @@
     
         <form action="includes/resendemail.inc.php" method="POST">
                 <div class="input-box">
-                <input type="hidden" name="username" value="<?php echo $_SESSION['useruid']; ?>">
+                <input type="hidden" name="username" value="<?php echo $_GET['useruid']; ?>">
                 <input  class="btn btn-primary" type="submit" name="submit" value="Resend Verification Email" />
                 <br>
             
