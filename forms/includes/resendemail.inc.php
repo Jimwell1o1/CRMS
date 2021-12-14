@@ -5,7 +5,7 @@ include('../includes/dbh.inc.php');
 if(isset($_POST['username']) && isset($_POST['submit'])){
 
 
-$username = $_POST['username'];
+$username = mysqli_real_escape_string($conn, $_POST['username']);
 
 $set='123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 $key=substr(str_shuffle($set), 0, 12);
@@ -58,7 +58,7 @@ $email_to = $email;
 
 
 $_SESSION['sign_msg'] = "Verification code sent to your email.";
-header("Location: ../email-verification.php?error=sent");
+header("Location: ../email-verification.php?error=sent&useruid=".$username);
 exit();
 
 }
