@@ -26,7 +26,7 @@ if (mysqli_connect_errno()) {
                     // Insert Temp Table
                             
                     $output.="<h3>Hi " .$name. "!</h3>";
-                    $output.='<p>This is MCY Dental Clinic. We want you to know that your scheduled appointment will be tomorrow  and is set on <b>' . $bookingDate .'</b> at <b>'.$bookingTime. '</b> for your '. $procedure. ' procedure. Please arrive at the assigned time and date and designated branch to avoid canceling your appointment. Thank you and stay safe! </p>';
+                    $output.='<p>This is MCY Dental Clinic. We want you to know that your scheduled appointment will be tomorrow and is set on <b>' . $bookingDate .'</b> at <b>'.$bookingTime. '</b> for your '. $procedure. ' procedure. Please arrive at the assigned time and date and designated branch to avoid canceling your appointment. Thank you and stay safe! </p>';
                     $output.='<p>Your Appointment Details are the following:</p>';
                     $output.='<p><b>Name:</b>     '.$name.'</p>';
                     $output.='<p><b>Date:</b>     '. $bookingDate .'</p>';
