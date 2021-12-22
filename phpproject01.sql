@@ -4,7 +4,6 @@ CREATE TABLE users(
    usersEmail varchar(128) NOT NULL,
    usersUid varchar(128) NOT NULL,
    usersPwd varchar(128) NOT NULL
-
 );
 
 CREATE TABLE adminAcc (
