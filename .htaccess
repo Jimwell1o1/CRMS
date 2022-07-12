@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule home views/index.php [L]
+RewriteRule forms/login forms/login.php [L]
+RewriteRule forms/register forms/signup.php [L]

@@ -1,5 +1,4 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
 
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat){
     $result;
@@ -70,18 +69,6 @@ function pwdMatch($pwd, $pwdRepeat){
     return $result;
 }
 
-// function strpass($pwd){
-// $result;
-// if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $pwd)) {
-//     $result = true;
-        
-// } else {
-    
-//     $result = false;
-// }
-// return $result;
-
-// }
 
 function uidExists($conn, $username, $email){
     $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
@@ -141,31 +128,31 @@ function createUser($conn, $name, $email, $username, $pwd){
     $email_to = $email;
 
 
-     //autoload the PHPMailer
-     require("../../vendor/autoload.php");
-     $mail = new PHPMailer();
-     $mail->IsSMTP();
-     $mail->Host = "smtp.gmail.com"; // Enter your host here
-     $mail->SMTPAuth = true;
-     $mail->Username = "clinicmcydental@gmail.com"; // Enter your email here
-     $mail->Password = "MCYdentaladmin01"; //Enter your passwrod here
-     $mail->Port = 587;
-     $mail->IsHTML(true);
-     $mail->From = "clinicmcydental@gmail.com";
-     $mail->FromName = "MCY Dental Clinic Account Verification";
+    //  //autoload the PHPMailer
+    //  require("../../vendor/autoload.php");
+    //  $mail = new PHPMailer();
+    //  $mail->IsSMTP();
+    //  $mail->Host = "smtp.gmail.com"; // Enter your host here
+    //  $mail->SMTPAuth = true;
+    //  $mail->Username = "clinicmcydental@gmail.com"; // Enter your email here
+    //  $mail->Password = "MCYdentaladmin01"; //Enter your passwrod here
+    //  $mail->Port = 587;
+    //  $mail->IsHTML(true);
+    //  $mail->From = "clinicmcydental@gmail.com";
+    //  $mail->FromName = "MCY Dental Clinic Account Verification";
 
-     $mail->Subject = $subject;
-     $mail->Body = $body;
-     $mail->AddAddress($email_to);
+    //  $mail->Subject = $subject;
+    //  $mail->Body = $body;
+    //  $mail->AddAddress($email_to);
 
-     if (!$mail->Send()) {
-         echo "Mailer Error: " . $mail->ErrorInfo;
-     } else {
-         echo "<div class='alert alert-success alert-dismissible'>
-         <button type='button' class='close' data-dismiss='alert'>&times;</button>
-         An email has been sent, kindly please<br> check your email account.
-       </div>";
-     }
+    //  if (!$mail->Send()) {
+    //      echo "Mailer Error: " . $mail->ErrorInfo;
+    //  } else {
+    //      echo "<div class='alert alert-success alert-dismissible'>
+    //      <button type='button' class='close' data-dismiss='alert'>&times;</button>
+    //      An email has been sent, kindly please<br> check your email account.
+    //    </div>";
+    //  }
 
 
     $_SESSION['sign_msg'] = "Verification code sent to your email.";

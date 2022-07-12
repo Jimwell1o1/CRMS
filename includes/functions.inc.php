@@ -109,26 +109,6 @@ function emailExists($conn, $email){
 
 
 
-
-// Function for Create User Account inserting to Database
-function createUser($conn, $name, $age, $address, $gender, $birthday, $email, $uid, $password){
-    $sql = "INSERT INTO users (usersName, usersAge, usersAddress, usersGender, usersBirthday, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
-    $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../signup.php?error=stmtfailed");
-        exit();
-    }
-
-    $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-
-    mysqli_stmt_bind_param($stmt, "ssssssss", $name, $age, $address, $gender, $birthday, $email, $uid, $hashedPwd);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-    header("location: ../signup.php?error=none");
-    exit();
-};
-
-
 // Function for Sign Up of Admin Account
 function admin_uidExists($conn, $admin_uid){
     $sql = "SELECT * FROM adminAcc WHERE adminAccUid = ?;";
@@ -225,9 +205,6 @@ function loginAdmin($conn, $uid, $password){
     }
 
 };
-
-
-
 
 
 

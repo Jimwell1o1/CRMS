@@ -85,7 +85,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.php">Home</a></li>
+          <li class="active"><a href="home">Home</a></li>
           <li><a href="#about">Intro</a></li>
           <li class="drop-down"><a href="">About Us</a>
             <ul>
@@ -109,8 +109,8 @@
         }
         else {
             # code...
-            echo "<li><a href='forms/signup.php'>Register</a></li>";
-            echo "<li><a href='forms/login.php'>Log In</a></li>";
+            echo "<li><a href='forms/register'>Register</a></li>";
+            echo "<li><a href='forms/login'>Log In</a></li>";
         }
        
     ?>
